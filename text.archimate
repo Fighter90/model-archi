@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:archimate="http://www.archimatetool.com/archimate"
+                 name="As-is модель бизнес-процессов фитнес-центра"
+                 id="id-67f0553bd6dd4f1da9448314599bf419"
+                 version="5.0.0">
+
+  <folder name="Strategy" id="id-folder-strategy" type="strategy"/>
+
+  <folder name="Business" id="id-folder-business" type="business">
+    <element xsi:type="archimate:BusinessActor" name="Клиент" id="id-actor-client"/>
+    <element xsi:type="archimate:BusinessActor" name="Администратор" id="id-actor-admin"/>
+    <element xsi:type="archimate:BusinessActor" name="Тренер" id="id-actor-trainer"/>
+    <element xsi:type="archimate:BusinessActor" name="Владелец клуба" id="id-actor-owner"/>
+    <element xsi:type="archimate:BusinessRole" name="Действующий клиент" id="id-role-active-client"/>
+    <element xsi:type="archimate:BusinessRole" name="Потенциальный клиент" id="id-role-potential-client"/>
+    <element xsi:type="archimate:BusinessRole" name="Администратор клуба" id="id-role-admin"/>
+    <element xsi:type="archimate:BusinessRole" name="Тренер спортивного зала" id="id-role-trainer"/>
+    <element xsi:type="archimate:BusinessProcess" name="Обслуживание клиента" id="id-process-client-journey"/>
+    <element xsi:type="archimate:BusinessProcess" name="Запись на тренировку" id="id-process-recording"/>
+    <element xsi:type="archimate:BusinessProcess" name="Регистрация нового клиента" id="id-process-reg"/>
+    <element xsi:type="archimate:BusinessProcess" name="Хранение данных клиента" id="id-process-data-store"/>
+    <element xsi:type="archimate:BusinessProcess" name="Контроль посещаемости" id="id-process-attendance"/>
+    <element xsi:type="archimate:BusinessProcess" name="Оформление и учёт абонементов" id="id-process-abonement"/>
+    <element xsi:type="archimate:BusinessProcess" name="Оплата абонемента" id="id-process-payment"/>
+    <element xsi:type="archimate:BusinessProcess" name="Коммуникации с клиентом" id="id-process-communication"/>
+    <element xsi:type="archimate:BusinessProcess" name="Первичная консультация" id="id-process-consultation"/>
+    <element xsi:type="archimate:BusinessProcess" name="Медицинский опрос" id="id-process-health-check"/>
+    <element xsi:type="archimate:BusinessProcess" name="Составление расписания" id="id-process-schedule"/>
+    <element xsi:type="archimate:BusinessProcess" name="Обработка обращений" id="id-process-support"/>
+    <element xsi:type="archimate:BusinessProcess" name="Проверка расписания" id="id-process-check-schedule"/>
+    <element xsi:type="archimate:BusinessProcess" name="Бронирование времени" id="id-process-book-slot"/>
+    <element xsi:type="archimate:BusinessProcess" name="Предложение альтернативного времени" id="id-process-alt-propose"/>
+    <element xsi:type="archimate:BusinessProcess" name="Создание карточки клиента" id="id-process-create-card"/>
+    <element xsi:type="archimate:BusinessProcess" name="Внесение личных данных" id="id-process-enter-data"/>
+    <element xsi:type="archimate:BusinessProcess" name="Отметка посещения" id="id-process-mark-visit"/>
+    <element xsi:type="archimate:BusinessProcess" name="Проверка остатка занятий" id="id-process-check-remaining"/>
+    <element xsi:type="archimate:BusinessProcess" name="Оформление абонемента" id="id-process-issue-abonement"/>
+    <element xsi:type="archimate:BusinessProcess" name="Фиксация оплаты" id="id-process-record-payment"/>
+    <element xsi:type="archimate:BusinessProcess" name="Уведомление о тренировке вручную" id="id-process-manual-remind"/>
+    <element xsi:type="archimate:BusinessProcess" name="Сообщение об отмене" id="id-process-cancel-inform"/>
+    <element xsi:type="archimate:BusinessProcess" name="Звонок клиенту" id="id-process-client-call"/>
+    <element xsi:type="archimate:BusinessProcess" name="Поиск карточки клиента" id="id-process-find-card"/>
+    <element xsi:type="archimate:BusinessProcess" name="Архивация карточки клиента" id="id-process-archive-card"/>
+    <element xsi:type="archimate:BusinessProcess" name="Контроль просроченных абонементов" id="id-process-overdue-control"/>
+    <element xsi:type="archimate:BusinessEvent" name="Двойное бронирование" id="id-issue-double"/>
+    <element xsi:type="archimate:BusinessEvent" name="Потеря данных" id="id-issue-loss"/>
+    <element xsi:type="archimate:BusinessEvent" name="Нет напоминания" id="id-issue-no-remind"/>
+    <element xsi:type="archimate:BusinessEvent" name="Трудности поиска карточки" id="id-issue-not-found"/>
+    <element xsi:type="archimate:BusinessEvent" name="Ошибка в расписании" id="id-issue-error"/>
+    <element xsi:type="archimate:BusinessEvent" name="Просроченный абонемент" id="id-issue-overdue"/>
+    <element xsi:type="archimate:BusinessObject" name="Бумажное расписание" id="id-bo-schedule"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента" id="id-bo-client-card"/>
+    <element xsi:type="archimate:BusinessObject" name="Журнал посещаемости" id="id-bo-visit-log"/>
+    <element xsi:type="archimate:BusinessObject" name="Журнал продаж абонементов" id="id-bo-abonement-log"/>
+    <element xsi:type="archimate:BusinessObject" name="Телефон клиента" id="id-bo-phone"/>
+    <element xsi:type="archimate:BusinessObject" name="Excel-файл" id="id-bo-excel"/>
+    <element xsi:type="archimate:BusinessObject" name="Заметка администратора" id="id-bo-note"/>
+    <element xsi:type="archimate:BusinessObject" name="Медицинская анкета" id="id-bo-med-form"/>
+    <element xsi:type="archimate:BusinessObject" name="Договор на обслуживание" id="id-bo-contract"/>
+    <element xsi:type="archimate:BusinessObject" name="Обращение клиента" id="id-bo-feedback"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента: Иванов" id="id-bo-1"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента: Петров" id="id-bo-2"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента: Сидоров" id="id-bo-3"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента: Смирнова" id="id-bo-4"/>
+    <element xsi:type="archimate:BusinessObject" name="Карточка клиента: Кузнецова" id="id-bo-5"/>
+    <element xsi:type="archimate:BusinessObject" name="Запись на 12:00 03.10" id="id-bo-6"/>
+    <element xsi:type="archimate:BusinessObject" name="Запись на 14:00 03.10" id="id-bo-7"/>
+    <element xsi:type="archimate:BusinessObject" name="Запись на 18:00 03.10" id="id-bo-8"/>
+    <element xsi:type="archimate:BusinessObject" name="Абонемент месяц: Иванов" id="id-bo-9"/>
+    <element xsi:type="archimate:BusinessObject" name="Абонемент 10 занятий: Петров" id="id-bo-10"/>
+    <element xsi:type="archimate:BusinessObject" name="Отметка посещения 02.10" id="id-bo-11"/>
+    <element xsi:type="archimate:BusinessObject" name="Отметка посещения 03.10" id="id-bo-12"/>
+    <element xsi:type="archimate:BusinessObject" name="Продажа абонемента 01.10" id="id-bo-13"/>
+    <element xsi:type="archimate:BusinessObject" name="Продажа абонемента 02.10" id="id-bo-14"/>
+    <element xsi:type="archimate:BusinessObject" name="Клиент Сидоров: жалоба" id="id-bo-15"/>
+    <element xsi:type="archimate:BusinessObject" name="Клиент Кузнецова: мед. анкета" id="id-bo-16"/>
+  </folder>
+
+  <folder name="Application" id="id-folder-application" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="Excel (как приложение)" id="id-app-excel"/>
+    <element xsi:type="archimate:ApplicationComponent" name="SMS-рассылка" id="id-app-sms"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Почтовый клиент" id="id-app-mail"/>
+  </folder>
+
+  <folder name="Technology &amp; Physical" id="id-folder-technology" type="technology">
+    <element xsi:type="archimate:Device" name="Телефон (устройство)" id="id-dev-phone"/>
+    <element xsi:type="archimate:Device" name="Бумажные носители" id="id-dev-paper"/>
+    <element xsi:type="archimate:Device" name="ПК администратора" id="id-dev-pc"/>
+  </folder>
+
+  <folder name="Motivation" id="id-folder-motivation" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-folder-implementation" type="implementation_migration"/>
+
+  <folder name="Other" id="id-folder-other" type="other"/>
+
+  <folder name="Relations" id="id-folder-relations" type="relations">
+    <element xsi:type="archimate:AssignmentRelationship" id="rel1" source="id-actor-client" target="id-role-active-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel2" source="id-actor-admin" target="id-role-admin"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel3" source="id-actor-trainer" target="id-role-trainer"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel4" source="id-actor-client" target="id-role-potential-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel6" source="id-role-active-client" target="id-process-client-journey"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel7" source="id-role-admin" target="id-process-client-journey"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel8" source="id-role-trainer" target="id-process-attendance"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel9" source="id-process-client-journey" target="id-process-recording"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel10" source="id-process-client-journey" target="id-process-reg"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel11" source="id-process-client-journey" target="id-process-data-store"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel12" source="id-process-client-journey" target="id-process-attendance"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel13" source="id-process-client-journey" target="id-process-abonement"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel14" source="id-process-client-journey" target="id-process-payment"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel15" source="id-process-client-journey" target="id-process-communication"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel16" source="id-process-client-journey" target="id-process-support"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel17" source="id-process-recording" target="id-process-check-schedule"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel18" source="id-process-recording" target="id-process-book-slot"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel19" source="id-process-recording" target="id-process-alt-propose"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel20" source="id-process-reg" target="id-process-create-card"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel21" source="id-process-reg" target="id-process-enter-data"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel22" source="id-process-reg" target="id-process-health-check"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel23" source="id-process-reg" target="id-process-find-card"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel24" source="id-process-data-store" target="id-process-archive-card"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel25" source="id-process-attendance" target="id-process-mark-visit"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel26" source="id-process-attendance" target="id-process-check-remaining"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel27" source="id-process-attendance" target="id-process-overdue-control"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel28" source="id-process-abonement" target="id-process-issue-abonement"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel29" source="id-process-abonement" target="id-process-record-payment"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel30" source="id-process-communication" target="id-process-manual-remind"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel31" source="id-process-communication" target="id-process-cancel-inform"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel32" source="id-process-communication" target="id-process-client-call"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel33" source="id-process-check-schedule" target="id-bo-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel34" source="id-process-book-slot" target="id-bo-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel35" source="id-process-create-card" target="id-bo-client-card"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel36" source="id-process-enter-data" target="id-bo-client-card"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel37" source="id-process-health-check" target="id-bo-med-form"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel38" source="id-process-find-card" target="id-bo-client-card"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel39" source="id-process-archive-card" target="id-bo-client-card"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel40" source="id-process-mark-visit" target="id-bo-visit-log"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel41" source="id-process-check-remaining" target="id-bo-client-card"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel42" source="id-process-overdue-control" target="id-bo-abonement-log"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel43" source="id-process-issue-abonement" target="id-bo-abonement-log"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel44" source="id-process-record-payment" target="id-bo-abonement-log"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel45" source="id-process-manual-remind" target="id-bo-phone"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel46" source="id-process-cancel-inform" target="id-bo-phone"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel47" source="id-process-client-call" target="id-bo-phone"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel48" source="id-process-support" target="id-bo-feedback"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel49" source="id-process-support" target="id-bo-note"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel50" source="id-app-excel" target="id-bo-excel"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel51" source="id-dev-phone" target="id-bo-phone"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel52" source="id-dev-paper" target="id-bo-schedule"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel53" source="id-dev-paper" target="id-bo-client-card"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel54" source="id-dev-paper" target="id-bo-visit-log"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel55" source="id-dev-paper" target="id-bo-abonement-log"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel56" source="id-dev-pc" target="id-bo-note"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel57" source="id-app-sms" target="id-process-manual-remind"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel58" source="id-app-mail" target="id-process-cancel-inform"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel59" source="id-app-mail" target="id-process-support"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel60" source="id-process-book-slot" target="id-issue-double"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel61" source="id-process-find-card" target="id-issue-not-found"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel62" source="id-process-create-card" target="id-issue-loss"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel63" source="id-process-manual-remind" target="id-issue-no-remind"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel64" source="id-process-check-schedule" target="id-issue-error"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel65" source="id-process-overdue-control" target="id-issue-overdue"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel66" source="id-bo-client-card" target="id-bo-1"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel67" source="id-bo-client-card" target="id-bo-2"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel68" source="id-bo-client-card" target="id-bo-3"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel69" source="id-bo-client-card" target="id-bo-4"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel70" source="id-bo-client-card" target="id-bo-5"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel71" source="id-bo-schedule" target="id-bo-6"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel72" source="id-bo-schedule" target="id-bo-7"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel73" source="id-bo-schedule" target="id-bo-8"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel74" source="id-bo-abonement-log" target="id-bo-9"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel75" source="id-bo-abonement-log" target="id-bo-10"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel76" source="id-bo-visit-log" target="id-bo-11"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel77" source="id-bo-visit-log" target="id-bo-12"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel78" source="id-bo-abonement-log" target="id-bo-13"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel79" source="id-bo-abonement-log" target="id-bo-14"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel80" source="id-bo-feedback" target="id-bo-15"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel81" source="id-bo-med-form" target="id-bo-16"/>
+  </folder>
+
+  <folder name="Views" id="id-folder-views" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Процессы работы с клиентами (as-is)" id="id-view">
+      <!-- Диаграммные объекты и их детализация -->
+      <child xsi:type="archimate:DiagramObject" id="do-client" archimateElement="id-actor-client">
+        <bounds x="60" y="40" width="160" height="60"/>
+        <properties>
+          <property key="Тип" value="Внешний"/>
+          <property key="Комментарий" value="Главный потребитель услуг"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-role-client" archimateElement="id-role-active-client">
+        <bounds x="60" y="115" width="180" height="60"/>
+        <notes>Клиент с активным абонементом</notes>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-journey" archimateElement="id-process-client-journey">
+        <bounds x="60" y="200" width="200" height="60"/>
+        <properties>
+          <property key="Описание" value="Основной бизнес-процесс работы с клиентом"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-recording" archimateElement="id-process-recording">
+        <bounds x="320" y="200" width="200" height="60"/>
+        <properties>
+          <property key="Описание" value="Запись клиента на тренировку"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-check" archimateElement="id-process-check-schedule">
+        <bounds x="320" y="300" width="200" height="60"/>
+        <notes>Проверка актуальности расписания тренеров</notes>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-book" archimateElement="id-process-book-slot">
+        <bounds x="530" y="200" width="200" height="60"/>
+        <properties>
+          <property key="Описание" value="Бронирование времени для клиента"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-alt" archimateElement="id-process-alt-propose">
+        <bounds x="530" y="300" width="200" height="60"/>
+        <notes>В случае занятости предлагается альтернативное время</notes>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-reg" archimateElement="id-process-reg">
+        <bounds x="790" y="200" width="200" height="60"/>
+        <properties>
+          <property key="Описание" value="Регистрация нового посетителя центра"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-create-card" archimateElement="id-process-create-card">
+        <bounds x="790" y="300" width="200" height="60"/>
+        <notes>Оформление бумажной карточки</notes>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-data-store" archimateElement="id-process-data-store">
+        <bounds x="1050" y="200" width="200" height="60"/>
+        <properties>
+          <property key="Описание" value="Управление хранением информации о клиентах"/>
+        </properties>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="do-archive" archimateElement="id-process-archive-card">
+        <bounds x="1050" y="300" width="200" height="60"/>
+        <notes>Архивация карточки клиента при завершении обслуживания</notes>
+      </child>
+      <!-- Связи (Визуальные стрелки, движения, агрегирования и т.д.) -->
+      <connection xsi:type="archimate:DiagramConnection" id="conn1" source="do-client" target="do-role-client" archimateRelationship="rel1"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn2" source="do-role-client" target="do-journey" archimateRelationship="rel6"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn3" source="do-journey" target="do-recording" archimateRelationship="rel9"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn4" source="do-recording" target="do-check" archimateRelationship="rel17"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn5" source="do-recording" target="do-book" archimateRelationship="rel18"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn6" source="do-book" target="do-alt" archimateRelationship="rel19"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn7" source="do-journey" target="do-reg" archimateRelationship="rel10"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn8" source="do-reg" target="do-create-card" archimateRelationship="rel20"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn9" source="do-journey" target="do-data-store" archimateRelationship="rel11"/>
+      <connection xsi:type="archimate:DiagramConnection" id="conn10" source="do-data-store" target="do-archive" archimateRelationship="rel24"/>
+    </element>
+  </folder>
+</archimate:model>
