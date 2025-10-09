@@ -713,37 +713,80 @@
           <bounds x="50" y="60" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="conn3-003" source="view3-actor-trainer" target="view3-role-trainer" archimateRelationship="rel-003"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view3-role-trainer" targetConnections="conn3-003" archimateElement="role-trainer">
+        <child xsi:type="archimate:DiagramObject" id="view3-role-trainer" targetConnections="conn3-003 conn3-073 conn3-074" archimateElement="role-trainer">
           <bounds x="200" y="60" width="150" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="conn3-025" source="view3-role-trainer" target="view3-proc-checkin" archimateRelationship="rel-025"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-046" source="view3-role-trainer" target="view3-proc-trainer-sched" archimateRelationship="rel-046"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-svc-card" archimateElement="svc-card-mgmt">
           <bounds x="50" y="160" width="200" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-073" source="view3-svc-card" target="view3-role-trainer" archimateRelationship="rel-073"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-svc-attend" archimateElement="svc-attendance">
           <bounds x="280" y="160" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-074" source="view3-svc-attend" target="view3-role-trainer" archimateRelationship="rel-074"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-func-records" archimateElement="func-records">
           <bounds x="50" y="260" width="230" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-034" source="view3-func-records" target="view3-proc-register" archimateRelationship="rel-034"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-035" source="view3-func-records" target="view3-proc-find" archimateRelationship="rel-035"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-036" source="view3-func-records" target="view3-proc-checkin" archimateRelationship="rel-036"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view3-proc-register" archimateElement="proc-register">
+        <child xsi:type="archimate:DiagramObject" id="view3-func-planning" archimateElement="func-planning">
+          <bounds x="320" y="260" width="230" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-030" source="view3-func-planning" target="view3-proc-main-sched" archimateRelationship="rel-030"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-031" source="view3-func-planning" target="view3-proc-trainer-sched" archimateRelationship="rel-031"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-proc-register" targetConnections="conn3-034" archimateElement="proc-register">
           <bounds x="50" y="360" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-059" source="view3-proc-register" target="view3-svc-card" archimateRelationship="rel-059"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-112" source="view3-proc-register" target="view3-obj-card" archimateRelationship="rel-112"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view3-proc-find" archimateElement="proc-find-card">
+        <child xsi:type="archimate:DiagramObject" id="view3-proc-find" targetConnections="conn3-035" archimateElement="proc-find-card">
           <bounds x="240" y="360" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-060" source="view3-proc-find" target="view3-svc-card" archimateRelationship="rel-060"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-113" source="view3-proc-find" target="view3-obj-card" archimateRelationship="rel-113"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-178" source="view3-proc-find" target="view3-proc-checkin" archimateRelationship="rel-178"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view3-proc-checkin" archimateElement="proc-check-in">
+        <child xsi:type="archimate:DiagramObject" id="view3-proc-checkin" targetConnections="conn3-025 conn3-036 conn3-178 conn3-161" archimateElement="proc-check-in">
           <bounds x="430" y="360" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-061" source="view3-proc-checkin" target="view3-svc-attend" archimateRelationship="rel-061"/>
           <sourceConnection xsi:type="archimate:Connection" id="conn3-114" source="view3-proc-checkin" target="view3-obj-attend" archimateRelationship="rel-114"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-115" source="view3-proc-checkin" target="view3-obj-balance" archimateRelationship="rel-115"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-116" source="view3-proc-checkin" target="view3-obj-card" archimateRelationship="rel-116"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view3-obj-card" archimateElement="obj-client-card">
-          <bounds x="50" y="440" width="160" height="55"/>
+        <child xsi:type="archimate:DiagramObject" id="view3-proc-trainer-sched" targetConnections="conn3-046 conn3-031" archimateElement="proc-trainer-schedule">
+          <bounds x="620" y="260" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-054" source="view3-proc-trainer-sched" target="view3-svc-schedule" archimateRelationship="rel-054"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-103" source="view3-proc-trainer-sched" target="view3-obj-trainer-notes" archimateRelationship="rel-103"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-167" source="view3-proc-trainer-sched" target="view3-proc-main-sched" archimateRelationship="rel-167"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-proc-main-sched" targetConnections="conn3-030 conn3-167" archimateElement="proc-main-schedule">
+          <bounds x="620" y="360" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-055" source="view3-proc-main-sched" target="view3-svc-schedule" archimateRelationship="rel-055"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-104" source="view3-proc-main-sched" target="view3-obj-schedule" archimateRelationship="rel-104"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-svc-schedule" targetConnections="conn3-054 conn3-055" archimateElement="svc-schedule">
+          <bounds x="620" y="160" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-obj-card" targetConnections="conn3-112 conn3-113 conn3-116" archimateElement="obj-client-card">
+          <bounds x="50" y="460" width="160" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-obj-attend" targetConnections="conn3-114" archimateElement="obj-attendance-log">
-          <bounds x="240" y="440" width="180" height="55"/>
+          <bounds x="240" y="460" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-obj-balance" targetConnections="conn3-115" archimateElement="obj-visit-balance">
+          <bounds x="430" y="460" width="160" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-obj-schedule" targetConnections="conn3-104" archimateElement="obj-paper-schedule">
+          <bounds x="620" y="460" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view3-obj-trainer-notes" targetConnections="conn3-103" archimateElement="obj-trainer-notes">
+          <bounds x="620" y="560" width="180" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-event-arrive" archimateElement="event-client-arrive">
           <bounds x="50" y="560" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn3-161" source="view3-event-arrive" target="view3-proc-checkin" archimateRelationship="rel-161"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-event-noshow" archimateElement="event-no-show">
           <bounds x="240" y="560" width="160" height="55"/>
