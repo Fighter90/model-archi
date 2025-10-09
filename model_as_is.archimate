@@ -8,7 +8,6 @@
   <folder name="Strategy" id="id-strategy-folder" type="strategy"/>
 
   <folder name="Business" id="id-business-folder" type="business">
-    <!-- ========== BUSINESS ACTORS ========== -->
     <element xsi:type="archimate:BusinessActor" name="Клиент" id="actor-client">
       <documentation>Физическое лицо, пользующееся услугами фитнес-клуба</documentation>
       <property key="Area" value="Запись"/>
@@ -25,8 +24,11 @@
       <documentation>Менеджмент, принимающий управленческие решения</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessActor" name="Бухгалтер" id="actor-accountant">
+      <documentation>Сотрудник, обрабатывающий платежи и финансовую отчётность</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
 
-    <!-- ========== BUSINESS ROLES ========== -->
     <element xsi:type="archimate:BusinessRole" name="Роль: Покупатель услуг" id="role-client">
       <documentation>Роль клиента при взаимодействии с клубом</documentation>
       <property key="Area" value="Запись"/>
@@ -43,8 +45,11 @@
       <documentation>Управленческая роль</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Финансист" id="role-accountant">
+      <documentation>Роль ответственного за финансы</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
 
-    <!-- ========== BUSINESS INTERFACES ========== -->
     <element xsi:type="archimate:BusinessInterface" name="Стойка администратора" id="iface-desk">
       <documentation>Физическая стойка для взаимодействия с клиентами</documentation>
       <property key="Area" value="Запись"/>
@@ -53,8 +58,11 @@
       <documentation>Канал телефонной связи с клиентами</documentation>
       <property key="Area" value="Запись"/>
     </element>
+    <element xsi:type="archimate:BusinessInterface" name="Доска объявлений" id="iface-board">
+      <documentation>Информационная доска в зоне ресепшена</documentation>
+      <property key="Area" value="Запись"/>
+    </element>
 
-    <!-- ========== BUSINESS SERVICES ========== -->
     <element xsi:type="archimate:BusinessService" name="Сервис: Запись на тренировку" id="svc-booking">
       <documentation>Услуга записи клиента на занятие</documentation>
       <property key="Area" value="Запись"/>
@@ -83,8 +91,11 @@
       <documentation>Услуга формирования отчётов для руководства</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Обработка платежей" id="svc-payment">
+      <documentation>Услуга приёма и учёта платежей</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
 
-    <!-- ========== BUSINESS FUNCTIONS ========== -->
     <element xsi:type="archimate:BusinessFunction" name="Функция: Планирование занятий" id="func-planning">
       <documentation>Общая функция планирования тренировочного расписания</documentation>
       <property key="Area" value="Запись"/>
@@ -101,8 +112,11 @@
       <documentation>Общая функция аналитики и отчётности</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Коммуникация с клиентами" id="func-communication">
+      <documentation>Общая функция взаимодействия и информирования</documentation>
+      <property key="Area" value="Запись"/>
+    </element>
 
-    <!-- ========== BUSINESS PROCESSES ========== -->
     <element xsi:type="archimate:BusinessProcess" name="Процесс: Запись клиента" id="proc-client-booking">
       <documentation>Первичный приём запроса на запись</documentation>
       <property key="Area" value="Запись"/>
@@ -163,8 +177,23 @@
       <documentation>Сбор и обобщение данных для руководства</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Отмена записи" id="proc-cancel-booking">
+      <documentation>Отмена ранее созданной брони</documentation>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Проверка остатка абонемента" id="proc-check-balance">
+      <documentation>Проверка количества оставшихся занятий</documentation>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Архивирование карточек" id="proc-archive">
+      <documentation>Перемещение неактивных карточек в архив</documentation>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Сверка платежей" id="proc-reconcile">
+      <documentation>Сопоставление платежей с записями продаж</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
 
-    <!-- ========== BUSINESS OBJECTS ========== -->
     <element xsi:type="archimate:BusinessObject" name="Объект: Бумажное расписание" id="obj-paper-schedule">
       <documentation>Журнал или листы с текущим расписанием</documentation>
       <property key="Area" value="Запись"/>
@@ -209,8 +238,19 @@
       <documentation>Записи об изменениях расписания</documentation>
       <property key="Area" value="Запись"/>
     </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Касса" id="obj-cashbox">
+      <documentation>Наличные средства и учёт платежей</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Архив карточек" id="obj-card-archive">
+      <documentation>Хранилище неактивных карточек клиентов</documentation>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Список группы" id="obj-group-list">
+      <documentation>Список участников группового занятия</documentation>
+      <property key="Area" value="Запись"/>
+    </element>
 
-    <!-- ========== CONTRACT & PRODUCT ========== -->
     <element xsi:type="archimate:Contract" name="Контракт: Условия абонемента" id="contract-sub">
       <documentation>Договор на оказание услуг фитнес-клуба</documentation>
       <property key="Area" value="Запись"/>
@@ -220,7 +260,6 @@
       <property key="Area" value="Запись"/>
     </element>
 
-    <!-- ========== BUSINESS EVENTS ========== -->
     <element xsi:type="archimate:BusinessEvent" name="Событие: Клиент звонит/приходит" id="event-client-comes">
       <documentation>Инициация процесса записи</documentation>
       <property key="Area" value="Запись"/>
@@ -261,6 +300,14 @@
       <documentation>Завершение формирования отчёта</documentation>
       <property key="Area" value="Отчётность"/>
     </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Запись подтверждена" id="event-booking-confirmed">
+      <documentation>Бронь успешно создана</documentation>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Оплата получена" id="event-payment-received">
+      <documentation>Платёж зарегистрирован</documentation>
+      <property key="Area" value="Отчётность"/>
+    </element>
   </folder>
 
   <folder name="Application" id="id-application-folder" type="application"/>
@@ -268,7 +315,6 @@
   <folder name="Motivation" id="id-motivation-folder" type="motivation"/>
   <folder name="Implementation &amp; Migration" id="id-implementation-folder" type="implementation_migration"/>
   <folder name="Other" id="id-other-folder" type="other">
-    <!-- ========== GROUPING (Области) ========== -->
     <element xsi:type="archimate:Grouping" name="Область: Запись (Booking)" id="grp-booking">
       <documentation>Процессы записи клиентов на тренировки, ведение расписания, продажа абонементов</documentation>
     </element>
@@ -281,13 +327,12 @@
   </folder>
 
   <folder name="Relations" id="id-relations-folder" type="relations">
-    <!-- ========== ASSIGNMENT: Actors -> Roles ========== -->
     <element xsi:type="archimate:AssignmentRelationship" id="rel-001" source="actor-client" target="role-client"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-002" source="actor-admin" target="role-frontdesk"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-003" source="actor-trainer" target="role-trainer"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-004" source="actor-management" target="role-management"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-005" source="actor-accountant" target="role-accountant"/>
 
-    <!-- ========== ASSIGNMENT: Roles -> Processes ========== -->
     <element xsi:type="archimate:AssignmentRelationship" id="rel-010" source="role-client" target="proc-client-booking"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-011" source="role-frontdesk" target="proc-client-booking"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-012" source="role-frontdesk" target="proc-slot-check"/>
@@ -306,8 +351,9 @@
     <element xsi:type="archimate:AssignmentRelationship" id="rel-025" source="role-trainer" target="proc-check-in"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-026" source="role-frontdesk" target="proc-check-in"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-027" source="role-management" target="proc-report"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-028" source="role-management" target="proc-reconcile"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-029" source="role-frontdesk" target="proc-cancel-booking"/>
 
-    <!-- ========== ASSIGNMENT: Functions -> Processes ========== -->
     <element xsi:type="archimate:AssignmentRelationship" id="rel-030" source="func-planning" target="proc-main-schedule"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-031" source="func-planning" target="proc-trainer-schedule"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-032" source="func-planning" target="proc-slot-check"/>
@@ -319,8 +365,12 @@
     <element xsi:type="archimate:AssignmentRelationship" id="rel-038" source="func-sales" target="proc-receipt"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-039" source="func-sales" target="proc-offer-alt"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-040" source="func-analytics" target="proc-report"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-041" source="func-analytics" target="proc-reconcile"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-042" source="func-communication" target="proc-manual-notify"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-043" source="func-records" target="proc-archive"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-044" source="role-accountant" target="proc-reconcile"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-045" source="role-accountant" target="proc-receipt"/>
 
-    <!-- ========== REALIZATION: Processes -> Services ========== -->
     <element xsi:type="archimate:RealizationRelationship" id="rel-050" source="proc-client-booking" target="svc-booking"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-051" source="proc-slot-check" target="svc-booking"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-052" source="proc-reserve" target="svc-booking"/>
@@ -337,8 +387,10 @@
     <element xsi:type="archimate:RealizationRelationship" id="rel-063" source="proc-receipt" target="svc-sales"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-064" source="proc-report" target="svc-reporting"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-065" source="contract-sub" target="product-pass"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-066" source="proc-cancel-booking" target="svc-booking"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-067" source="proc-reconcile" target="svc-payment"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-068" source="proc-check-balance" target="svc-card-mgmt"/>
 
-    <!-- ========== SERVING: Services -> Roles/Interfaces ========== -->
     <element xsi:type="archimate:ServingRelationship" id="rel-070" source="svc-booking" target="role-client"/>
     <element xsi:type="archimate:ServingRelationship" id="rel-071" source="svc-schedule" target="role-frontdesk"/>
     <element xsi:type="archimate:ServingRelationship" id="rel-072" source="svc-schedule" target="iface-desk"/>
@@ -354,8 +406,10 @@
     <element xsi:type="archimate:ServingRelationship" id="rel-082" source="svc-notify" target="actor-client"/>
     <element xsi:type="archimate:ServingRelationship" id="rel-083" source="iface-desk" target="role-client"/>
     <element xsi:type="archimate:ServingRelationship" id="rel-084" source="iface-phone" target="role-client"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-085" source="svc-payment" target="role-accountant"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-086" source="svc-notify" target="iface-board"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-087" source="iface-board" target="role-client"/>
 
-    <!-- ========== ACCESS: Processes -> Objects ========== -->
     <element xsi:type="archimate:AccessRelationship" id="rel-100" source="proc-slot-check" target="obj-paper-schedule" accessType="1"/>
     <element xsi:type="archimate:AccessRelationship" id="rel-101" source="proc-reserve" target="obj-paper-schedule" accessType="2"/>
     <element xsi:type="archimate:AccessRelationship" id="rel-102" source="proc-offer-alt" target="obj-paper-schedule" accessType="1"/>
@@ -382,8 +436,17 @@
     <element xsi:type="archimate:AccessRelationship" id="rel-123" source="proc-change" target="obj-cancel-move" accessType="2"/>
     <element xsi:type="archimate:AccessRelationship" id="rel-124" source="proc-main-schedule" target="obj-trainer-notes" accessType="1"/>
     <element xsi:type="archimate:AccessRelationship" id="rel-125" source="proc-sell-subscription" target="contract-sub" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-126" source="proc-cancel-booking" target="obj-paper-schedule" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-127" source="proc-cancel-booking" target="obj-cancel-move" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-128" source="proc-check-balance" target="obj-visit-balance" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-129" source="proc-archive" target="obj-client-card" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-130" source="proc-archive" target="obj-card-archive" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-131" source="proc-reconcile" target="obj-sales-log" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-132" source="proc-reconcile" target="obj-cashbox" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-133" source="proc-receipt" target="obj-cashbox" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-134" source="proc-reserve" target="obj-group-list" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-135" source="proc-check-in" target="obj-group-list" accessType="1"/>
 
-    <!-- ========== TRIGGERING: Events <-> Processes ========== -->
     <element xsi:type="archimate:TriggeringRelationship" id="rel-150" source="event-client-comes" target="proc-client-booking"/>
     <element xsi:type="archimate:TriggeringRelationship" id="rel-151" source="proc-client-booking" target="event-slot-free-busy"/>
     <element xsi:type="archimate:TriggeringRelationship" id="rel-152" source="event-slot-free-busy" target="proc-slot-check"/>
@@ -403,8 +466,13 @@
     <element xsi:type="archimate:TriggeringRelationship" id="rel-166" source="proc-report" target="event-report-gen"/>
     <element xsi:type="archimate:TriggeringRelationship" id="rel-167" source="proc-trainer-schedule" target="proc-main-schedule"/>
     <element xsi:type="archimate:TriggeringRelationship" id="rel-168" source="proc-offer-alt" target="proc-reserve"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-169" source="proc-reserve" target="event-booking-confirmed"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-170" source="proc-receipt" target="event-payment-received"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-171" source="event-booking-confirmed" target="proc-manual-notify"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-172" source="event-abn-expiry" target="proc-manual-notify"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-173" source="event-payment-received" target="proc-reconcile"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-174" source="proc-check-balance" target="proc-check-in"/>
 
-    <!-- ========== AGGREGATION: Grouping -> Elements ========== -->
     <element xsi:type="archimate:AggregationRelationship" id="rel-200" source="grp-booking" target="actor-client"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-201" source="grp-booking" target="actor-admin"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-202" source="grp-booking" target="role-client"/>
@@ -441,6 +509,11 @@
     <element xsi:type="archimate:AggregationRelationship" id="rel-233" source="grp-booking" target="event-schedule-change"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-234" source="grp-booking" target="event-class-cancel"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-235" source="grp-booking" target="event-double-book"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-236" source="grp-booking" target="proc-cancel-booking"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-237" source="grp-booking" target="event-booking-confirmed"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-238" source="grp-booking" target="iface-board"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-239" source="grp-booking" target="func-communication"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-240" source="grp-booking" target="obj-group-list"/>
 
     <element xsi:type="archimate:AggregationRelationship" id="rel-250" source="grp-storage" target="actor-trainer"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-251" source="grp-storage" target="role-trainer"/>
@@ -458,6 +531,9 @@
     <element xsi:type="archimate:AggregationRelationship" id="rel-263" source="grp-storage" target="event-client-arrive"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-264" source="grp-storage" target="event-no-show"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-265" source="grp-storage" target="event-abn-expiry"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-266" source="grp-storage" target="proc-check-balance"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-267" source="grp-storage" target="proc-archive"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-268" source="grp-storage" target="obj-card-archive"/>
 
     <element xsi:type="archimate:AggregationRelationship" id="rel-280" source="grp-reporting" target="actor-management"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-281" source="grp-reporting" target="role-management"/>
@@ -466,8 +542,13 @@
     <element xsi:type="archimate:AggregationRelationship" id="rel-284" source="grp-reporting" target="proc-report"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-285" source="grp-reporting" target="event-report-request"/>
     <element xsi:type="archimate:AggregationRelationship" id="rel-286" source="grp-reporting" target="event-report-gen"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-287" source="grp-reporting" target="actor-accountant"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-288" source="grp-reporting" target="role-accountant"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-289" source="grp-reporting" target="svc-payment"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-290" source="grp-reporting" target="proc-reconcile"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-291" source="grp-reporting" target="obj-cashbox"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-292" source="grp-reporting" target="event-payment-received"/>
 
-    <!-- ========== ASSOCIATION: Issues & Cross-refs ========== -->
     <element xsi:type="archimate:AssociationRelationship" id="rel-300" source="event-double-book" target="obj-incident-log"/>
     <element xsi:type="archimate:AssociationRelationship" id="rel-301" source="event-no-show" target="obj-incident-log"/>
     <element xsi:type="archimate:AssociationRelationship" id="rel-302" source="event-class-cancel" target="obj-cancel-move"/>
@@ -483,52 +564,73 @@
         <!-- Акторы и роли -->
         <child xsi:type="archimate:DiagramObject" id="view-actor-client" archimateElement="actor-client">
           <bounds x="30" y="40" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-001" source="view-actor-client" target="view-role-client" archimateRelationship="rel-001"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-actor-admin" archimateElement="actor-admin">
           <bounds x="30" y="120" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-002" source="view-actor-admin" target="view-role-frontdesk" archimateRelationship="rel-002"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-role-client" archimateElement="role-client">
+        <child xsi:type="archimate:DiagramObject" id="view-role-client" targetConnections="conn-001 conn-070" archimateElement="role-client">
           <bounds x="200" y="40" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-010" source="view-role-client" target="view-proc-booking" archimateRelationship="rel-010"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-role-frontdesk" archimateElement="role-frontdesk">
+        <child xsi:type="archimate:DiagramObject" id="view-role-frontdesk" targetConnections="conn-002 conn-071" archimateElement="role-frontdesk">
           <bounds x="200" y="120" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-011" source="view-role-frontdesk" target="view-proc-booking" archimateRelationship="rel-011"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-012" source="view-role-frontdesk" target="view-proc-slot" archimateRelationship="rel-012"/>
         </child>
 
         <!-- Интерфейсы -->
         <child xsi:type="archimate:DiagramObject" id="view-iface-desk" archimateElement="iface-desk">
           <bounds x="200" y="200" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-083" source="view-iface-desk" target="view-role-client" archimateRelationship="rel-083"/>
         </child>
 
         <!-- Сервисы -->
         <child xsi:type="archimate:DiagramObject" id="view-svc-booking" archimateElement="svc-booking">
           <bounds x="30" y="280" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-070" source="view-svc-booking" target="view-role-client" archimateRelationship="rel-070"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-svc-schedule" archimateElement="svc-schedule">
           <bounds x="210" y="280" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-071" source="view-svc-schedule" target="view-role-frontdesk" archimateRelationship="rel-071"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-072" source="view-svc-schedule" target="view-iface-desk" archimateRelationship="rel-072"/>
         </child>
 
         <!-- Процессы -->
-        <child xsi:type="archimate:DiagramObject" id="view-proc-booking" archimateElement="proc-client-booking">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-booking" targetConnections="conn-010 conn-011 conn-150" archimateElement="proc-client-booking">
           <bounds x="30" y="360" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-050" source="view-proc-booking" target="view-svc-booking" archimateRelationship="rel-050"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-151" source="view-proc-booking" target="view-event-slot-free" archimateRelationship="rel-151"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-109" source="view-proc-booking" target="view-obj-phone" archimateRelationship="rel-109"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-proc-slot" archimateElement="proc-slot-check">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-slot" targetConnections="conn-012 conn-152" archimateElement="proc-slot-check">
           <bounds x="210" y="360" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-051" source="view-proc-slot" target="view-svc-booking" archimateRelationship="rel-051"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-100" source="view-proc-slot" target="view-obj-schedule" archimateRelationship="rel-100"/>
         </child>
 
-        <!-- События -->
         <child xsi:type="archimate:DiagramObject" id="view-event-client" archimateElement="event-client-comes">
           <bounds x="30" y="440" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-150" source="view-event-client" target="view-proc-booking" archimateRelationship="rel-150"/>
         </child>
 
-        <!-- Объекты -->
-        <child xsi:type="archimate:DiagramObject" id="view-obj-schedule" archimateElement="obj-paper-schedule">
+        <child xsi:type="archimate:DiagramObject" id="view-event-slot-free" targetConnections="conn-151" archimateElement="event-slot-free-busy">
+          <bounds x="210" y="440" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-152" source="view-event-slot-free" target="view-proc-slot" archimateRelationship="rel-152"/>
+        </child>
+
+        <child xsi:type="archimate:DiagramObject" id="view-obj-schedule" targetConnections="conn-100" archimateElement="obj-paper-schedule">
           <bounds x="30" y="520" width="150" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-obj-receipt" archimateElement="obj-receipt">
           <bounds x="210" y="520" width="150" height="55"/>
         </child>
 
-        <!-- Продукт -->
+        <child xsi:type="archimate:DiagramObject" id="view-obj-phone" targetConnections="conn-109" archimateElement="obj-client-phone">
+          <bounds x="30" y="680" width="150" height="55"/>
+        </child>
+
         <child xsi:type="archimate:DiagramObject" id="view-product" archimateElement="product-pass">
           <bounds x="30" y="600" width="160" height="55"/>
         </child>
@@ -537,52 +639,61 @@
       <child xsi:type="archimate:Group" id="grp-storage-view" name="Область: Хранение данных (Storage)" textAlignment="1">
         <bounds x="450" y="24" width="400" height="800"/>
 
-        <!-- Акторы и роли -->
         <child xsi:type="archimate:DiagramObject" id="view-actor-trainer" archimateElement="actor-trainer">
           <bounds x="30" y="40" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-003" source="view-actor-trainer" target="view-role-trainer" archimateRelationship="rel-003"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-role-trainer" archimateElement="role-trainer">
+        <child xsi:type="archimate:DiagramObject" id="view-role-trainer" targetConnections="conn-003 conn-073" archimateElement="role-trainer">
           <bounds x="180" y="40" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-025" source="view-role-trainer" target="view-proc-checkin" archimateRelationship="rel-025"/>
         </child>
 
-        <!-- Сервисы -->
         <child xsi:type="archimate:DiagramObject" id="view-svc-card" archimateElement="svc-card-mgmt">
           <bounds x="30" y="120" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-073" source="view-svc-card" target="view-role-trainer" archimateRelationship="rel-073"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-svc-attend" archimateElement="svc-attendance">
           <bounds x="230" y="120" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-074" source="view-svc-attend" target="view-role-trainer" archimateRelationship="rel-074"/>
         </child>
 
-        <!-- Функции -->
         <child xsi:type="archimate:DiagramObject" id="view-func-records" archimateElement="func-records">
           <bounds x="30" y="200" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-034" source="view-func-records" target="view-proc-register" archimateRelationship="rel-034"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-035" source="view-func-records" target="view-proc-find" archimateRelationship="rel-035"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-036" source="view-func-records" target="view-proc-checkin" archimateRelationship="rel-036"/>
         </child>
 
-        <!-- Процессы -->
-        <child xsi:type="archimate:DiagramObject" id="view-proc-register" archimateElement="proc-register">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-register" targetConnections="conn-034" archimateElement="proc-register">
           <bounds x="30" y="280" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-059" source="view-proc-register" target="view-svc-card" archimateRelationship="rel-059"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-112" source="view-proc-register" target="view-obj-card" archimateRelationship="rel-112"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-proc-find" archimateElement="proc-find-card">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-find" targetConnections="conn-035" archimateElement="proc-find-card">
           <bounds x="210" y="280" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-060" source="view-proc-find" target="view-svc-card" archimateRelationship="rel-060"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-113" source="view-proc-find" target="view-obj-card" archimateRelationship="rel-113"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-proc-checkin" archimateElement="proc-check-in">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-checkin" targetConnections="conn-025 conn-036 conn-161" archimateElement="proc-check-in">
           <bounds x="30" y="360" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-061" source="view-proc-checkin" target="view-svc-attend" archimateRelationship="rel-061"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-114" source="view-proc-checkin" target="view-obj-attend-log" archimateRelationship="rel-114"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-115" source="view-proc-checkin" target="view-obj-balance" archimateRelationship="rel-115"/>
         </child>
 
-        <!-- Объекты -->
-        <child xsi:type="archimate:DiagramObject" id="view-obj-card" archimateElement="obj-client-card">
+        <child xsi:type="archimate:DiagramObject" id="view-obj-card" targetConnections="conn-112 conn-113" archimateElement="obj-client-card">
           <bounds x="30" y="440" width="150" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-attend-log" archimateElement="obj-attendance-log">
+        <child xsi:type="archimate:DiagramObject" id="view-obj-attend-log" targetConnections="conn-114" archimateElement="obj-attendance-log">
           <bounds x="210" y="440" width="150" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-balance" archimateElement="obj-visit-balance">
+        <child xsi:type="archimate:DiagramObject" id="view-obj-balance" targetConnections="conn-115" archimateElement="obj-visit-balance">
           <bounds x="30" y="520" width="150" height="55"/>
         </child>
 
-        <!-- События -->
         <child xsi:type="archimate:DiagramObject" id="view-event-arrive" archimateElement="event-client-arrive">
           <bounds x="210" y="520" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-161" source="view-event-arrive" target="view-proc-checkin" archimateRelationship="rel-161"/>
         </child>
       </child>
 
@@ -592,31 +703,38 @@
         <!-- Акторы и роли -->
         <child xsi:type="archimate:DiagramObject" id="view-actor-mgmt" archimateElement="actor-management">
           <bounds x="30" y="40" width="140" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-004" source="view-actor-mgmt" target="view-role-mgmt" archimateRelationship="rel-004"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-role-mgmt" archimateElement="role-management">
+        <child xsi:type="archimate:DiagramObject" id="view-role-mgmt" targetConnections="conn-004 conn-079" archimateElement="role-management">
           <bounds x="180" y="40" width="140" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-027" source="view-role-mgmt" target="view-proc-report" archimateRelationship="rel-027"/>
         </child>
 
         <!-- Сервисы -->
         <child xsi:type="archimate:DiagramObject" id="view-svc-report" archimateElement="svc-reporting">
           <bounds x="30" y="120" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-079" source="view-svc-report" target="view-role-mgmt" archimateRelationship="rel-079"/>
         </child>
 
         <!-- Функции -->
         <child xsi:type="archimate:DiagramObject" id="view-func-analytics" archimateElement="func-analytics">
           <bounds x="30" y="200" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-040" source="view-func-analytics" target="view-proc-report" archimateRelationship="rel-040"/>
         </child>
 
         <!-- Процессы -->
-        <child xsi:type="archimate:DiagramObject" id="view-proc-report" archimateElement="proc-report">
+        <child xsi:type="archimate:DiagramObject" id="view-proc-report" targetConnections="conn-027 conn-040 conn-165" archimateElement="proc-report">
           <bounds x="30" y="280" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-064" source="view-proc-report" target="view-svc-report" archimateRelationship="rel-064"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-166" source="view-proc-report" target="view-event-gen" archimateRelationship="rel-166"/>
         </child>
 
         <!-- События -->
         <child xsi:type="archimate:DiagramObject" id="view-event-req" archimateElement="event-report-request">
           <bounds x="30" y="360" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-165" source="view-event-req" target="view-proc-report" archimateRelationship="rel-165"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-event-gen" archimateElement="event-report-gen">
+        <child xsi:type="archimate:DiagramObject" id="view-event-gen" targetConnections="conn-166" archimateElement="event-report-gen">
           <bounds x="190" y="360" width="130" height="55"/>
         </child>
       </child>
@@ -629,45 +747,63 @@
         <!-- Основные элементы зоны Запись -->
         <child xsi:type="archimate:DiagramObject" id="view2-actor-client" archimateElement="actor-client">
           <bounds x="50" y="60" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-001" source="view2-actor-client" target="view2-role-client" archimateRelationship="rel-001"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-actor-admin" archimateElement="actor-admin">
           <bounds x="200" y="60" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-002" source="view2-actor-admin" target="view2-role-frontdesk" archimateRelationship="rel-002"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view2-role-client" archimateElement="role-client">
+        <child xsi:type="archimate:DiagramObject" id="view2-role-client" targetConnections="conn2-001 conn2-070" archimateElement="role-client">
           <bounds x="350" y="60" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-010" source="view2-role-client" target="view2-proc-booking" archimateRelationship="rel-010"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view2-role-frontdesk" archimateElement="role-frontdesk">
+        <child xsi:type="archimate:DiagramObject" id="view2-role-frontdesk" targetConnections="conn2-002 conn2-071" archimateElement="role-frontdesk">
           <bounds x="530" y="60" width="150" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-011" source="view2-role-frontdesk" target="view2-proc-booking" archimateRelationship="rel-011"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-012" source="view2-role-frontdesk" target="view2-proc-slot" archimateRelationship="rel-012"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-013" source="view2-role-frontdesk" target="view2-proc-reserve" archimateRelationship="rel-013"/>
         </child>
 
         <child xsi:type="archimate:DiagramObject" id="view2-svc-booking" archimateElement="svc-booking">
           <bounds x="50" y="160" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-070" source="view2-svc-booking" target="view2-role-client" archimateRelationship="rel-070"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-svc-schedule" archimateElement="svc-schedule">
           <bounds x="260" y="160" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-071" source="view2-svc-schedule" target="view2-role-frontdesk" archimateRelationship="rel-071"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-svc-sales" archimateElement="svc-sales">
           <bounds x="470" y="160" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-077" source="view2-svc-sales" target="view2-role-client" archimateRelationship="rel-077"/>
         </child>
 
         <child xsi:type="archimate:DiagramObject" id="view2-func-planning" archimateElement="func-planning">
           <bounds x="50" y="260" width="200" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-032" source="view2-func-planning" target="view2-proc-slot" archimateRelationship="rel-032"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-033" source="view2-func-planning" target="view2-proc-reserve" archimateRelationship="rel-033"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-func-sales" archimateElement="func-sales">
           <bounds x="280" y="260" width="200" height="55"/>
         </child>
 
-        <child xsi:type="archimate:DiagramObject" id="view2-proc-booking" archimateElement="proc-client-booking">
+        <child xsi:type="archimate:DiagramObject" id="view2-proc-booking" targetConnections="conn2-010 conn2-011 conn2-150" archimateElement="proc-client-booking">
           <bounds x="50" y="360" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-050" source="view2-proc-booking" target="view2-svc-booking" archimateRelationship="rel-050"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-151" source="view2-proc-booking" target="view2-proc-slot" archimateRelationship="rel-151"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view2-proc-slot" archimateElement="proc-slot-check">
+        <child xsi:type="archimate:DiagramObject" id="view2-proc-slot" targetConnections="conn2-012 conn2-032 conn2-151" archimateElement="proc-slot-check">
           <bounds x="240" y="360" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-051" source="view2-proc-slot" target="view2-svc-booking" archimateRelationship="rel-051"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-100" source="view2-proc-slot" target="view2-obj-schedule" archimateRelationship="rel-100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-153" source="view2-proc-slot" target="view2-proc-reserve" archimateRelationship="rel-153"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view2-proc-reserve" archimateElement="proc-reserve">
+        <child xsi:type="archimate:DiagramObject" id="view2-proc-reserve" targetConnections="conn2-013 conn2-033 conn2-153" archimateElement="proc-reserve">
           <bounds x="450" y="360" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-052" source="view2-proc-reserve" target="view2-svc-booking" archimateRelationship="rel-052"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-101" source="view2-proc-reserve" target="view2-obj-schedule" archimateRelationship="rel-101"/>
         </child>
 
-        <child xsi:type="archimate:DiagramObject" id="view2-obj-schedule" archimateElement="obj-paper-schedule">
+        <child xsi:type="archimate:DiagramObject" id="view2-obj-schedule" targetConnections="conn2-100 conn2-101" archimateElement="obj-paper-schedule">
           <bounds x="50" y="460" width="180" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-obj-sales" archimateElement="obj-sales-log">
@@ -676,6 +812,7 @@
 
         <child xsi:type="archimate:DiagramObject" id="view2-event-client" archimateElement="event-client-comes">
           <bounds x="50" y="560" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn2-150" source="view2-event-client" target="view2-proc-booking" archimateRelationship="rel-150"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view2-product" archimateElement="product-pass">
           <bounds x="260" y="560" width="200" height="55"/>
@@ -716,13 +853,13 @@
         </child>
 
         <child xsi:type="archimate:DiagramObject" id="view3-obj-card" archimateElement="obj-client-card">
-          <bounds x="50" y="460" width="160" height="55"/>
+          <bounds x="50" y="440" width="160" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-obj-attend" archimateElement="obj-attendance-log">
-          <bounds x="240" y="460" width="180" height="55"/>
+          <bounds x="240" y="440" width="180" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-obj-balance" archimateElement="obj-visit-balance">
-          <bounds x="450" y="460" width="160" height="55"/>
+          <bounds x="450" y="440" width="160" height="55"/>
         </child>
 
         <child xsi:type="archimate:DiagramObject" id="view3-event-arrive" archimateElement="event-client-arrive">
