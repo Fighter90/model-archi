@@ -460,6 +460,9 @@
     <element xsi:type="archimate:RealizationRelationship" id="id-721b3491561a45edb0748ea0595e2285" source="func-analytics" target="svc-reporting"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-c3d70bfedc1c4c44b451fab9b6fe6ba4" source="func-analytics" target="svc-reporting"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-ad0a339af5544b0db9a73dcaf2050125" source="proc-find-card" target="svc-card-mgmt"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-fcad0f3ba0054863b847df990ad16838" source="proc-slot-check" target="proc-reserve"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-89dd348aa65f42929bbae042d6f6c2cc" source="func-planning" target="product-pass"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-76c6a26b11ae4dcb97a9c667e89138f3" source="proc-report" target="obj-client-card" accessType="1"/>
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Fitness Club — Integrated View" id="view-integrated">
@@ -496,7 +499,7 @@
           </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-proc-booking" targetConnections="conn-010 conn-011 conn-150" archimateElement="proc-client-booking">
-          <bounds x="198" y="264" width="427" height="151"/>
+          <bounds x="12" y="264" width="613" height="151"/>
           <sourceConnection xsi:type="archimate:Connection" id="conn-151" source="view-proc-booking" target="view-proc-slot" archimateRelationship="rel-151"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-68f98d2a3df043a48c402d4b2996fdc9" source="view-proc-booking" target="view-proc-slot" archimateRelationship="id-1b669c9219ee4f3abb01fb550e4dac14">
             <bendpoint startX="321" startY="57" endX="57" endY="-97"/>
@@ -504,26 +507,28 @@
           <sourceConnection xsi:type="archimate:Connection" id="id-242cda2135774b4f9efd6d40af29a949" source="view-proc-booking" target="id-2ac322fdcc7347449879af3b71bcea8b" archimateRelationship="id-632641c62d9c4955a3d54148c7ec065e"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-7bfcc6c819ee412b8524ae9e6fa4ef6b" source="view-proc-booking" target="view-product" archimateRelationship="id-fbde85f674104d37b0ab081fc75c4a14"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-ce915fd9c5074008a75922f748196f35" source="view-proc-booking" target="view-svc-booking" archimateRelationship="rel-052"/>
-          <child xsi:type="archimate:DiagramObject" id="id-2ac322fdcc7347449879af3b71bcea8b" targetConnections="id-cbd54204e8964230993271054a013a73 id-242cda2135774b4f9efd6d40af29a949" archimateElement="proc-reserve">
-            <bounds x="240" y="60" width="120" height="55"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-7814334f7ccb4ae4ac6dc2e70685ee4c" source="id-2ac322fdcc7347449879af3b71bcea8b" target="view-obj-schedule" archimateRelationship="rel-101"/>
+          <child xsi:type="archimate:DiagramObject" id="id-2ac322fdcc7347449879af3b71bcea8b" targetConnections="id-242cda2135774b4f9efd6d40af29a949 id-8e8f3fd9b9214bd78e92ee723fee5228" archimateElement="proc-reserve">
+            <bounds x="426" y="60" width="120" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-7814334f7ccb4ae4ac6dc2e70685ee4c" source="id-2ac322fdcc7347449879af3b71bcea8b" target="view-obj-schedule" archimateRelationship="rel-101">
+              <bendpoint startX="-53" startY="286" endX="166" endY="-14"/>
+            </sourceConnection>
             <sourceConnection xsi:type="archimate:Connection" id="conn-109" source="id-2ac322fdcc7347449879af3b71bcea8b" target="view-obj-phone" archimateRelationship="rel-109"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-proc-slot" targetConnections="conn-151 conn-109 id-68f98d2a3df043a48c402d4b2996fdc9" archimateElement="proc-slot-check">
-            <bounds x="48" y="60" width="150" height="55"/>
+            <bounds x="234" y="60" width="150" height="55"/>
             <sourceConnection xsi:type="archimate:Connection" id="conn-100" source="view-proc-slot" target="view-obj-schedule" archimateRelationship="rel-100"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-cbd54204e8964230993271054a013a73" source="view-proc-slot" target="id-2ac322fdcc7347449879af3b71bcea8b" archimateRelationship="rel-153"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8e8f3fd9b9214bd78e92ee723fee5228" source="view-proc-slot" target="id-2ac322fdcc7347449879af3b71bcea8b" archimateRelationship="id-fcad0f3ba0054863b847df990ad16838"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-event-client" archimateElement="event-client-comes">
+            <bounds x="48" y="60" width="150" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="conn-150" source="view-event-client" target="view-proc-booking" archimateRelationship="rel-150"/>
           </child>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-event-client" archimateElement="event-client-comes">
-          <bounds x="12" y="300" width="150" height="55"/>
-          <sourceConnection xsi:type="archimate:Connection" id="conn-150" source="view-event-client" target="view-proc-booking" archimateRelationship="rel-150"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-schedule" targetConnections="conn-100 id-7814334f7ccb4ae4ac6dc2e70685ee4c" archimateElement="obj-paper-schedule" type="1">
-          <bounds x="198" y="520" width="150" height="55"/>
+        <child xsi:type="archimate:DiagramObject" id="view-obj-schedule" targetConnections="conn-100 id-7814334f7ccb4ae4ac6dc2e70685ee4c id-15340855040c44c2b22dc5d9980929df" archimateElement="obj-paper-schedule" type="1">
+          <bounds x="204" y="624" width="150" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-obj-phone" targetConnections="conn-109" archimateElement="obj-client-phone" type="1">
-          <bounds x="378" y="520" width="150" height="55"/>
+          <bounds x="475" y="540" width="150" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-product" targetConnections="id-7bfcc6c819ee412b8524ae9e6fa4ef6b" archimateElement="product-pass" type="1">
           <bounds x="696" y="520" width="160" height="55"/>
@@ -557,7 +562,9 @@
           <sourceConnection xsi:type="archimate:Connection" id="conn-036" source="view-func-records" target="view-proc-checkin" archimateRelationship="rel-036"/>
           <child xsi:type="archimate:DiagramObject" id="view-proc-register" targetConnections="conn-034" archimateElement="proc-register">
             <bounds x="36" y="40" width="156" height="48"/>
-            <sourceConnection xsi:type="archimate:Connection" id="conn-112" source="view-proc-register" target="view-obj-card" archimateRelationship="rel-112"/>
+            <sourceConnection xsi:type="archimate:Connection" id="conn-112" source="view-proc-register" target="view-obj-card" archimateRelationship="rel-112">
+              <bendpoint startX="31" startY="308" endX="-170" endY="10"/>
+            </sourceConnection>
             <sourceConnection xsi:type="archimate:Connection" id="id-73d9991d6ca646efb2ef4f9614085a28" source="view-proc-register" target="view-svc-card" archimateRelationship="id-a3f78b2de7514fd98bb9ae79f17b85d9"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-proc-find" targetConnections="conn-035" archimateElement="proc-find-card">
@@ -575,13 +582,13 @@
             <sourceConnection xsi:type="archimate:Connection" id="id-e346d9a1af404cfdb210d60d5f710fec" source="view-proc-checkin" target="view-svc-attend" archimateRelationship="id-e26c5efde64c4e81a47c806fc1a38c9f"/>
           </child>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-card" targetConnections="conn-112 conn-113" archimateElement="obj-client-card" type="1">
-          <bounds x="197" y="372" width="150" height="55"/>
+        <child xsi:type="archimate:DiagramObject" id="view-obj-card" targetConnections="conn-112 conn-113 id-96537ab4acef4730a16f17c6794025b3" archimateElement="obj-client-card" type="1">
+          <bounds x="276" y="552" width="150" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-attend" targetConnections="conn-114" archimateElement="obj-attendance-log" type="1">
+        <child xsi:type="archimate:DiagramObject" id="view-obj-attend" targetConnections="conn-114 id-67a980f8a09849cbab91df8229ce2b68" archimateElement="obj-attendance-log" type="1">
           <bounds x="444" y="372" width="150" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-obj-balance" targetConnections="conn-115" archimateElement="obj-visit-balance" type="1">
+        <child xsi:type="archimate:DiagramObject" id="view-obj-balance" targetConnections="conn-115 id-3f88e19a40364c95992b95902b7ba381" archimateElement="obj-visit-balance" type="1">
           <bounds x="552" y="468" width="150" height="55"/>
         </child>
       </child>
@@ -606,6 +613,18 @@
           <child xsi:type="archimate:DiagramObject" id="view-proc-report" targetConnections="conn-027 conn-040 conn-165" archimateElement="proc-report">
             <bounds x="180" y="36" width="150" height="55"/>
             <sourceConnection xsi:type="archimate:Connection" id="conn-166" source="view-proc-report" target="view-event-gen" archimateRelationship="rel-166"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3f88e19a40364c95992b95902b7ba381" source="view-proc-report" target="view-obj-balance" archimateRelationship="rel-121">
+              <bendpoint startX="34" startY="238" endX="862" endY="22"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-67a980f8a09849cbab91df8229ce2b68" source="view-proc-report" target="view-obj-attend" archimateRelationship="rel-118">
+              <bendpoint startX="-62" startY="130" endX="874" endY="10"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-96537ab4acef4730a16f17c6794025b3" source="view-proc-report" target="view-obj-card" archimateRelationship="id-76c6a26b11ae4dcb97a9c667e89138f3">
+              <bendpoint startX="58" startY="322" endX="1162" endY="22"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-15340855040c44c2b22dc5d9980929df" source="view-proc-report" target="view-obj-schedule" archimateRelationship="rel-137">
+              <bendpoint startX="-2" startY="382" endX="2194" endY="10"/>
+            </sourceConnection>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-event-req" archimateElement="event-report-request">
             <bounds x="12" y="36" width="150" height="55"/>
@@ -678,6 +697,7 @@
             <bendpoint startX="138" startY="49" endX="-252" endY="-51"/>
           </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-e12d93a9e3734de0a86f7c6f0e9a7ba9" source="view2-func-planning" target="view2-svc-booking" archimateRelationship="id-2bfe60b8f0284c9ea99d6179ba2ab662"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-ce06cc85fe8242e4adaf76a7315c2b89" source="view2-func-planning" target="view2-product" archimateRelationship="id-89dd348aa65f42929bbae042d6f6c2cc"/>
           <child xsi:type="archimate:DiagramObject" id="view2-proc-slot" targetConnections="conn2-012 conn2-032 id-d0c780df728942efb0d6138322d81fde" archimateElement="proc-slot-check">
             <bounds x="277" y="30" width="180" height="55"/>
             <sourceConnection xsi:type="archimate:Connection" id="conn2-153" source="view2-proc-slot" target="view2-proc-reserve" archimateRelationship="rel-153"/>
@@ -699,7 +719,7 @@
         <child xsi:type="archimate:DiagramObject" id="view2-obj-schedule" targetConnections="conn2-101 id-dfb5deec25d349f4b97fbf15e12d153a" archimateElement="obj-paper-schedule" type="1">
           <bounds x="492" y="492" width="180" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view2-product" archimateElement="product-pass" type="1">
+        <child xsi:type="archimate:DiagramObject" id="view2-product" targetConnections="id-ce06cc85fe8242e4adaf76a7315c2b89" archimateElement="product-pass" type="1">
           <bounds x="697" y="600" width="200" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-bdd497d562f74404837d15bbe7b87cdc" targetConnections="id-25de2d81425d4f9ca2ce1711435f131d id-f456e0e73e154037937dc30bc9978432 id-689ab04642f94ffc8554c59584d057bb" archimateElement="iface-desk">
