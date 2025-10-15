@@ -231,8 +231,380 @@
       <property key="Area" value="Хранение"/>
     </element>
   </folder>
-  <folder name="Application" id="id-application-folder" type="application"/>
-  <folder name="Technology &amp; Physical" id="id-technology-folder" type="technology"/>
+  <folder name="Application" id="id-application-folder" type="application">
+    <!-- Application Components -->
+    <element xsi:type="archimate:ApplicationComponent" name="Booking App" id="app-booking">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="CRM Clients" id="app-crm">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Scheduling Module" id="app-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Attendance Tracker" id="app-attendance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Sales System" id="app-sales">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Notifications System" id="app-notify">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Reporting Module" id="app-reporting">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Auth Service" id="app-auth">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Integration Bus (ESB)" id="app-esb">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Общий"/>
+    </element>
+
+    <!-- Application Services -->
+    <element xsi:type="archimate:ApplicationService" name="Booking Service" id="app-svc-booking">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Client Card Service" id="app-svc-card">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Scheduling Service" id="app-svc-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Attendance Service" id="app-svc-attendance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Sales/Payment API" id="app-svc-sales">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Notification API" id="app-svc-notify">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Reporting API" id="app-svc-report">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Authentication API" id="app-svc-auth">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Общий"/>
+    </element>
+
+    <!-- Application Functions -->
+    <element xsi:type="archimate:ApplicationFunction" name="Check Slot Availability" id="app-func-check-slot">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Create Booking" id="app-func-create-booking">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Cancel Booking" id="app-func-cancel-booking">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Register Client" id="app-func-register">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Search Client Card" id="app-func-search">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Update Client Status" id="app-func-update-status">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Record Attendance" id="app-func-attendance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Check Visit Balance" id="app-func-check-balance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Process Payment" id="app-func-payment">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Issue Receipt" id="app-func-receipt">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Send Notification" id="app-func-notify">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Generate Report" id="app-func-gen-report">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Manage Schedule" id="app-func-manage-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Sync Trainer Schedule" id="app-func-sync-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Resolve Conflicts" id="app-func-resolve">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Track Sales" id="app-func-track-sales">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+
+    <!-- Data Objects -->
+    <element xsi:type="archimate:DataObject" name="Schedule Data" id="data-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Client Card Record" id="data-client-card">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Attendance Log" id="data-attendance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Sales Register" id="data-sales">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Client Contact" id="data-contact">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Receipt Data" id="data-receipt">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Price List Data" id="data-price">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Visit Balance" id="data-balance">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Subscription Terms" id="data-subscription">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Booking Record" id="data-booking">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+
+    <!-- Application Events -->
+    <element xsi:type="archimate:ApplicationEvent" name="Booking Confirmed" id="app-event-booking-confirmed">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Payment Processed" id="app-event-payment">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Schedule Updated" id="app-event-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-technology-folder" type="technology">
+    <!-- Technology Nodes - Запись -->
+    <element xsi:type="archimate:Node" name="Admin PC" id="tech-admin-pc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Phone Line Device" id="tech-phone-device">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Router" id="tech-router">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+    </element>
+
+    <!-- Technology Nodes - Хранение -->
+    <element xsi:type="archimate:Node" name="App Server" id="tech-app-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="DB Server" id="tech-db-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="File Server (Backups)" id="tech-file-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+
+    <!-- Technology Nodes - Отчётность -->
+    <element xsi:type="archimate:Node" name="Reporting Server" id="tech-report-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Printer" id="tech-printer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Manager Workstation" id="tech-manager-ws">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+
+    <!-- Technology Nodes - Сквозные -->
+    <element xsi:type="archimate:Device" name="Firewall" id="tech-firewall">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:Device" name="VPN Gateway" id="tech-vpn">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Backup Node" id="tech-backup-node">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Monitoring System" id="tech-monitoring">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:Device" name="External SMS Gateway" id="tech-sms-gateway">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+
+    <!-- System Software -->
+    <element xsi:type="archimate:SystemSoftware" name="Windows Server" id="tech-sw-windows">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Linux Server" id="tech-sw-linux">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL" id="tech-sw-postgres">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Web Server (Apache)" id="tech-sw-apache">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+    </element>
+
+    <!-- Technology Services -->
+    <element xsi:type="archimate:TechnologyService" name="Hosting Service" id="tech-svc-hosting">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Database Service" id="tech-svc-database">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Queue/Messaging Service" id="tech-svc-queue">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Notification Gateway Service" id="tech-svc-notify">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Backup Service" id="tech-svc-backup">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Print Service" id="tech-svc-print">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Network Service" id="tech-svc-network">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="VPN Service" id="tech-svc-vpn">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Monitoring Service" id="tech-svc-monitoring">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Storage Service" id="tech-svc-storage">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+
+    <!-- Artifacts -->
+    <element xsi:type="archimate:Artifact" name="Database Dump" id="tech-artifact-db-dump">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Attendance Logs File" id="tech-artifact-logs">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Reports PDF" id="tech-artifact-pdf">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Client Data XML" id="tech-artifact-xml">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Config Files" id="tech-artifact-config">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+
+    <!-- Paths -->
+    <element xsi:type="archimate:Path" name="VPN Tunnel" id="tech-path-vpn">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="LAN Segment" id="tech-net-lan">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Internet Link" id="tech-net-internet">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+
+    <!-- Technology Functions -->
+    <element xsi:type="archimate:TechnologyFunction" name="Data Processing" id="tech-func-processing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Data Replication" id="tech-func-replication">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Load Balancing" id="tech-func-balancing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Security Filtering" id="tech-func-security">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+    </element>
+  </folder>
   <folder name="Motivation" id="id-motivation-folder" type="motivation"/>
   <folder name="Implementation &amp; Migration" id="id-implementation-folder" type="implementation_migration"/>
   <folder name="Other" id="id-other-folder" type="other">
@@ -463,6 +835,159 @@
     <element xsi:type="archimate:TriggeringRelationship" id="id-fcad0f3ba0054863b847df990ad16838" source="proc-slot-check" target="proc-reserve"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-89dd348aa65f42929bbae042d6f6c2cc" source="func-planning" target="product-pass"/>
     <element xsi:type="archimate:AccessRelationship" id="id-76c6a26b11ae4dcb97a9c667e89138f3" source="proc-report" target="obj-client-card" accessType="1"/>
+
+    <!-- Application Layer Relations -->
+    <!-- Component -> Service (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-001" source="app-booking" target="app-svc-booking"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-002" source="app-crm" target="app-svc-card"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-003" source="app-schedule" target="app-svc-schedule"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-004" source="app-attendance" target="app-svc-attendance"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-005" source="app-sales" target="app-svc-sales"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-006" source="app-notify" target="app-svc-notify"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-007" source="app-reporting" target="app-svc-report"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-008" source="app-auth" target="app-svc-auth"/>
+
+    <!-- Component -> Function (Assignment) -->
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-010" source="app-booking" target="app-func-check-slot"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-011" source="app-booking" target="app-func-create-booking"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-012" source="app-booking" target="app-func-cancel-booking"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-013" source="app-crm" target="app-func-register"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-014" source="app-crm" target="app-func-search"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-015" source="app-crm" target="app-func-update-status"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-016" source="app-attendance" target="app-func-attendance"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-017" source="app-attendance" target="app-func-check-balance"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-018" source="app-sales" target="app-func-payment"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-019" source="app-sales" target="app-func-receipt"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-020" source="app-sales" target="app-func-track-sales"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-021" source="app-notify" target="app-func-notify"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-022" source="app-reporting" target="app-func-gen-report"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-023" source="app-schedule" target="app-func-manage-schedule"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-024" source="app-schedule" target="app-func-sync-schedule"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="app-rel-025" source="app-schedule" target="app-func-resolve"/>
+
+    <!-- Function -> Data (Access) -->
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-030" source="app-func-check-slot" target="data-schedule" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-031" source="app-func-create-booking" target="data-booking" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-032" source="app-func-create-booking" target="data-schedule" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-033" source="app-func-cancel-booking" target="data-booking" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-034" source="app-func-register" target="data-client-card" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-035" source="app-func-register" target="data-contact" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-036" source="app-func-search" target="data-client-card" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-037" source="app-func-update-status" target="data-client-card" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-038" source="app-func-attendance" target="data-attendance" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-039" source="app-func-attendance" target="data-balance" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-040" source="app-func-check-balance" target="data-balance" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-041" source="app-func-payment" target="data-sales" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-042" source="app-func-receipt" target="data-receipt" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-043" source="app-func-track-sales" target="data-sales" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-044" source="app-func-notify" target="data-contact" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-045" source="app-func-gen-report" target="data-attendance" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-046" source="app-func-gen-report" target="data-sales" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-047" source="app-func-gen-report" target="data-client-card" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-048" source="app-func-manage-schedule" target="data-schedule" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-049" source="app-func-sync-schedule" target="data-schedule" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-050" source="app-func-payment" target="data-price" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="app-rel-051" source="app-func-payment" target="data-subscription" accessType="1"/>
+
+    <!-- Component -> Component (Flow/Serving) -->
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-060" source="app-booking" target="app-schedule"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-061" source="app-booking" target="app-crm"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-062" source="app-crm" target="app-attendance"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-063" source="app-sales" target="app-crm"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-064" source="app-attendance" target="app-reporting"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-065" source="app-sales" target="app-reporting"/>
+    <element xsi:type="archimate:FlowRelationship" id="app-rel-066" source="app-notify" target="app-esb"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-067" source="app-esb" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-068" source="app-esb" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-069" source="app-esb" target="app-sales"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-070" source="app-auth" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-071" source="app-auth" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="app-rel-072" source="app-auth" target="app-sales"/>
+
+    <!-- Function -> Event (Triggering) -->
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-080" source="app-func-create-booking" target="app-event-booking-confirmed"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-081" source="app-func-payment" target="app-event-payment"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-082" source="app-func-manage-schedule" target="app-event-schedule"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-083" source="app-event-booking-confirmed" target="app-func-notify"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-084" source="app-event-payment" target="app-func-receipt"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="app-rel-085" source="app-event-schedule" target="app-func-notify"/>
+
+    <!-- Service Realizations -->
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-090" source="app-func-check-slot" target="app-svc-booking"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-091" source="app-func-create-booking" target="app-svc-booking"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-092" source="app-func-register" target="app-svc-card"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-093" source="app-func-search" target="app-svc-card"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-094" source="app-func-manage-schedule" target="app-svc-schedule"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-095" source="app-func-attendance" target="app-svc-attendance"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-096" source="app-func-payment" target="app-svc-sales"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-097" source="app-func-notify" target="app-svc-notify"/>
+    <element xsi:type="archimate:RealizationRelationship" id="app-rel-098" source="app-func-gen-report" target="app-svc-report"/>
+
+    <!-- Technology Layer Relations -->
+    <!-- Node -> Service (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-001" source="tech-app-server" target="tech-svc-hosting"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-002" source="tech-db-server" target="tech-svc-database"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-003" source="tech-file-server" target="tech-svc-backup"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-004" source="tech-printer" target="tech-svc-print"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-005" source="tech-router" target="tech-svc-network"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-006" source="tech-vpn" target="tech-svc-vpn"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-007" source="tech-monitoring" target="tech-svc-monitoring"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-008" source="tech-sms-gateway" target="tech-svc-notify"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-009" source="tech-file-server" target="tech-svc-storage"/>
+
+    <!-- Node -> SystemSoftware (Assignment) -->
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-010" source="tech-app-server" target="tech-sw-linux"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-011" source="tech-db-server" target="tech-sw-postgres"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-012" source="tech-admin-pc" target="tech-sw-windows"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-013" source="tech-app-server" target="tech-sw-apache"/>
+
+    <!-- SystemSoftware -> Artifact (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-020" source="tech-sw-postgres" target="tech-artifact-db-dump"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-021" source="tech-sw-linux" target="tech-artifact-logs"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-022" source="tech-sw-apache" target="tech-artifact-xml"/>
+
+    <!-- Tech Service -> App Component (Serving) -->
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-030" source="tech-svc-hosting" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-031" source="tech-svc-hosting" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-032" source="tech-svc-hosting" target="app-schedule"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-033" source="tech-svc-hosting" target="app-sales"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-034" source="tech-svc-hosting" target="app-reporting"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-035" source="tech-svc-database" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-036" source="tech-svc-database" target="app-schedule"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-037" source="tech-svc-database" target="app-attendance"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-038" source="tech-svc-database" target="app-sales"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-039" source="tech-svc-notify" target="app-notify"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-040" source="tech-svc-print" target="app-reporting"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-041" source="tech-svc-backup" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-042" source="tech-svc-backup" target="app-schedule"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-043" source="tech-svc-queue" target="app-esb"/>
+
+    <!-- Network Relations -->
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-050" source="tech-net-lan" target="tech-path-vpn"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-051" source="tech-net-internet" target="tech-sms-gateway"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-052" source="tech-net-lan" target="tech-admin-pc"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-053" source="tech-net-lan" target="tech-app-server"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-054" source="tech-net-lan" target="tech-db-server"/>
+    <element xsi:type="archimate:ServingRelationship" id="tech-rel-055" source="tech-net-lan" target="tech-manager-ws"/>
+    <element xsi:type="archimate:FlowRelationship" id="tech-rel-056" source="tech-admin-pc" target="tech-app-server"/>
+    <element xsi:type="archimate:FlowRelationship" id="tech-rel-057" source="tech-app-server" target="tech-db-server"/>
+    <element xsi:type="archimate:FlowRelationship" id="tech-rel-058" source="tech-db-server" target="tech-file-server"/>
+    <element xsi:type="archimate:FlowRelationship" id="tech-rel-059" source="tech-report-server" target="tech-printer"/>
+
+    <!-- Tech Function -> Service (Realization) -->
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-070" source="tech-db-server" target="tech-func-processing"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-071" source="tech-file-server" target="tech-func-replication"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-072" source="tech-firewall" target="tech-func-security"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="tech-rel-073" source="tech-router" target="tech-func-balancing"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-074" source="tech-func-processing" target="tech-svc-database"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-075" source="tech-func-replication" target="tech-svc-backup"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-076" source="tech-func-security" target="tech-svc-network"/>
+
+    <!-- Artifact -> DataObject (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-080" source="tech-artifact-db-dump" target="data-client-card"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-081" source="tech-artifact-logs" target="data-attendance"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-082" source="tech-artifact-pdf" target="data-sales"/>
+    <element xsi:type="archimate:RealizationRelationship" id="tech-rel-083" source="tech-artifact-xml" target="data-client-card"/>
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Fitness Club — Integrated View" id="view-integrated">
@@ -541,7 +1066,7 @@
           <bounds x="78" y="40" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="conn-003" source="view-actor-trainer" target="view-role-trainer" archimateRelationship="rel-003"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="view-role-trainer" targetConnections="conn-003 conn-073 id-05fb1ef17e7a48a2b95193460769ae80" archimateElement="role-trainer">
+        <child xsi:type="archimate:DiagramObject" id="view-role-trainer" targetConnections="conn-003 conn-073 id-b6d163372b5d490e887559d91adb79ce" archimateElement="role-trainer">
           <bounds x="228" y="40" width="150" height="55"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-svc-card" targetConnections="id-73d9991d6ca646efb2ef4f9614085a28 id-43eeb6d341844131b12ea16a6e4fc14c" archimateElement="svc-card-mgmt">
@@ -553,7 +1078,7 @@
           <sourceConnection xsi:type="archimate:Connection" id="conn-074" source="view-svc-attend" target="view-role-client" archimateRelationship="rel-074">
             <bendpoint startX="-62" startY="-230" endX="562" endY="22"/>
           </sourceConnection>
-          <sourceConnection xsi:type="archimate:Connection" id="id-05fb1ef17e7a48a2b95193460769ae80" source="view-svc-attend" target="view-role-trainer" archimateRelationship="id-89f3ab2d467f424e83fa894b9ccd605c"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-b6d163372b5d490e887559d91adb79ce" source="view-svc-attend" target="view-role-trainer" archimateRelationship="id-89f3ab2d467f424e83fa894b9ccd605c"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-func-records" archimateElement="func-records">
           <bounds x="36" y="216" width="606" height="112"/>
@@ -778,7 +1303,7 @@
             <sourceConnection xsi:type="archimate:Connection" id="conn3-116" source="view3-proc-checkin" target="view3-obj-card" archimateRelationship="rel-116">
               <bendpoint startX="-68" startY="125" endX="247" endY="-15"/>
             </sourceConnection>
-            <sourceConnection xsi:type="archimate:Connection" id="id-8b633c6e22f14a38b729f49b408ec64d" source="view3-proc-checkin" target="view3-svc-attend" archimateRelationship="id-e26c5efde64c4e81a47c806fc1a38c9f"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8b633c6e22f14a38b729f49b408ec64d" source="view-proc-checkin" target="view-svc-attend" archimateRelationship="id-e26c5efde64c4e81a47c806fc1a38c9f"/>
           </child>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view3-func-planning" archimateElement="func-planning">
