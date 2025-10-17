@@ -278,6 +278,18 @@
       <property key="Area" value="Запись"/>
       <property key="State" value="TO-BE"/>
     </element>
+    <element xsi:type="archimate:BusinessInterface" name="QR-сканер (TO-BE)" id="iface-qr-scanner-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Облачная панель управления (TO-BE)" id="iface-cloud-panel-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Аналитический дашборд (TO-BE)" id="iface-analytics-dashboard-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
 
     <!-- TO-BE Services -->
     <element xsi:type="archimate:BusinessService" name="Сервис: Онлайн-запись (TO-BE)" id="svc-online-booking-tobe">
@@ -389,6 +401,10 @@
       <property key="State" value="TO-BE"/>
     </element>
     <element xsi:type="archimate:BusinessEvent" name="Событие: Оплата онлайн подтверждена (TO-BE)" id="event-payment-online-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Платёж успешно обработан (TO-BE)" id="event-payment-success-tobe">
       <property key="Area" value="Отчётность"/>
       <property key="State" value="TO-BE"/>
     </element>
@@ -2743,7 +2759,7 @@
             <fillColor r="200" g="255" b="200"/>
           </child>
           <!-- Events -->
-          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-qr-scan" archimateElement="event-qr-scan-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-qr-scan" archimateElement="event-qr-scanned-tobe">
             <bounds x="1080" y="50" width="220" height="55"/>
             <fillColor r="200" g="255" b="200"/>
           </child>
@@ -3160,7 +3176,7 @@ PHASE 1-2
             <bounds x="720" y="160" width="180" height="55"/>
             <fillColor r="200" g="255" b="200"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-web-tobe" archimateElement="iface-web-portal-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-web-tobe" archimateElement="iface-web-tobe">
             <bounds x="920" y="160" width="180" height="55"/>
             <fillColor r="200" g="255" b="200"/>
           </child>
@@ -3233,7 +3249,7 @@ PHASE 1-2
             <content>AS-IS: Бумажные карточки, ручная отметка посещений, локальная БД. 
 УСТАРЕВАЕТ → TO-BE</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-card-asis" archimateElement="svc-client-cards">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-card-asis" archimateElement="svc-card-mgmt">
             <bounds x="50" y="160" width="180" height="55"/>
             <fillColor r="255" g="165" b="0"/>
           </child>
@@ -3241,7 +3257,7 @@ PHASE 1-2
             <bounds x="250" y="160" width="180" height="55"/>
             <fillColor r="255" g="165" b="0"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-paper-card-asis" archimateElement="obj-paper-card">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-paper-card-asis" archimateElement="obj-client-card">
             <bounds x="50" y="240" width="180" height="55"/>
             <fillColor r="255" g="200" b="200"/>
           </child>
@@ -3326,11 +3342,11 @@ PHASE 2
             <bounds x="50" y="160" width="180" height="55"/>
             <fillColor r="255" g="165" b="0"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-paper-receipt-asis" archimateElement="obj-paper-receipt">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-paper-receipt-asis" archimateElement="obj-receipt">
             <bounds x="250" y="160" width="180" height="55"/>
             <fillColor r="255" g="200" b="200"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-manual-report-asis" archimateElement="proc-manager-reporting">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-manual-report-asis" archimateElement="proc-report">
             <bounds x="50" y="240" width="280" height="55"/>
             <fillColor r="255" g="165" b="0"/>
           </child>
