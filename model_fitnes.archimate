@@ -1669,6 +1669,11 @@
 
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
+    
+    <!-- ==================== BUSINESS LAYER VIEWS ==================== -->
+    <folder name="Business Layer" id="folder-business-views" type="diagrams">
+      
+      <!-- AS-IS Business Views -->
     <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Fitness Club — Integrated View" id="view-integrated">
       <child xsi:type="archimate:Group" id="grp-booking-view" name="Область: Запись (Booking)" textAlignment="1">
         <bounds x="-24" y="24" width="984" height="800"/>
@@ -2057,6 +2062,10 @@
         </child>
       </child>
     </element>
+    
+    </folder> <!-- End of Business Layer Views -->
+    
+    <!-- ==================== IS/APPLICATION LAYER VIEWS ==================== -->
     <folder name="IS Layer" id="folder-is-layer" type="diagrams">
       <element xsi:type="archimate:ArchimateDiagramModel" name="IS — AS-IS Fitness Club — Integrated View" id="view-is-integrated">
         <child xsi:type="archimate:Group" id="grp-is-booking" name="IS: Запись (Booking)" textAlignment="1">
