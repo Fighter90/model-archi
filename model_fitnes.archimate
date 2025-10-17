@@ -263,6 +263,140 @@
     <element xsi:type="archimate:BusinessObject" name="Объект: Дневная выручка" id="obj-daily-revenue">
       <property key="Area" value="Отчётность"/>
     </element>
+
+    <!-- TO-BE Business Layer Elements -->
+    <!-- TO-BE Interfaces -->
+    <element xsi:type="archimate:BusinessInterface" name="Мобильное приложение (TO-BE)" id="iface-mobile-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Веб-портал (TO-BE)" id="iface-web-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Чат-бот (TO-BE)" id="iface-chatbot-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Services -->
+    <element xsi:type="archimate:BusinessService" name="Сервис: Онлайн-запись (TO-BE)" id="svc-online-booking-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Автоматические уведомления (TO-BE)" id="svc-auto-notify-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Цифровое расписание (TO-BE)" id="svc-digital-schedule-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Электронные карточки (TO-BE)" id="svc-digital-cards-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Автоучёт посещений (TO-BE)" id="svc-auto-attendance-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Онлайн-оплата (TO-BE)" id="svc-online-payment-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Аналитические дашборды (TO-BE)" id="svc-analytics-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Processes -->
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Самостоятельная онлайн-запись (TO-BE)" id="proc-self-booking-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автопроверка доступности (TO-BE)" id="proc-auto-check-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: SMS/Email напоминание (TO-BE)" id="proc-auto-reminder-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автосинхронизация расписаний (TO-BE)" id="proc-auto-sync-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: QR-регистрация посещения (TO-BE)" id="proc-qr-checkin-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоформирование отчётов (TO-BE)" id="proc-auto-reporting-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Онлайн-оплата картой (TO-BE)" id="proc-card-payment-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Пуш-уведомления (TO-BE)" id="proc-push-notify-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Functions -->
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Автоматизация бронирования (TO-BE)" id="func-auto-booking-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Цифровизация клиентских данных (TO-BE)" id="func-digitization-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Бизнес-аналитика (TO-BE)" id="func-bi-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Objects -->
+    <element xsi:type="archimate:BusinessObject" name="Объект: Облачное расписание (TO-BE)" id="obj-cloud-schedule-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронная карточка клиента (TO-BE)" id="obj-digital-card-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронный журнал посещений (TO-BE)" id="obj-digital-attendance-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Цифровой чек (TO-BE)" id="obj-digital-receipt-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Дашборд KPI (TO-BE)" id="obj-kpi-dashboard-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Events -->
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Онлайн-бронирование создано (TO-BE)" id="event-online-booking-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автонапоминание отправлено (TO-BE)" id="event-auto-reminder-tobe">
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Оплата онлайн подтверждена (TO-BE)" id="event-payment-online-tobe">
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: QR-код отсканирован (TO-BE)" id="event-qr-scanned-tobe">
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Application" id="id-application-folder" type="application">
     <!-- Application Components -->
@@ -1078,6 +1212,62 @@
     <element xsi:type="archimate:RealizationRelationship" id="rel-data-004" source="data-sales" target="obj-sales-log"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-data-005" source="data-balance" target="obj-visit-balance"/>
     <element xsi:type="archimate:RealizationRelationship" id="rel-data-006" source="data-receipt" target="obj-receipt"/>
+
+    <!-- TO-BE Business Layer Relationships -->
+    <!-- TO-BE: Assignment (Role -> Process) -->
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-001" source="role-client" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-002" source="role-frontdesk" target="proc-auto-check-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-003" source="role-frontdesk" target="proc-qr-checkin-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-004" source="role-management" target="proc-auto-reporting-tobe"/>
+
+    <!-- TO-BE: Assignment (Function -> Process) -->
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-010" source="func-auto-booking-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-011" source="func-auto-booking-tobe" target="proc-auto-check-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-012" source="func-digitization-tobe" target="proc-qr-checkin-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-013" source="func-digitization-tobe" target="proc-auto-sync-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="rel-tobe-014" source="func-bi-tobe" target="proc-auto-reporting-tobe"/>
+
+    <!-- TO-BE: Realization (Process -> Service) -->
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-020" source="proc-self-booking-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-021" source="proc-auto-check-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-022" source="proc-auto-reminder-tobe" target="svc-auto-notify-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-023" source="proc-push-notify-tobe" target="svc-auto-notify-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-024" source="proc-auto-sync-tobe" target="svc-digital-schedule-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-025" source="proc-qr-checkin-tobe" target="svc-auto-attendance-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-026" source="proc-card-payment-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-tobe-027" source="proc-auto-reporting-tobe" target="svc-analytics-tobe"/>
+
+    <!-- TO-BE: Serving (Service -> Role/Interface) -->
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-030" source="svc-online-booking-tobe" target="role-client"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-031" source="svc-online-booking-tobe" target="iface-mobile-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-032" source="svc-online-booking-tobe" target="iface-web-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-033" source="svc-auto-notify-tobe" target="role-client"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-034" source="svc-auto-notify-tobe" target="iface-mobile-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-035" source="svc-auto-notify-tobe" target="iface-chatbot-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-036" source="svc-digital-schedule-tobe" target="role-frontdesk"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-037" source="svc-digital-cards-tobe" target="role-frontdesk"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-038" source="svc-auto-attendance-tobe" target="role-trainer"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-039" source="svc-online-payment-tobe" target="role-client"/>
+    <element xsi:type="archimate:ServingRelationship" id="rel-tobe-040" source="svc-analytics-tobe" target="role-management"/>
+
+    <!-- TO-BE: Access (Process -> Object) -->
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-050" source="proc-self-booking-tobe" target="obj-cloud-schedule-tobe" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-051" source="proc-auto-check-tobe" target="obj-cloud-schedule-tobe" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-052" source="proc-qr-checkin-tobe" target="obj-digital-card-tobe" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-053" source="proc-qr-checkin-tobe" target="obj-digital-attendance-tobe" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-054" source="proc-card-payment-tobe" target="obj-digital-receipt-tobe" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-055" source="proc-auto-reporting-tobe" target="obj-kpi-dashboard-tobe" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="rel-tobe-056" source="proc-auto-reporting-tobe" target="obj-digital-attendance-tobe" accessType="1"/>
+
+    <!-- TO-BE: Triggering (Event -> Process, Process -> Event) -->
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-060" source="event-online-booking-tobe" target="proc-auto-check-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-061" source="proc-auto-check-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-062" source="proc-self-booking-tobe" target="event-auto-reminder-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-063" source="event-auto-reminder-tobe" target="proc-auto-reminder-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-064" source="event-qr-scanned-tobe" target="proc-qr-checkin-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-065" source="proc-card-payment-tobe" target="event-payment-online-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-066" source="event-payment-online-tobe" target="proc-auto-reporting-tobe"/>
+
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Fitness Club — Integrated View" id="view-integrated">
@@ -1156,6 +1346,122 @@
         <child xsi:type="archimate:DiagramObject" id="view-product" targetConnections="id-7bfcc6c819ee412b8524ae9e6fa4ef6b" archimateElement="product-pass" type="1">
           <bounds x="696" y="520" width="160" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-6919794ac3e6424fa895b89b3d32fa19" source="view-product" target="view-iface-desk" archimateRelationship="id-c4f7221beff1465cb3ce46ffc9e0026c"/>
+        </child>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Запись — Business View" id="view-booking">
+      <child xsi:type="archimate:Group" id="grp-booking-detail" name="Область: Запись (Booking)" textAlignment="1">
+        <bounds x="24" y="24" width="1400" height="900"/>
+        <!-- Actors and Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-actor-client" archimateElement="actor-client">
+          <bounds x="60" y="60" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-actor-admin" archimateElement="actor-admin">
+          <bounds x="220" y="60" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-role-client" archimateElement="role-client">
+          <bounds x="60" y="150" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-role-frontdesk" archimateElement="role-frontdesk">
+          <bounds x="240" y="150" width="150" height="55"/>
+        </child>
+        <!-- Interfaces -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-iface-desk" archimateElement="iface-desk">
+          <bounds x="60" y="250" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-iface-phone" archimateElement="iface-phone">
+          <bounds x="240" y="250" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-iface-board" archimateElement="iface-board">
+          <bounds x="420" y="250" width="150" height="55"/>
+        </child>
+        <!-- Business Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-svc-booking" archimateElement="svc-booking">
+          <bounds x="60" y="360" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-svc-notify" archimateElement="svc-notify">
+          <bounds x="290" y="360" width="160" height="55"/>
+        </child>
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-func-planning" archimateElement="func-planning">
+          <bounds x="60" y="460" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-func-communication" archimateElement="func-communication">
+          <bounds x="290" y="460" width="220" height="55"/>
+        </child>
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-booking" archimateElement="proc-client-booking">
+          <bounds x="600" y="60" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-slot-check" archimateElement="proc-slot-check">
+          <bounds x="600" y="140" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-reserve" archimateElement="proc-reserve">
+          <bounds x="600" y="220" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-offer-alt" archimateElement="proc-offer-alt">
+          <bounds x="600" y="300" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-cancel" archimateElement="proc-cancel-booking">
+          <bounds x="600" y="380" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-notify" archimateElement="proc-manual-notify">
+          <bounds x="600" y="460" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-reschedule" archimateElement="proc-reschedule">
+          <bounds x="600" y="540" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-proc-print" archimateElement="proc-print-schedule">
+          <bounds x="600" y="620" width="200" height="55"/>
+        </child>
+        <!-- Business Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-schedule" archimateElement="obj-paper-schedule" type="1">
+          <bounds x="900" y="60" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-phone" archimateElement="obj-client-phone" type="1">
+          <bounds x="900" y="140" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-cancel" archimateElement="obj-cancel-move" type="1">
+          <bounds x="900" y="220" width="160" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-booking-form" archimateElement="obj-booking-form" type="1">
+          <bounds x="900" y="300" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-schedule-copy" archimateElement="obj-schedule-copy" type="1">
+          <bounds x="900" y="380" width="170" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-obj-group-list" archimateElement="obj-group-list" type="1">
+          <bounds x="900" y="460" width="150" height="55"/>
+        </child>
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-client-comes" archimateElement="event-client-comes">
+          <bounds x="1150" y="60" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-slot-free" archimateElement="event-slot-free">
+          <bounds x="1150" y="140" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-slot-busy" archimateElement="event-slot-busy">
+          <bounds x="1150" y="220" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-confirmed" archimateElement="event-booking-confirmed">
+          <bounds x="1150" y="300" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-double-book" archimateElement="event-double-book">
+          <bounds x="1150" y="380" width="190" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-change" archimateElement="event-booking-change">
+          <bounds x="1150" y="460" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-booking-event-class-cancel" archimateElement="event-class-cancel">
+          <bounds x="1150" y="540" width="180" height="55"/>
+        </child>
+        <!-- Location -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-loc-front-desk" archimateElement="loc-front-desk">
+          <bounds x="60" y="700" width="200" height="55"/>
+        </child>
+        <!-- Product -->
+        <child xsi:type="archimate:DiagramObject" id="view-booking-product" archimateElement="product-pass" type="1">
+          <bounds x="900" y="620" width="180" height="55"/>
         </child>
       </child>
     </element>
@@ -1818,6 +2124,196 @@
           </child>
         </child>
       </element>
+
+      <!-- TO-BE Business Layer Views -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Fitness Club — Integrated View" id="view-tobe-integrated">
+        <child xsi:type="archimate:Group" id="grp-tobe-integrated" name="TO-BE: Цифровизация фитнес-клуба" textAlignment="1">
+          <bounds x="24" y="24" width="1600" height="900"/>
+          <fillColor r="220" g="255" b="220"/>
+          
+          <!-- Actors and Roles -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-actor-client" archimateElement="actor-client">
+            <bounds x="60" y="60" width="120" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-role-client" archimateElement="role-client">
+            <bounds x="60" y="140" width="150" height="55"/>
+          </child>
+          
+          <!-- TO-BE Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-mobile" archimateElement="iface-mobile-tobe">
+            <bounds x="60" y="240" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-web" archimateElement="iface-web-tobe">
+            <bounds x="60" y="320" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-chatbot" archimateElement="iface-chatbot-tobe">
+            <bounds x="60" y="400" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Services (Booking Area) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-online-booking" archimateElement="svc-online-booking-tobe">
+            <bounds x="300" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-auto-notify" archimateElement="svc-auto-notify-tobe">
+            <bounds x="300" y="320" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Services (Storage Area) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-digital-schedule" archimateElement="svc-digital-schedule-tobe">
+            <bounds x="600" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-digital-cards" archimateElement="svc-digital-cards-tobe">
+            <bounds x="600" y="320" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-auto-attendance" archimateElement="svc-auto-attendance-tobe">
+            <bounds x="600" y="400" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Services (Reporting Area) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-online-payment" archimateElement="svc-online-payment-tobe">
+            <bounds x="900" y="240" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-analytics" archimateElement="svc-analytics-tobe">
+            <bounds x="900" y="320" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-self-booking" archimateElement="proc-self-booking-tobe">
+            <bounds x="300" y="500" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-auto-check" archimateElement="proc-auto-check-tobe">
+            <bounds x="300" y="580" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-qr-checkin" archimateElement="proc-qr-checkin-tobe">
+            <bounds x="600" y="500" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-auto-sync" archimateElement="proc-auto-sync-tobe">
+            <bounds x="600" y="580" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-card-payment" archimateElement="proc-card-payment-tobe">
+            <bounds x="900" y="500" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-auto-reporting" archimateElement="proc-auto-reporting-tobe">
+            <bounds x="900" y="580" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-cloud-schedule" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="600" y="700" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-card" archimateElement="obj-digital-card-tobe" type="1">
+            <bounds x="300" y="700" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-attendance" archimateElement="obj-digital-attendance-tobe" type="1">
+            <bounds x="600" y="780" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-receipt" archimateElement="obj-digital-receipt-tobe" type="1">
+            <bounds x="900" y="700" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-kpi-dashboard" archimateElement="obj-kpi-dashboard-tobe" type="1">
+            <bounds x="900" y="780" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- TO-BE Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-online-booking" archimateElement="event-online-booking-tobe">
+            <bounds x="1200" y="240" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-auto-reminder" archimateElement="event-auto-reminder-tobe">
+            <bounds x="1200" y="320" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-payment-online" archimateElement="event-payment-online-tobe">
+            <bounds x="1200" y="400" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-qr-scanned" archimateElement="event-qr-scanned-tobe">
+            <bounds x="1200" y="480" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Запись — Business View" id="view-tobe-booking">
+        <child xsi:type="archimate:Group" id="grp-tobe-booking" name="TO-BE Область: Онлайн-запись (Booking)" textAlignment="1">
+          <bounds x="24" y="24" width="1400" height="800"/>
+          <fillColor r="220" g="255" b="220"/>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-role-client" archimateElement="role-client">
+            <bounds x="60" y="60" width="150" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-iface-mobile" archimateElement="iface-mobile-tobe">
+            <bounds x="60" y="150" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-iface-web" archimateElement="iface-web-tobe">
+            <bounds x="60" y="230" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-svc-online" archimateElement="svc-online-booking-tobe">
+            <bounds x="300" y="150" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-svc-notify" archimateElement="svc-auto-notify-tobe">
+            <bounds x="300" y="230" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-func-auto" archimateElement="func-auto-booking-tobe">
+            <bounds x="60" y="350" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-proc-self" archimateElement="proc-self-booking-tobe">
+            <bounds x="600" y="150" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-proc-auto-check" archimateElement="proc-auto-check-tobe">
+            <bounds x="600" y="230" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-proc-reminder" archimateElement="proc-auto-reminder-tobe">
+            <bounds x="600" y="310" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-proc-push" archimateElement="proc-push-notify-tobe">
+            <bounds x="600" y="390" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-obj-schedule" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="900" y="150" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-event-online" archimateElement="event-online-booking-tobe">
+            <bounds x="1150" y="150" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-event-reminder" archimateElement="event-auto-reminder-tobe">
+            <bounds x="1150" y="230" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
     </folder>
   </folder>
 </archimate:model>
