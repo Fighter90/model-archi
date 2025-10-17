@@ -608,6 +608,198 @@
       <property key="Layer" value="IS"/>
       <property key="Area" value="Отчётность"/>
     </element>
+
+    <!-- TO-BE IS Layer Elements -->
+    
+    <!-- TO-BE Application Components -->
+    <element xsi:type="archimate:ApplicationComponent" name="Mobile App Client (TO-BE)" id="app-mobile-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Web Portal (TO-BE)" id="app-web-portal-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Cloud CRM System (TO-BE)" id="app-cloud-crm-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="API Gateway (TO-BE)" id="app-api-gateway-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="BI Analytics System (TO-BE)" id="app-bi-analytics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Payment Gateway (TO-BE)" id="app-payment-gateway-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Push Notification Service (TO-BE)" id="app-push-notify-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="QR Scanner Integration (TO-BE)" id="app-qr-scanner-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Cloud Scheduler (TO-BE)" id="app-cloud-scheduler-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="ML Recommendation Engine (TO-BE)" id="app-ml-recommendation-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Application Services -->
+    <element xsi:type="archimate:ApplicationService" name="Online Booking API (TO-BE)" id="app-svc-online-booking-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Client Profile API (TO-BE)" id="app-svc-client-profile-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="QR Check-in API (TO-BE)" id="app-svc-qr-checkin-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Push Notification API (TO-BE)" id="app-svc-push-notify-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Analytics Dashboard API (TO-BE)" id="app-svc-analytics-api-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Card Payment API (TO-BE)" id="app-svc-card-payment-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Cloud Schedule Sync API (TO-BE)" id="app-svc-cloud-sync-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Recommendation API (TO-BE)" id="app-svc-recommendation-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Application Functions -->
+    <element xsi:type="archimate:ApplicationFunction" name="Self-Service Slot Booking (TO-BE)" id="app-func-self-booking-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Auto Availability Check (TO-BE)" id="app-func-auto-availability-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="QR Scan Processing (TO-BE)" id="app-func-qr-scan-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Real-time Analytics (TO-BE)" id="app-func-realtime-analytics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Auto Payment Processing (TO-BE)" id="app-func-auto-payment-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Smart Recommendation (TO-BE)" id="app-func-smart-recommendation-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Cloud Data Sync (TO-BE)" id="app-func-cloud-sync-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Push Notification Delivery (TO-BE)" id="app-func-push-delivery-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Data Objects -->
+    <element xsi:type="archimate:DataObject" name="Cloud Schedule Data (TO-BE)" id="data-cloud-schedule-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Digital Client Profile (TO-BE)" id="data-digital-profile-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="E-Receipt Data (TO-BE)" id="data-e-receipt-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="KPI Metrics (TO-BE)" id="data-kpi-metrics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="QR Attendance Log (TO-BE)" id="data-qr-attendance-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="ML Training Data (TO-BE)" id="data-ml-training-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Application Events -->
+    <element xsi:type="archimate:ApplicationEvent" name="Booking Auto-Confirmed (TO-BE)" id="app-event-auto-confirmed-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="QR Check-in Successful (TO-BE)" id="app-event-qr-checkin-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Payment Auto-Processed (TO-BE)" id="app-event-payment-auto-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Push Notification Sent (TO-BE)" id="app-event-push-sent-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
   </folder>
   <folder name="Technology &amp; Physical" id="id-technology-folder" type="technology">
     <!-- Technology Nodes - Запись -->
@@ -799,6 +991,197 @@
     </element>
     <element xsi:type="archimate:Location" name="Локация: Тренажёрный зал" id="loc-gym">
       <property key="Area" value="Хранение"/>
+    </element>
+
+    <!-- TO-BE Technology Layer Elements -->
+    
+    <!-- TO-BE Technology Nodes -->
+    <element xsi:type="archimate:Node" name="AWS Cloud Instance (TO-BE)" id="tech-aws-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Azure Cloud VM (TO-BE)" id="tech-azure-vm-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Database Server (TO-BE)" id="tech-cloud-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Load Balancer Cluster (TO-BE)" id="tech-load-balancer-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="CDN Edge Server (TO-BE)" id="tech-cdn-edge-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="API Gateway Node (TO-BE)" id="tech-api-gateway-node-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Devices -->
+    <element xsi:type="archimate:Device" name="Tablet (TO-BE)" id="tech-tablet-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smartphone (TO-BE)" id="tech-smartphone-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="QR Scanner (TO-BE)" id="tech-qr-scanner-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Payment Terminal (TO-BE)" id="tech-payment-terminal-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE System Software -->
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Kubernetes (TO-BE)" id="tech-sw-kubernetes-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Docker Container (TO-BE)" id="tech-sw-docker-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="NGINX Web Server (TO-BE)" id="tech-sw-nginx-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Technology Services -->
+    <element xsi:type="archimate:TechnologyService" name="Cloud Hosting Service (TO-BE)" id="tech-svc-cloud-hosting-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Managed Database Service (TO-BE)" id="tech-svc-managed-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Push Notification Gateway (TO-BE)" id="tech-svc-push-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Queue Service (TO-BE)" id="tech-svc-cloud-queue-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Backup Service (TO-BE)" id="tech-svc-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="BI Analytics Service (TO-BE)" id="tech-svc-bi-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Artifacts -->
+    <element xsi:type="archimate:Artifact" name="Cloud Database Backup (TO-BE)" id="tech-artifact-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Digital Report JSON (TO-BE)" id="tech-artifact-json-report-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="QR Code Data (TO-BE)" id="tech-artifact-qr-data-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-image-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Networks -->
+    <element xsi:type="archimate:CommunicationNetwork" name="5G Mobile Network (TO-BE)" id="tech-net-5g-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Secure API Channel (TO-BE)" id="tech-net-secure-api-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Technology Functions -->
+    <element xsi:type="archimate:TechnologyFunction" name="Auto-Scaling (TO-BE)" id="tech-func-auto-scaling-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Cloud Data Replication (TO-BE)" id="tech-func-cloud-replication-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Encrypted Communication (TO-BE)" id="tech-func-encryption-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Real-time Monitoring (TO-BE)" id="tech-func-monitoring-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
     </element>
   </folder>
   <folder name="Relations" id="id-relations-folder" type="relations">
@@ -2309,6 +2692,720 @@
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-tobe-booking-event-reminder" archimateElement="event-auto-reminder-tobe">
             <bounds x="1150" y="230" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Business TO-BE: Хранение View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Хранение — Business View" id="view-tobe-storage">
+        <child xsi:type="archimate:Group" id="grp-tobe-storage" name="TO-BE: Хранение (Digitalized Storage)">
+          <bounds x="24" y="24" width="1400" height="700"/>
+          <fillColor r="220" g="255" b="220"/>
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-qr" archimateElement="iface-qr-scanner-tobe">
+            <bounds x="50" y="50" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-cloud" archimateElement="iface-cloud-panel-tobe">
+            <bounds x="50" y="130" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-digital-schedule" archimateElement="svc-digital-schedule-tobe">
+            <bounds x="280" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-digital-cards" archimateElement="svc-digital-cards-tobe">
+            <bounds x="280" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-auto-attendance" archimateElement="svc-auto-attendance-tobe">
+            <bounds x="280" y="210" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-auto-sync" archimateElement="proc-auto-sync-tobe">
+            <bounds x="530" y="50" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-qr-checkin" archimateElement="proc-qr-checkin-tobe">
+            <bounds x="530" y="130" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-card" archimateElement="obj-digital-card-tobe">
+            <bounds x="830" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-attendance" archimateElement="obj-digital-attendance-tobe">
+            <bounds x="830" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-qr-scan" archimateElement="event-qr-scan-tobe">
+            <bounds x="1080" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Business TO-BE: Отчётность View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Отчётность — Business View" id="view-tobe-reporting">
+        <child xsi:type="archimate:Group" id="grp-tobe-reporting" name="TO-BE: Отчётность (Automated Reporting)">
+          <bounds x="24" y="24" width="1400" height="700"/>
+          <fillColor r="220" g="255" b="220"/>
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-iface-dashboard" archimateElement="iface-analytics-dashboard-tobe">
+            <bounds x="50" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-online-payment" archimateElement="svc-online-payment-tobe">
+            <bounds x="300" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-svc-analytics" archimateElement="svc-analytics-tobe">
+            <bounds x="300" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-card-payment" archimateElement="proc-card-payment-tobe">
+            <bounds x="550" y="50" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-proc-auto-reporting" archimateElement="proc-auto-reporting-tobe">
+            <bounds x="550" y="130" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-digital-receipt" archimateElement="obj-digital-receipt-tobe">
+            <bounds x="850" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-obj-kpi-dashboard" archimateElement="obj-kpi-dashboard-tobe">
+            <bounds x="850" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-tobe-event-payment-success" archimateElement="event-payment-success-tobe">
+            <bounds x="1100" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- IS TO-BE: Integrated View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Fitness Club — Integrated View" id="view-is-tobe-integrated">
+        <child xsi:type="archimate:Group" id="grp-is-tobe-integrated" name="TO-BE IS Architecture — Integrated">
+          <bounds x="24" y="24" width="1600" height="900"/>
+          <fillColor r="220" g="255" b="220"/>
+          <!-- TO-BE Components -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-mobile" archimateElement="app-mobile-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-web-portal" archimateElement="app-web-portal-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-cloud-crm" archimateElement="app-cloud-crm-tobe">
+            <bounds x="300" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-api-gateway" archimateElement="app-api-gateway-tobe">
+            <bounds x="300" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-bi-analytics" archimateElement="app-bi-analytics-tobe">
+            <bounds x="550" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-payment-gateway" archimateElement="app-payment-gateway-tobe">
+            <bounds x="550" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-svc-online-booking" archimateElement="app-svc-online-booking-tobe">
+            <bounds x="50" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-svc-client-profile" archimateElement="app-svc-client-profile-tobe">
+            <bounds x="300" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-svc-qr-checkin" archimateElement="app-svc-qr-checkin-tobe">
+            <bounds x="550" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Functions -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-func-self-booking" archimateElement="app-func-self-booking-tobe">
+            <bounds x="50" y="340" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-func-auto-availability" archimateElement="app-func-auto-availability-tobe">
+            <bounds x="320" y="340" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Data Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-data-cloud-schedule" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="50" y="440" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-data-digital-profile" archimateElement="data-digital-profile-tobe">
+            <bounds x="280" y="440" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- IS TO-BE: Запись View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Запись — Application View" id="view-is-tobe-booking">
+        <child xsi:type="archimate:Group" id="grp-is-tobe-booking" name="TO-BE IS: Запись (Booking Digitalization)">
+          <bounds x="24" y="24" width="1400" height="700"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-booking-mobile" archimateElement="app-mobile-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-booking-web" archimateElement="app-web-portal-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-booking-svc-online" archimateElement="app-svc-online-booking-tobe">
+            <bounds x="300" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-booking-func-self" archimateElement="app-func-self-booking-tobe">
+            <bounds x="300" y="130" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-booking-func-auto" archimateElement="app-func-auto-availability-tobe">
+            <bounds x="580" y="50" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- IS TO-BE: Хранение View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Хранение — Application View" id="view-is-tobe-storage">
+        <child xsi:type="archimate:Group" id="grp-is-tobe-storage" name="TO-BE IS: Хранение (Storage Digitalization)">
+          <bounds x="24" y="24" width="1400" height="700"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-crm" archimateElement="app-cloud-crm-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-qr" archimateElement="app-qr-scanner-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-svc-profile" archimateElement="app-svc-client-profile-tobe">
+            <bounds x="300" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-svc-qr" archimateElement="app-svc-qr-checkin-tobe">
+            <bounds x="300" y="130" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-func-qr-scan" archimateElement="app-func-qr-scan-tobe">
+            <bounds x="570" y="50" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-func-cloud-sync" archimateElement="app-func-cloud-sync-tobe">
+            <bounds x="570" y="130" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-data-cloud" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="860" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-storage-data-profile" archimateElement="data-digital-profile-tobe">
+            <bounds x="860" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- IS TO-BE: Отчётность View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Отчётность — Application View" id="view-is-tobe-reporting">
+        <child xsi:type="archimate:Group" id="grp-is-tobe-reporting" name="TO-BE IS: Отчётность (Reporting Automation)">
+          <bounds x="24" y="24" width="1400" height="700"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-bi" archimateElement="app-bi-analytics-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-payment" archimateElement="app-payment-gateway-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-svc-analytics" archimateElement="app-svc-analytics-api-tobe">
+            <bounds x="300" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-svc-card" archimateElement="app-svc-card-payment-tobe">
+            <bounds x="300" y="130" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-func-analytics" archimateElement="app-func-realtime-analytics-tobe">
+            <bounds x="570" y="50" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-func-payment" archimateElement="app-func-auto-payment-tobe">
+            <bounds x="570" y="130" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-data-receipt" archimateElement="data-e-receipt-tobe">
+            <bounds x="860" y="50" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-data-kpi" archimateElement="data-kpi-metrics-tobe">
+            <bounds x="860" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Tech TO-BE: Integrated View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Fitness Club — Integrated View" id="view-tech-tobe-integrated">
+        <child xsi:type="archimate:Group" id="grp-tech-tobe-integrated" name="TO-BE Tech Architecture — Integrated">
+          <bounds x="24" y="24" width="1600" height="900"/>
+          <fillColor r="220" g="255" b="220"/>
+          <!-- Cloud Nodes -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-aws" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-azure" archimateElement="tech-azure-vm-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-cloud-db" archimateElement="tech-cloud-db-tobe">
+            <bounds x="300" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-load-balancer" archimateElement="tech-load-balancer-tobe">
+            <bounds x="300" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Devices -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-tablet" archimateElement="tech-tablet-tobe">
+            <bounds x="550" y="50" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-smartphone" archimateElement="tech-smartphone-tobe">
+            <bounds x="550" y="130" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-qr-scanner" archimateElement="tech-qr-scanner-tobe">
+            <bounds x="750" y="50" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-svc-cloud-hosting" archimateElement="tech-svc-cloud-hosting-tobe">
+            <bounds x="50" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-svc-managed-db" archimateElement="tech-svc-managed-db-tobe">
+            <bounds x="300" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-svc-cdn" archimateElement="tech-svc-cdn-tobe">
+            <bounds x="550" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Tech TO-BE: Запись View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Запись — Technology View" id="view-tech-tobe-booking">
+        <child xsi:type="archimate:Group" id="grp-tech-tobe-booking" name="TO-BE Tech: Запись (Mobile Infrastructure)">
+          <bounds x="24" y="24" width="1200" height="600"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-tablet" archimateElement="tech-tablet-tobe">
+            <bounds x="50" y="50" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-smartphone" archimateElement="tech-smartphone-tobe">
+            <bounds x="50" y="130" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-cdn" archimateElement="tech-cdn-edge-tobe">
+            <bounds x="250" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-svc-cdn" archimateElement="tech-svc-cdn-tobe">
+            <bounds x="250" y="130" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-svc-push" archimateElement="tech-svc-push-gateway-tobe">
+            <bounds x="520" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-booking-net-5g" archimateElement="tech-net-5g-tobe">
+            <bounds x="520" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Tech TO-BE: Хранение View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Хранение — Technology View" id="view-tech-tobe-storage">
+        <child xsi:type="archimate:Group" id="grp-tech-tobe-storage" name="TO-BE Tech: Хранение (Cloud Storage)">
+          <bounds x="24" y="24" width="1200" height="600"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-aws" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-azure" archimateElement="tech-azure-vm-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-cloud-db" archimateElement="tech-cloud-db-tobe">
+            <bounds x="300" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-qr" archimateElement="tech-qr-scanner-tobe">
+            <bounds x="300" y="130" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-svc-managed-db" archimateElement="tech-svc-managed-db-tobe">
+            <bounds x="500" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-svc-backup" archimateElement="tech-svc-cloud-backup-tobe">
+            <bounds x="500" y="130" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-sw-postgres" archimateElement="tech-sw-postgres-cloud-tobe">
+            <bounds x="770" y="50" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-storage-sw-redis" archimateElement="tech-sw-redis-tobe">
+            <bounds x="770" y="130" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Tech TO-BE: Отчётность View -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Отчётность — Technology View" id="view-tech-tobe-reporting">
+        <child xsi:type="archimate:Group" id="grp-tech-tobe-reporting" name="TO-BE Tech: Отчётность (BI &amp; Analytics)">
+          <bounds x="24" y="24" width="1200" height="600"/>
+          <fillColor r="220" g="255" b="220"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-reporting-analytics" archimateElement="tech-analytics-server-tobe">
+            <bounds x="50" y="50" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-reporting-payment-terminal" archimateElement="tech-payment-terminal-tobe">
+            <bounds x="50" y="130" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-reporting-svc-bi" archimateElement="tech-svc-bi-analytics-tobe">
+            <bounds x="300" y="50" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-reporting-artifact-json" archimateElement="tech-artifact-json-report-tobe">
+            <bounds x="300" y="130" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Transition Architecture: Запись -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Запись (Booking)" id="view-transition-booking">
+        <child xsi:type="archimate:Group" id="grp-transition-booking" name="Transition: Запись AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="800"/>
+          <fillColor r="255" g="245" b="220"/>
+          <!-- AS-IS Elements (будут deprecated - желтый/красный) -->
+          <child xsi:type="archimate:Note" id="note-transition-booking-asis">
+            <bounds x="50" y="50" width="350" height="80"/>
+            <fillColor r="255" g="200" b="200"/>
+            <content>AS-IS: Ручная запись через стойку администратора, телефон. 
+УСТАРЕВАЕТ → TO-BE</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-phone-asis" archimateElement="iface-phone">
+            <bounds x="50" y="160" width="150" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-desk-asis" archimateElement="iface-desk">
+            <bounds x="220" y="160" width="150" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-booking-asis" archimateElement="proc-client-booking">
+            <bounds x="50" y="240" width="320" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          
+          <!-- Transition Arrow/Note -->
+          <child xsi:type="archimate:Note" id="note-transition-booking-arrow">
+            <bounds x="450" y="200" width="200" height="100"/>
+            <fillColor r="255" g="255" b="150"/>
+            <content>═══════➤
+MIGRATION
+PHASE 1-2
+(3 months)</content>
+          </child>
+          
+          <!-- TO-BE Elements (новые - зеленый) -->
+          <child xsi:type="archimate:Note" id="note-transition-booking-tobe">
+            <bounds x="720" y="50" width="400" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: Онлайн-запись через мобильное приложение, веб-портал.
+НОВЫЕ возможности: самообслуживание, автоматическое подтверждение</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-mobile-tobe" archimateElement="iface-mobile-tobe">
+            <bounds x="720" y="160" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-web-tobe" archimateElement="iface-web-portal-tobe">
+            <bounds x="920" y="160" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-self-tobe" archimateElement="proc-self-booking-tobe">
+            <bounds x="720" y="240" width="280" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-svc-online-tobe" archimateElement="svc-online-booking-tobe">
+            <bounds x="1020" y="240" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- IS Layer Transition -->
+          <child xsi:type="archimate:Note" id="note-transition-booking-is">
+            <bounds x="50" y="350" width="600" height="60"/>
+            <fillColor r="220" g="230" b="255"/>
+            <content>IS Layer: Booking App (AS-IS) → Mobile App Client + API Gateway (TO-BE)</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-booking-asis" archimateElement="app-booking">
+            <bounds x="50" y="430" width="200" height="60"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-mobile-tobe" archimateElement="app-mobile-tobe">
+            <bounds x="720" y="430" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-api-gateway-tobe" archimateElement="app-api-gateway-tobe">
+            <bounds x="940" y="430" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Tech Layer Transition -->
+          <child xsi:type="archimate:Note" id="note-transition-booking-tech">
+            <bounds x="50" y="530" width="600" height="60"/>
+            <fillColor r="230" g="220" b="255"/>
+            <content>Tech Layer: Admin PC + Phone Line → Tablet + Smartphone + 5G Network (TO-BE)</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-admin-pc-asis" archimateElement="tech-admin-pc">
+            <bounds x="50" y="610" width="150" height="60"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-phone-asis" archimateElement="tech-phone-device">
+            <bounds x="220" y="610" width="150" height="60"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-tablet-tobe" archimateElement="tech-tablet-tobe">
+            <bounds x="720" y="610" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-smartphone-tobe" archimateElement="tech-smartphone-tobe">
+            <bounds x="890" y="610" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-5g-tobe" archimateElement="tech-net-5g-tobe">
+            <bounds x="1060" y="610" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Transition Architecture: Хранение -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Хранение (Storage)" id="view-transition-storage">
+        <child xsi:type="archimate:Group" id="grp-transition-storage" name="Transition: Хранение AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="800"/>
+          <fillColor r="255" g="245" b="220"/>
+          <!-- AS-IS -->
+          <child xsi:type="archimate:Note" id="note-transition-storage-asis">
+            <bounds x="50" y="50" width="350" height="80"/>
+            <fillColor r="255" g="200" b="200"/>
+            <content>AS-IS: Бумажные карточки, ручная отметка посещений, локальная БД. 
+УСТАРЕВАЕТ → TO-BE</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-card-asis" archimateElement="svc-client-cards">
+            <bounds x="50" y="160" width="180" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-attendance-asis" archimateElement="svc-attendance">
+            <bounds x="250" y="160" width="180" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-paper-card-asis" archimateElement="obj-paper-card">
+            <bounds x="50" y="240" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <!-- Transition -->
+          <child xsi:type="archimate:Note" id="note-transition-storage-arrow">
+            <bounds x="500" y="200" width="200" height="100"/>
+            <fillColor r="255" g="255" b="150"/>
+            <content>═══════➤
+MIGRATION
+PHASE 2
+(2 months)</content>
+          </child>
+          
+          <!-- TO-BE -->
+          <child xsi:type="archimate:Note" id="note-transition-storage-tobe">
+            <bounds x="770" y="50" width="400" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: Цифровые карты, QR-сканирование, облачное хранилище.
+НОВЫЕ возможности: автоматический учет, синхронизация</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-digital-cards-tobe" archimateElement="svc-digital-cards-tobe">
+            <bounds x="770" y="160" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-auto-attendance-tobe" archimateElement="svc-auto-attendance-tobe">
+            <bounds x="990" y="160" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-iface-qr-tobe" archimateElement="iface-qr-scanner-tobe">
+            <bounds x="770" y="240" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-digital-card-tobe" archimateElement="obj-digital-card-tobe">
+            <bounds x="970" y="240" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- IS Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-crm-asis" archimateElement="app-crm">
+            <bounds x="50" y="380" width="200" height="60"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-cloud-crm-tobe" archimateElement="app-cloud-crm-tobe">
+            <bounds x="770" y="380" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-qr-scanner-tobe" archimateElement="app-qr-scanner-tobe">
+            <bounds x="990" y="380" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-db-server-asis" archimateElement="tech-db-server">
+            <bounds x="50" y="480" width="180" height="60"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-cloud-db-tobe" archimateElement="tech-cloud-db-tobe">
+            <bounds x="770" y="480" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-qr-scanner-tobe" archimateElement="tech-qr-scanner-tobe">
+            <bounds x="990" y="480" width="150" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Transition Architecture: Отчётность -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Отчётность (Reporting)" id="view-transition-reporting">
+        <child xsi:type="archimate:Group" id="grp-transition-reporting" name="Transition: Отчётность AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="800"/>
+          <fillColor r="255" g="245" b="220"/>
+          <!-- AS-IS -->
+          <child xsi:type="archimate:Note" id="note-transition-reporting-asis">
+            <bounds x="50" y="50" width="350" height="80"/>
+            <fillColor r="255" g="200" b="200"/>
+            <content>AS-IS: Наличные расчеты, бумажные чеки, ручные отчеты Excel.
+УСТАРЕВАЕТ → TO-BE</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-sales-asis" archimateElement="svc-sales">
+            <bounds x="50" y="160" width="180" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-paper-receipt-asis" archimateElement="obj-paper-receipt">
+            <bounds x="250" y="160" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-manual-report-asis" archimateElement="proc-manager-reporting">
+            <bounds x="50" y="240" width="280" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          
+          <!-- Transition -->
+          <child xsi:type="archimate:Note" id="note-transition-reporting-arrow">
+            <bounds x="500" y="200" width="200" height="100"/>
+            <fillColor r="255" g="255" b="150"/>
+            <content>═══════➤
+MIGRATION
+PHASE 3
+(2 months)</content>
+          </child>
+          
+          <!-- TO-BE -->
+          <child xsi:type="archimate:Note" id="note-transition-reporting-tobe">
+            <bounds x="770" y="50" width="400" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: Безналичные платежи, электронные чеки, BI-дашборды.
+НОВЫЕ возможности: real-time аналитика, автоматические KPI</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-online-payment-tobe" archimateElement="svc-online-payment-tobe">
+            <bounds x="770" y="160" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-analytics-tobe" archimateElement="svc-analytics-tobe">
+            <bounds x="990" y="160" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-card-payment-tobe" archimateElement="proc-card-payment-tobe">
+            <bounds x="770" y="240" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-auto-reporting-tobe" archimateElement="proc-auto-reporting-tobe">
+            <bounds x="990" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-digital-receipt-tobe" archimateElement="obj-digital-receipt-tobe">
+            <bounds x="770" y="320" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-kpi-dashboard-tobe" archimateElement="obj-kpi-dashboard-tobe">
+            <bounds x="970" y="320" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- IS Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-sales-asis" archimateElement="app-sales">
+            <bounds x="50" y="430" width="180" height="60"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-bi-analytics-tobe" archimateElement="app-bi-analytics-tobe">
+            <bounds x="770" y="430" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-payment-gateway-tobe" archimateElement="app-payment-gateway-tobe">
+            <bounds x="990" y="430" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-reporting-server-asis" archimateElement="tech-report-server">
+            <bounds x="50" y="530" width="180" height="60"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-printer-asis" archimateElement="tech-printer">
+            <bounds x="250" y="530" width="120" height="60"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-analytics-server-tobe" archimateElement="tech-analytics-server-tobe">
+            <bounds x="770" y="530" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-payment-terminal-tobe" archimateElement="tech-payment-terminal-tobe">
+            <bounds x="990" y="530" width="200" height="60"/>
             <fillColor r="200" g="255" b="200"/>
           </child>
         </child>
