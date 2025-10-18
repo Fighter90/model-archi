@@ -413,6 +413,491 @@
       <property key="State" value="TO-BE"/>
     </element>
 
+    <!-- ========== ЭЛЕМЕНТЫ ДЛЯ ТРЕНЕРОВ (Trainer-centric View) ========== -->
+    <!-- Actors & Roles -->
+    <element xsi:type="archimate:BusinessActor" name="Главный тренер" id="actor-head-trainer">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Персональный тренер" id="actor-personal-trainer">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Групповой тренер" id="actor-group-trainer">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Стажёр-тренер" id="actor-trainee-trainer">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Менеджер по обучению" id="actor-education-manager">
+      <property key="Area" value="Планирование"/>
+    </element>
+    
+    <element xsi:type="archimate:BusinessRole" name="Роль: Методист" id="role-methodist">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Инструктор" id="role-instructor">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Консультант" id="role-consultant">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Координатор тренеров" id="role-coordinator">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Наставник" id="role-mentor">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Interfaces -->
+    <element xsi:type="archimate:BusinessInterface" name="Журнал тренера" id="iface-trainer-journal">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Доска расписаний тренеров" id="iface-trainer-schedule-board">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Мессенджер тренеров" id="iface-trainer-messenger">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Планшет тренера" id="iface-trainer-tablet">
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Services -->
+    <element xsi:type="archimate:BusinessService" name="Сервис: Планирование тренировок" id="svc-training-planning">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Проведение занятий" id="svc-conducting-sessions">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Консультирование клиентов" id="svc-client-consultation">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Ведение документации тренера" id="svc-trainer-documentation">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Координация тренерской команды" id="svc-trainer-coordination">
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Processes -->
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Составление программы тренировок" id="proc-create-program">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Согласование графика работы" id="proc-approve-schedule">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Подготовка к занятию" id="proc-session-preparation">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Инструктаж клиента" id="proc-client-briefing">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Проведение тренировки" id="proc-conduct-training">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Мониторинг техники выполнения" id="proc-monitor-technique">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Корректировка нагрузки" id="proc-adjust-load">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Фиксация результатов" id="proc-record-results">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Заполнение журнала тренера" id="proc-fill-journal">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Консультация по питанию" id="proc-nutrition-consult">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Оценка прогресса клиента" id="proc-assess-progress">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Обратная связь с клиентом" id="proc-client-feedback">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Обмен опытом между тренерами" id="proc-trainer-knowledge-share">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Замена тренера" id="proc-trainer-substitution">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Координация групповых занятий" id="proc-coordinate-group-session">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Наставничество стажёров" id="proc-mentor-trainees">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Отчёт о проведённых занятиях" id="proc-session-report">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Работа с жалобами клиентов" id="proc-handle-complaints">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Objects -->
+    <element xsi:type="archimate:BusinessObject" name="Объект: План тренировок" id="obj-training-plan">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: График работы тренера" id="obj-trainer-schedule">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Журнал тренировок" id="obj-training-journal">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Карточка клиента тренера" id="obj-trainer-client-card">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Протокол занятия" id="obj-session-protocol">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Метрики прогресса" id="obj-progress-metrics">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Программа питания" id="obj-nutrition-program">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Список упражнений" id="obj-exercise-list">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Инструкции по безопасности" id="obj-safety-instructions">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Заметки тренера по клиенту" id="obj-trainer-client-notes">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Отчёт тренера" id="obj-trainer-report">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: База упражнений" id="obj-exercise-database">
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Events -->
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Начало занятия" id="event-session-start">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Окончание занятия" id="event-session-end">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Клиент не пришёл" id="event-client-no-show">
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Запрос на замену тренера" id="event-substitution-request">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Изменение в расписании тренера" id="event-trainer-schedule-change">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Достижение цели клиента" id="event-client-goal-achieved">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Жалоба на тренера" id="event-trainer-complaint">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Запрос консультации" id="event-consultation-request">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Групповое занятие готово" id="event-group-session-ready">
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Functions -->
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Управление тренировочным процессом" id="func-training-management">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Взаимодействие с клиентами" id="func-client-interaction">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Проведение тренировок" id="func-session-execution">
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Collaborations -->
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Тренерская команда" id="collab-trainer-team">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Тренер-Клиент" id="collab-trainer-client">
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Interactions -->
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Планёрка тренеров" id="interact-trainer-meeting">
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Передача клиента" id="interact-client-handover">
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- ========== TO-BE ЭЛЕМЕНТЫ ДЛЯ ТРЕНЕРОВ (Digitalized Trainer View) ========== -->
+    
+    <!-- TO-BE Interfaces -->
+    <element xsi:type="archimate:BusinessInterface" name="Мобильное приложение тренера (TO-BE)" id="iface-trainer-mobile-app-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Облачная платформа управления (TO-BE)" id="iface-trainer-cloud-platform-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Цифровой дневник тренера (TO-BE)" id="iface-digital-trainer-journal-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Умные часы/трекер (TO-BE)" id="iface-smart-watch-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Видео-платформа онлайн-занятий (TO-BE)" id="iface-video-platform-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="AI-помощник тренера (TO-BE)" id="iface-ai-assistant-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInterface" name="Чат-платформа команды (TO-BE)" id="iface-team-chat-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Services -->
+    <element xsi:type="archimate:BusinessService" name="Сервис: Автоматическое планирование тренировок (TO-BE)" id="svc-auto-training-planning-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Цифровое управление расписанием (TO-BE)" id="svc-digital-schedule-mgmt-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Онлайн-проведение занятий (TO-BE)" id="svc-online-sessions-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Автоматическая фиксация данных (TO-BE)" id="svc-auto-data-capture-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: AI-консультирование (TO-BE)" id="svc-ai-consultation-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Видео-аналитика техники (TO-BE)" id="svc-video-analytics-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Цифровая координация команды (TO-BE)" id="svc-digital-team-coordination-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Processes -->
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: AI-генерация программы тренировок (TO-BE)" id="proc-ai-program-generation-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автосогласование графика онлайн (TO-BE)" id="proc-auto-schedule-approval-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Цифровая подготовка к занятию (TO-BE)" id="proc-digital-preparation-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Онлайн-инструктаж клиента (TO-BE)" id="proc-online-briefing-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Гибридная тренировка (онлайн/офлайн) (TO-BE)" id="proc-hybrid-training-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: AI-мониторинг техники выполнения (TO-BE)" id="proc-ai-technique-monitor-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автокорректировка нагрузки (TO-BE)" id="proc-auto-load-adjust-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автофиксация результатов с датчиков (TO-BE)" id="proc-auto-results-capture-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автозаполнение цифрового журнала (TO-BE)" id="proc-auto-journal-fill-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Видео-консультация по питанию (TO-BE)" id="proc-video-nutrition-consult-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автооценка прогресса клиента (TO-BE)" id="proc-auto-progress-assessment-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Цифровая обратная связь (TO-BE)" id="proc-digital-feedback-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Онлайн-обмен опытом тренеров (TO-BE)" id="proc-online-knowledge-share-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоматическая замена тренера (TO-BE)" id="proc-auto-substitution-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Цифровая координация групповых занятий (TO-BE)" id="proc-digital-group-coordination-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Виртуальное наставничество стажёров (TO-BE)" id="proc-virtual-mentoring-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоотчёт о проведённых занятиях (TO-BE)" id="proc-auto-session-report-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: AI-обработка жалоб клиентов (TO-BE)" id="proc-ai-complaint-handling-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Запись и анализ видео-тренировок (TO-BE)" id="proc-video-recording-analysis-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Objects -->
+    <element xsi:type="archimate:BusinessObject" name="Объект: AI-сгенерированный план тренировок (TO-BE)" id="obj-ai-training-plan-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Синхронизированный график работы (TO-BE)" id="obj-sync-schedule-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Цифровой журнал тренировок (TO-BE)" id="obj-digital-journal-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронная карточка клиента тренера (TO-BE)" id="obj-digital-client-card-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Автоматический протокол занятия (TO-BE)" id="obj-auto-protocol-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Данные с носимых устройств (TO-BE)" id="obj-wearable-data-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Dashboard метрик прогресса (TO-BE)" id="obj-progress-dashboard-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: AI-рекомендации по питанию (TO-BE)" id="obj-ai-nutrition-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Облачная база упражнений с видео (TO-BE)" id="obj-cloud-exercise-library-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Видеозаписи тренировок (TO-BE)" id="obj-video-recordings-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: AI-анализ техники выполнения (TO-BE)" id="obj-ai-technique-analysis-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Автоматический отчёт тренера (TO-BE)" id="obj-auto-trainer-report-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Облачное хранилище заметок (TO-BE)" id="obj-cloud-notes-storage-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Events -->
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автостарт онлайн-занятия (TO-BE)" id="event-auto-session-start-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автозавершение занятия (TO-BE)" id="event-auto-session-end-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автоуведомление о No-show (TO-BE)" id="event-auto-no-show-alert-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: AI-запрос на замену тренера (TO-BE)" id="event-ai-substitution-request-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автосинхронизация расписания (TO-BE)" id="event-auto-schedule-sync-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Достижение цели клиента (уведомление) (TO-BE)" id="event-goal-achievement-notification-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: AI-детект жалобы на тренера (TO-BE)" id="event-ai-complaint-detection-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Онлайн-запрос консультации (TO-BE)" id="event-online-consultation-request-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автоформирование отчёта готово (TO-BE)" id="event-auto-report-ready-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Видеозапись доступна (TO-BE)" id="event-video-available-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Functions -->
+    <element xsi:type="archimate:BusinessFunction" name="Функция: AI-управление тренировочным процессом (TO-BE)" id="func-ai-training-management-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Цифровое взаимодействие с клиентами (TO-BE)" id="func-digital-client-interaction-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Гибридное проведение тренировок (TO-BE)" id="func-hybrid-session-execution-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Collaborations -->
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Виртуальная тренерская команда (TO-BE)" id="collab-virtual-trainer-team-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Тренер-Клиент онлайн (TO-BE)" id="collab-trainer-client-online-tobe">
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Interactions -->
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Виртуальная планёрка тренеров (TO-BE)" id="interact-virtual-trainer-meeting-tobe">
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Цифровая передача клиента (TO-BE)" id="interact-digital-client-handover-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Application" id="id-application-folder" type="application">
     <!-- Application Components -->
@@ -816,6 +1301,597 @@
       <property key="Area" value="Запись"/>
       <property key="State" value="TO-BE"/>
     </element>
+
+    <!-- ========== IS ЭЛЕМЕНТЫ ДЛЯ ТРЕНЕРОВ (Trainer IS Layer) ========== -->
+    
+    <!-- Trainer Application Components -->
+    <element xsi:type="archimate:ApplicationComponent" name="Trainer Schedule System" id="app-trainer-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Exercise Library" id="app-exercise-library">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Training Program Builder" id="app-program-builder">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Trainer Journal System" id="app-trainer-journal">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Session Recording System" id="app-session-recording">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Client Progress Tracker" id="app-progress-tracker">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Trainer Messaging System" id="app-trainer-messaging">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Nutrition Database" id="app-nutrition-db">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Trainer Coordination Portal" id="app-trainer-portal">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Trainer Application Services -->
+    <element xsi:type="archimate:ApplicationService" name="Schedule Management API" id="app-svc-trainer-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Program Generation Service" id="app-svc-program-gen">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Exercise Search API" id="app-svc-exercise-search">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Session Recording API" id="app-svc-session-record">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Journal Entry Service" id="app-svc-journal-entry">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Progress Tracking API" id="app-svc-progress-track">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Messaging Service" id="app-svc-trainer-msg">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Nutrition Lookup API" id="app-svc-nutrition">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Trainer Application Functions -->
+    <element xsi:type="archimate:ApplicationFunction" name="Create Training Program" id="app-func-create-program">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Search Exercises" id="app-func-search-exercises">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Sync Trainer Calendar" id="app-func-sync-calendar">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Check Trainer Availability" id="app-func-check-trainer-avail">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Request Substitution" id="app-func-request-subst">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Record Session Results" id="app-func-record-session">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Update Journal Entry" id="app-func-update-journal">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Log Exercise Details" id="app-func-log-exercise">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Track Client Metrics" id="app-func-track-metrics">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Calculate Progress" id="app-func-calc-progress">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Generate Progress Report" id="app-func-gen-progress-report">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Send Message to Client" id="app-func-send-msg-client">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Search Nutrition Info" id="app-func-search-nutrition">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Create Nutrition Plan" id="app-func-create-nutrition">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Notify Team Members" id="app-func-notify-team">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Archive Session Data" id="app-func-archive-session">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Trainer Data Objects -->
+    <element xsi:type="archimate:DataObject" name="Training Program Data" id="data-training-program">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Trainer Schedule Data" id="data-trainer-schedule">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Exercise Database Record" id="data-exercise">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Session Protocol Data" id="data-session-protocol">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Journal Entry Record" id="data-journal-entry">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Exercise Log Data" id="data-exercise-log">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Client Metrics Data" id="data-client-metrics">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Progress Report Data" id="data-progress-report">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Nutrition Plan Data" id="data-nutrition-plan">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Trainer Notes Record" id="data-trainer-notes">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Message Thread Data" id="data-message-thread">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Substitution Request Data" id="data-substitution-request">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Trainer Application Interfaces -->
+    <element xsi:type="archimate:ApplicationInterface" name="Trainer Dashboard UI" id="app-iface-trainer-dashboard">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Program Builder UI" id="app-iface-program-builder">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Journal Entry Form" id="app-iface-journal-form">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Progress Tracking UI" id="app-iface-progress-ui">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Messaging Interface" id="app-iface-messaging">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Trainer Application Events -->
+    <element xsi:type="archimate:ApplicationEvent" name="Program Created" id="app-event-program-created">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Schedule Synced" id="app-event-schedule-synced">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Substitution Requested" id="app-event-subst-requested">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Session Recorded" id="app-event-session-recorded">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Journal Updated" id="app-event-journal-updated">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Progress Calculated" id="app-event-progress-calc">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Message Sent" id="app-event-msg-sent">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Nutrition Plan Generated" id="app-event-nutrition-gen">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Trainer Application Collaborations -->
+    <element xsi:type="archimate:ApplicationCollaboration" name="Trainer-Client Data Exchange" id="app-collab-trainer-client">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:ApplicationCollaboration" name="Team Coordination System" id="app-collab-team-coord">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Components -->
+    <element xsi:type="archimate:ApplicationComponent" name="AI-Powered Training Platform (TO-BE)" id="app-ai-training-platform-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Smart Schedule Assistant (TO-BE)" id="app-smart-schedule-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Exercise AI Library (TO-BE)" id="app-exercise-ai-lib-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Automated Program Generator (TO-BE)" id="app-auto-program-gen-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Video Analytics System (TO-BE)" id="app-video-analytics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="IoT Wearables Integration (TO-BE)" id="app-iot-wearables-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Real-time Progress Dashboard (TO-BE)" id="app-realtime-dashboard-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Digital Journal with Voice Input (TO-BE)" id="app-voice-journal-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Unified Communication Hub (TO-BE)" id="app-unified-comm-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="AI Nutrition Advisor (TO-BE)" id="app-ai-nutrition-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Automated Team Coordination (TO-BE)" id="app-auto-team-coord-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Services -->
+    <element xsi:type="archimate:ApplicationService" name="AI Schedule Optimization API (TO-BE)" id="app-svc-ai-schedule-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Automated Program Generation API (TO-BE)" id="app-svc-auto-program-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="AI Exercise Recommendation API (TO-BE)" id="app-svc-ai-exercise-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Video Analysis Service (TO-BE)" id="app-svc-video-analysis-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="IoT Data Collection API (TO-BE)" id="app-svc-iot-data-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Real-time Metrics Service (TO-BE)" id="app-svc-realtime-metrics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Voice-to-Text Journal Service (TO-BE)" id="app-svc-voice-journal-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Multi-channel Messaging API (TO-BE)" id="app-svc-multi-msg-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="AI Nutrition Planning API (TO-BE)" id="app-svc-ai-nutrition-api-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Functions -->
+    <element xsi:type="archimate:ApplicationFunction" name="Auto-Generate Training Program (TO-BE)" id="app-func-auto-gen-program-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="AI Exercise Search &amp; Filter (TO-BE)" id="app-func-ai-exercise-search-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Predictive Schedule Sync (TO-BE)" id="app-func-predict-schedule-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="AI Availability Prediction (TO-BE)" id="app-func-ai-availability-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Smart Substitution Matching (TO-BE)" id="app-func-smart-subst-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Automated Session Recording (TO-BE)" id="app-func-auto-record-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Voice-Based Journal Update (TO-BE)" id="app-func-voice-journal-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Auto-Log Exercise from Video (TO-BE)" id="app-func-auto-log-video-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Real-time Metrics Collection (TO-BE)" id="app-func-realtime-metrics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="AI Progress Analysis (TO-BE)" id="app-func-ai-progress-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Auto-Generate Reports (TO-BE)" id="app-func-auto-reports-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Smart Message Routing (TO-BE)" id="app-func-smart-msg-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="AI Nutrition Search (TO-BE)" id="app-func-ai-nutrition-search-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Auto-Create Nutrition Plan (TO-BE)" id="app-func-auto-nutrition-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Proactive Team Notification (TO-BE)" id="app-func-proactive-notify-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Cloud Archive &amp; Backup (TO-BE)" id="app-func-cloud-archive-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Data Objects -->
+    <element xsi:type="archimate:DataObject" name="AI-Generated Program (TO-BE)" id="data-ai-program-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Smart Schedule with Predictions (TO-BE)" id="data-smart-schedule-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="AI Exercise Knowledge Base (TO-BE)" id="data-ai-exercise-kb-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Video Analysis Results (TO-BE)" id="data-video-analysis-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="IoT Sensor Data Stream (TO-BE)" id="data-iot-stream-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Voice Journal Transcript (TO-BE)" id="data-voice-transcript-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Real-time Performance Metrics (TO-BE)" id="data-realtime-metrics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="AI Progress Insights (TO-BE)" id="data-ai-insights-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Automated Report Data (TO-BE)" id="data-auto-report-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="AI Nutrition Plan (TO-BE)" id="data-ai-nutrition-plan-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Multi-channel Message Log (TO-BE)" id="data-multi-msg-log-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Smart Substitution Queue (TO-BE)" id="data-smart-subst-queue-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Interfaces -->
+    <element xsi:type="archimate:ApplicationInterface" name="AI Trainer Dashboard (TO-BE)" id="app-iface-ai-dashboard-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Voice-Enabled Mobile App (TO-BE)" id="app-iface-voice-mobile-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Real-time Progress UI (TO-BE)" id="app-iface-realtime-ui-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Unified Communication Interface (TO-BE)" id="app-iface-unified-comm-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="AR/VR Exercise Builder (TO-BE)" id="app-iface-ar-builder-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Events -->
+    <element xsi:type="archimate:ApplicationEvent" name="AI Program Auto-Generated (TO-BE)" id="app-event-ai-program-gen-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Schedule Auto-Optimized (TO-BE)" id="app-event-schedule-opt-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Smart Substitution Matched (TO-BE)" id="app-event-smart-subst-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Session Auto-Recorded (TO-BE)" id="app-event-auto-recorded-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Real-time Alert Triggered (TO-BE)" id="app-event-realtime-alert-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="AI Insights Generated (TO-BE)" id="app-event-ai-insights-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Auto-Message Sent (TO-BE)" id="app-event-auto-msg-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="AI Nutrition Plan Created (TO-BE)" id="app-event-ai-nutrition-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Application Collaborations -->
+    <element xsi:type="archimate:ApplicationCollaboration" name="AI-Powered Trainer-Client Interaction (TO-BE)" id="app-collab-ai-interaction-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationCollaboration" name="Automated Team Workflow (TO-BE)" id="app-collab-auto-workflow-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:ApplicationCollaboration" name="IoT &amp; Analytics Integration (TO-BE)" id="app-collab-iot-analytics-tobe">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Technology &amp; Physical" id="id-technology-folder" type="technology">
     <!-- Technology Nodes - Запись -->
@@ -1199,6 +2275,555 @@
       <property key="Area" value="Общий"/>
       <property key="State" value="TO-BE"/>
     </element>
+
+    <!-- Trainer Technology Nodes -->
+    <element xsi:type="archimate:Node" name="Trainer Workstation" id="tech-trainer-workstation">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Trainer Laptop" id="tech-trainer-laptop">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Training Room PC" id="tech-training-room-pc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Exercise Library Server" id="tech-exercise-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Training Programs Database Server" id="tech-program-db-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Session Recording Server" id="tech-session-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Progress Data Server" id="tech-progress-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Trainer File Storage Server" id="tech-trainer-file-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Messaging Server" id="tech-messaging-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+
+    <!-- Trainer Technology Devices -->
+    <element xsi:type="archimate:Device" name="Trainer Smartphone" id="tech-trainer-phone">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Tablet for Sessions" id="tech-trainer-tablet">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Fitness Tracker Reader" id="tech-fitness-tracker">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Barcode Scanner" id="tech-barcode-scanner">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Network Printer (Training Plans)" id="tech-trainer-printer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="WiFi Access Point (Training Area)" id="tech-wifi-training">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Backup NAS" id="tech-backup-nas">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Trainer System Software -->
+    <element xsi:type="archimate:SystemSoftware" name="Windows 10 Pro" id="tech-sw-windows-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="MS Office Suite" id="tech-sw-office">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL DB (Trainers)" id="tech-sw-postgres-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="MongoDB (Session Data)" id="tech-sw-mongodb">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="File System Server" id="tech-sw-file-system">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Mail Server Software" id="tech-sw-mail-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Web Server (Nginx)" id="tech-sw-nginx">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Antivirus Software" id="tech-sw-antivirus">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Trainer Technology Services -->
+    <element xsi:type="archimate:TechnologyService" name="Trainer Database Service" id="tech-svc-trainer-db">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Exercise Library Hosting" id="tech-svc-exercise-hosting">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Session Storage Service" id="tech-svc-session-storage">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="File Sharing Service" id="tech-svc-file-sharing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Email Service" id="tech-svc-email">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Messaging Infrastructure Service" id="tech-svc-messaging-infra">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Backup &amp; Recovery Service" id="tech-svc-backup-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Network Connectivity Service" id="tech-svc-network-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Printing Service (Trainers)" id="tech-svc-print-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Authentication Service" id="tech-svc-auth-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+
+    <!-- Trainer Communication Paths -->
+    <element xsi:type="archimate:CommunicationNetwork" name="Trainer LAN" id="tech-net-trainer-lan">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Training Area WiFi" id="tech-net-training-wifi">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Trainer VPN" id="tech-net-trainer-vpn">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Trainer Data Path" id="tech-path-trainer-data">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Session Recording Path" id="tech-path-session-rec">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Trainer Artifacts -->
+    <element xsi:type="archimate:Artifact" name="Training Program File (PDF)" id="tech-artifact-program-pdf">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Exercise Database Dump" id="tech-artifact-exercise-db">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Session Protocol Document" id="tech-artifact-session-doc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Journal Entry CSV" id="tech-artifact-journal-csv">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Progress Report XLSX" id="tech-artifact-progress-xlsx">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Nutrition Plan Document" id="tech-artifact-nutrition-doc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Message Archive JSON" id="tech-artifact-msg-archive">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Backup Image (TAR.GZ)" id="tech-artifact-backup">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- Trainer Technology Functions -->
+    <element xsi:type="archimate:TechnologyFunction" name="Schedule Synchronization" id="tech-func-schedule-sync">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Database Replication" id="tech-func-db-replication">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="File Upload/Download" id="tech-func-file-transfer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Data Encryption" id="tech-func-encryption">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Load Balancing" id="tech-func-load-balance">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Message Queue Processing" id="tech-func-msg-queue">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Email Routing" id="tech-func-email-routing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Automated Backup" id="tech-func-auto-backup">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+
+    <!-- TO-BE Trainer Technology Nodes -->
+    <element xsi:type="archimate:Node" name="AI Training Cloud Platform (TO-BE)" id="tech-ai-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="AWS EC2 for Trainers (TO-BE)" id="tech-aws-trainer-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Azure ML Server (TO-BE)" id="tech-azure-ml-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Database Cluster (TO-BE)" id="tech-cloud-db-cluster-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Video Processing Server (TO-BE)" id="tech-video-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="IoT Gateway Hub (TO-BE)" id="tech-iot-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Real-time Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Edge Computing Node (TO-BE)" id="tech-edge-node-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Storage (S3) (TO-BE)" id="tech-cloud-storage-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Technology Devices -->
+    <element xsi:type="archimate:Device" name="Smart Trainer Tablet (TO-BE)" id="tech-smart-tablet-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="5G Smartphone (TO-BE)" id="tech-5g-phone-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smartwatch (Fitness Tracker) (TO-BE)" id="tech-smartwatch-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Heart Rate Monitor (IoT) (TO-BE)" id="tech-heart-monitor-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Motion Sensors (IoT) (TO-BE)" id="tech-motion-sensor-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="4K Video Camera (TO-BE)" id="tech-4k-camera-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="AR/VR Headset (TO-BE)" id="tech-ar-headset-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Voice Assistant Device (TO-BE)" id="tech-voice-assistant-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smart Display Panel (TO-BE)" id="tech-smart-display-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer System Software -->
+    <element xsi:type="archimate:SystemSoftware" name="Kubernetes Cluster (TO-BE)" id="tech-sw-k8s-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="TensorFlow AI Engine (TO-BE)" id="tech-sw-tensorflow-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="OpenCV Video Analytics (TO-BE)" id="tech-sw-opencv-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="IoT Platform (MQTT) (TO-BE)" id="tech-sw-mqtt-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Kafka Streaming (TO-BE)" id="tech-sw-kafka-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Docker Containers (TO-BE)" id="tech-sw-docker-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Technology Services -->
+    <element xsi:type="archimate:TechnologyService" name="AI Model Serving (TO-BE)" id="tech-svc-ai-serving-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Database Service (TO-BE)" id="tech-svc-cloud-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Container Orchestration (TO-BE)" id="tech-svc-orchestration-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Video Streaming Service (TO-BE)" id="tech-svc-video-stream-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="IoT Data Collection (TO-BE)" id="tech-svc-iot-collection-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Real-time Analytics Service (TO-BE)" id="tech-svc-realtime-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Storage Service (TO-BE)" id="tech-svc-cloud-storage-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Edge Computing Service (TO-BE)" id="tech-svc-edge-compute-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Push Notification Service (TO-BE)" id="tech-svc-push-notif-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Communication Networks -->
+    <element xsi:type="archimate:CommunicationNetwork" name="5G Network (TO-BE)" id="tech-net-5g-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="WiFi 6 Network (TO-BE)" id="tech-net-wifi6-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="IoT Mesh Network (TO-BE)" id="tech-net-iot-mesh-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Path" name="AI Data Pipeline (TO-BE)" id="tech-path-ai-pipeline-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Video Stream Path (TO-BE)" id="tech-path-video-stream-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Artifacts -->
+    <element xsi:type="archimate:Artifact" name="AI Model Binary (TO-BE)" id="tech-artifact-ai-model-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-img-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Training Program JSON (TO-BE)" id="tech-artifact-program-json-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Video Recording (MP4) (TO-BE)" id="tech-artifact-video-mp4-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="IoT Sensor Data (JSON) (TO-BE)" id="tech-artifact-iot-json-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Analytics Report (BI Format) (TO-BE)" id="tech-artifact-analytics-bi-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Voice Transcript (TEXT) (TO-BE)" id="tech-artifact-voice-text-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Cloud Backup Snapshot (TO-BE)" id="tech-artifact-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Trainer Technology Functions -->
+    <element xsi:type="archimate:TechnologyFunction" name="AI Model Training &amp; Inference (TO-BE)" id="tech-func-ai-inference-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Auto-scaling (TO-BE)" id="tech-func-autoscaling-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Video Compression &amp; Encoding (TO-BE)" id="tech-func-video-encoding-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Real-time Data Processing (TO-BE)" id="tech-func-realtime-process-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="IoT Data Aggregation (TO-BE)" id="tech-func-iot-aggregation-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Stream Processing (TO-BE)" id="tech-func-stream-process-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Edge Analytics (TO-BE)" id="tech-func-edge-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Cloud Sync &amp; Replication (TO-BE)" id="tech-func-cloud-sync-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="API Rate Limiting (TO-BE)" id="tech-func-rate-limit-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Relations" id="id-relations-folder" type="relations">
     <element xsi:type="archimate:AssignmentRelationship" id="rel-001" source="actor-client" target="role-client"/>
@@ -2440,6 +4065,258 @@
         </child>
       </child>
     </element>
+
+    <!-- ==================== AS-IS ТРЕНЕРЫ (Trainer-centric View) ==================== -->
+    <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Тренеры — Business View" id="view-trainers">
+      <child xsi:type="archimate:Group" id="grp-trainers-planning" name="Область: Планирование (Planning)" textAlignment="1">
+        <bounds x="24" y="24" width="520" height="1100"/>
+        <fillColor r="255" g="245" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-actor-head" archimateElement="actor-head-trainer">
+          <bounds x="30" y="30" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-actor-edu" archimateElement="actor-education-manager">
+          <bounds x="210" y="30" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-role-methodist" archimateElement="role-methodist">
+          <bounds x="30" y="110" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-role-coordinator" archimateElement="role-coordinator">
+          <bounds x="210" y="110" width="180" height="55"/>
+        </child>
+        
+        <!-- Interfaces -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-iface-schedule-board" archimateElement="iface-trainer-schedule-board">
+          <bounds x="30" y="200" width="220" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-svc-planning" archimateElement="svc-training-planning">
+          <bounds x="30" y="290" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-svc-coordination" archimateElement="svc-trainer-coordination">
+          <bounds x="270" y="290" width="220" height="55"/>
+        </child>
+        
+        <!-- Function & Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-func-management" archimateElement="func-training-management">
+          <bounds x="30" y="380" width="460" height="320"/>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-create-program" archimateElement="proc-create-program">
+            <bounds x="20" y="40" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-approve-schedule" archimateElement="proc-approve-schedule">
+            <bounds x="240" y="40" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-preparation" archimateElement="proc-session-preparation">
+            <bounds x="20" y="110" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-substitution" archimateElement="proc-trainer-substitution">
+            <bounds x="240" y="110" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-coord-group" archimateElement="proc-coordinate-group-session">
+            <bounds x="20" y="180" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-interact-meeting" archimateElement="interact-trainer-meeting">
+            <bounds x="240" y="180" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-collab-team" archimateElement="collab-trainer-team">
+            <bounds x="130" y="250" width="200" height="55"/>
+          </child>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-plan" archimateElement="obj-training-plan" type="1">
+          <bounds x="30" y="730" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-schedule" archimateElement="obj-trainer-schedule" type="1">
+          <bounds x="230" y="730" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-exercise-list" archimateElement="obj-exercise-list" type="1">
+          <bounds x="30" y="810" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-exercise-db" archimateElement="obj-exercise-database" type="1">
+          <bounds x="230" y="810" width="180" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-substitution" archimateElement="event-substitution-request">
+          <bounds x="30" y="900" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-schedule-change" archimateElement="event-trainer-schedule-change">
+          <bounds x="250" y="900" width="240" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-group-ready" archimateElement="event-group-session-ready">
+          <bounds x="30" y="980" width="200" height="55"/>
+        </child>
+      </child>
+      
+      <child xsi:type="archimate:Group" id="grp-trainers-conducting" name="Область: Проведение (Conducting)" textAlignment="1">
+        <bounds x="570" y="24" width="540" height="1100"/>
+        <fillColor r="220" g="245" b="255"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-actor-personal" archimateElement="actor-personal-trainer">
+          <bounds x="30" y="30" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-actor-group" archimateElement="actor-group-trainer">
+          <bounds x="230" y="30" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-actor-trainee" archimateElement="actor-trainee-trainer">
+          <bounds x="400" y="30" width="130" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-role-instructor" archimateElement="role-instructor">
+          <bounds x="30" y="110" width="150" height="55"/>
+        </child>
+        
+        <!-- Interfaces -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-iface-journal" archimateElement="iface-trainer-journal">
+          <bounds x="30" y="200" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-iface-tablet" archimateElement="iface-trainer-tablet">
+          <bounds x="230" y="200" width="180" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-svc-conducting" archimateElement="svc-conducting-sessions">
+          <bounds x="30" y="290" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-svc-documentation" archimateElement="svc-trainer-documentation">
+          <bounds x="250" y="290" width="260" height="55"/>
+        </child>
+        
+        <!-- Function & Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-func-execution" archimateElement="func-session-execution">
+          <bounds x="30" y="380" width="480" height="340"/>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-briefing" archimateElement="proc-client-briefing">
+            <bounds x="20" y="40" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-conduct" archimateElement="proc-conduct-training">
+            <bounds x="220" y="40" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-monitor" archimateElement="proc-monitor-technique">
+            <bounds x="20" y="110" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-adjust" archimateElement="proc-adjust-load">
+            <bounds x="240" y="110" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-record" archimateElement="proc-record-results">
+            <bounds x="20" y="180" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-fill-journal" archimateElement="proc-fill-journal">
+            <bounds x="220" y="180" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-report" archimateElement="proc-session-report">
+            <bounds x="20" y="250" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-collab-trainer-client" archimateElement="collab-trainer-client">
+            <bounds x="240" y="250" width="180" height="55"/>
+          </child>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-journal" archimateElement="obj-training-journal" type="1">
+          <bounds x="30" y="750" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-client-card" archimateElement="obj-trainer-client-card" type="1">
+          <bounds x="230" y="750" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-protocol" archimateElement="obj-session-protocol" type="1">
+          <bounds x="30" y="830" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-safety" archimateElement="obj-safety-instructions" type="1">
+          <bounds x="230" y="830" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-report" archimateElement="obj-trainer-report" type="1">
+          <bounds x="30" y="910" width="180" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-start" archimateElement="event-session-start">
+          <bounds x="30" y="1000" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-end" archimateElement="event-session-end">
+          <bounds x="230" y="1000" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-no-show" archimateElement="event-client-no-show">
+          <bounds x="430" y="1000" width="100" height="55"/>
+        </child>
+      </child>
+      
+      <child xsi:type="archimate:Group" id="grp-trainers-communication" name="Область: Коммуникации (Communication)" textAlignment="1">
+        <bounds x="1136" y="24" width="520" height="1100"/>
+        <fillColor r="240" g="255" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-role-consultant" archimateElement="role-consultant">
+          <bounds x="30" y="30" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-role-mentor" archimateElement="role-mentor">
+          <bounds x="200" y="30" width="150" height="55"/>
+        </child>
+        
+        <!-- Interfaces -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-iface-messenger" archimateElement="iface-trainer-messenger">
+          <bounds x="30" y="120" width="200" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-svc-consultation" archimateElement="svc-client-consultation">
+          <bounds x="30" y="210" width="220" height="55"/>
+        </child>
+        
+        <!-- Function & Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-func-interaction" archimateElement="func-client-interaction">
+          <bounds x="30" y="300" width="460" height="400"/>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-nutrition" archimateElement="proc-nutrition-consult">
+            <bounds x="20" y="40" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-assess" archimateElement="proc-assess-progress">
+            <bounds x="240" y="40" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-feedback" archimateElement="proc-client-feedback">
+            <bounds x="20" y="110" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-knowledge-share" archimateElement="proc-trainer-knowledge-share">
+            <bounds x="240" y="110" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-mentor" archimateElement="proc-mentor-trainees">
+            <bounds x="20" y="180" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-proc-complaints" archimateElement="proc-handle-complaints">
+            <bounds x="240" y="180" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-interact-handover" archimateElement="interact-client-handover">
+            <bounds x="130" y="250" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-collab-team2" archimateElement="collab-trainer-team">
+            <bounds x="130" y="320" width="200" height="55"/>
+          </child>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-metrics" archimateElement="obj-progress-metrics" type="1">
+          <bounds x="30" y="730" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-nutrition" archimateElement="obj-nutrition-program" type="1">
+          <bounds x="230" y="730" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-obj-notes" archimateElement="obj-trainer-client-notes" type="1">
+          <bounds x="30" y="810" width="200" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-goal" archimateElement="event-client-goal-achieved">
+          <bounds x="30" y="920" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-complaint" archimateElement="event-trainer-complaint">
+          <bounds x="250" y="920" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-trainers-event-consult-req" archimateElement="event-consultation-request">
+          <bounds x="30" y="1000" width="200" height="55"/>
+        </child>
+      </child>
+    </element>
     
     <!-- ==================== TO-BE Business Layer Views ==================== -->
       <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Fitness Club — Integrated View" id="view-tobe-integrated">
@@ -2727,6 +4604,308 @@
           </child>
         </child>
       </element>
+
+      <!-- ==================== TO-BE ТРЕНЕРЫ (Digitalized Trainer View) ==================== -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Тренеры — Business View" id="view-trainers-tobe">
+        <child xsi:type="archimate:Group" id="grp-trainers-tobe-planning" name="TO-BE: Планирование (AI-Powered Planning)" textAlignment="1">
+          <bounds x="24" y="24" width="560" height="1200"/>
+          <fillColor r="230" g="255" b="230"/>
+          
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-mobile" archimateElement="iface-trainer-mobile-app-tobe">
+            <bounds x="30" y="30" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-cloud" archimateElement="iface-trainer-cloud-platform-tobe">
+            <bounds x="270" y="30" width="260" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-auto-planning" archimateElement="svc-auto-training-planning-tobe">
+            <bounds x="30" y="120" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-digital-schedule" archimateElement="svc-digital-schedule-mgmt-tobe">
+            <bounds x="300" y="120" width="230" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-team-coord" archimateElement="svc-digital-team-coordination-tobe">
+            <bounds x="30" y="200" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Function & Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-func-ai-mgmt" archimateElement="func-ai-training-management-tobe">
+            <bounds x="30" y="290" width="500" height="420"/>
+            <fillColor r="220" g="255" b="220"/>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-ai-program" archimateElement="proc-ai-program-generation-tobe">
+              <bounds x="20" y="40" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-approval" archimateElement="proc-auto-schedule-approval-tobe">
+              <bounds x="260" y="40" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-digital-prep" archimateElement="proc-digital-preparation-tobe">
+              <bounds x="20" y="110" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-subst" archimateElement="proc-auto-substitution-tobe">
+              <bounds x="260" y="110" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-digital-group" archimateElement="proc-digital-group-coordination-tobe">
+              <bounds x="20" y="180" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-interact-virtual" archimateElement="interact-virtual-trainer-meeting-tobe">
+              <bounds x="260" y="180" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-collab-virtual-team" archimateElement="collab-virtual-trainer-team-tobe">
+              <bounds x="140" y="250" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-ai-plan" archimateElement="obj-ai-training-plan-tobe">
+              <bounds x="20" y="320" width="220" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-sync-schedule" archimateElement="obj-sync-schedule-tobe">
+              <bounds x="260" y="320" width="220" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+          </child>
+          
+          <!-- Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-cloud-library" archimateElement="obj-cloud-exercise-library-tobe" type="1">
+            <bounds x="30" y="750" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-cloud-notes" archimateElement="obj-cloud-notes-storage-tobe" type="1">
+            <bounds x="290" y="750" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-ai-subst" archimateElement="event-ai-substitution-request-tobe">
+            <bounds x="30" y="850" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-auto-sync" archimateElement="event-auto-schedule-sync-tobe">
+            <bounds x="290" y="850" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-auto-report" archimateElement="event-auto-report-ready-tobe">
+            <bounds x="30" y="930" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+        </child>
+        
+        <child xsi:type="archimate:Group" id="grp-trainers-tobe-conducting" name="TO-BE: Проведение (Hybrid &amp; AI-Enhanced)" textAlignment="1">
+          <bounds x="610" y="24" width="580" height="1200"/>
+          <fillColor r="230" g="245" b="255"/>
+          
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-digital-journal" archimateElement="iface-digital-trainer-journal-tobe">
+            <bounds x="30" y="30" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-watch" archimateElement="iface-smart-watch-tobe">
+            <bounds x="270" y="30" width="180" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-video" archimateElement="iface-video-platform-tobe">
+            <bounds x="30" y="110" width="250" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-online-sessions" archimateElement="svc-online-sessions-tobe">
+            <bounds x="30" y="200" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-auto-data" archimateElement="svc-auto-data-capture-tobe">
+            <bounds x="290" y="200" width="260" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-video-analytics" archimateElement="svc-video-analytics-tobe">
+            <bounds x="30" y="280" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Function & Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-func-hybrid" archimateElement="func-hybrid-session-execution-tobe">
+            <bounds x="30" y="370" width="520" height="480"/>
+            <fillColor r="220" g="245" b="255"/>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-online-brief" archimateElement="proc-online-briefing-tobe">
+              <bounds x="20" y="40" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-hybrid-train" archimateElement="proc-hybrid-training-tobe">
+              <bounds x="260" y="40" width="240" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-ai-monitor" archimateElement="proc-ai-technique-monitor-tobe">
+              <bounds x="20" y="110" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-adjust" archimateElement="proc-auto-load-adjust-tobe">
+              <bounds x="260" y="110" width="240" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-capture" archimateElement="proc-auto-results-capture-tobe">
+              <bounds x="20" y="180" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-journal" archimateElement="proc-auto-journal-fill-tobe">
+              <bounds x="260" y="180" width="240" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-video-record" archimateElement="proc-video-recording-analysis-tobe">
+              <bounds x="20" y="250" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-report-proc" archimateElement="proc-auto-session-report-tobe">
+              <bounds x="260" y="250" width="240" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-collab-online" archimateElement="collab-trainer-client-online-tobe">
+              <bounds x="150" y="320" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-wearable" archimateElement="obj-wearable-data-tobe">
+              <bounds x="20" y="390" width="220" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-ai-analysis" archimateElement="obj-ai-technique-analysis-tobe">
+              <bounds x="260" y="390" width="240" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+          </child>
+          
+          <!-- Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-digital-journal" archimateElement="obj-digital-journal-tobe" type="1">
+            <bounds x="30" y="890" width="220" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-digital-card" archimateElement="obj-digital-client-card-tobe" type="1">
+            <bounds x="270" y="890" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-auto-protocol" archimateElement="obj-auto-protocol-tobe" type="1">
+            <bounds x="30" y="970" width="220" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-video" archimateElement="obj-video-recordings-tobe" type="1">
+            <bounds x="270" y="970" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-auto-report" archimateElement="obj-auto-trainer-report-tobe" type="1">
+            <bounds x="30" y="1050" width="220" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-auto-start" archimateElement="event-auto-session-start-tobe">
+            <bounds x="270" y="1050" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-auto-end" archimateElement="event-auto-session-end-tobe">
+            <bounds x="30" y="1130" width="220" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-no-show-alert" archimateElement="event-auto-no-show-alert-tobe">
+            <bounds x="270" y="1130" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-video-avail" archimateElement="event-video-available-tobe">
+            <bounds x="150" y="1050" width="100" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+        </child>
+        
+        <child xsi:type="archimate:Group" id="grp-trainers-tobe-communication" name="TO-BE: Коммуникации (AI &amp; Digital)" textAlignment="1">
+          <bounds x="1216" y="24" width="560" height="1200"/>
+          <fillColor r="245" g="255" b="230"/>
+          
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-ai-assistant" archimateElement="iface-ai-assistant-tobe">
+            <bounds x="30" y="30" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-iface-team-chat" archimateElement="iface-team-chat-tobe">
+            <bounds x="270" y="30" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-svc-ai-consult" archimateElement="svc-ai-consultation-tobe">
+            <bounds x="30" y="120" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Function & Processes -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-func-digital-interact" archimateElement="func-digital-client-interaction-tobe">
+            <bounds x="30" y="210" width="500" height="500"/>
+            <fillColor r="235" g="255" b="220"/>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-video-nutrition" archimateElement="proc-video-nutrition-consult-tobe">
+              <bounds x="20" y="40" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-auto-assess" archimateElement="proc-auto-progress-assessment-tobe">
+              <bounds x="260" y="40" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-digital-feedback" archimateElement="proc-digital-feedback-tobe">
+              <bounds x="20" y="110" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-online-share" archimateElement="proc-online-knowledge-share-tobe">
+              <bounds x="260" y="110" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-virtual-mentor" archimateElement="proc-virtual-mentoring-tobe">
+              <bounds x="20" y="180" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-proc-ai-complaint" archimateElement="proc-ai-complaint-handling-tobe">
+              <bounds x="260" y="180" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-interact-digital-hand" archimateElement="interact-digital-client-handover-tobe">
+              <bounds x="140" y="250" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-collab-virtual2" archimateElement="collab-virtual-trainer-team-tobe">
+              <bounds x="140" y="320" width="220" height="55"/>
+              <fillColor r="200" g="255" b="200"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-dashboard" archimateElement="obj-progress-dashboard-tobe">
+              <bounds x="20" y="390" width="220" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-obj-ai-nutrition" archimateElement="obj-ai-nutrition-tobe">
+              <bounds x="260" y="390" width="220" height="55"/>
+              <fillColor r="180" g="240" b="180"/>
+            </child>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-goal-notif" archimateElement="event-goal-achievement-notification-tobe">
+            <bounds x="30" y="750" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-ai-complaint" archimateElement="event-ai-complaint-detection-tobe">
+            <bounds x="290" y="750" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trainers-tobe-event-online-consult" archimateElement="event-online-consultation-request-tobe">
+            <bounds x="30" y="830" width="240" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
     
     </folder> <!-- End of Business Layer Views -->
     
@@ -2930,6 +5109,198 @@
         </child>
       </element>
 
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — AS-IS Тренеры — Application View" id="view-is-trainers">
+        <child xsi:type="archimate:Group" id="grp-is-trainers-planning" name="IS: Планирование тренерами" textAlignment="1" fillColor="#c9e7b7">
+          <bounds x="24" y="24" width="450" height="850"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-schedule-sys" archimateElement="app-trainer-schedule">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-program-builder" archimateElement="app-program-builder">
+            <bounds x="250" y="48" width="180" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-exercise-lib" archimateElement="app-exercise-library">
+            <bounds x="24" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-schedule-mgmt" archimateElement="app-svc-trainer-schedule">
+            <bounds x="250" y="148" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-program-gen" archimateElement="app-svc-program-gen">
+            <bounds x="24" y="248" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-exercise-search" archimateElement="app-svc-exercise-search">
+            <bounds x="250" y="248" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-create-program" archimateElement="app-func-create-program">
+            <bounds x="24" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-search-exercises" archimateElement="app-func-search-exercises">
+            <bounds x="230" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-sync-calendar" archimateElement="app-func-sync-calendar">
+            <bounds x="24" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-check-avail" archimateElement="app-func-check-trainer-avail">
+            <bounds x="230" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-training-program" archimateElement="data-training-program" type="1">
+            <bounds x="24" y="478" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-trainer-schedule" archimateElement="data-trainer-schedule" type="1">
+            <bounds x="230" y="478" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-exercise-db" archimateElement="data-exercise" type="1">
+            <bounds x="24" y="558" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-iface-dashboard" archimateElement="app-iface-trainer-dashboard">
+            <bounds x="230" y="558" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-iface-program-builder" archimateElement="app-iface-program-builder">
+            <bounds x="24" y="638" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-program-created" archimateElement="app-event-program-created">
+            <bounds x="230" y="638" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-schedule-synced" archimateElement="app-event-schedule-synced">
+            <bounds x="24" y="713" width="180" height="55"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-is-trainers-conducting" name="IS: Проведение занятий" textAlignment="1" fillColor="#b7d7e7">
+          <bounds x="500" y="24" width="500" height="850"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-journal" archimateElement="app-trainer-journal">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-session-rec" archimateElement="app-session-recording">
+            <bounds x="250" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-progress-tracker" archimateElement="app-progress-tracker">
+            <bounds x="24" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-session-rec" archimateElement="app-svc-session-record">
+            <bounds x="250" y="148" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-journal-entry" archimateElement="app-svc-journal-entry">
+            <bounds x="24" y="248" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-progress-track" archimateElement="app-svc-progress-track">
+            <bounds x="250" y="248" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-record-session" archimateElement="app-func-record-session">
+            <bounds x="24" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-update-journal" archimateElement="app-func-update-journal">
+            <bounds x="230" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-log-exercise" archimateElement="app-func-log-exercise">
+            <bounds x="24" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-track-metrics" archimateElement="app-func-track-metrics">
+            <bounds x="230" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-calc-progress" archimateElement="app-func-calc-progress">
+            <bounds x="24" y="478" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-gen-report" archimateElement="app-func-gen-progress-report">
+            <bounds x="230" y="478" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-session-protocol" archimateElement="data-session-protocol" type="1">
+            <bounds x="24" y="553" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-journal-entry" archimateElement="data-journal-entry" type="1">
+            <bounds x="230" y="553" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-exercise-log" archimateElement="data-exercise-log" type="1">
+            <bounds x="24" y="633" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-client-metrics" archimateElement="data-client-metrics" type="1">
+            <bounds x="230" y="633" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-progress-report" archimateElement="data-progress-report" type="1">
+            <bounds x="24" y="713" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-iface-journal-form" archimateElement="app-iface-journal-form">
+            <bounds x="230" y="713" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-iface-progress-ui" archimateElement="app-iface-progress-ui">
+            <bounds x="24" y="788" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-session-recorded" archimateElement="app-event-session-recorded">
+            <bounds x="230" y="788" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-journal-updated" archimateElement="app-event-journal-updated">
+            <bounds x="312" y="378" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-progress-calc" archimateElement="app-event-progress-calc">
+            <bounds x="312" y="168" width="180" height="55"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-is-trainers-communication" name="IS: Коммуникации" textAlignment="1" fillColor="#f7e7b7">
+          <bounds x="1026" y="24" width="450" height="850"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-messaging" archimateElement="app-trainer-messaging">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-nutrition-db" archimateElement="app-nutrition-db">
+            <bounds x="250" y="48" width="180" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-app-coordination" archimateElement="app-trainer-portal">
+            <bounds x="24" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-messaging" archimateElement="app-svc-trainer-msg">
+            <bounds x="250" y="148" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-svc-nutrition" archimateElement="app-svc-nutrition">
+            <bounds x="24" y="248" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-send-message" archimateElement="app-func-send-msg-client">
+            <bounds x="250" y="248" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-search-nutrition" archimateElement="app-func-search-nutrition">
+            <bounds x="24" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-create-nutr-plan" archimateElement="app-func-create-nutrition">
+            <bounds x="230" y="328" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-notify-team" archimateElement="app-func-notify-team">
+            <bounds x="24" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-request-subst" archimateElement="app-func-request-subst">
+            <bounds x="230" y="403" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-func-archive-session" archimateElement="app-func-archive-session">
+            <bounds x="24" y="478" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-nutrition-plan" archimateElement="data-nutrition-plan" type="1">
+            <bounds x="230" y="478" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-trainer-notes" archimateElement="data-trainer-notes" type="1">
+            <bounds x="24" y="553" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-message-thread" archimateElement="data-message-thread" type="1">
+            <bounds x="230" y="553" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-data-subst-request" archimateElement="data-substitution-request" type="1">
+            <bounds x="24" y="633" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-iface-messaging" archimateElement="app-iface-messaging">
+            <bounds x="230" y="633" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-message-sent" archimateElement="app-event-msg-sent">
+            <bounds x="24" y="708" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-nutr-plan-gen" archimateElement="app-event-nutrition-gen">
+            <bounds x="230" y="708" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-event-subst-requested" archimateElement="app-event-subst-requested">
+            <bounds x="24" y="783" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-collab-data-exchange" archimateElement="app-collab-trainer-client">
+            <bounds x="230" y="783" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-collab-team-coord" archimateElement="app-collab-team-coord">
+            <bounds x="132" y="58" width="200" height="60"/>
+          </child>
+        </child>
+      </element>
+
     <!-- TO-BE IS Layer Views -->
       <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Fitness Club — Integrated View" id="view-is-tobe-integrated">
         <child xsi:type="archimate:Group" id="grp-is-tobe-integrated" name="TO-BE IS Architecture — Integrated">
@@ -3098,6 +5469,274 @@
           <child xsi:type="archimate:DiagramObject" id="view-is-tobe-reporting-data-kpi" archimateElement="data-kpi-metrics-tobe">
             <bounds x="860" y="130" width="200" height="55"/>
             <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Тренеры — Application View" id="view-is-trainers-tobe">
+        <child xsi:type="archimate:Group" id="grp-is-trainers-tobe-planning" name="IS TO-BE: AI-Powered Planning" textAlignment="1" fillColor="#d4f1d4">
+          <bounds x="24" y="24" width="500" height="900"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-ai-platform" archimateElement="app-ai-training-platform-tobe">
+            <bounds x="24" y="48" width="220" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-smart-schedule" archimateElement="app-smart-schedule-tobe">
+            <bounds x="270" y="48" width="200" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-ai-lib" archimateElement="app-exercise-ai-lib-tobe">
+            <bounds x="24" y="148" width="200" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-auto-gen" archimateElement="app-auto-program-gen-tobe">
+            <bounds x="250" y="148" width="220" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-ai-schedule" archimateElement="app-svc-ai-schedule-tobe">
+            <bounds x="24" y="248" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-auto-program" archimateElement="app-svc-auto-program-tobe">
+            <bounds x="250" y="248" width="220" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-ai-exercise" archimateElement="app-svc-ai-exercise-tobe">
+            <bounds x="24" y="328" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-auto-gen" archimateElement="app-func-auto-gen-program-tobe">
+            <bounds x="250" y="328" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-ai-search" archimateElement="app-func-ai-exercise-search-tobe">
+            <bounds x="24" y="403" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-predict-schedule" archimateElement="app-func-predict-schedule-tobe">
+            <bounds x="250" y="403" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-ai-avail" archimateElement="app-func-ai-availability-tobe">
+            <bounds x="24" y="478" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-smart-subst" archimateElement="app-func-smart-subst-tobe">
+            <bounds x="250" y="478" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-ai-program" archimateElement="data-ai-program-tobe" type="1">
+            <bounds x="24" y="553" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-smart-schedule" archimateElement="data-smart-schedule-tobe" type="1">
+            <bounds x="250" y="553" width="220" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-ai-kb" archimateElement="data-ai-exercise-kb-tobe" type="1">
+            <bounds x="24" y="633" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-subst-queue" archimateElement="data-smart-subst-queue-tobe" type="1">
+            <bounds x="250" y="633" width="220" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iface-ai-dashboard" archimateElement="app-iface-ai-dashboard-tobe">
+            <bounds x="24" y="713" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iface-ar-builder" archimateElement="app-iface-ar-builder-tobe">
+            <bounds x="250" y="713" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-ai-program" archimateElement="app-event-ai-program-gen-tobe">
+            <bounds x="24" y="788" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-schedule-opt" archimateElement="app-event-schedule-opt-tobe">
+            <bounds x="250" y="788" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-smart-subst" archimateElement="app-event-smart-subst-tobe">
+            <bounds x="137" y="38" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-collab-workflow" archimateElement="app-collab-auto-workflow-tobe">
+            <bounds x="137" y="128" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-is-trainers-tobe-conducting" name="IS TO-BE: IoT &amp; Video Analytics" textAlignment="1" fillColor="#d4e7f1">
+          <bounds x="550" y="24" width="550" height="900"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-video-analytics" archimateElement="app-video-analytics-tobe">
+            <bounds x="24" y="48" width="220" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iot-wearables" archimateElement="app-iot-wearables-tobe">
+            <bounds x="270" y="48" width="240" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-realtime-dashboard" archimateElement="app-realtime-dashboard-tobe">
+            <bounds x="24" y="148" width="240" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-voice-journal" archimateElement="app-voice-journal-tobe">
+            <bounds x="290" y="148" width="220" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-video" archimateElement="app-svc-video-analysis-tobe">
+            <bounds x="24" y="248" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-iot" archimateElement="app-svc-iot-data-tobe">
+            <bounds x="270" y="248" width="240" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-realtime" archimateElement="app-svc-realtime-metrics-tobe">
+            <bounds x="24" y="328" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-voice" archimateElement="app-svc-voice-journal-tobe">
+            <bounds x="270" y="328" width="240" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-auto-record" archimateElement="app-func-auto-record-tobe">
+            <bounds x="24" y="408" width="220" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-voice-journal" archimateElement="app-func-voice-journal-tobe">
+            <bounds x="270" y="408" width="240" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-auto-log" archimateElement="app-func-auto-log-video-tobe">
+            <bounds x="24" y="483" width="220" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-realtime-metrics" archimateElement="app-func-realtime-metrics-tobe">
+            <bounds x="270" y="483" width="240" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-cloud-archive" archimateElement="app-func-cloud-archive-tobe">
+            <bounds x="147" y="558" width="220" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-video" archimateElement="data-video-analysis-tobe" type="1">
+            <bounds x="24" y="633" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-iot" archimateElement="data-iot-stream-tobe" type="1">
+            <bounds x="250" y="633" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-voice" archimateElement="data-voice-transcript-tobe" type="1">
+            <bounds x="24" y="713" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-realtime" archimateElement="data-realtime-metrics-tobe" type="1">
+            <bounds x="250" y="713" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iface-voice-mobile" archimateElement="app-iface-voice-mobile-tobe">
+            <bounds x="24" y="793" width="200" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iface-realtime-ui" archimateElement="app-iface-realtime-ui-tobe">
+            <bounds x="250" y="793" width="220" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-auto-recorded" archimateElement="app-event-auto-recorded-tobe">
+            <bounds x="137" y="38" width="200" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-realtime-alert" archimateElement="app-event-realtime-alert-tobe">
+            <bounds x="137" y="113" width="200" height="55"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-collab-ai-interaction" archimateElement="app-collab-ai-interaction-tobe">
+            <bounds x="137" y="188" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-collab-iot" archimateElement="app-collab-iot-analytics-tobe">
+            <bounds x="137" y="268" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-is-trainers-tobe-communication" name="IS TO-BE: AI Communication" textAlignment="1" fillColor="#fef4d4">
+          <bounds x="1126" y="24" width="500" height="900"/>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-unified-comm" archimateElement="app-unified-comm-tobe">
+            <bounds x="24" y="48" width="220" height="80"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-ai-nutrition" archimateElement="app-ai-nutrition-tobe">
+            <bounds x="270" y="48" width="200" height="80"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-auto-team" archimateElement="app-auto-team-coord-tobe">
+            <bounds x="24" y="148" width="220" height="80"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-multi-msg" archimateElement="app-svc-multi-msg-tobe">
+            <bounds x="270" y="148" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-svc-ai-nutrition" archimateElement="app-svc-ai-nutrition-api-tobe">
+            <bounds x="24" y="248" width="220" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-ai-progress" archimateElement="app-func-ai-progress-tobe">
+            <bounds x="270" y="248" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-auto-reports" archimateElement="app-func-auto-reports-tobe">
+            <bounds x="24" y="323" width="220" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-smart-msg" archimateElement="app-func-smart-msg-tobe">
+            <bounds x="270" y="323" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-ai-nutr-search" archimateElement="app-func-ai-nutrition-search-tobe">
+            <bounds x="24" y="398" width="220" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-auto-nutrition" archimateElement="app-func-auto-nutrition-tobe">
+            <bounds x="270" y="398" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-func-proactive-notify" archimateElement="app-func-proactive-notify-tobe">
+            <bounds x="147" y="473" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-ai-insights" archimateElement="data-ai-insights-tobe" type="1">
+            <bounds x="24" y="548" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-auto-report" archimateElement="data-auto-report-tobe" type="1">
+            <bounds x="250" y="548" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-ai-nutrition" archimateElement="data-ai-nutrition-plan-tobe" type="1">
+            <bounds x="24" y="628" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-data-multi-msg" archimateElement="data-multi-msg-log-tobe" type="1">
+            <bounds x="250" y="628" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-iface-unified-comm" archimateElement="app-iface-unified-comm-tobe">
+            <bounds x="137" y="708" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-ai-insights" archimateElement="app-event-ai-insights-tobe">
+            <bounds x="24" y="783" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-auto-msg" archimateElement="app-event-auto-msg-tobe">
+            <bounds x="250" y="783" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-ai-nutrition" archimateElement="app-event-ai-nutrition-tobe">
+            <bounds x="137" y="38" width="200" height="55"/>
+            <fillColor r="255" g="245" b="200"/>
           </child>
         </child>
       </element>
@@ -3371,6 +6010,183 @@
         </child>
       </element>
 
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — AS-IS Тренеры — Technology View" id="view-tech-trainers">
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-planning" name="Tech: Планирование тренерами" textAlignment="1" fillColor="#e8f5e8">
+          <bounds x="24" y="24" width="550" height="950"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-workstation" archimateElement="tech-trainer-workstation">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-laptop" archimateElement="tech-trainer-laptop">
+            <bounds x="250" y="48" width="180" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-exercise-server" archimateElement="tech-exercise-server">
+            <bounds x="24" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-program-db" archimateElement="tech-program-db-server">
+            <bounds x="250" y="148" width="240" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-printer" archimateElement="tech-trainer-printer">
+            <bounds x="24" y="248" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-windows" archimateElement="tech-sw-windows-trainer">
+            <bounds x="250" y="248" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-office" archimateElement="tech-sw-office">
+            <bounds x="24" y="338" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-postgres" archimateElement="tech-sw-postgres-trainer">
+            <bounds x="230" y="338" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-antivirus" archimateElement="tech-sw-antivirus">
+            <bounds x="24" y="428" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-trainer-db" archimateElement="tech-svc-trainer-db">
+            <bounds x="230" y="428" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-exercise-host" archimateElement="tech-svc-exercise-hosting">
+            <bounds x="24" y="508" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-print" archimateElement="tech-svc-print-trainer">
+            <bounds x="250" y="508" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-auth" archimateElement="tech-svc-auth-trainer">
+            <bounds x="24" y="588" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-path-data" archimateElement="tech-path-trainer-data">
+            <bounds x="230" y="588" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-program-pdf" archimateElement="tech-artifact-program-pdf" type="1">
+            <bounds x="24" y="668" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-exercise-db" archimateElement="tech-artifact-exercise-db" type="1">
+            <bounds x="250" y="668" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-schedule-sync" archimateElement="tech-func-schedule-sync">
+            <bounds x="24" y="748" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-db-replication" archimateElement="tech-func-db-replication">
+            <bounds x="250" y="748" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-net-trainer-lan" archimateElement="tech-net-trainer-lan">
+            <bounds x="24" y="828" width="240" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-conducting" name="Tech: Проведение занятий" textAlignment="1" fillColor="#e8f0f5">
+          <bounds x="600" y="24" width="600" height="950"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-training-pc" archimateElement="tech-training-room-pc">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tablet" archimateElement="tech-trainer-tablet">
+            <bounds x="250" y="48" width="180" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-fitness-tracker" archimateElement="tech-fitness-tracker">
+            <bounds x="456" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-barcode" archimateElement="tech-barcode-scanner">
+            <bounds x="24" y="148" width="180" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-session-server" archimateElement="tech-session-server">
+            <bounds x="230" y="148" width="220" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-file-server" archimateElement="tech-trainer-file-server">
+            <bounds x="476" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-wifi" archimateElement="tech-wifi-training">
+            <bounds x="24" y="248" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-backup-nas" archimateElement="tech-backup-nas">
+            <bounds x="250" y="248" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-mongodb" archimateElement="tech-sw-mongodb">
+            <bounds x="456" y="248" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-file-system" archimateElement="tech-sw-file-system">
+            <bounds x="24" y="338" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-session-storage" archimateElement="tech-svc-session-storage">
+            <bounds x="230" y="338" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-file-sharing" archimateElement="tech-svc-file-sharing">
+            <bounds x="456" y="338" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-backup" archimateElement="tech-svc-backup-trainer">
+            <bounds x="24" y="418" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-network" archimateElement="tech-svc-network-trainer">
+            <bounds x="250" y="418" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-net-training-wifi" archimateElement="tech-net-training-wifi">
+            <bounds x="476" y="418" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-path-session" archimateElement="tech-path-session-rec">
+            <bounds x="24" y="498" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-session-doc" archimateElement="tech-artifact-session-doc" type="1">
+            <bounds x="250" y="498" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-journal-csv" archimateElement="tech-artifact-journal-csv" type="1">
+            <bounds x="476" y="498" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-backup" archimateElement="tech-artifact-backup" type="1">
+            <bounds x="24" y="578" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-file-transfer" archimateElement="tech-func-file-transfer">
+            <bounds x="230" y="578" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-encryption" archimateElement="tech-func-encryption">
+            <bounds x="456" y="578" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-load-balance" archimateElement="tech-func-load-balance">
+            <bounds x="24" y="658" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-auto-backup" archimateElement="tech-func-auto-backup">
+            <bounds x="250" y="658" width="200" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-communication" name="Tech: Коммуникации" textAlignment="1" fillColor="#fef8e8">
+          <bounds x="1226" y="24" width="550" height="950"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-phone" archimateElement="tech-trainer-phone">
+            <bounds x="24" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-messaging-server" archimateElement="tech-messaging-server">
+            <bounds x="250" y="48" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-progress-server" archimateElement="tech-progress-server">
+            <bounds x="24" y="148" width="200" height="80"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-mail" archimateElement="tech-sw-mail-server">
+            <bounds x="250" y="148" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-sw-nginx" archimateElement="tech-sw-nginx">
+            <bounds x="24" y="248" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-email" archimateElement="tech-svc-email">
+            <bounds x="230" y="248" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-svc-messaging-infra" archimateElement="tech-svc-messaging-infra">
+            <bounds x="24" y="338" width="220" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-net-vpn" archimateElement="tech-net-trainer-vpn">
+            <bounds x="270" y="338" width="180" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-progress-xlsx" archimateElement="tech-artifact-progress-xlsx" type="1">
+            <bounds x="24" y="418" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-nutrition-doc" archimateElement="tech-artifact-nutrition-doc" type="1">
+            <bounds x="250" y="418" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-artifact-msg-archive" archimateElement="tech-artifact-msg-archive" type="1">
+            <bounds x="24" y="498" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-msg-queue" archimateElement="tech-func-msg-queue">
+            <bounds x="250" y="498" width="200" height="60"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-func-email-routing" archimateElement="tech-func-email-routing">
+            <bounds x="137" y="578" width="200" height="60"/>
+          </child>
+        </child>
+      </element>
+
       <!-- Tech TO-BE: Integrated View -->
       <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Fitness Club — Integrated View" id="view-tech-tobe-integrated">
         <child xsi:type="archimate:Group" id="grp-tech-tobe-integrated" name="TO-BE Tech Architecture — Integrated">
@@ -3514,6 +6330,258 @@
           <child xsi:type="archimate:DiagramObject" id="view-tech-tobe-reporting-artifact-json" archimateElement="tech-artifact-json-report-tobe">
             <bounds x="300" y="130" width="200" height="55"/>
             <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Тренеры — Technology View" id="view-tech-trainers-tobe">
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-tobe-planning" name="Tech TO-BE: AI Cloud Planning" textAlignment="1" fillColor="#d9f5d9">
+          <bounds x="24" y="24" width="600" height="1000"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-ai-cloud" archimateElement="tech-ai-cloud-tobe">
+            <bounds x="24" y="48" width="240" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-aws" archimateElement="tech-aws-trainer-tobe">
+            <bounds x="290" y="48" width="200" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-azure-ml" archimateElement="tech-azure-ml-tobe">
+            <bounds x="24" y="148" width="200" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-cloud-db" archimateElement="tech-cloud-db-cluster-tobe">
+            <bounds x="250" y="148" width="240" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-ar-headset" archimateElement="tech-ar-headset-tobe">
+            <bounds x="24" y="248" width="200" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-k8s" archimateElement="tech-sw-k8s-tobe">
+            <bounds x="250" y="248" width="200" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-tensorflow" archimateElement="tech-sw-tensorflow-tobe">
+            <bounds x="24" y="338" width="200" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-postgres-cloud" archimateElement="tech-sw-postgres-cloud-tobe">
+            <bounds x="250" y="338" width="200" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-docker" archimateElement="tech-sw-docker-tobe">
+            <bounds x="24" y="428" width="180" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-ai-serving" archimateElement="tech-svc-ai-serving-tobe">
+            <bounds x="230" y="428" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-cloud-db" archimateElement="tech-svc-cloud-db-tobe">
+            <bounds x="24" y="518" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-orchestration" archimateElement="tech-svc-orchestration-tobe">
+            <bounds x="250" y="518" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-path-ai-pipeline" archimateElement="tech-path-ai-pipeline-tobe">
+            <bounds x="24" y="598" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-ai-model" archimateElement="tech-artifact-ai-model-tobe" type="1">
+            <bounds x="250" y="598" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-docker-img" archimateElement="tech-artifact-docker-img-tobe" type="1">
+            <bounds x="24" y="678" width="180" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-program-json" archimateElement="tech-artifact-program-json-tobe" type="1">
+            <bounds x="230" y="678" width="220" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-ai-inference" archimateElement="tech-func-ai-inference-tobe">
+            <bounds x="24" y="758" width="240" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-autoscaling" archimateElement="tech-func-autoscaling-tobe">
+            <bounds x="290" y="758" width="180" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-tobe-conducting" name="Tech TO-BE: IoT &amp; Video Analytics" textAlignment="1" fillColor="#d9ebf5">
+          <bounds x="650" y="24" width="650" height="1000"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-video-server" archimateElement="tech-video-server-tobe">
+            <bounds x="24" y="48" width="220" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-iot-gateway" archimateElement="tech-iot-gateway-tobe">
+            <bounds x="270" y="48" width="200" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-analytics-server" archimateElement="tech-analytics-server-tobe">
+            <bounds x="496" y="48" width="200" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-edge-node" archimateElement="tech-edge-node-tobe">
+            <bounds x="24" y="148" width="200" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-cloud-storage" archimateElement="tech-cloud-storage-tobe">
+            <bounds x="250" y="148" width="200" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-smart-tablet" archimateElement="tech-smart-tablet-tobe">
+            <bounds x="476" y="148" width="180" height="80"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-smartwatch" archimateElement="tech-smartwatch-tobe">
+            <bounds x="24" y="248" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-heart-monitor" archimateElement="tech-heart-monitor-tobe">
+            <bounds x="230" y="248" width="200" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-motion-sensor" archimateElement="tech-motion-sensor-tobe">
+            <bounds x="456" y="248" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-4k-camera" archimateElement="tech-4k-camera-tobe">
+            <bounds x="24" y="338" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-voice-assistant" archimateElement="tech-voice-assistant-tobe">
+            <bounds x="230" y="338" width="200" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-smart-display" archimateElement="tech-smart-display-tobe">
+            <bounds x="456" y="338" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-redis" archimateElement="tech-sw-redis-tobe">
+            <bounds x="24" y="428" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-opencv" archimateElement="tech-sw-opencv-tobe">
+            <bounds x="230" y="428" width="200" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-mqtt" archimateElement="tech-sw-mqtt-tobe">
+            <bounds x="456" y="428" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-sw-kafka" archimateElement="tech-sw-kafka-tobe">
+            <bounds x="24" y="518" width="180" height="70"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-video-stream" archimateElement="tech-svc-video-stream-tobe">
+            <bounds x="230" y="518" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-iot-collection" archimateElement="tech-svc-iot-collection-tobe">
+            <bounds x="456" y="518" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-realtime-analytics" archimateElement="tech-svc-realtime-analytics-tobe">
+            <bounds x="24" y="608" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-cloud-storage" archimateElement="tech-svc-cloud-storage-tobe">
+            <bounds x="270" y="608" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-edge-compute" archimateElement="tech-svc-edge-compute-tobe">
+            <bounds x="496" y="608" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-net-5g" archimateElement="tech-net-5g-tobe">
+            <bounds x="24" y="688" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-net-wifi6" archimateElement="tech-net-wifi6-tobe">
+            <bounds x="230" y="688" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-net-iot-mesh" archimateElement="tech-net-iot-mesh-tobe">
+            <bounds x="436" y="688" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-path-video" archimateElement="tech-path-video-stream-tobe">
+            <bounds x="24" y="768" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-video-mp4" archimateElement="tech-artifact-video-mp4-tobe" type="1">
+            <bounds x="230" y="768" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-iot-json" archimateElement="tech-artifact-iot-json-tobe" type="1">
+            <bounds x="436" y="768" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-voice-text" archimateElement="tech-artifact-voice-text-tobe" type="1">
+            <bounds x="24" y="848" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-cloud-backup" archimateElement="tech-artifact-cloud-backup-tobe" type="1">
+            <bounds x="230" y="848" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-video-encoding" archimateElement="tech-func-video-encoding-tobe">
+            <bounds x="456" y="848" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-realtime-process" archimateElement="tech-func-realtime-process-tobe">
+            <bounds x="24" y="928" width="220" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-iot-aggregation" archimateElement="tech-func-iot-aggregation-tobe">
+            <bounds x="270" y="928" width="200" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-stream-process" archimateElement="tech-func-stream-process-tobe">
+            <bounds x="496" y="928" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-edge-analytics" archimateElement="tech-func-edge-analytics-tobe">
+            <bounds x="197" y="38" width="180" height="60"/>
+            <fillColor r="200" g="230" b="255"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="grp-tech-trainers-tobe-communication" name="Tech TO-BE: Cloud Communication" textAlignment="1" fillColor="#fef9d9">
+          <bounds x="1326" y="24" width="500" height="1000"/>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-5g-phone" archimateElement="tech-5g-phone-tobe">
+            <bounds x="24" y="48" width="180" height="80"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-cdn" archimateElement="tech-svc-cdn-tobe">
+            <bounds x="230" y="48" width="180" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-push-notif" archimateElement="tech-svc-push-notif-tobe">
+            <bounds x="24" y="148" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-svc-api-gateway" archimateElement="tech-svc-api-gateway-tobe">
+            <bounds x="250" y="148" width="180" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-net-cloud-vpn" archimateElement="tech-net-cloud-vpn-tobe">
+            <bounds x="24" y="228" width="180" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-artifact-analytics-bi" archimateElement="tech-artifact-analytics-bi-tobe" type="1">
+            <bounds x="230" y="228" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-cloud-sync" archimateElement="tech-func-cloud-sync-tobe">
+            <bounds x="24" y="308" width="200" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-rate-limit" archimateElement="tech-func-rate-limit-tobe">
+            <bounds x="250" y="308" width="180" height="60"/>
+            <fillColor r="255" g="245" b="200"/>
           </child>
         </child>
       </element>
