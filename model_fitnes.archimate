@@ -898,6 +898,564 @@
       <property key="State" value="TO-BE"/>
     </element>
 
+    <!-- AS-IS Business Layer: Партнеры — Взаимодействие с поставщиками и подрядчиками -->
+    
+    <!-- AS-IS Actors & Roles — Поставщики и подрядчики -->
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Поставщик оборудования" id="actor-equipment-supplier-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Поставщик спортивного питания" id="actor-nutrition-supplier-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Клининговая компания" id="actor-cleaning-company-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Сервисная компания оборудования" id="actor-maintenance-company-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Маркетинговое агентство" id="actor-marketing-agency-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер по закупкам" id="role-procurement-manager-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер по снабжению" id="role-supply-manager-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Контактное лицо поставщика" id="role-supplier-contact-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Координатор обслуживания" id="role-service-coordinator-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Координатор маркетинга" id="role-marketing-coordinator-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Processes — Процессы работы с партнерами -->
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Поиск и выбор поставщика" id="proc-select-supplier-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Согласование условий контракта" id="proc-negotiate-contract-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Оформление заказа оборудования" id="proc-order-equipment-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Приемка товара" id="proc-receive-goods-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Контроль качества поставки" id="proc-quality-check-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Оплата счета поставщика" id="proc-pay-invoice-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Планирование обслуживания оборудования" id="proc-plan-maintenance-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Вызов сервисной службы" id="proc-call-service-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Приемка работ по обслуживанию" id="proc-accept-maintenance-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Заказ клининговых услуг" id="proc-order-cleaning-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Контроль качества уборки" id="proc-check-cleaning-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Брифинг с маркетинговым агентством" id="proc-marketing-briefing-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Согласование рекламных материалов" id="proc-approve-marketing-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Запуск рекламной кампании" id="proc-launch-campaign-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Services — Сервисы партнеров -->
+    <element xsi:type="archimate:BusinessService" name="Сервис: Поставка оборудования" id="svc-equipment-supply-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Поставка спортивного питания" id="svc-nutrition-supply-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Техническое обслуживание" id="svc-tech-maintenance-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Клининг" id="svc-cleaning-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Маркетинговые услуги" id="svc-marketing-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Гарантийное обслуживание" id="svc-warranty-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Логистика поставок" id="svc-delivery-logistics-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Business Objects — Бизнес-объекты -->
+    <element xsi:type="archimate:BusinessObject" name="Объект: Договор с поставщиком" id="obj-supplier-contract-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Спецификация заказа" id="obj-order-spec-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Счет на оплату" id="obj-invoice-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Накладная поставки" id="obj-delivery-note-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Акт приемки товара" id="obj-acceptance-act-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: График обслуживания" id="obj-maintenance-schedule-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Акт выполненных работ" id="obj-service-completion-act-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Карточка поставщика" id="obj-supplier-card-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Рекламный бриф" id="obj-marketing-brief-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Медиаплан" id="obj-media-plan-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Контракт на маркетинг" id="obj-marketing-contract-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Events — События -->
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Получен запрос на закупку" id="event-purchase-request-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Контракт подписан" id="event-contract-signed-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Товар доставлен" id="event-goods-delivered-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Обнаружена неисправность" id="event-equipment-failure-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Завершено обслуживание" id="event-maintenance-completed-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Получен маркетинговый запрос" id="event-marketing-request-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Одобрены рекламные материалы" id="event-marketing-approved-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Functions — Функции -->
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Управление поставщиками" id="func-supplier-management-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Оценка поставщиков" id="func-supplier-evaluation-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Контроль закупок" id="func-procurement-control-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Управление контрактами" id="func-contract-management-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Управление техобслуживанием" id="func-maintenance-management-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Координация сервисных услуг" id="func-service-coordination-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Управление маркетингом" id="func-marketing-management-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Координация рекламных кампаний" id="func-campaign-coordination-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Collaborations — Совместная работа -->
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Работа с поставщиком" id="collab-supplier-work-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Координация обслуживания" id="collab-maintenance-coord-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Партнерство с агентством" id="collab-agency-partnership-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Interactions — Взаимодействия -->
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Переговоры с поставщиком" id="interact-supplier-negotiation-asis">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Согласование работ с сервисом" id="interact-service-agreement-asis">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Презентация маркетинговых решений" id="interact-marketing-presentation-asis">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- TO-BE Business Layer: Партнеры — Цифровая платформа взаимодействия -->
+    
+    <!-- TO-BE Actors & Roles — Цифровое партнерство -->
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Онлайн-поставщик оборудования (TO-BE)" id="actor-online-supplier-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Маркетплейс спортпитания (TO-BE)" id="actor-nutrition-marketplace-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Сервисная платформа IoT (TO-BE)" id="actor-iot-service-platform-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Цифровое маркетинговое агентство (TO-BE)" id="actor-digital-marketing-agency-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: AI-помощник закупок (TO-BE)" id="actor-ai-procurement-assistant-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер цифровых закупок (TO-BE)" id="role-digital-procurement-mgr-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Аналитик поставщиков (TO-BE)" id="role-supplier-analyst-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Координатор автосервиса (TO-BE)" id="role-auto-service-coordinator-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер цифрового маркетинга (TO-BE)" id="role-digital-marketing-mgr-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessRole" name="Роль: Оператор партнерской платформы (TO-BE)" id="role-platform-operator-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Processes — Автоматизированные процессы -->
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: AI-подбор поставщика (TO-BE)" id="proc-ai-select-supplier-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Электронное согласование контракта (TO-BE)" id="proc-e-negotiate-contract-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоматический заказ через API (TO-BE)" id="proc-api-auto-order-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Отслеживание доставки в реальном времени (TO-BE)" id="proc-realtime-tracking-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоконтроль качества с IoT (TO-BE)" id="proc-iot-quality-check-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоматическая оплата (TO-BE)" id="proc-auto-payment-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Предиктивное обслуживание (TO-BE)" id="proc-predictive-maintenance-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автовызов сервиса через IoT (TO-BE)" id="proc-iot-auto-service-call-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Удаленная диагностика (TO-BE)" id="proc-remote-diagnostics-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Цифровая приемка работ (TO-BE)" id="proc-digital-acceptance-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автоматическое планирование уборки (TO-BE)" id="proc-auto-cleaning-schedule-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: AI-генерация маркетингового брифа (TO-BE)" id="proc-ai-marketing-brief-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Мгновенное согласование через платформу (TO-BE)" id="proc-instant-approval-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Автозапуск омниканальной кампании (TO-BE)" id="proc-auto-omnichannel-launch-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Аналитика эффективности партнеров (TO-BE)" id="proc-partner-analytics-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Services — Цифровые сервисы -->
+    <element xsi:type="archimate:BusinessService" name="Сервис: Умная платформа закупок (TO-BE)" id="svc-smart-procurement-platform-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: API-интеграция с поставщиками (TO-BE)" id="svc-supplier-api-integration-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Предиктивная аналитика IoT (TO-BE)" id="svc-iot-predictive-analytics-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Удаленный мониторинг оборудования (TO-BE)" id="svc-remote-monitoring-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Маркетинговая автоплатформа (TO-BE)" id="svc-marketing-autoplatform-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Электронный документооборот (TO-BE)" id="svc-e-document-flow-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: Blockchain-контракты (TO-BE)" id="svc-blockchain-contracts-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessService" name="Сервис: AI-аналитика поставщиков (TO-BE)" id="svc-ai-supplier-analytics-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Business Objects — Цифровые объекты -->
+    <element xsi:type="archimate:BusinessObject" name="Объект: Смарт-контракт (TO-BE)" id="obj-smart-contract-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронная спецификация (TO-BE)" id="obj-e-specification-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Цифровой счет (TO-BE)" id="obj-digital-invoice-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: QR-накладная (TO-BE)" id="obj-qr-delivery-note-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронный акт (TO-BE)" id="obj-e-acceptance-act-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Цифровой профиль поставщика (TO-BE)" id="obj-digital-supplier-profile-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: IoT-журнал обслуживания (TO-BE)" id="obj-iot-maintenance-log-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Предиктивное расписание (TO-BE)" id="obj-predictive-schedule-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Цифровой акт работ (TO-BE)" id="obj-digital-service-act-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: AI-генерируемый бриф (TO-BE)" id="obj-ai-brief-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Автоматический медиаплан (TO-BE)" id="obj-auto-mediaplan-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Объект: Электронный маркетинг-контракт (TO-BE)" id="obj-e-marketing-contract-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Events — События в реальном времени -->
+    <element xsi:type="archimate:BusinessEvent" name="Событие: AI-запрос на закупку (TO-BE)" id="event-ai-purchase-request-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Смарт-контракт активирован (TO-BE)" id="event-smart-contract-activated-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Товар отслежен IoT (TO-BE)" id="event-goods-tracked-iot-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: IoT-датчик обнаружил проблему (TO-BE)" id="event-iot-sensor-alert-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автосервис завершен (TO-BE)" id="event-auto-service-completed-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: AI-генерация брифа запущена (TO-BE)" id="event-ai-brief-generated-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Автомгновенное одобрение (TO-BE)" id="event-instant-auto-approval-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" name="Событие: Кампания запущена автоматически (TO-BE)" id="event-campaign-auto-launched-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Functions — Умные функции -->
+    <element xsi:type="archimate:BusinessFunction" name="Функция: AI-управление поставщиками (TO-BE)" id="func-ai-supplier-management-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Предиктивная оценка поставщиков (TO-BE)" id="func-predictive-evaluation-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Автоконтроль закупок (TO-BE)" id="func-auto-procurement-control-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Blockchain-управление контрактами (TO-BE)" id="func-blockchain-contract-mgmt-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Предиктивное управление ТО (TO-BE)" id="func-predictive-maintenance-mgmt-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Автокоординация IoT-сервиса (TO-BE)" id="func-iot-auto-coordination-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: AI-управление маркетингом (TO-BE)" id="func-ai-marketing-management-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessFunction" name="Функция: Автокоординация омниканальных кампаний (TO-BE)" id="func-omnichannel-auto-coord-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Collaborations — Цифровое партнерство -->
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Цифровая экосистема поставщиков (TO-BE)" id="collab-digital-supplier-ecosystem-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: IoT-сервисная сеть (TO-BE)" id="collab-iot-service-network-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessCollaboration" name="Коллаборация: Маркетинговый хаб (TO-BE)" id="collab-marketing-hub-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- TO-BE Interactions — Цифровые взаимодействия -->
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: API-переговоры (TO-BE)" id="interact-api-negotiation-tobe">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Удаленное IoT-согласование (TO-BE)" id="interact-iot-remote-agreement-tobe">
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessInteraction" name="Взаимодействие: Виртуальная презентация (TO-BE)" id="interact-virtual-presentation-tobe">
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Application" id="id-application-folder" type="application">
     <!-- Application Components -->
@@ -1890,6 +2448,307 @@
       <property key="Layer" value="IS"/>
       <property key="Area" value="Проведение"/>
       <property key="State" value="TO-BE"/>
+    </element>
+
+    <!-- AS-IS IS Layer: Партнеры — Информационные системы взаимодействия -->
+    
+    <!-- AS-IS Application Components — Системы управления партнерами -->
+    <element xsi:type="archimate:ApplicationComponent" name="Система закупок (ERP Procurement)" id="app-partners-procurement-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Модуль управления поставщиками" id="app-partners-supplier-mgmt-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Система учета товаров (Inventory)" id="app-partners-inventory-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Бухгалтерская система (1С)" id="app-partners-accounting-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="CMMS (Система управления ТО)" id="app-partners-cmms-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Система заявок на сервис" id="app-partners-service-requests-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="CRM для маркетинга" id="app-partners-marketing-crm-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Система документооборота (EDMS)" id="app-partners-edms-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Email/Почтовый сервер" id="app-partners-email-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Application Services — Сервисы систем -->
+    <element xsi:type="archimate:ApplicationService" name="Сервис управления заказами" id="app-svc-partners-order-mgmt-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис каталога поставщиков" id="app-svc-partners-supplier-catalog-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис учета товаров" id="app-svc-partners-inventory-tracking-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис формирования счетов" id="app-svc-partners-invoicing-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис планирования ТО" id="app-svc-partners-maintenance-planning-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис заявок на ремонт" id="app-svc-partners-repair-requests-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис управления кампаниями" id="app-svc-partners-campaign-mgmt-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Сервис документооборота" id="app-svc-partners-document-flow-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Application Functions — Функции систем -->
+    <element xsi:type="archimate:ApplicationFunction" name="Создание заказа поставщику" id="app-func-partners-create-order-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Согласование закупки" id="app-func-partners-approve-purchase-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Проверка наличия товара" id="app-func-partners-check-stock-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Генерация накладной" id="app-func-partners-generate-invoice-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Регистрация поступления" id="app-func-partners-register-receipt-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Оценка поставщика" id="app-func-partners-rate-supplier-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Планирование графика ТО" id="app-func-partners-schedule-maintenance-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Создание заявки на ремонт" id="app-func-partners-create-repair-ticket-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Отслеживание статуса ремонта" id="app-func-partners-track-repair-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Создание маркетингового брифа" id="app-func-partners-create-brief-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Отправка email агентству" id="app-func-partners-send-email-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Хранение контракта" id="app-func-partners-store-contract-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Data Objects — Данные партнеров -->
+    <element xsi:type="archimate:DataObject" name="Заказ поставщику (данные)" id="app-data-partners-purchase-order-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Профиль поставщика (БД)" id="app-data-partners-supplier-profile-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Электронный контракт" id="app-data-partners-contract-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Спецификация товара" id="app-data-partners-product-spec-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Счет-фактура (данные)" id="app-data-partners-invoice-data-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="История поставок" id="app-data-partners-delivery-history-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="График обслуживания (БД)" id="app-data-partners-maintenance-schedule-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Заявка на ремонт (данные)" id="app-data-partners-repair-ticket-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Журнал работ по ТО" id="app-data-partners-maintenance-log-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Маркетинговый бриф (документ)" id="app-data-partners-marketing-brief-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Медиаплан (таблица)" id="app-data-partners-mediaplan-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Email переписка" id="app-data-partners-email-thread-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Application Interfaces — Интерфейсы -->
+    <element xsi:type="archimate:ApplicationInterface" name="Web-интерфейс системы закупок" id="app-iface-partners-procurement-web-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Email-интерфейс" id="app-iface-partners-email-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Портал поставщика" id="app-iface-partners-supplier-portal-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Интерфейс CMMS" id="app-iface-partners-cmms-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Интерфейс CRM" id="app-iface-partners-crm-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Application Events — События систем -->
+    <element xsi:type="archimate:ApplicationEvent" name="Заказ создан" id="app-event-partners-order-created-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Заказ согласован" id="app-event-partners-order-approved-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Товар поступил" id="app-event-partners-goods-received-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Счет сформирован" id="app-event-partners-invoice-generated-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Заявка на ТО создана" id="app-event-partners-maintenance-requested-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Ремонт завершен" id="app-event-partners-repair-completed-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Email отправлен" id="app-event-partners-email-sent-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" name="Бриф утвержден" id="app-event-partners-brief-approved-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+
+    <!-- AS-IS Application Collaborations — Взаимодействие систем -->
+    <element xsi:type="archimate:ApplicationCollaboration" name="Интеграция закупки-бухгалтерия" id="app-collab-partners-procurement-accounting-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationCollaboration" name="Обмен данными с поставщиком" id="app-collab-partners-supplier-data-exchange-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:ApplicationCollaboration" name="Координация ТО с сервисом" id="app-collab-partners-maintenance-coordination-asis">
+      <property key="Layer" value="IS"/>
+      <property key="Area" value="Обслуживание"/>
+      <property key="State" value="AS-IS"/>
     </element>
 
   </folder>
@@ -4317,6 +5176,259 @@
         </child>
       </child>
     </element>
+
+    <!-- ==================== AS-IS Партнеры Business View ==================== -->
+    <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Партнеры — Business View" id="view-partners-asis-business">
+      
+      <!-- Group 1: Закупки — Procurement -->
+      <child xsi:type="archimate:Group" id="grp-partners-procurement" name="AS-IS Партнеры: Закупки" textAlignment="1">
+        <bounds x="24" y="24" width="1800" height="500"/>
+        <fillColor r="255" g="240" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-actor-equipment-supplier" archimateElement="actor-equipment-supplier-asis">
+          <bounds x="30" y="60" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-actor-nutrition-supplier" archimateElement="actor-nutrition-supplier-asis">
+          <bounds x="230" y="60" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-role-procurement-mgr" archimateElement="role-procurement-manager-asis">
+          <bounds x="30" y="140" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-role-supply-mgr" archimateElement="role-supply-manager-asis">
+          <bounds x="230" y="140" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-role-supplier-contact" archimateElement="role-supplier-contact-asis">
+          <bounds x="430" y="140" width="180" height="55"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-select-supplier" archimateElement="proc-select-supplier-asis">
+          <bounds x="30" y="230" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-negotiate" archimateElement="proc-negotiate-contract-asis">
+          <bounds x="250" y="230" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-order-equip" archimateElement="proc-order-equipment-asis">
+          <bounds x="490" y="230" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-receive" archimateElement="proc-receive-goods-asis">
+          <bounds x="730" y="230" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-quality" archimateElement="proc-quality-check-asis">
+          <bounds x="930" y="230" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-pay" archimateElement="proc-pay-invoice-asis">
+          <bounds x="1150" y="230" width="180" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-equipment" archimateElement="svc-equipment-supply-asis">
+          <bounds x="30" y="310" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-nutrition" archimateElement="svc-nutrition-supply-asis">
+          <bounds x="230" y="310" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-logistics" archimateElement="svc-delivery-logistics-asis">
+          <bounds x="470" y="310" width="180" height="55"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-contract" archimateElement="obj-supplier-contract-asis">
+          <bounds x="680" y="310" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-spec" archimateElement="obj-order-spec-asis">
+          <bounds x="880" y="310" width="170" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-invoice" archimateElement="obj-invoice-asis">
+          <bounds x="1070" y="310" width="150" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-delivery" archimateElement="obj-delivery-note-asis">
+          <bounds x="1240" y="310" width="170" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-acceptance" archimateElement="obj-acceptance-act-asis">
+          <bounds x="1430" y="310" width="170" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-supplier-card" archimateElement="obj-supplier-card-asis">
+          <bounds x="1620" y="310" width="160" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-purchase-req" archimateElement="event-purchase-request-asis">
+          <bounds x="30" y="390" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-contract-signed" archimateElement="event-contract-signed-asis">
+          <bounds x="250" y="390" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-delivered" archimateElement="event-goods-delivered-asis">
+          <bounds x="450" y="390" width="170" height="55"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-supplier-mgmt" archimateElement="func-supplier-management-asis">
+          <bounds x="650" y="390" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-evaluation" archimateElement="func-supplier-evaluation-asis">
+          <bounds x="870" y="390" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-procurement-ctrl" archimateElement="func-procurement-control-asis">
+          <bounds x="1070" y="390" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-contract-mgmt" archimateElement="func-contract-management-asis">
+          <bounds x="1270" y="390" width="200" height="55"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-collab-supplier" archimateElement="collab-supplier-work-asis">
+          <bounds x="1490" y="390" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-interact-negotiation" archimateElement="interact-supplier-negotiation-asis">
+          <bounds x="1490" y="450" width="230" height="55"/>
+        </child>
+      </child>
+      
+      <!-- Group 2: Обслуживание — Maintenance & Services -->
+      <child xsi:type="archimate:Group" id="grp-partners-maintenance" name="AS-IS Партнеры: Обслуживание" textAlignment="1">
+        <bounds x="24" y="544" width="1800" height="420"/>
+        <fillColor r="220" g="240" b="255"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-actor-cleaning" archimateElement="actor-cleaning-company-asis">
+          <bounds x="30" y="60" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-actor-maintenance-co" archimateElement="actor-maintenance-company-asis">
+          <bounds x="230" y="60" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-role-service-coord" archimateElement="role-service-coordinator-asis">
+          <bounds x="30" y="140" width="200" height="55"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-plan-maint" archimateElement="proc-plan-maintenance-asis">
+          <bounds x="250" y="140" width="240" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-call-service" archimateElement="proc-call-service-asis">
+          <bounds x="510" y="140" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-accept-maint" archimateElement="proc-accept-maintenance-asis">
+          <bounds x="710" y="140" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-order-clean" archimateElement="proc-order-cleaning-asis">
+          <bounds x="950" y="140" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-check-clean" archimateElement="proc-check-cleaning-asis">
+          <bounds x="1170" y="140" width="200" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-tech-maint" archimateElement="svc-tech-maintenance-asis">
+          <bounds x="30" y="220" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-cleaning" archimateElement="svc-cleaning-asis">
+          <bounds x="250" y="220" width="140" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-warranty" archimateElement="svc-warranty-asis">
+          <bounds x="410" y="220" width="200" height="55"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-maint-schedule" archimateElement="obj-maintenance-schedule-asis">
+          <bounds x="630" y="220" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-service-act" archimateElement="obj-service-completion-act-asis">
+          <bounds x="830" y="220" width="200" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-failure" archimateElement="event-equipment-failure-asis">
+          <bounds x="1050" y="220" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-maint-completed" archimateElement="event-maintenance-completed-asis">
+          <bounds x="1270" y="220" width="210" height="55"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-maint-mgmt" archimateElement="func-maintenance-management-asis">
+          <bounds x="30" y="300" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-service-coord" archimateElement="func-service-coordination-asis">
+          <bounds x="270" y="300" width="230" height="55"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-collab-maint" archimateElement="collab-maintenance-coord-asis">
+          <bounds x="520" y="300" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-interact-service" archimateElement="interact-service-agreement-asis">
+          <bounds x="760" y="300" width="250" height="55"/>
+        </child>
+      </child>
+      
+      <!-- Group 3: Коммуникации — Marketing & Communications -->
+      <child xsi:type="archimate:Group" id="grp-partners-marketing" name="AS-IS Партнеры: Коммуникации" textAlignment="1">
+        <bounds x="24" y="984" width="1800" height="340"/>
+        <fillColor r="255" g="250" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-actor-marketing" archimateElement="actor-marketing-agency-asis">
+          <bounds x="30" y="60" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-role-marketing-coord" archimateElement="role-marketing-coordinator-asis">
+          <bounds x="250" y="60" width="200" height="55"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-briefing" archimateElement="proc-marketing-briefing-asis">
+          <bounds x="30" y="140" width="250" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-approve-marketing" archimateElement="proc-approve-marketing-asis">
+          <bounds x="300" y="140" width="260" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-proc-launch-campaign" archimateElement="proc-launch-campaign-asis">
+          <bounds x="580" y="140" width="220" height="55"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-svc-marketing" archimateElement="svc-marketing-asis">
+          <bounds x="820" y="140" width="200" height="55"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-brief" archimateElement="obj-marketing-brief-asis">
+          <bounds x="30" y="220" width="170" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-mediaplan" archimateElement="obj-media-plan-asis">
+          <bounds x="220" y="220" width="140" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-obj-marketing-contract" archimateElement="obj-marketing-contract-asis">
+          <bounds x="380" y="220" width="200" height="55"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-marketing-req" archimateElement="event-marketing-request-asis">
+          <bounds x="600" y="220" width="220" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-event-approved" archimateElement="event-marketing-approved-asis">
+          <bounds x="840" y="220" width="230" height="55"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-marketing-mgmt" archimateElement="func-marketing-management-asis">
+          <bounds x="1090" y="220" width="200" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-func-campaign-coord" archimateElement="func-campaign-coordination-asis">
+          <bounds x="1310" y="220" width="240" height="55"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-collab-agency" archimateElement="collab-agency-partnership-asis">
+          <bounds x="1570" y="220" width="210" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-interact-presentation" archimateElement="interact-marketing-presentation-asis">
+          <bounds x="1090" y="140" width="260" height="55"/>
+        </child>
+      </child>
+    </element>
     
     <!-- ==================== TO-BE Business Layer Views ==================== -->
       <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Fitness Club — Integrated View" id="view-tobe-integrated">
@@ -4906,6 +6018,338 @@
           </child>
         </child>
       </element>
+
+    <!-- ==================== TO-BE Партнеры Business View ==================== -->
+    <element xsi:type="archimate:ArchimateDiagramModel" name="TO-BE Партнеры — Business View" id="view-partners-tobe-business">
+      
+      <!-- Group 1: Закупки — Smart Procurement -->
+      <child xsi:type="archimate:Group" id="grp-partners-smart-procurement" name="TO-BE Партнеры: Умные закупки" textAlignment="1">
+        <bounds x="24" y="24" width="1900" height="530"/>
+        <fillColor r="220" g="255" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-actor-online-supplier" archimateElement="actor-online-supplier-tobe">
+          <bounds x="30" y="60" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-actor-marketplace" archimateElement="actor-nutrition-marketplace-tobe">
+          <bounds x="270" y="60" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-actor-ai-assistant" archimateElement="actor-ai-procurement-assistant-tobe">
+          <bounds x="510" y="60" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-role-digital-procure" archimateElement="role-digital-procurement-mgr-tobe">
+          <bounds x="30" y="140" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-role-analyst" archimateElement="role-supplier-analyst-tobe">
+          <bounds x="270" y="140" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-role-platform-operator" archimateElement="role-platform-operator-tobe">
+          <bounds x="490" y="140" width="230" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-ai-select" archimateElement="proc-ai-select-supplier-tobe">
+          <bounds x="30" y="220" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-e-negotiate" archimateElement="proc-e-negotiate-contract-tobe">
+          <bounds x="250" y="220" width="250" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-api-order" archimateElement="proc-api-auto-order-tobe">
+          <bounds x="520" y="220" width="230" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-realtime-track" archimateElement="proc-realtime-tracking-tobe">
+          <bounds x="770" y="220" width="250" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-iot-quality" archimateElement="proc-iot-quality-check-tobe">
+          <bounds x="1040" y="220" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-auto-pay" archimateElement="proc-auto-payment-tobe">
+          <bounds x="1280" y="220" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-analytics" archimateElement="proc-partner-analytics-tobe">
+          <bounds x="1500" y="220" width="240" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-smart-platform" archimateElement="svc-smart-procurement-platform-tobe">
+          <bounds x="30" y="300" width="230" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-api-integration" archimateElement="svc-supplier-api-integration-tobe">
+          <bounds x="280" y="300" width="250" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-e-docs" archimateElement="svc-e-document-flow-tobe">
+          <bounds x="550" y="300" width="230" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-blockchain" archimateElement="svc-blockchain-contracts-tobe">
+          <bounds x="800" y="300" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-ai-analytics" archimateElement="svc-ai-supplier-analytics-tobe">
+          <bounds x="1040" y="300" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-smart-contract" archimateElement="obj-smart-contract-tobe">
+          <bounds x="1280" y="300" width="180" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-e-spec" archimateElement="obj-e-specification-tobe">
+          <bounds x="1480" y="300" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-digital-invoice" archimateElement="obj-digital-invoice-tobe">
+          <bounds x="1700" y="300" width="170" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-qr-note" archimateElement="obj-qr-delivery-note-tobe">
+          <bounds x="30" y="380" width="180" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-e-act" archimateElement="obj-e-acceptance-act-tobe">
+          <bounds x="230" y="380" width="170" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-digital-profile" archimateElement="obj-digital-supplier-profile-tobe">
+          <bounds x="420" y="380" width="230" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-ai-request" archimateElement="event-ai-purchase-request-tobe">
+          <bounds x="670" y="380" width="210" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-smart-activated" archimateElement="event-smart-contract-activated-tobe">
+          <bounds x="900" y="380" width="240" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-iot-tracked" archimateElement="event-goods-tracked-iot-tobe">
+          <bounds x="1160" y="380" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-ai-mgmt" archimateElement="func-ai-supplier-management-tobe">
+          <bounds x="1380" y="380" width="240" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-predict-eval" archimateElement="func-predictive-evaluation-tobe">
+          <bounds x="1640" y="380" width="240" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-auto-control" archimateElement="func-auto-procurement-control-tobe">
+          <bounds x="30" y="460" width="220" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-blockchain-mgmt" archimateElement="func-blockchain-contract-mgmt-tobe">
+          <bounds x="270" y="460" width="270" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-collab-ecosystem" archimateElement="collab-digital-supplier-ecosystem-tobe">
+          <bounds x="560" y="460" width="280" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-interact-api" archimateElement="interact-api-negotiation-tobe">
+          <bounds x="860" y="460" width="200" height="55"/>
+          <fillColor r="200" g="255" b="200"/>
+        </child>
+      </child>
+      
+      <!-- Group 2: Обслуживание — Predictive & IoT Services -->
+      <child xsi:type="archimate:Group" id="grp-partners-predictive-service" name="TO-BE Партнеры: Предиктивный IoT-сервис" textAlignment="1">
+        <bounds x="24" y="574" width="1900" height="400"/>
+        <fillColor r="220" g="240" b="255"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-actor-iot-platform" archimateElement="actor-iot-service-platform-tobe">
+          <bounds x="30" y="60" width="230" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-role-auto-coord" archimateElement="role-auto-service-coordinator-tobe">
+          <bounds x="280" y="60" width="230" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-predictive" archimateElement="proc-predictive-maintenance-tobe">
+          <bounds x="30" y="140" width="230" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-iot-auto-call" archimateElement="proc-iot-auto-service-call-tobe">
+          <bounds x="280" y="140" width="240" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-remote-diag" archimateElement="proc-remote-diagnostics-tobe">
+          <bounds x="540" y="140" width="200" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-digital-accept" archimateElement="proc-digital-acceptance-tobe">
+          <bounds x="760" y="140" width="220" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-auto-clean" archimateElement="proc-auto-cleaning-schedule-tobe">
+          <bounds x="1000" y="140" width="260" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-iot-predict" archimateElement="svc-iot-predictive-analytics-tobe">
+          <bounds x="30" y="220" width="240" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-remote-monitor" archimateElement="svc-remote-monitoring-tobe">
+          <bounds x="290" y="220" width="260" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-iot-log" archimateElement="obj-iot-maintenance-log-tobe">
+          <bounds x="570" y="220" width="220" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-predict-schedule" archimateElement="obj-predictive-schedule-tobe">
+          <bounds x="810" y="220" width="210" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-digital-service-act" archimateElement="obj-digital-service-act-tobe">
+          <bounds x="1040" y="220" width="210" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-iot-alert" archimateElement="event-iot-sensor-alert-tobe">
+          <bounds x="1270" y="220" width="240" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-auto-complete" archimateElement="event-auto-service-completed-tobe">
+          <bounds x="1530" y="220" width="220" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-predict-mgmt" archimateElement="func-predictive-maintenance-mgmt-tobe">
+          <bounds x="30" y="300" width="250" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-iot-coord" archimateElement="func-iot-auto-coordination-tobe">
+          <bounds x="300" y="300" width="260" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-collab-iot-network" archimateElement="collab-iot-service-network-tobe">
+          <bounds x="580" y="300" width="220" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-interact-iot-remote" archimateElement="interact-iot-remote-agreement-tobe">
+          <bounds x="820" y="300" width="260" height="55"/>
+          <fillColor r="200" g="230" b="255"/>
+        </child>
+      </child>
+      
+      <!-- Group 3: Коммуникации — AI Marketing Automation -->
+      <child xsi:type="archimate:Group" id="grp-partners-ai-marketing" name="TO-BE Партнеры: AI-маркетинг" textAlignment="1">
+        <bounds x="24" y="994" width="1900" height="340"/>
+        <fillColor r="255" g="250" b="220"/>
+        
+        <!-- Actors & Roles -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-actor-digital-agency" archimateElement="actor-digital-marketing-agency-tobe">
+          <bounds x="30" y="60" width="270" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-role-digital-mkt-mgr" archimateElement="role-digital-marketing-mgr-tobe">
+          <bounds x="320" y="60" width="260" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Processes -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-ai-brief" archimateElement="proc-ai-marketing-brief-tobe">
+          <bounds x="30" y="140" width="270" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-instant-approval" archimateElement="proc-instant-approval-tobe">
+          <bounds x="320" y="140" width="290" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-proc-omni-launch" archimateElement="proc-auto-omnichannel-launch-tobe">
+          <bounds x="630" y="140" width="280" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Services -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-svc-auto-platform" archimateElement="svc-marketing-autoplatform-tobe">
+          <bounds x="930" y="140" width="250" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Objects -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-ai-brief" archimateElement="obj-ai-brief-tobe">
+          <bounds x="30" y="220" width="200" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-auto-mediaplan" archimateElement="obj-auto-mediaplan-tobe">
+          <bounds x="250" y="220" width="220" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-obj-e-mkt-contract" archimateElement="obj-e-marketing-contract-tobe">
+          <bounds x="490" y="220" width="250" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Events -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-ai-brief-gen" archimateElement="event-ai-brief-generated-tobe">
+          <bounds x="760" y="220" width="260" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-instant-approval" archimateElement="event-instant-auto-approval-tobe">
+          <bounds x="1040" y="220" width="240" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-event-auto-launch" archimateElement="event-campaign-auto-launched-tobe">
+          <bounds x="1300" y="220" width="270" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Functions -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-ai-mkt-mgmt" archimateElement="func-ai-marketing-management-tobe">
+          <bounds x="1590" y="220" width="240" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-func-omni-coord" archimateElement="func-omnichannel-auto-coord-tobe">
+          <bounds x="30" y="300" width="300" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        
+        <!-- Collaboration & Interaction -->
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-collab-hub" archimateElement="collab-marketing-hub-tobe">
+          <bounds x="350" y="300" width="200" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="view-partners-tobe-interact-virtual" archimateElement="interact-virtual-presentation-tobe">
+          <bounds x="570" y="300" width="240" height="55"/>
+          <fillColor r="255" g="245" b="200"/>
+        </child>
+      </child>
+    </element>
     
     </folder> <!-- End of Business Layer Views -->
     
@@ -5737,6 +7181,239 @@
           <child xsi:type="archimate:DiagramObject" id="view-is-trainers-tobe-event-ai-nutrition" archimateElement="app-event-ai-nutrition-tobe">
             <bounds x="137" y="38" width="200" height="55"/>
             <fillColor r="255" g="245" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- ==================== AS-IS Партнеры IS View ==================== -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="AS-IS Партнеры — IS View" id="view-is-partners-asis">
+        
+        <!-- Group 1: Закупки — Procurement Systems -->
+        <child xsi:type="archimate:Group" id="grp-is-partners-procurement" name="IS AS-IS: Системы закупок" textAlignment="1">
+          <bounds x="24" y="24" width="1950" height="550"/>
+          <fillColor r="255" g="240" b="220"/>
+          
+          <!-- Application Components -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-procurement-sys" archimateElement="app-partners-procurement-asis">
+            <bounds x="30" y="60" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-supplier-mgmt" archimateElement="app-partners-supplier-mgmt-asis">
+            <bounds x="230" y="60" width="200" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-inventory" archimateElement="app-partners-inventory-asis">
+            <bounds x="450" y="60" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-accounting" archimateElement="app-partners-accounting-asis">
+            <bounds x="650" y="60" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-edms" archimateElement="app-partners-edms-asis">
+            <bounds x="850" y="60" width="220" height="70"/>
+          </child>
+          
+          <!-- Application Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-order-mgmt-svc" archimateElement="app-svc-partners-order-mgmt-asis">
+            <bounds x="30" y="155" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-catalog-svc" archimateElement="app-svc-partners-supplier-catalog-asis">
+            <bounds x="250" y="155" width="210" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-inventory-svc" archimateElement="app-svc-partners-inventory-tracking-asis">
+            <bounds x="480" y="155" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-invoicing-svc" archimateElement="app-svc-partners-invoicing-asis">
+            <bounds x="680" y="155" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-document-svc" archimateElement="app-svc-partners-document-flow-asis">
+            <bounds x="900" y="155" width="200" height="55"/>
+          </child>
+          
+          <!-- Application Functions -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-create-order-func" archimateElement="app-func-partners-create-order-asis">
+            <bounds x="30" y="235" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approve-func" archimateElement="app-func-partners-approve-purchase-asis">
+            <bounds x="250" y="235" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-check-stock-func" archimateElement="app-func-partners-check-stock-asis">
+            <bounds x="450" y="235" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-gen-invoice-func" archimateElement="app-func-partners-generate-invoice-asis">
+            <bounds x="670" y="235" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-register-func" archimateElement="app-func-partners-register-receipt-asis">
+            <bounds x="870" y="235" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-rate-func" archimateElement="app-func-partners-rate-supplier-asis">
+            <bounds x="1080" y="235" width="170" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-store-func" archimateElement="app-func-partners-store-contract-asis">
+            <bounds x="1270" y="235" width="170" height="55"/>
+          </child>
+          
+          <!-- Data Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-po-data" archimateElement="app-data-partners-purchase-order-asis">
+            <bounds x="30" y="315" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-supplier-data" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="250" y="315" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-contract-data" archimateElement="app-data-partners-contract-asis">
+            <bounds x="470" y="315" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-spec-data" archimateElement="app-data-partners-product-spec-asis">
+            <bounds x="670" y="315" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-invoice-data" archimateElement="app-data-partners-invoice-data-asis">
+            <bounds x="870" y="315" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-history-data" archimateElement="app-data-partners-delivery-history-asis">
+            <bounds x="1080" y="315" width="170" height="55"/>
+          </child>
+          
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-web-iface" archimateElement="app-iface-partners-procurement-web-asis">
+            <bounds x="1270" y="315" width="230" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-portal-iface" archimateElement="app-iface-partners-supplier-portal-asis">
+            <bounds x="1520" y="315" width="180" height="55"/>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-order-created-event" archimateElement="app-event-partners-order-created-asis">
+            <bounds x="30" y="395" width="170" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-order-approved-event" archimateElement="app-event-partners-order-approved-asis">
+            <bounds x="220" y="395" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-goods-received-event" archimateElement="app-event-partners-goods-received-asis">
+            <bounds x="420" y="395" width="170" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-invoice-gen-event" archimateElement="app-event-partners-invoice-generated-asis">
+            <bounds x="610" y="395" width="190" height="55"/>
+          </child>
+          
+          <!-- Collaborations -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-proc-acc-collab" archimateElement="app-collab-partners-procurement-accounting-asis">
+            <bounds x="820" y="395" width="250" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-supplier-exchange-collab" archimateElement="app-collab-partners-supplier-data-exchange-asis">
+            <bounds x="1090" y="395" width="250" height="55"/>
+          </child>
+        </child>
+        
+        <!-- Group 2: Обслуживание — Maintenance Systems -->
+        <child xsi:type="archimate:Group" id="grp-is-partners-maintenance" name="IS AS-IS: Системы обслуживания" textAlignment="1">
+          <bounds x="24" y="594" width="1950" height="400"/>
+          <fillColor r="220" g="240" b="255"/>
+          
+          <!-- Application Components -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cmms" archimateElement="app-partners-cmms-asis">
+            <bounds x="30" y="60" width="220" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-service-requests" archimateElement="app-partners-service-requests-asis">
+            <bounds x="270" y="60" width="220" height="70"/>
+          </child>
+          
+          <!-- Application Services -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-maint-planning-svc" archimateElement="app-svc-partners-maintenance-planning-asis">
+            <bounds x="30" y="155" width="220" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-repair-svc" archimateElement="app-svc-partners-repair-requests-asis">
+            <bounds x="270" y="155" width="200" height="55"/>
+          </child>
+          
+          <!-- Application Functions -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-schedule-func" archimateElement="app-func-partners-schedule-maintenance-asis">
+            <bounds x="30" y="235" width="220" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-create-ticket-func" archimateElement="app-func-partners-create-repair-ticket-asis">
+            <bounds x="270" y="235" width="220" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-track-repair-func" archimateElement="app-func-partners-track-repair-asis">
+            <bounds x="510" y="235" width="220" height="55"/>
+          </child>
+          
+          <!-- Data Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-schedule-data" archimateElement="app-data-partners-maintenance-schedule-asis">
+            <bounds x="750" y="235" width="220" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-ticket-data" archimateElement="app-data-partners-repair-ticket-asis">
+            <bounds x="990" y="235" width="210" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-log-data" archimateElement="app-data-partners-maintenance-log-asis">
+            <bounds x="1220" y="235" width="180" height="55"/>
+          </child>
+          
+          <!-- Interface -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cmms-iface" archimateElement="app-iface-partners-cmms-asis">
+            <bounds x="1420" y="235" width="160" height="55"/>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-maint-req-event" archimateElement="app-event-partners-maintenance-requested-asis">
+            <bounds x="30" y="315" width="210" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-repair-done-event" archimateElement="app-event-partners-repair-completed-asis">
+            <bounds x="260" y="315" width="180" height="55"/>
+          </child>
+          
+          <!-- Collaboration -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-maint-coord-collab" archimateElement="app-collab-partners-maintenance-coordination-asis">
+            <bounds x="460" y="315" width="250" height="55"/>
+          </child>
+        </child>
+        
+        <!-- Group 3: Коммуникации — Marketing Systems -->
+        <child xsi:type="archimate:Group" id="grp-is-partners-marketing" name="IS AS-IS: Системы маркетинга" textAlignment="1">
+          <bounds x="24" y="1014" width="1950" height="350"/>
+          <fillColor r="255" g="250" b="220"/>
+          
+          <!-- Application Components -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-crm" archimateElement="app-partners-marketing-crm-asis">
+            <bounds x="30" y="60" width="180" height="70"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-email" archimateElement="app-partners-email-asis">
+            <bounds x="230" y="60" width="200" height="70"/>
+          </child>
+          
+          <!-- Application Service -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-campaign-svc" archimateElement="app-svc-partners-campaign-mgmt-asis">
+            <bounds x="30" y="155" width="230" height="55"/>
+          </child>
+          
+          <!-- Application Functions -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-func" archimateElement="app-func-partners-create-brief-asis">
+            <bounds x="280" y="155" width="240" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-email-func" archimateElement="app-func-partners-send-email-asis">
+            <bounds x="540" y="155" width="200" height="55"/>
+          </child>
+          
+          <!-- Data Objects -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-data" archimateElement="app-data-partners-marketing-brief-asis">
+            <bounds x="30" y="235" width="230" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-mediaplan-data" archimateElement="app-data-partners-mediaplan-asis">
+            <bounds x="280" y="235" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-email-data" archimateElement="app-data-partners-email-thread-asis">
+            <bounds x="490" y="235" width="170" height="55"/>
+          </child>
+          
+          <!-- Interfaces -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-email-iface" archimateElement="app-iface-partners-email-asis">
+            <bounds x="680" y="235" width="170" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-crm-iface" archimateElement="app-iface-partners-crm-asis">
+            <bounds x="870" y="235" width="150" height="55"/>
+          </child>
+          
+          <!-- Events -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-email-sent-event" archimateElement="app-event-partners-email-sent-asis">
+            <bounds x="1040" y="235" width="170" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-approved-event" archimateElement="app-event-partners-brief-approved-asis">
+            <bounds x="1230" y="235" width="170" height="55"/>
           </child>
         </child>
       </element>
