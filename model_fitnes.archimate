@@ -2931,7 +2931,189 @@
       <property key="Area" value="Общий"/>
     </element>
   </folder>
-  <folder name="Motivation" id="id-motivation-folder" type="motivation"/>
+  <folder name="Motivation" id="id-motivation-folder" type="motivation">
+    <!-- Stakeholders -->
+    <element xsi:type="archimate:Stakeholder" name="Клиенты фитнес-клуба" id="stake-clients">
+      <documentation>Основные потребители услуг клуба, заинтересованы в удобстве записи и качестве сервиса</documentation>
+    </element>
+    <element xsi:type="archimate:Stakeholder" name="Руководство клуба" id="stake-management">
+      <documentation>Владельцы и топ-менеджмент, заинтересованы в росте прибыли и эффективности</documentation>
+    </element>
+    <element xsi:type="archimate:Stakeholder" name="Персонал клуба" id="stake-staff">
+      <documentation>Администраторы, тренеры, бухгалтеры — заинтересованы в упрощении работы</documentation>
+    </element>
+    <element xsi:type="archimate:Stakeholder" name="Инвесторы" id="stake-investors">
+      <documentation>Заинтересованы в ROI и росте бизнеса</documentation>
+    </element>
+    <element xsi:type="archimate:Stakeholder" name="IT-отдел" id="stake-it">
+      <documentation>Отвечает за внедрение и поддержку систем</documentation>
+    </element>
+
+    <!-- Drivers (Движущие силы) -->
+    <element xsi:type="archimate:Driver" name="Рост конкуренции на рынке" id="drv-competition">
+      <documentation>Появление новых фитнес-клубов с современным сервисом</documentation>
+    </element>
+    <element xsi:type="archimate:Driver" name="Цифровизация сервисов" id="drv-digitalization">
+      <documentation>Тренд на онлайн-запись, мобильные приложения, самообслуживание</documentation>
+    </element>
+    <element xsi:type="archimate:Driver" name="Потеря клиентов из-за неудобства" id="drv-churn">
+      <documentation>Отток клиентов из-за ошибок в расписании, долгого ожидания</documentation>
+    </element>
+    <element xsi:type="archimate:Driver" name="Ручные процессы — источник ошибок" id="drv-manual-errors">
+      <documentation>Двойное бронирование, потеря данных, несвоевременные уведомления</documentation>
+    </element>
+    <element xsi:type="archimate:Driver" name="Отсутствие аналитики" id="drv-no-analytics">
+      <documentation>Невозможность принимать решения на основе данных</documentation>
+    </element>
+    <element xsi:type="archimate:Driver" name="Требования регуляторов" id="drv-compliance">
+      <documentation>GDPR, защита персональных данных, электронная отчетность</documentation>
+    </element>
+
+    <!-- Assessments (Оценки текущего состояния) -->
+    <element xsi:type="archimate:Assessment" name="AS-IS: Низкая удовлетворенность клиентов (60%)" id="assess-satisfaction-asis">
+      <documentation>Текущий уровень удовлетворенности клиентов по опросам</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="TO-BE: Целевая удовлетворенность (90%)" id="assess-satisfaction-tobe">
+      <documentation>Целевой показатель после цифровизации</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="AS-IS: Ошибки в расписании (15% случаев)" id="assess-errors-asis">
+      <documentation>Частота ошибок двойного бронирования и накладок</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="TO-BE: Ошибки менее 2%" id="assess-errors-tobe">
+      <documentation>Цель автоматизации — снижение ошибок до минимума</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="AS-IS: Время на запись — 10-15 мин" id="assess-time-asis">
+      <documentation>Среднее время оформления записи через администратора</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="TO-BE: Время на запись — 2 мин" id="assess-time-tobe">
+      <documentation>Самостоятельная онлайн-запись за 2 минуты</documentation>
+    </element>
+
+    <!-- Goals (Цели) -->
+    <element xsi:type="archimate:Goal" name="Увеличить выручку на 30%" id="goal-revenue">
+      <documentation>Стратегическая цель через рост количества клиентов и удержание</documentation>
+    </element>
+    <element xsi:type="archimate:Goal" name="Повысить удовлетворенность клиентов" id="goal-satisfaction">
+      <documentation>Улучшить качество обслуживания и удобство сервисов</documentation>
+    </element>
+    <element xsi:type="archimate:Goal" name="Снизить операционные издержки на 20%" id="goal-cost-reduction">
+      <documentation>Автоматизация процессов для снижения затрат на персонал</documentation>
+    </element>
+    <element xsi:type="archimate:Goal" name="Обеспечить конкурентное преимущество" id="goal-competitive">
+      <documentation>Стать лидером по качеству цифрового сервиса в регионе</documentation>
+    </element>
+    <element xsi:type="archimate:Goal" name="Минимизировать ошибки в процессах" id="goal-minimize-errors">
+      <documentation>Устранить ручные ошибки через автоматизацию</documentation>
+    </element>
+    <element xsi:type="archimate:Goal" name="Обеспечить доступ к аналитике в реальном времени" id="goal-analytics">
+      <documentation>Дать руководству инструменты для принятия решений</documentation>
+    </element>
+
+    <!-- Outcomes (Результаты) -->
+    <element xsi:type="archimate:Outcome" name="Рост числа клиентов на 25%" id="outcome-client-growth">
+      <documentation>Ожидаемый результат улучшения сервиса</documentation>
+    </element>
+    <element xsi:type="archimate:Outcome" name="Снижение времени обслуживания в 5 раз" id="outcome-time-reduction">
+      <documentation>Эффект от внедрения самообслуживания</documentation>
+    </element>
+    <element xsi:type="archimate:Outcome" name="Снижение оттока клиентов на 40%" id="outcome-churn-reduction">
+      <documentation>Удержание клиентов благодаря качеству сервиса</documentation>
+    </element>
+    <element xsi:type="archimate:Outcome" name="Прозрачность бизнес-процессов" id="outcome-transparency">
+      <documentation>Полная видимость операций для руководства</documentation>
+    </element>
+
+    <!-- Principles (Принципы) -->
+    <element xsi:type="archimate:Principle" name="Клиентоориентированность" id="prin-client-centric">
+      <documentation>Все решения принимаются с учетом удобства клиентов</documentation>
+    </element>
+    <element xsi:type="archimate:Principle" name="Автоматизация рутинных процессов" id="prin-automation">
+      <documentation>Минимизировать ручной труд, автоматизировать повторяющиеся операции</documentation>
+    </element>
+    <element xsi:type="archimate:Principle" name="Единая точка правды (Single Source of Truth)" id="prin-ssot">
+      <documentation>Все данные хранятся в единой системе, исключая дублирование</documentation>
+    </element>
+    <element xsi:type="archimate:Principle" name="Безопасность данных клиентов" id="prin-security">
+      <documentation>Защита персональных данных в соответствии с требованиями</documentation>
+    </element>
+    <element xsi:type="archimate:Principle" name="Масштабируемость решений" id="prin-scalability">
+      <documentation>ИТ-системы должны поддерживать рост бизнеса</documentation>
+    </element>
+    <element xsi:type="archimate:Principle" name="Прозрачность для руководства" id="prin-transparency">
+      <documentation>Метрики и KPI доступны в реальном времени</documentation>
+    </element>
+
+    <!-- Requirements (Требования) -->
+    <element xsi:type="archimate:Requirement" name="Онлайн-запись 24/7" id="req-online-booking">
+      <documentation>Клиенты должны иметь возможность записаться в любое время</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Мобильное приложение для клиентов" id="req-mobile-app">
+      <documentation>Разработать и внедрить мобильное приложение iOS/Android</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Автоматические уведомления" id="req-auto-notifications">
+      <documentation>SMS/push-уведомления о записях, изменениях, напоминания</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Цифровые карты клиентов" id="req-digital-cards">
+      <documentation>Замена бумажных карт на электронные профили</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Единая CRM-система" id="req-crm">
+      <documentation>Централизованная система управления клиентами</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="BI-дашборды для руководства" id="req-bi-dashboards">
+      <documentation>Аналитические панели с KPI и метриками</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Интеграция с платежными системами" id="req-payment-integration">
+      <documentation>Онлайн-оплата картами, электронные чеки</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="QR-код для входа" id="req-qr-checkin">
+      <documentation>Бесконтактная регистрация посещений через QR</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="Облачное хранилище данных" id="req-cloud-storage">
+      <documentation>Миграция данных в облако для надежности и доступности</documentation>
+    </element>
+    <element xsi:type="archimate:Requirement" name="API для интеграции систем" id="req-api">
+      <documentation>Открытый API для связи мобильного приложения, веб-портала, CRM</documentation>
+    </element>
+
+    <!-- Constraints (Ограничения) -->
+    <element xsi:type="archimate:Constraint" name="Бюджет проекта: 5 млн руб." id="constr-budget">
+      <documentation>Ограничение финансирования на внедрение</documentation>
+    </element>
+    <element xsi:type="archimate:Constraint" name="Сроки внедрения: 12 месяцев" id="constr-timeline">
+      <documentation>Проект должен быть завершен за год</documentation>
+    </element>
+    <element xsi:type="archimate:Constraint" name="Совместимость с существующим оборудованием" id="constr-compatibility">
+      <documentation>Новые системы должны работать с текущей инфраструктурой</documentation>
+    </element>
+    <element xsi:type="archimate:Constraint" name="Обучение персонала (макс. 2 недели)" id="constr-training">
+      <documentation>Переход на новую систему не должен надолго останавливать работу</documentation>
+    </element>
+
+    <!-- Value (Ценности) -->
+    <element xsi:type="archimate:Value" name="Удобство для клиентов" id="value-convenience">
+      <documentation>Простота использования сервисов клуба</documentation>
+    </element>
+    <element xsi:type="archimate:Value" name="Экономия времени" id="value-time-saving">
+      <documentation>Клиенты и персонал экономят время на операциях</documentation>
+    </element>
+    <element xsi:type="archimate:Value" name="Надежность сервиса" id="value-reliability">
+      <documentation>Минимум ошибок, стабильная работа систем</documentation>
+    </element>
+    <element xsi:type="archimate:Value" name="Инновационный имидж клуба" id="value-innovation">
+      <documentation>Репутация современного технологичного клуба</documentation>
+    </element>
+
+    <!-- Meaning (Значение для стейкхолдеров) -->
+    <element xsi:type="archimate:Meaning" name="Для клиентов: Комфорт и контроль" id="mean-client">
+      <documentation>Клиенты получают полный контроль над записями и расписанием</documentation>
+    </element>
+    <element xsi:type="archimate:Meaning" name="Для руководства: Рост прибыли" id="mean-management">
+      <documentation>Увеличение выручки и снижение издержек</documentation>
+    </element>
+    <element xsi:type="archimate:Meaning" name="Для персонала: Упрощение работы" id="mean-staff">
+      <documentation>Меньше рутины, больше фокуса на клиентском сервисе</documentation>
+    </element>
+  </folder>
   <folder name="Implementation &amp; Migration" id="id-implementation-folder" type="implementation_migration"/>
   <folder name="Other" id="id-other-folder" type="other">
     <element xsi:type="archimate:Grouping" name="Область: Запись (Booking)" id="grp-booking"/>
@@ -4326,8 +4508,544 @@
     <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-111" source="proc-auto-sync-tobe" target="event-auto-reminder-tobe"/>
     <element xsi:type="archimate:TriggeringRelationship" id="rel-tobe-112" source="proc-qr-checkin-tobe" target="proc-auto-reporting-tobe"/>
 
+    <!-- ==================== MOTIVATION LAYER RELATIONSHIPS ==================== -->
+    
+    <!-- Stakeholder -> Driver (Association) -->
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-001" source="stake-clients" target="drv-churn"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-002" source="stake-management" target="drv-competition"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-003" source="stake-management" target="drv-no-analytics"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-004" source="stake-staff" target="drv-manual-errors"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-005" source="stake-clients" target="drv-digitalization"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-006" source="stake-investors" target="drv-competition"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-007" source="stake-it" target="drv-compliance"/>
+
+    <!-- Driver -> Assessment -->
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-010" source="drv-churn" target="assess-satisfaction-asis"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-011" source="drv-manual-errors" target="assess-errors-asis"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-012" source="drv-digitalization" target="assess-time-asis"/>
+
+    <!-- Driver -> Goal (Influence) -->
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-020" source="drv-competition" target="goal-competitive"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-021" source="drv-churn" target="goal-satisfaction"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-022" source="drv-manual-errors" target="goal-minimize-errors"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-023" source="drv-no-analytics" target="goal-analytics"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-024" source="drv-digitalization" target="goal-satisfaction"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-025" source="drv-competition" target="goal-revenue"/>
+
+    <!-- Assessment -> Goal (Influence) -->
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-030" source="assess-satisfaction-asis" target="goal-satisfaction"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-031" source="assess-errors-asis" target="goal-minimize-errors"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-032" source="assess-time-asis" target="goal-cost-reduction"/>
+
+    <!-- Goal -> Outcome (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-040" source="outcome-client-growth" target="goal-revenue"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-041" source="outcome-time-reduction" target="goal-cost-reduction"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-042" source="outcome-churn-reduction" target="goal-satisfaction"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-043" source="outcome-transparency" target="goal-analytics"/>
+
+    <!-- Goal -> Principle (Influence) -->
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-050" source="goal-satisfaction" target="prin-client-centric"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-051" source="goal-minimize-errors" target="prin-automation"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-052" source="goal-analytics" target="prin-transparency"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-053" source="goal-cost-reduction" target="prin-automation"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-054" source="goal-competitive" target="prin-scalability"/>
+
+    <!-- Principle -> Requirement (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-060" source="req-online-booking" target="prin-client-centric"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-061" source="req-mobile-app" target="prin-client-centric"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-062" source="req-auto-notifications" target="prin-automation"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-063" source="req-digital-cards" target="prin-ssot"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-064" source="req-crm" target="prin-ssot"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-065" source="req-bi-dashboards" target="prin-transparency"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-066" source="req-payment-integration" target="prin-automation"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-067" source="req-qr-checkin" target="prin-automation"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-068" source="req-cloud-storage" target="prin-scalability"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-069" source="req-api" target="prin-ssot"/>
+
+    <!-- Assessment TO-BE -> Requirement (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-070" source="req-mobile-app" target="assess-satisfaction-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-071" source="req-online-booking" target="assess-time-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-072" source="req-crm" target="assess-errors-tobe"/>
+
+    <!-- Constraint -> Requirement (Influence negative) -->
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-080" source="constr-budget" target="req-cloud-storage" strength="-"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-081" source="constr-timeline" target="req-mobile-app" strength="-"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-082" source="constr-compatibility" target="req-api" strength="-"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="rel-mot-083" source="constr-training" target="req-auto-notifications" strength="-"/>
+
+    <!-- Value -> Stakeholder (Association) -->
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-090" source="value-convenience" target="stake-clients"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-091" source="value-time-saving" target="stake-staff"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-092" source="value-reliability" target="stake-management"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-093" source="value-innovation" target="stake-investors"/>
+
+    <!-- Outcome -> Value (Association) -->
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-100" source="outcome-client-growth" target="value-innovation"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-101" source="outcome-time-reduction" target="value-time-saving"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-102" source="outcome-churn-reduction" target="value-reliability"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-103" source="outcome-transparency" target="value-reliability"/>
+
+    <!-- Meaning -> Stakeholder (Association) -->
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-110" source="mean-client" target="stake-clients"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-111" source="mean-management" target="stake-management"/>
+    <element xsi:type="archimate:AssociationRelationship" id="rel-mot-112" source="mean-staff" target="stake-staff"/>
+
+    <!-- Value -> Meaning (Realization) -->
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-120" source="value-convenience" target="mean-client"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-121" source="value-time-saving" target="mean-staff"/>
+    <element xsi:type="archimate:RealizationRelationship" id="rel-mot-122" source="value-innovation" target="mean-management"/>
+
+    <!-- Goal -> Goal (Aggregation для иерархии целей) -->
+    <element xsi:type="archimate:AggregationRelationship" id="rel-mot-130" source="goal-revenue" target="goal-satisfaction"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-mot-131" source="goal-revenue" target="goal-cost-reduction"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-mot-132" source="goal-competitive" target="goal-minimize-errors"/>
+    <element xsi:type="archimate:AggregationRelationship" id="rel-mot-133" source="goal-competitive" target="goal-analytics"/>
+
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
+    
+    <!-- ==================== MOTIVATION MODEL VIEW ==================== -->
+    <folder name="Motivation Model" id="folder-motivation-views" type="diagrams">
+      
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Motivation Model — AS-IS to TO-BE Transition" id="view-motivation">
+        <documentation>Модель мотивации перехода из текущего состояния (AS-IS) в целевое (TO-BE). 
+Включает стейкхолдеров, драйверы изменений, цели, требования, принципы, оценки и ценности.</documentation>
+        
+        <!-- Stakeholders Layer (Top) -->
+        <child xsi:type="archimate:Note" id="note-mot-stakeholders">
+          <bounds x="24" y="24" width="1400" height="40"/>
+          <fillColor r="240" g="240" b="240"/>
+          <content>СТЕЙКХОЛДЕРЫ</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-stake-clients" archimateElement="stake-clients">
+          <bounds x="50" y="80" width="200" height="60"/>
+          <fillColor r="173" g="216" b="230"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-001" source="view-stake-clients" target="view-drv-churn" archimateRelationship="rel-mot-001"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-005" source="view-stake-clients" target="view-drv-digitalization" archimateRelationship="rel-mot-005"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-stake-management" archimateElement="stake-management">
+          <bounds x="280" y="80" width="200" height="60"/>
+          <fillColor r="173" g="216" b="230"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-002" source="view-stake-management" target="view-drv-competition" archimateRelationship="rel-mot-002"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-003" source="view-stake-management" target="view-drv-no-analytics" archimateRelationship="rel-mot-003"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-stake-staff" archimateElement="stake-staff">
+          <bounds x="510" y="80" width="200" height="60"/>
+          <fillColor r="173" g="216" b="230"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-004" source="view-stake-staff" target="view-drv-manual-errors" archimateRelationship="rel-mot-004"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-stake-investors" archimateElement="stake-investors">
+          <bounds x="740" y="80" width="200" height="60"/>
+          <fillColor r="173" g="216" b="230"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-006" source="view-stake-investors" target="view-drv-competition" archimateRelationship="rel-mot-006"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-stake-it" archimateElement="stake-it">
+          <bounds x="970" y="80" width="200" height="60"/>
+          <fillColor r="173" g="216" b="230"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-007" source="view-stake-it" target="view-drv-compliance" archimateRelationship="rel-mot-007"/>
+        </child>
+
+        <!-- Drivers Layer -->
+        <child xsi:type="archimate:Note" id="note-mot-drivers">
+          <bounds x="24" y="170" width="1400" height="40"/>
+          <fillColor r="255" g="228" b="196"/>
+          <content>ДВИЖУЩИЕ СИЛЫ (DRIVERS)</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-competition" targetConnections="conn-mot-002 conn-mot-006" archimateElement="drv-competition">
+          <bounds x="50" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-020" source="view-drv-competition" target="view-goal-competitive" archimateRelationship="rel-mot-020"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-025" source="view-drv-competition" target="view-goal-revenue" archimateRelationship="rel-mot-025"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-digitalization" targetConnections="conn-mot-005" archimateElement="drv-digitalization">
+          <bounds x="260" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-024" source="view-drv-digitalization" target="view-goal-satisfaction" archimateRelationship="rel-mot-024"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-012" source="view-drv-digitalization" target="view-assess-time-asis" archimateRelationship="rel-mot-012"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-churn" targetConnections="conn-mot-001" archimateElement="drv-churn">
+          <bounds x="470" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-021" source="view-drv-churn" target="view-goal-satisfaction" archimateRelationship="rel-mot-021"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-010" source="view-drv-churn" target="view-assess-satisfaction-asis" archimateRelationship="rel-mot-010"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-manual-errors" targetConnections="conn-mot-004" archimateElement="drv-manual-errors">
+          <bounds x="680" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-022" source="view-drv-manual-errors" target="view-goal-minimize-errors" archimateRelationship="rel-mot-022"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-011" source="view-drv-manual-errors" target="view-assess-errors-asis" archimateRelationship="rel-mot-011"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-no-analytics" targetConnections="conn-mot-003" archimateElement="drv-no-analytics">
+          <bounds x="890" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-023" source="view-drv-no-analytics" target="view-goal-analytics" archimateRelationship="rel-mot-023"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-drv-compliance" targetConnections="conn-mot-007" archimateElement="drv-compliance">
+          <bounds x="1100" y="230" width="180" height="60"/>
+          <fillColor r="255" g="200" b="150"/>
+        </child>
+
+        <!-- Assessments AS-IS -->
+        <child xsi:type="archimate:Note" id="note-mot-assess-asis">
+          <bounds x="24" y="320" width="600" height="30"/>
+          <fillColor r="255" g="200" b="200"/>
+          <content>ОЦЕНКА ТЕКУЩЕГО СОСТОЯНИЯ (AS-IS)</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-satisfaction-asis" targetConnections="conn-mot-010" archimateElement="assess-satisfaction-asis">
+          <bounds x="50" y="370" width="180" height="60"/>
+          <fillColor r="255" g="180" b="180"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-030" source="view-assess-satisfaction-asis" target="view-goal-satisfaction" archimateRelationship="rel-mot-030"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-errors-asis" targetConnections="conn-mot-011" archimateElement="assess-errors-asis">
+          <bounds x="260" y="370" width="180" height="60"/>
+          <fillColor r="255" g="180" b="180"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-031" source="view-assess-errors-asis" target="view-goal-minimize-errors" archimateRelationship="rel-mot-031"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-time-asis" targetConnections="conn-mot-012" archimateElement="assess-time-asis">
+          <bounds x="470" y="370" width="180" height="60"/>
+          <fillColor r="255" g="180" b="180"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-032" source="view-assess-time-asis" target="view-goal-cost-reduction" archimateRelationship="rel-mot-032"/>
+        </child>
+
+        <!-- Assessments TO-BE -->
+        <child xsi:type="archimate:Note" id="note-mot-assess-tobe">
+          <bounds x="730" y="320" width="600" height="30"/>
+          <fillColor r="200" g="255" b="200"/>
+          <content>ЦЕЛЕВОЕ СОСТОЯНИЕ (TO-BE) — ОЖИДАЕМЫЕ ПОКАЗАТЕЛИ</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-satisfaction-tobe" archimateElement="assess-satisfaction-tobe">
+          <bounds x="730" y="370" width="180" height="60"/>
+          <fillColor r="180" g="255" b="180"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-errors-tobe" archimateElement="assess-errors-tobe">
+          <bounds x="940" y="370" width="180" height="60"/>
+          <fillColor r="180" g="255" b="180"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-assess-time-tobe" archimateElement="assess-time-tobe">
+          <bounds x="1150" y="370" width="180" height="60"/>
+          <fillColor r="180" g="255" b="180"/>
+        </child>
+
+        <!-- Goals Layer -->
+        <child xsi:type="archimate:Note" id="note-mot-goals">
+          <bounds x="24" y="460" width="1400" height="40"/>
+          <fillColor r="144" g="238" b="144"/>
+          <content>СТРАТЕГИЧЕСКИЕ ЦЕЛИ</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-revenue" targetConnections="conn-mot-025" archimateElement="goal-revenue">
+          <bounds x="50" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-130" source="view-goal-revenue" target="view-goal-satisfaction" archimateRelationship="rel-mot-130"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-131" source="view-goal-revenue" target="view-goal-cost-reduction" archimateRelationship="rel-mot-131"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-satisfaction" targetConnections="conn-mot-021 conn-mot-024 conn-mot-030 conn-mot-130" archimateElement="goal-satisfaction">
+          <bounds x="280" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-050" source="view-goal-satisfaction" target="view-prin-client-centric" archimateRelationship="rel-mot-050"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-cost-reduction" targetConnections="conn-mot-032 conn-mot-131" archimateElement="goal-cost-reduction">
+          <bounds x="510" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-053" source="view-goal-cost-reduction" target="view-prin-automation" archimateRelationship="rel-mot-053"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-competitive" targetConnections="conn-mot-020" archimateElement="goal-competitive">
+          <bounds x="740" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-132" source="view-goal-competitive" target="view-goal-minimize-errors" archimateRelationship="rel-mot-132"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-133" source="view-goal-competitive" target="view-goal-analytics" archimateRelationship="rel-mot-133"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-054" source="view-goal-competitive" target="view-prin-scalability" archimateRelationship="rel-mot-054"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-minimize-errors" targetConnections="conn-mot-022 conn-mot-031 conn-mot-132" archimateElement="goal-minimize-errors">
+          <bounds x="970" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-051" source="view-goal-minimize-errors" target="view-prin-automation" archimateRelationship="rel-mot-051"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-goal-analytics" targetConnections="conn-mot-023 conn-mot-133" archimateElement="goal-analytics">
+          <bounds x="1200" y="520" width="200" height="60"/>
+          <fillColor r="100" g="200" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-052" source="view-goal-analytics" target="view-prin-transparency" archimateRelationship="rel-mot-052"/>
+        </child>
+
+        <!-- Outcomes -->
+        <child xsi:type="archimate:Note" id="note-mot-outcomes">
+          <bounds x="24" y="610" width="1400" height="30"/>
+          <fillColor r="255" g="255" b="200"/>
+          <content>ОЖИДАЕМЫЕ РЕЗУЛЬТАТЫ (OUTCOMES)</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-outcome-client-growth" archimateElement="outcome-client-growth">
+          <bounds x="50" y="660" width="200" height="60"/>
+          <fillColor r="255" g="255" b="153"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-040" source="view-outcome-client-growth" target="view-goal-revenue" archimateRelationship="rel-mot-040"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-100" source="view-outcome-client-growth" target="view-value-innovation" archimateRelationship="rel-mot-100"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-outcome-time-reduction" archimateElement="outcome-time-reduction">
+          <bounds x="280" y="660" width="200" height="60"/>
+          <fillColor r="255" g="255" b="153"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-041" source="view-outcome-time-reduction" target="view-goal-cost-reduction" archimateRelationship="rel-mot-041"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-101" source="view-outcome-time-reduction" target="view-value-time-saving" archimateRelationship="rel-mot-101"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-outcome-churn-reduction" archimateElement="outcome-churn-reduction">
+          <bounds x="510" y="660" width="200" height="60"/>
+          <fillColor r="255" g="255" b="153"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-042" source="view-outcome-churn-reduction" target="view-goal-satisfaction" archimateRelationship="rel-mot-042"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-102" source="view-outcome-churn-reduction" target="view-value-reliability" archimateRelationship="rel-mot-102"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-outcome-transparency" archimateElement="outcome-transparency">
+          <bounds x="740" y="660" width="200" height="60"/>
+          <fillColor r="255" g="255" b="153"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-043" source="view-outcome-transparency" target="view-goal-analytics" archimateRelationship="rel-mot-043"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-103" source="view-outcome-transparency" target="view-value-reliability" archimateRelationship="rel-mot-103"/>
+        </child>
+
+        <!-- Principles -->
+        <child xsi:type="archimate:Note" id="note-mot-principles">
+          <bounds x="24" y="750" width="1400" height="30"/>
+          <fillColor r="221" g="160" b="221"/>
+          <content>АРХИТЕКТУРНЫЕ ПРИНЦИПЫ</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-client-centric" targetConnections="conn-mot-050" archimateElement="prin-client-centric">
+          <bounds x="50" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-automation" targetConnections="conn-mot-051 conn-mot-053" archimateElement="prin-automation">
+          <bounds x="280" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-ssot" archimateElement="prin-ssot">
+          <bounds x="510" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-security" archimateElement="prin-security">
+          <bounds x="740" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-scalability" targetConnections="conn-mot-054" archimateElement="prin-scalability">
+          <bounds x="970" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-prin-transparency" targetConnections="conn-mot-052" archimateElement="prin-transparency">
+          <bounds x="1200" y="800" width="200" height="60"/>
+          <fillColor r="200" g="120" b="200"/>
+        </child>
+
+        <!-- Requirements -->
+        <child xsi:type="archimate:Note" id="note-mot-requirements">
+          <bounds x="24" y="890" width="1400" height="30"/>
+          <fillColor r="176" g="224" b="230"/>
+          <content>ФУНКЦИОНАЛЬНЫЕ ТРЕБОВАНИЯ К TO-BE</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-online-booking" archimateElement="req-online-booking">
+          <bounds x="50" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-060" source="view-req-online-booking" target="view-prin-client-centric" archimateRelationship="rel-mot-060"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-071" source="view-req-online-booking" target="view-assess-time-tobe" archimateRelationship="rel-mot-071"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-mobile-app" archimateElement="req-mobile-app">
+          <bounds x="260" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-061" source="view-req-mobile-app" target="view-prin-client-centric" archimateRelationship="rel-mot-061"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-070" source="view-req-mobile-app" target="view-assess-satisfaction-tobe" archimateRelationship="rel-mot-070"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-auto-notifications" archimateElement="req-auto-notifications">
+          <bounds x="470" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-062" source="view-req-auto-notifications" target="view-prin-automation" archimateRelationship="rel-mot-062"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-digital-cards" archimateElement="req-digital-cards">
+          <bounds x="680" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-063" source="view-req-digital-cards" target="view-prin-ssot" archimateRelationship="rel-mot-063"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-crm" archimateElement="req-crm">
+          <bounds x="890" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-064" source="view-req-crm" target="view-prin-ssot" archimateRelationship="rel-mot-064"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-072" source="view-req-crm" target="view-assess-errors-tobe" archimateRelationship="rel-mot-072"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-bi-dashboards" archimateElement="req-bi-dashboards">
+          <bounds x="1100" y="940" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-065" source="view-req-bi-dashboards" target="view-prin-transparency" archimateRelationship="rel-mot-065"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-payment-integration" archimateElement="req-payment-integration">
+          <bounds x="50" y="1030" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-066" source="view-req-payment-integration" target="view-prin-automation" archimateRelationship="rel-mot-066"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-qr-checkin" archimateElement="req-qr-checkin">
+          <bounds x="260" y="1030" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-067" source="view-req-qr-checkin" target="view-prin-automation" archimateRelationship="rel-mot-067"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-cloud-storage" archimateElement="req-cloud-storage">
+          <bounds x="470" y="1030" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-068" source="view-req-cloud-storage" target="view-prin-scalability" archimateRelationship="rel-mot-068"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-req-api" archimateElement="req-api">
+          <bounds x="680" y="1030" width="180" height="60"/>
+          <fillColor r="135" g="206" b="250"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-069" source="view-req-api" target="view-prin-ssot" archimateRelationship="rel-mot-069"/>
+        </child>
+
+        <!-- Constraints -->
+        <child xsi:type="archimate:Note" id="note-mot-constraints">
+          <bounds x="24" y="1120" width="1400" height="30"/>
+          <fillColor r="255" g="182" b="193"/>
+          <content>ОГРАНИЧЕНИЯ ПРОЕКТА</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-constr-budget" archimateElement="constr-budget">
+          <bounds x="50" y="1170" width="180" height="60"/>
+          <fillColor r="255" g="140" b="140"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-080" source="view-constr-budget" target="view-req-cloud-storage" archimateRelationship="rel-mot-080">
+            <bendpoint startX="-40" startY="120" endX="380" endY="-20"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-constr-timeline" archimateElement="constr-timeline">
+          <bounds x="260" y="1170" width="180" height="60"/>
+          <fillColor r="255" g="140" b="140"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-081" source="view-constr-timeline" target="view-req-mobile-app" archimateRelationship="rel-mot-081">
+            <bendpoint startX="0" startY="-100" endX="0" endY="130"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-constr-compatibility" archimateElement="constr-compatibility">
+          <bounds x="470" y="1170" width="180" height="60"/>
+          <fillColor r="255" g="140" b="140"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-082" source="view-constr-compatibility" target="view-req-api" archimateRelationship="rel-mot-082">
+            <bendpoint startX="100" startY="-70" endX="-110" endY="70"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-constr-training" archimateElement="constr-training">
+          <bounds x="680" y="1170" width="180" height="60"/>
+          <fillColor r="255" g="140" b="140"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-083" source="view-constr-training" target="view-req-auto-notifications" archimateRelationship="rel-mot-083">
+            <bendpoint startX="-100" startY="-120" endX="110" endY="110"/>
+          </sourceConnection>
+        </child>
+
+        <!-- Values -->
+        <child xsi:type="archimate:Note" id="note-mot-values">
+          <bounds x="900" y="1120" width="500" height="30"/>
+          <fillColor r="255" g="215" b="0"/>
+          <content>ЦЕННОСТИ ДЛЯ БИЗНЕСА</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-value-convenience" archimateElement="value-convenience">
+          <bounds x="910" y="1170" width="160" height="60"/>
+          <fillColor r="255" g="215" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-090" source="view-value-convenience" target="view-stake-clients" archimateRelationship="rel-mot-090">
+            <bendpoint startX="-700" startY="-1000"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-120" source="view-value-convenience" target="view-mean-client" archimateRelationship="rel-mot-120"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-value-time-saving" targetConnections="conn-mot-101" archimateElement="value-time-saving">
+          <bounds x="1100" y="1170" width="160" height="60"/>
+          <fillColor r="255" g="215" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-091" source="view-value-time-saving" target="view-stake-staff" archimateRelationship="rel-mot-091">
+            <bendpoint startX="-500" startY="-1000"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-121" source="view-value-time-saving" target="view-mean-staff" archimateRelationship="rel-mot-121"/>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-value-reliability" targetConnections="conn-mot-102 conn-mot-103" archimateElement="value-reliability">
+          <bounds x="910" y="1260" width="160" height="60"/>
+          <fillColor r="255" g="215" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-092" source="view-value-reliability" target="view-stake-management" archimateRelationship="rel-mot-092">
+            <bendpoint startX="-500" startY="-1100"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-value-innovation" targetConnections="conn-mot-100" archimateElement="value-innovation">
+          <bounds x="1100" y="1260" width="160" height="60"/>
+          <fillColor r="255" g="215" b="100"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-093" source="view-value-innovation" target="view-stake-investors" archimateRelationship="rel-mot-093">
+            <bendpoint startX="-250" startY="-1100"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-122" source="view-value-innovation" target="view-mean-management" archimateRelationship="rel-mot-122"/>
+        </child>
+
+        <!-- Meaning (bottom layer) -->
+        <child xsi:type="archimate:Note" id="note-mot-meaning">
+          <bounds x="24" y="1350" width="1400" height="30"/>
+          <fillColor r="255" g="250" b="205"/>
+          <content>ЗНАЧЕНИЕ ДЛЯ СТЕЙКХОЛДЕРОВ</content>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-mean-client" targetConnections="conn-mot-120" archimateElement="mean-client">
+          <bounds x="50" y="1400" width="200" height="60"/>
+          <fillColor r="255" g="248" b="220"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-110" source="view-mean-client" target="view-stake-clients" archimateRelationship="rel-mot-110">
+            <bendpoint startX="0" startY="-1250"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-mean-management" targetConnections="conn-mot-122" archimateElement="mean-management">
+          <bounds x="280" y="1400" width="200" height="60"/>
+          <fillColor r="255" g="248" b="220"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-111" source="view-mean-management" target="view-stake-management" archimateRelationship="rel-mot-111">
+            <bendpoint startX="0" startY="-1250"/>
+          </sourceConnection>
+        </child>
+        
+        <child xsi:type="archimate:DiagramObject" id="view-mean-staff" targetConnections="conn-mot-121" archimateElement="mean-staff">
+          <bounds x="510" y="1400" width="200" height="60"/>
+          <fillColor r="255" g="248" b="220"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-mot-112" source="view-mean-staff" target="view-stake-staff" archimateRelationship="rel-mot-112">
+            <bendpoint startX="0" startY="-1250"/>
+          </sourceConnection>
+        </child>
+
+      </element>
+      
+    </folder>
     
     <!-- ==================== BUSINESS LAYER VIEWS ==================== -->
     <folder name="Business Layer" id="folder-business-views" type="diagrams">
