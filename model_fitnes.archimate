@@ -2930,7 +2930,745 @@
       <property key="Layer" value="Tech"/>
       <property key="Area" value="Общий"/>
     </element>
+
+    <!-- Additional Technology Elements (moved from Other) -->
+    <element xsi:type="archimate:Node" name="AWS Cloud Instance (TO-BE)" id="tech-aws-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Azure Cloud VM (TO-BE)" id="tech-azure-vm-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Database Server (TO-BE)" id="tech-cloud-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Load Balancer Cluster (TO-BE)" id="tech-load-balancer-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="CDN Edge Server (TO-BE)" id="tech-cdn-edge-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="API Gateway Node (TO-BE)" id="tech-api-gateway-node-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Tablet (TO-BE)" id="tech-tablet-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smartphone (TO-BE)" id="tech-smartphone-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="QR Scanner (TO-BE)" id="tech-qr-scanner-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Payment Terminal (TO-BE)" id="tech-payment-terminal-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Kubernetes (TO-BE)" id="tech-sw-kubernetes-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Docker Container (TO-BE)" id="tech-sw-docker-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="NGINX Web Server (TO-BE)" id="tech-sw-nginx-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Hosting Service (TO-BE)" id="tech-svc-cloud-hosting-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Managed Database Service (TO-BE)" id="tech-svc-managed-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Push Notification Gateway (TO-BE)" id="tech-svc-push-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Queue Service (TO-BE)" id="tech-svc-cloud-queue-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Backup Service (TO-BE)" id="tech-svc-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="BI Analytics Service (TO-BE)" id="tech-svc-bi-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Cloud Database Backup (TO-BE)" id="tech-artifact-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Digital Report JSON (TO-BE)" id="tech-artifact-json-report-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Отчётность"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="QR Code Data (TO-BE)" id="tech-artifact-qr-data-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-image-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="5G Mobile Network (TO-BE)" id="tech-net-5g-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Запись"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Secure API Channel (TO-BE)" id="tech-net-secure-api-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Auto-Scaling (TO-BE)" id="tech-func-auto-scaling-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Cloud Data Replication (TO-BE)" id="tech-func-cloud-replication-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Хранение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Encrypted Communication (TO-BE)" id="tech-func-encryption-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Real-time Monitoring (TO-BE)" id="tech-func-monitoring-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Общий"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Trainer Workstation" id="tech-trainer-workstation">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Trainer Laptop" id="tech-trainer-laptop">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Training Room PC" id="tech-training-room-pc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Exercise Library Server" id="tech-exercise-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Training Programs Database Server" id="tech-program-db-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Session Recording Server" id="tech-session-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Progress Data Server" id="tech-progress-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Trainer File Storage Server" id="tech-trainer-file-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Messaging Server" id="tech-messaging-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Trainer Smartphone" id="tech-trainer-phone">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Tablet for Sessions" id="tech-trainer-tablet">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Fitness Tracker Reader" id="tech-fitness-tracker">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Barcode Scanner" id="tech-barcode-scanner">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Network Printer (Training Plans)" id="tech-trainer-printer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Device" name="WiFi Access Point (Training Area)" id="tech-wifi-training">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Backup NAS" id="tech-backup-nas">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Windows 10 Pro" id="tech-sw-windows-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="MS Office Suite" id="tech-sw-office">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL DB (Trainers)" id="tech-sw-postgres-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="MongoDB (Session Data)" id="tech-sw-mongodb">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="File System Server" id="tech-sw-file-system">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Mail Server Software" id="tech-sw-mail-server">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Web Server (Nginx)" id="tech-sw-nginx">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Antivirus Software" id="tech-sw-antivirus">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Trainer Database Service" id="tech-svc-trainer-db">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Exercise Library Hosting" id="tech-svc-exercise-hosting">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Session Storage Service" id="tech-svc-session-storage">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="File Sharing Service" id="tech-svc-file-sharing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Email Service" id="tech-svc-email">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Messaging Infrastructure Service" id="tech-svc-messaging-infra">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Backup &amp; Recovery Service" id="tech-svc-backup-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Network Connectivity Service" id="tech-svc-network-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Printing Service (Trainers)" id="tech-svc-print-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Authentication Service" id="tech-svc-auth-trainer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Trainer LAN" id="tech-net-trainer-lan">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Training Area WiFi" id="tech-net-training-wifi">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Trainer VPN" id="tech-net-trainer-vpn">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Trainer Data Path" id="tech-path-trainer-data">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Session Recording Path" id="tech-path-session-rec">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Training Program File (PDF)" id="tech-artifact-program-pdf">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Exercise Database Dump" id="tech-artifact-exercise-db">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Session Protocol Document" id="tech-artifact-session-doc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Journal Entry CSV" id="tech-artifact-journal-csv">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Progress Report XLSX" id="tech-artifact-progress-xlsx">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Nutrition Plan Document" id="tech-artifact-nutrition-doc">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Message Archive JSON" id="tech-artifact-msg-archive">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Backup Image (TAR.GZ)" id="tech-artifact-backup">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Schedule Synchronization" id="tech-func-schedule-sync">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Database Replication" id="tech-func-db-replication">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="File Upload/Download" id="tech-func-file-transfer">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Data Encryption" id="tech-func-encryption">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Load Balancing" id="tech-func-load-balance">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Message Queue Processing" id="tech-func-msg-queue">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Email Routing" id="tech-func-email-routing">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Automated Backup" id="tech-func-auto-backup">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+    </element>
+    <element xsi:type="archimate:Node" name="AI Training Cloud Platform (TO-BE)" id="tech-ai-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="AWS EC2 for Trainers (TO-BE)" id="tech-aws-trainer-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Azure ML Server (TO-BE)" id="tech-azure-ml-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Database Cluster (TO-BE)" id="tech-cloud-db-cluster-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Video Processing Server (TO-BE)" id="tech-video-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="IoT Gateway Hub (TO-BE)" id="tech-iot-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Real-time Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Edge Computing Node (TO-BE)" id="tech-edge-node-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Node" name="Cloud Storage (S3) (TO-BE)" id="tech-cloud-storage-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smart Trainer Tablet (TO-BE)" id="tech-smart-tablet-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="5G Smartphone (TO-BE)" id="tech-5g-phone-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smartwatch (Fitness Tracker) (TO-BE)" id="tech-smartwatch-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Heart Rate Monitor (IoT) (TO-BE)" id="tech-heart-monitor-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Motion Sensors (IoT) (TO-BE)" id="tech-motion-sensor-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="4K Video Camera (TO-BE)" id="tech-4k-camera-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="AR/VR Headset (TO-BE)" id="tech-ar-headset-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Voice Assistant Device (TO-BE)" id="tech-voice-assistant-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Smart Display Panel (TO-BE)" id="tech-smart-display-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Kubernetes Cluster (TO-BE)" id="tech-sw-k8s-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="TensorFlow AI Engine (TO-BE)" id="tech-sw-tensorflow-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="OpenCV Video Analytics (TO-BE)" id="tech-sw-opencv-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="IoT Platform (MQTT) (TO-BE)" id="tech-sw-mqtt-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Kafka Streaming (TO-BE)" id="tech-sw-kafka-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Docker Containers (TO-BE)" id="tech-sw-docker-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="AI Model Serving (TO-BE)" id="tech-svc-ai-serving-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Database Service (TO-BE)" id="tech-svc-cloud-db-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Container Orchestration (TO-BE)" id="tech-svc-orchestration-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Video Streaming Service (TO-BE)" id="tech-svc-video-stream-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="IoT Data Collection (TO-BE)" id="tech-svc-iot-collection-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Real-time Analytics Service (TO-BE)" id="tech-svc-realtime-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Storage Service (TO-BE)" id="tech-svc-cloud-storage-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Edge Computing Service (TO-BE)" id="tech-svc-edge-compute-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Push Notification Service (TO-BE)" id="tech-svc-push-notif-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="5G Network (TO-BE)" id="tech-net-5g-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="WiFi 6 Network (TO-BE)" id="tech-net-wifi6-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:CommunicationNetwork" name="IoT Mesh Network (TO-BE)" id="tech-net-iot-mesh-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Path" name="AI Data Pipeline (TO-BE)" id="tech-path-ai-pipeline-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Path" name="Video Stream Path (TO-BE)" id="tech-path-video-stream-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="AI Model Binary (TO-BE)" id="tech-artifact-ai-model-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-img-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Training Program JSON (TO-BE)" id="tech-artifact-program-json-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Video Recording (MP4) (TO-BE)" id="tech-artifact-video-mp4-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="IoT Sensor Data (JSON) (TO-BE)" id="tech-artifact-iot-json-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Analytics Report (BI Format) (TO-BE)" id="tech-artifact-analytics-bi-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Voice Transcript (TEXT) (TO-BE)" id="tech-artifact-voice-text-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Cloud Backup Snapshot (TO-BE)" id="tech-artifact-cloud-backup-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="AI Model Training &amp; Inference (TO-BE)" id="tech-func-ai-inference-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Auto-scaling (TO-BE)" id="tech-func-autoscaling-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Планирование"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Video Compression &amp; Encoding (TO-BE)" id="tech-func-video-encoding-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Real-time Data Processing (TO-BE)" id="tech-func-realtime-process-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="IoT Data Aggregation (TO-BE)" id="tech-func-iot-aggregation-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Stream Processing (TO-BE)" id="tech-func-stream-process-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Edge Analytics (TO-BE)" id="tech-func-edge-analytics-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Проведение"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="Cloud Sync &amp; Replication (TO-BE)" id="tech-func-cloud-sync-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyFunction" name="API Rate Limiting (TO-BE)" id="tech-func-rate-limit-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Коммуникации"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="RFID Reader (TO-BE)" id="tech-rfid-reader-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Biometric Scanner (TO-BE)" id="tech-biometric-scanner-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Grafana Monitoring (TO-BE)" id="tech-sw-grafana-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Prometheus Metrics (TO-BE)" id="tech-sw-prometheus-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Elasticsearch (TO-BE)" id="tech-sw-elasticsearch-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ Messaging (TO-BE)" id="tech-sw-rabbitmq-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="ML Training Service (TO-BE)" id="tech-svc-ml-training-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Monitoring Service (TO-BE)" id="tech-svc-monitoring-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
   </folder>
+
   <folder name="Motivation" id="id-motivation-folder" type="motivation">
     <!-- Stakeholders -->
     <element xsi:type="archimate:Stakeholder" name="Клиенты фитнес-клуба" id="stake-clients">
@@ -3125,791 +3863,8 @@
     <element xsi:type="archimate:Location" name="Локация: Тренажёрный зал" id="loc-gym">
       <property key="Area" value="Хранение"/>
     </element>
-
-    <!-- TO-BE Technology Layer Elements -->
-    
-    <!-- TO-BE Technology Nodes -->
-    <element xsi:type="archimate:Node" name="AWS Cloud Instance (TO-BE)" id="tech-aws-cloud-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Azure Cloud VM (TO-BE)" id="tech-azure-vm-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Cloud Database Server (TO-BE)" id="tech-cloud-db-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Load Balancer Cluster (TO-BE)" id="tech-load-balancer-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="CDN Edge Server (TO-BE)" id="tech-cdn-edge-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Отчётность"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="API Gateway Node (TO-BE)" id="tech-api-gateway-node-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Devices -->
-    <element xsi:type="archimate:Device" name="Tablet (TO-BE)" id="tech-tablet-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Smartphone (TO-BE)" id="tech-smartphone-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="QR Scanner (TO-BE)" id="tech-qr-scanner-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Payment Terminal (TO-BE)" id="tech-payment-terminal-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Отчётность"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE System Software -->
-    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Kubernetes (TO-BE)" id="tech-sw-kubernetes-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Docker Container (TO-BE)" id="tech-sw-docker-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="NGINX Web Server (TO-BE)" id="tech-sw-nginx-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Technology Services -->
-    <element xsi:type="archimate:TechnologyService" name="Cloud Hosting Service (TO-BE)" id="tech-svc-cloud-hosting-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Managed Database Service (TO-BE)" id="tech-svc-managed-db-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Push Notification Gateway (TO-BE)" id="tech-svc-push-gateway-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Cloud Queue Service (TO-BE)" id="tech-svc-cloud-queue-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Cloud Backup Service (TO-BE)" id="tech-svc-cloud-backup-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="BI Analytics Service (TO-BE)" id="tech-svc-bi-analytics-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Отчётность"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Artifacts -->
-    <element xsi:type="archimate:Artifact" name="Cloud Database Backup (TO-BE)" id="tech-artifact-cloud-backup-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Digital Report JSON (TO-BE)" id="tech-artifact-json-report-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Отчётность"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="QR Code Data (TO-BE)" id="tech-artifact-qr-data-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-image-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Networks -->
-    <element xsi:type="archimate:CommunicationNetwork" name="5G Mobile Network (TO-BE)" id="tech-net-5g-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Запись"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="Secure API Channel (TO-BE)" id="tech-net-secure-api-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Technology Functions -->
-    <element xsi:type="archimate:TechnologyFunction" name="Auto-Scaling (TO-BE)" id="tech-func-auto-scaling-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Cloud Data Replication (TO-BE)" id="tech-func-cloud-replication-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Хранение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Encrypted Communication (TO-BE)" id="tech-func-encryption-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Real-time Monitoring (TO-BE)" id="tech-func-monitoring-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Общий"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- Trainer Technology Nodes -->
-    <element xsi:type="archimate:Node" name="Trainer Workstation" id="tech-trainer-workstation">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Trainer Laptop" id="tech-trainer-laptop">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Training Room PC" id="tech-training-room-pc">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Exercise Library Server" id="tech-exercise-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Training Programs Database Server" id="tech-program-db-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Session Recording Server" id="tech-session-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Progress Data Server" id="tech-progress-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Trainer File Storage Server" id="tech-trainer-file-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Messaging Server" id="tech-messaging-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-
-    <!-- Trainer Technology Devices -->
-    <element xsi:type="archimate:Device" name="Trainer Smartphone" id="tech-trainer-phone">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Tablet for Sessions" id="tech-trainer-tablet">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Fitness Tracker Reader" id="tech-fitness-tracker">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Barcode Scanner" id="tech-barcode-scanner">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Network Printer (Training Plans)" id="tech-trainer-printer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Device" name="WiFi Access Point (Training Area)" id="tech-wifi-training">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Backup NAS" id="tech-backup-nas">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-
-    <!-- Trainer System Software -->
-    <element xsi:type="archimate:SystemSoftware" name="Windows 10 Pro" id="tech-sw-windows-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="MS Office Suite" id="tech-sw-office">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL DB (Trainers)" id="tech-sw-postgres-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="MongoDB (Session Data)" id="tech-sw-mongodb">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="File System Server" id="tech-sw-file-system">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Mail Server Software" id="tech-sw-mail-server">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Web Server (Nginx)" id="tech-sw-nginx">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Antivirus Software" id="tech-sw-antivirus">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-
-    <!-- Trainer Technology Services -->
-    <element xsi:type="archimate:TechnologyService" name="Trainer Database Service" id="tech-svc-trainer-db">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Exercise Library Hosting" id="tech-svc-exercise-hosting">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Session Storage Service" id="tech-svc-session-storage">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="File Sharing Service" id="tech-svc-file-sharing">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Email Service" id="tech-svc-email">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Messaging Infrastructure Service" id="tech-svc-messaging-infra">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Backup &amp; Recovery Service" id="tech-svc-backup-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Network Connectivity Service" id="tech-svc-network-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Printing Service (Trainers)" id="tech-svc-print-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Authentication Service" id="tech-svc-auth-trainer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-
-    <!-- Trainer Communication Paths -->
-    <element xsi:type="archimate:CommunicationNetwork" name="Trainer LAN" id="tech-net-trainer-lan">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="Training Area WiFi" id="tech-net-training-wifi">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="Trainer VPN" id="tech-net-trainer-vpn">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Path" name="Trainer Data Path" id="tech-path-trainer-data">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Path" name="Session Recording Path" id="tech-path-session-rec">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-
-    <!-- Trainer Artifacts -->
-    <element xsi:type="archimate:Artifact" name="Training Program File (PDF)" id="tech-artifact-program-pdf">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Exercise Database Dump" id="tech-artifact-exercise-db">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Session Protocol Document" id="tech-artifact-session-doc">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Journal Entry CSV" id="tech-artifact-journal-csv">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Progress Report XLSX" id="tech-artifact-progress-xlsx">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Nutrition Plan Document" id="tech-artifact-nutrition-doc">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Message Archive JSON" id="tech-artifact-msg-archive">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Backup Image (TAR.GZ)" id="tech-artifact-backup">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-
-    <!-- Trainer Technology Functions -->
-    <element xsi:type="archimate:TechnologyFunction" name="Schedule Synchronization" id="tech-func-schedule-sync">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Database Replication" id="tech-func-db-replication">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="File Upload/Download" id="tech-func-file-transfer">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Data Encryption" id="tech-func-encryption">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Load Balancing" id="tech-func-load-balance">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Message Queue Processing" id="tech-func-msg-queue">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Email Routing" id="tech-func-email-routing">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Automated Backup" id="tech-func-auto-backup">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-    </element>
-
-    <!-- TO-BE Trainer Technology Nodes -->
-    <element xsi:type="archimate:Node" name="AI Training Cloud Platform (TO-BE)" id="tech-ai-cloud-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="AWS EC2 for Trainers (TO-BE)" id="tech-aws-trainer-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Azure ML Server (TO-BE)" id="tech-azure-ml-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Cloud Database Cluster (TO-BE)" id="tech-cloud-db-cluster-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Video Processing Server (TO-BE)" id="tech-video-server-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="IoT Gateway Hub (TO-BE)" id="tech-iot-gateway-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Real-time Analytics Server (TO-BE)" id="tech-analytics-server-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Edge Computing Node (TO-BE)" id="tech-edge-node-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Node" name="Cloud Storage (S3) (TO-BE)" id="tech-cloud-storage-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer Technology Devices -->
-    <element xsi:type="archimate:Device" name="Smart Trainer Tablet (TO-BE)" id="tech-smart-tablet-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="5G Smartphone (TO-BE)" id="tech-5g-phone-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Smartwatch (Fitness Tracker) (TO-BE)" id="tech-smartwatch-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Heart Rate Monitor (IoT) (TO-BE)" id="tech-heart-monitor-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Motion Sensors (IoT) (TO-BE)" id="tech-motion-sensor-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="4K Video Camera (TO-BE)" id="tech-4k-camera-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="AR/VR Headset (TO-BE)" id="tech-ar-headset-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Voice Assistant Device (TO-BE)" id="tech-voice-assistant-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Smart Display Panel (TO-BE)" id="tech-smart-display-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer System Software -->
-    <element xsi:type="archimate:SystemSoftware" name="Kubernetes Cluster (TO-BE)" id="tech-sw-k8s-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="TensorFlow AI Engine (TO-BE)" id="tech-sw-tensorflow-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="PostgreSQL Cloud (TO-BE)" id="tech-sw-postgres-cloud-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Redis Cache (TO-BE)" id="tech-sw-redis-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="OpenCV Video Analytics (TO-BE)" id="tech-sw-opencv-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="IoT Platform (MQTT) (TO-BE)" id="tech-sw-mqtt-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Kafka Streaming (TO-BE)" id="tech-sw-kafka-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Docker Containers (TO-BE)" id="tech-sw-docker-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer Technology Services -->
-    <element xsi:type="archimate:TechnologyService" name="AI Model Serving (TO-BE)" id="tech-svc-ai-serving-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Cloud Database Service (TO-BE)" id="tech-svc-cloud-db-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Container Orchestration (TO-BE)" id="tech-svc-orchestration-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Video Streaming Service (TO-BE)" id="tech-svc-video-stream-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="IoT Data Collection (TO-BE)" id="tech-svc-iot-collection-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Real-time Analytics Service (TO-BE)" id="tech-svc-realtime-analytics-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Cloud Storage Service (TO-BE)" id="tech-svc-cloud-storage-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Edge Computing Service (TO-BE)" id="tech-svc-edge-compute-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="CDN Service (TO-BE)" id="tech-svc-cdn-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Push Notification Service (TO-BE)" id="tech-svc-push-notif-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="API Gateway Service (TO-BE)" id="tech-svc-api-gateway-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer Communication Networks -->
-    <element xsi:type="archimate:CommunicationNetwork" name="5G Network (TO-BE)" id="tech-net-5g-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="WiFi 6 Network (TO-BE)" id="tech-net-wifi6-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="Cloud VPN (TO-BE)" id="tech-net-cloud-vpn-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:CommunicationNetwork" name="IoT Mesh Network (TO-BE)" id="tech-net-iot-mesh-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Path" name="AI Data Pipeline (TO-BE)" id="tech-path-ai-pipeline-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Path" name="Video Stream Path (TO-BE)" id="tech-path-video-stream-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer Artifacts -->
-    <element xsi:type="archimate:Artifact" name="AI Model Binary (TO-BE)" id="tech-artifact-ai-model-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Docker Image (TO-BE)" id="tech-artifact-docker-img-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Training Program JSON (TO-BE)" id="tech-artifact-program-json-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Video Recording (MP4) (TO-BE)" id="tech-artifact-video-mp4-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="IoT Sensor Data (JSON) (TO-BE)" id="tech-artifact-iot-json-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Analytics Report (BI Format) (TO-BE)" id="tech-artifact-analytics-bi-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Voice Transcript (TEXT) (TO-BE)" id="tech-artifact-voice-text-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Artifact" name="Cloud Backup Snapshot (TO-BE)" id="tech-artifact-cloud-backup-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- TO-BE Trainer Technology Functions -->
-    <element xsi:type="archimate:TechnologyFunction" name="AI Model Training &amp; Inference (TO-BE)" id="tech-func-ai-inference-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Auto-scaling (TO-BE)" id="tech-func-autoscaling-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Планирование"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Video Compression &amp; Encoding (TO-BE)" id="tech-func-video-encoding-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Real-time Data Processing (TO-BE)" id="tech-func-realtime-process-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="IoT Data Aggregation (TO-BE)" id="tech-func-iot-aggregation-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Stream Processing (TO-BE)" id="tech-func-stream-process-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Edge Analytics (TO-BE)" id="tech-func-edge-analytics-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Проведение"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="Cloud Sync &amp; Replication (TO-BE)" id="tech-func-cloud-sync-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyFunction" name="API Rate Limiting (TO-BE)" id="tech-func-rate-limit-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Коммуникации"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
-    <!-- Additional TO-BE Elements for Partners -->
-    <element xsi:type="archimate:Device" name="RFID Reader (TO-BE)" id="tech-rfid-reader-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:Device" name="Biometric Scanner (TO-BE)" id="tech-biometric-scanner-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    
-    <element xsi:type="archimate:SystemSoftware" name="Grafana Monitoring (TO-BE)" id="tech-sw-grafana-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Prometheus Metrics (TO-BE)" id="tech-sw-prometheus-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="Elasticsearch (TO-BE)" id="tech-sw-elasticsearch-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ Messaging (TO-BE)" id="tech-sw-rabbitmq-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    
-    <element xsi:type="archimate:TechnologyService" name="ML Training Service (TO-BE)" id="tech-svc-ml-training-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-    <element xsi:type="archimate:TechnologyService" name="Cloud Monitoring Service (TO-BE)" id="tech-svc-monitoring-tobe">
-      <property key="Layer" value="Tech"/>
-      <property key="Area" value="Партнёры"/>
-      <property key="State" value="TO-BE"/>
-    </element>
-
   </folder>
+
   <folder name="Relations" id="id-relations-folder" type="relations">
     <element xsi:type="archimate:AssignmentRelationship" id="rel-001" source="actor-client" target="role-client"/>
     <element xsi:type="archimate:AssignmentRelationship" id="rel-002" source="actor-admin" target="role-frontdesk"/>
@@ -5212,7 +5167,7 @@
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-integ-proc-main-sched" archimateElement="proc-main-schedule">
           <bounds x="230" y="300" width="180" height="55"/>
-          <sourceConnection xsi:type="archimate:Connection" id="conn-main-sched-svc" source="view-integ-proc-main-sched" target="view-integ-svc-schedule" archimateRelationship="rel-072"/>
+          <sourceConnection xsi:type="archimate:Connection" id="conn-main-sched-svc" source="view-integ-proc-main-sched" target="view-integ-svc-schedule" archimateRelationship="rel-055"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="view-integ-proc-change" archimateElement="proc-change">
           <bounds x="30" y="380" width="160" height="55"/>
