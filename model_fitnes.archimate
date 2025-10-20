@@ -9267,6 +9267,540 @@ PHASE 2
         </child>
       </element>
 
+      <!-- Transition Architecture: Тренеры -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Тренеры (Trainers)" id="view-transition-trainers">
+        <child xsi:type="archimate:Group" id="grp-transition-trainers" name="Transition: Тренеры AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="850"/>
+          <fillColor r="255" g="250" b="240"/>
+          
+          <!-- AS-IS Column -->
+          <child xsi:type="archimate:Note" id="note-transition-trainers-asis">
+            <bounds x="50" y="50" width="380" height="80"/>
+            <fillColor r="255" g="200" b="200"/>
+            <content>AS-IS: Бумажные журналы, ручное планирование, доска расписания.
+ПРОБЛЕМЫ: Низкая скорость, ошибки, отсутствие аналитики</content>
+          </child>
+          
+          <!-- AS-IS Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-journal-asis" archimateElement="iface-trainer-journal">
+            <bounds x="50" y="160" width="180" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-board-asis" archimateElement="iface-trainer-schedule-board">
+            <bounds x="250" y="160" width="200" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-planning-asis" archimateElement="svc-training-planning">
+            <bounds x="50" y="240" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-conducting-asis" archimateElement="svc-conducting-sessions">
+            <bounds x="250" y="240" width="200" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-create-asis" archimateElement="proc-create-program">
+            <bounds x="50" y="320" width="180" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-fill-asis" archimateElement="proc-fill-journal">
+            <bounds x="250" y="320" width="200" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-plan-asis" archimateElement="obj-training-plan" type="1">
+            <bounds x="50" y="400" width="180" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-journal-asis" archimateElement="obj-training-journal" type="1">
+            <bounds x="250" y="400" width="200" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          
+          <!-- AS-IS Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-schedule-asis" archimateElement="app-schedule">
+            <bounds x="50" y="480" width="180" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-crm-asis" archimateElement="app-crm">
+            <bounds x="250" y="480" width="200" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          
+          <!-- AS-IS Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-server-asis" archimateElement="tech-app-server">
+            <bounds x="50" y="560" width="180" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-pc-asis" archimateElement="tech-trainer-workstation">
+            <bounds x="250" y="560" width="200" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          
+          <!-- TRANSITION Column -->
+          <child xsi:type="archimate:Note" id="note-transition-trainers-hybrid">
+            <bounds x="550" y="50" width="420" height="80"/>
+            <fillColor r="255" g="255" b="200"/>
+            <content>ПЕРЕХОД (6-12 мес): Внедрение планшетов, пилот AI-ассистента, обучение персонала, параллельная работа систем, миграция данных</content>
+          </child>
+          
+          <!-- Transition Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-tablet-trans" archimateElement="iface-trainer-tablet">
+            <bounds x="550" y="160" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-trans" archimateElement="iface-trainer-mobile-app-tobe">
+            <bounds x="750" y="160" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-digital-schedule-trans" archimateElement="svc-digital-schedule-mgmt-tobe">
+            <bounds x="550" y="240" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-coord-trans" archimateElement="svc-digital-team-coordination-tobe">
+            <bounds x="770" y="240" width="180" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-digital-prep-trans" archimateElement="proc-digital-preparation-tobe">
+            <bounds x="550" y="320" width="200" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-auto-doc-trans" archimateElement="proc-fill-journal">
+            <bounds x="770" y="320" width="180" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-sync-trans" archimateElement="obj-sync-schedule-tobe" type="1">
+            <bounds x="550" y="400" width="180" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-cloud-trans" archimateElement="obj-cloud-notes-storage-tobe" type="1">
+            <bounds x="750" y="400" width="200" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          
+          <!-- Transition Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-trans" archimateElement="app-crm">
+            <bounds x="550" y="480" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-integration-trans" archimateElement="app-qr-scanner-tobe">
+            <bounds x="770" y="480" width="180" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <!-- Transition Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-cloud-trans" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="550" y="560" width="180" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-mobile-trans" archimateElement="tech-smartphone-tobe">
+            <bounds x="750" y="560" width="200" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          
+          <!-- TO-BE Column -->
+          <child xsi:type="archimate:Note" id="note-transition-trainers-tobe">
+            <bounds x="1070" y="50" width="480" height="80"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: AI-ассистент тренера, автоматическая генерация программ, реал-тайм аналитика.
+РЕЗУЛЬТАТ: Автоматизация 70%, персонализация тренировок, рост удовлетворённости на 40%</content>
+          </child>
+          
+          <!-- TO-BE Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-tobe" archimateElement="iface-trainer-mobile-app-tobe">
+            <bounds x="1070" y="160" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-cloud-tobe" archimateElement="iface-trainer-cloud-platform-tobe">
+            <bounds x="1290" y="160" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-auto-planning-tobe" archimateElement="svc-auto-training-planning-tobe">
+            <bounds x="1070" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-ai-guidance-tobe" archimateElement="svc-conducting-sessions">
+            <bounds x="1310" y="240" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-ai-program-tobe" archimateElement="proc-ai-program-generation-tobe">
+            <bounds x="1070" y="320" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-smart-conduct-tobe" archimateElement="proc-conduct-training">
+            <bounds x="1310" y="320" width="220" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-ai-plan-tobe" archimateElement="obj-ai-training-plan-tobe" type="1">
+            <bounds x="1070" y="400" width="200" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-digital-journal-tobe" archimateElement="obj-digital-journal-tobe" type="1">
+            <bounds x="1290" y="400" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- TO-BE Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-tobe" archimateElement="app-cloud-crm-tobe">
+            <bounds x="1070" y="480" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-analytics-tobe" archimateElement="app-bi-analytics-tobe">
+            <bounds x="1290" y="480" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <!-- TO-BE Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-aws-tobe" archimateElement="tech-aws-trainer-tobe">
+            <bounds x="1070" y="560" width="200" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-tablet-tobe" archimateElement="tech-smart-tablet-tobe">
+            <bounds x="1290" y="560" width="240" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          
+          <!-- Transition Arrows/Indicators -->
+          <child xsi:type="archimate:Note" id="note-trans-trainers-arrow1">
+            <bounds x="470" y="250" width="60" height="40"/>
+            <fillColor r="255" g="255" b="100"/>
+            <content>→ Фаза 1
+3 мес</content>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-trainers-arrow2">
+            <bounds x="990" y="250" width="60" height="40"/>
+            <fillColor r="200" g="255" b="100"/>
+            <content>→ Фаза 2
+6 мес</content>
+          </child>
+          
+          <!-- Migration Workpackages -->
+          <child xsi:type="archimate:Note" id="note-trans-trainers-workpackage1">
+            <bounds x="550" y="650" width="400" height="150"/>
+            <fillColor r="230" g="240" b="255"/>
+            <content>РАБОТЫ ПО МИГРАЦИИ:
+1. Внедрение планшетов для тренеров (1-2 мес)
+2. Пилот AI-ассистента на 5 тренерах (2-3 мес)
+3. Обучение персонала (2 мес, параллельно)
+4. Миграция журналов в облако (3-4 мес)
+5. Интеграция с CRM и расписанием (4-5 мес)
+6. Полный запуск AI-платформы (6 мес)</content>
+          </child>
+          
+          <child xsi:type="archimate:Note" id="note-trans-trainers-risks">
+            <bounds x="50" y="650" width="450" height="150"/>
+            <fillColor r="255" g="240" b="240"/>
+            <content>РИСКИ И МИТИГАЦИЯ:
+• Сопротивление тренеров → Постепенное внедрение, демо успешных кейсов
+• Ошибки AI → Гибридный режим с ручной проверкой
+• Потеря данных при миграции → Параллельная работа систем 3 месяца
+• Высокая стоимость → Поэтапное внедрение, ROI-анализ каждые 2 мес</content>
+          </child>
+        </child>
+      </element>
+
+      <!-- Transition Architecture: Партнеры -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Партнеры (Partners)" id="view-transition-partners">
+        <child xsi:type="archimate:Group" id="grp-transition-partners" name="Transition: Партнеры AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="900"/>
+          <fillColor r="255" g="248" b="235"/>
+          
+          <!-- AS-IS Column -->
+          <child xsi:type="archimate:Note" id="note-transition-partners-asis">
+            <bounds x="50" y="50" width="380" height="90"/>
+            <fillColor r="255" g="200" b="200"/>
+            <content>AS-IS: Телефонные переговоры, Excel-реестры, бумажные договоры, email.
+ПРОБЛЕМЫ: Потеря контактов, ручной контроль оплат, отсутствие централизованной базы</content>
+          </child>
+          
+          <!-- AS-IS Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-asis" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="50" y="170" width="180" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-nutrition-asis" archimateElement="actor-nutrition-supplier-asis">
+            <bounds x="250" y="170" width="190" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-asis" archimateElement="role-procurement-manager-asis">
+            <bounds x="50" y="250" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-supply-asis" archimateElement="role-supply-manager-asis">
+            <bounds x="250" y="250" width="190" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-asis" archimateElement="proc-select-supplier-asis">
+            <bounds x="50" y="330" width="180" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-negotiate-asis" archimateElement="proc-negotiate-contract-asis">
+            <bounds x="250" y="330" width="190" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-contract-asis" archimateElement="proc-negotiate-contract-asis">
+            <bounds x="50" y="410" width="180" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-delivery-asis" archimateElement="proc-order-equipment-asis">
+            <bounds x="250" y="410" width="190" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-asis" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="50" y="490" width="180" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-contract-asis" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="250" y="490" width="190" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          
+          <!-- AS-IS Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-asis" archimateElement="app-partners-procurement-asis">
+            <bounds x="50" y="570" width="180" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-email-asis" archimateElement="app-partners-email-asis">
+            <bounds x="250" y="570" width="190" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-supplier-asis" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="50" y="650" width="180" height="55"/>
+            <fillColor r="255" g="230" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-email-asis" archimateElement="app-data-partners-email-thread-asis">
+            <bounds x="250" y="650" width="190" height="55"/>
+            <fillColor r="255" g="230" b="180"/>
+          </child>
+          
+          <!-- AS-IS Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-asis" archimateElement="tech-admin-pc">
+            <bounds x="50" y="730" width="180" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-phone-asis" archimateElement="tech-phone-device">
+            <bounds x="250" y="730" width="190" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          
+          <!-- TRANSITION Column -->
+          <child xsi:type="archimate:Note" id="note-transition-partners-hybrid">
+            <bounds x="550" y="50" width="420" height="90"/>
+            <fillColor r="255" g="255" b="200"/>
+            <content>ПЕРЕХОД (8-12 мес): Внедрение CRM для партнёров, миграция Excel в базу, e-подписи пилотные, API-интеграция с топ-5 поставщиками, обучение менеджеров</content>
+          </child>
+          
+          <!-- Transition Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-trans" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="550" y="170" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-digital-trans" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="750" y="170" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-trans" archimateElement="role-procurement-manager-asis">
+            <bounds x="550" y="250" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-trans" archimateElement="role-procurement-manager-asis">
+            <bounds x="750" y="250" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-trans" archimateElement="proc-select-supplier-asis">
+            <bounds x="550" y="330" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-trans" archimateElement="proc-e-negotiate-contract-tobe">
+            <bounds x="750" y="330" width="200" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-auto-notify-trans" archimateElement="proc-order-equipment-asis">
+            <bounds x="550" y="410" width="180" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-track-trans" archimateElement="proc-order-equipment-asis">
+            <bounds x="750" y="410" width="200" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-trans" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="550" y="490" width="180" height="55"/>
+            <fillColor r="255" g="230" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-trans" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="750" y="490" width="200" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          
+          <!-- Transition Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-trans" archimateElement="app-partners-procurement-asis">
+            <bounds x="550" y="570" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-trans" archimateElement="app-crm">
+            <bounds x="750" y="570" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-mixed-trans" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="550" y="650" width="180" height="55"/>
+            <fillColor r="255" g="230" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-trans" archimateElement="app-data-partners-contract-asis">
+            <bounds x="750" y="650" width="200" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          
+          <!-- Transition Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-trans" archimateElement="tech-admin-pc">
+            <bounds x="550" y="730" width="180" height="55"/>
+            <fillColor r="255" g="200" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-trans" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="750" y="730" width="200" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          
+          <!-- TO-BE Column -->
+          <child xsi:type="archimate:Note" id="note-transition-partners-tobe">
+            <bounds x="1070" y="50" width="480" height="90"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: Единый портал партнёров, автоматические e-договоры, интеграция через API, онлайн-оплаты, реал-тайм трекинг поставок.
+РЕЗУЛЬТАТ: Время обработки заказа -60%, прозрачность поставок 100%, сокращение ошибок на 75%</content>
+          </child>
+          
+          <!-- TO-BE Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-digital-tobe" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="1070" y="170" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-api-tobe" archimateElement="actor-nutrition-supplier-asis">
+            <bounds x="1290" y="170" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-tobe" archimateElement="role-procurement-manager-asis">
+            <bounds x="1070" y="250" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-integration-tobe" archimateElement="role-supply-manager-asis">
+            <bounds x="1290" y="250" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-svc-portal-tobe" archimateElement="svc-smart-procurement-platform-tobe">
+            <bounds x="1070" y="330" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-svc-auto-ordering-tobe" archimateElement="app-svc-partners-order-mgmt-asis">
+            <bounds x="1290" y="330" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-tobe" archimateElement="proc-e-negotiate-contract-tobe">
+            <bounds x="1070" y="410" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-auto-payment-tobe" archimateElement="proc-partner-analytics-tobe">
+            <bounds x="1290" y="410" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-db-tobe" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="1070" y="490" width="200" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-esign-tobe" archimateElement="obj-smart-contract-tobe" type="1">
+            <bounds x="1290" y="490" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- TO-BE Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-tobe" archimateElement="app-crm">
+            <bounds x="1070" y="570" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-portal-tobe" archimateElement="app-web-portal-tobe">
+            <bounds x="1290" y="570" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-tobe" archimateElement="app-data-partners-contract-asis">
+            <bounds x="1070" y="650" width="200" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-api-tobe" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="1290" y="650" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- TO-BE Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-tobe" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="1070" y="730" width="200" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-api-gateway-tobe" archimateElement="tech-api-gateway-node-tobe">
+            <bounds x="1290" y="730" width="240" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          
+          <!-- Transition Arrows/Indicators -->
+          <child xsi:type="archimate:Note" id="note-trans-partners-arrow1">
+            <bounds x="470" y="350" width="60" height="40"/>
+            <fillColor r="255" g="255" b="100"/>
+            <content>→ Фаза 1
+4 мес</content>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-partners-arrow2">
+            <bounds x="990" y="350" width="60" height="40"/>
+            <fillColor r="200" g="255" b="100"/>
+            <content>→ Фаза 2
+8 мес</content>
+          </child>
+          
+          <!-- Migration Workpackages -->
+          <child xsi:type="archimate:Note" id="note-trans-partners-workpackage">
+            <bounds x="550" y="810" width="400" height="160"/>
+            <fillColor r="230" g="240" b="255"/>
+            <content>РАБОТЫ ПО МИГРАЦИИ:
+1. Выбор и внедрение CRM для партнёров (2-3 мес)
+2. Миграция реестра поставщиков из Excel (1-2 мес)
+3. Пилот e-подписи с 3 партнёрами (3-4 мес)
+4. API-интеграция топ-5 поставщиков (4-6 мес)
+5. Обучение менеджеров закупок (2 мес, параллельно)
+6. Запуск партнёрского портала (8 мес)
+7. Полная миграция всех партнёров (12 мес)</content>
+          </child>
+          
+          <child xsi:type="archimate:Note" id="note-trans-partners-risks">
+            <bounds x="50" y="810" width="450" height="160"/>
+            <fillColor r="255" g="240" b="240"/>
+            <content>РИСКИ И МИТИГАЦИЯ:
+• Сопротивление партнёров → Демо преимуществ, пилот с лояльными партнёрами
+• Потеря данных при миграции → Параллельное ведение Excel 6 месяцев
+• Сложность интеграции → API для топ-5, остальные через портал
+• Юридические вопросы e-подписи → Консультация с юристами, сертифицированные решения
+• Высокая стоимость портала → Поэтапное внедрение, MVP за 4 месяца</content>
+          </child>
+        </child>
+      </element>
+
       <!-- Transition Architecture: Отчётность -->
       <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Отчётность (Reporting)" id="view-transition-reporting">
         <child xsi:type="archimate:Group" id="grp-transition-reporting" name="Transition: Отчётность AS-IS → TO-BE">
@@ -9364,6 +9898,262 @@ PHASE 3
           <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-payment-terminal-tobe" archimateElement="tech-payment-terminal-tobe">
             <bounds x="990" y="530" width="200" height="60"/>
             <fillColor r="200" g="255" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- Transition Architecture: Clients (AS-IS → TO-BE) -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Клиенты" id="view-transition-clients">
+        <child xsi:type="archimate:Group" id="grp-transition-clients" name="Transition: Клиенты AS-IS → TO-BE">
+          <bounds x="24" y="24" width="1600" height="850"/>
+          <fillColor r="255" g="250" b="240"/>
+          
+          <!-- AS-IS Column -->
+          <child xsi:type="archimate:Note" id="note-transition-clients-asis">
+            <bounds x="50" y="50" width="400" height="90"/>
+            <fillColor r="255" g="220" b="200"/>
+            <content>AS-IS: Ручная запись через администратора, телефон, бумажное расписание, оплата наличными/картой на стойке.
+ПРОБЛЕМЫ: Очереди, ошибки записи, нет онлайн доступа, низкая прозрачность баланса посещений</content>
+          </child>
+          
+          <!-- AS-IS Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-asis" archimateElement="actor-client">
+            <bounds x="50" y="170" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-frontdesk-asis" archimateElement="actor-admin">
+            <bounds x="250" y="170" width="190" height="55"/>
+            <fillColor r="255" g="165" b="0"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-asis" archimateElement="role-client">
+            <bounds x="50" y="250" width="180" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-frontdesk-asis" archimateElement="role-frontdesk">
+            <bounds x="250" y="250" width="190" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-asis" archimateElement="proc-client-booking">
+            <bounds x="50" y="330" width="180" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-subscription-asis" archimateElement="proc-sell-subscription">
+            <bounds x="250" y="330" width="190" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-asis" archimateElement="proc-check-in">
+            <bounds x="50" y="410" width="180" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-desk-asis" archimateElement="iface-desk">
+            <bounds x="250" y="410" width="190" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-asis" archimateElement="obj-paper-schedule" type="1">
+            <bounds x="50" y="490" width="180" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-client-card-asis" archimateElement="obj-client-card" type="1">
+            <bounds x="250" y="490" width="190" height="55"/>
+            <fillColor r="255" g="230" b="230"/>
+          </child>
+          
+          <!-- AS-IS Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-asis" archimateElement="app-booking">
+            <bounds x="50" y="570" width="180" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-crm-asis" archimateElement="app-crm">
+            <bounds x="250" y="570" width="190" height="55"/>
+            <fillColor r="255" g="200" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-asis" archimateElement="data-schedule">
+            <bounds x="50" y="650" width="180" height="55"/>
+            <fillColor r="255" g="230" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-asis" archimateElement="data-client-card">
+            <bounds x="250" y="650" width="190" height="55"/>
+            <fillColor r="255" g="230" b="180"/>
+          </child>
+          
+          <!-- AS-IS Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-asis" archimateElement="tech-admin-pc">
+            <bounds x="50" y="730" width="180" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-phone-asis" archimateElement="tech-phone-device">
+            <bounds x="250" y="730" width="190" height="55"/>
+            <fillColor r="255" g="180" b="150"/>
+          </child>
+          
+          <!-- TRANSITION Column -->
+          <child xsi:type="archimate:Note" id="note-transition-clients-hybrid">
+            <bounds x="550" y="50" width="420" height="90"/>
+            <fillColor r="255" g="255" b="200"/>
+            <content>ПЕРЕХОД (6-9 мес): Внедрение веб-портала и мобильного приложения, гибридная запись (стойка + онлайн), обучение клиентов, постепенный переход на онлайн оплаты</content>
+          </child>
+          
+          <!-- Transition Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-trans" archimateElement="actor-client">
+            <bounds x="550" y="170" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-trans" archimateElement="actor-client">
+            <bounds x="750" y="170" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-trans" archimateElement="role-client">
+            <bounds x="550" y="250" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-service-trans" archimateElement="role-client">
+            <bounds x="750" y="250" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-trans" archimateElement="proc-client-booking">
+            <bounds x="550" y="330" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-trans" archimateElement="proc-self-booking-tobe">
+            <bounds x="750" y="330" width="200" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-trans" archimateElement="proc-check-in">
+            <bounds x="550" y="410" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-web-trans" archimateElement="iface-web-tobe">
+            <bounds x="750" y="410" width="200" height="55"/>
+            <fillColor r="220" g="255" b="180"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-trans" archimateElement="obj-paper-schedule" type="1">
+            <bounds x="550" y="490" width="180" height="55"/>
+            <fillColor r="255" g="230" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-trans" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="750" y="490" width="200" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          
+          <!-- Transition Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-trans" archimateElement="app-booking">
+            <bounds x="550" y="570" width="180" height="55"/>
+            <fillColor r="255" g="220" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-trans" archimateElement="app-web-portal-tobe">
+            <bounds x="750" y="570" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-trans" archimateElement="data-schedule">
+            <bounds x="550" y="650" width="180" height="55"/>
+            <fillColor r="255" g="230" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-trans" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="750" y="650" width="200" height="55"/>
+            <fillColor r="200" g="255" b="180"/>
+          </child>
+          
+          <!-- Transition Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-trans" archimateElement="tech-admin-pc">
+            <bounds x="550" y="730" width="180" height="55"/>
+            <fillColor r="255" g="200" b="100"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-trans" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="750" y="730" width="200" height="55"/>
+            <fillColor r="200" g="255" b="150"/>
+          </child>
+          
+          <!-- TO-BE Column -->
+          <child xsi:type="archimate:Note" id="note-transition-clients-tobe">
+            <bounds x="1070" y="50" width="480" height="90"/>
+            <fillColor r="200" g="255" b="200"/>
+            <content>TO-BE: 100% онлайн-запись через мобильное приложение и веб-портал, бесконтактный QR-вход, онлайн-оплаты, push-уведомления, персонализированные рекомендации.
+РЕЗУЛЬТАТ: Время записи -80%, удовлетворенность клиентов +40%, конверсия онлайн-оплат 85%</content>
+          </child>
+          
+          <!-- TO-BE Business Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-tobe" archimateElement="actor-client">
+            <bounds x="1070" y="170" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-mobile-tobe" archimateElement="actor-client">
+            <bounds x="1290" y="170" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-tobe" archimateElement="role-client">
+            <bounds x="1070" y="250" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-mobile-user-tobe" archimateElement="role-client">
+            <bounds x="1290" y="250" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-booking-tobe" archimateElement="svc-online-booking-tobe">
+            <bounds x="1070" y="330" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-payment-tobe" archimateElement="svc-online-payment-tobe">
+            <bounds x="1290" y="330" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-tobe" archimateElement="proc-self-booking-tobe">
+            <bounds x="1070" y="410" width="200" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-qr-checkin-tobe" archimateElement="proc-qr-checkin-tobe">
+            <bounds x="1290" y="410" width="240" height="55"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-tobe" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="1070" y="490" width="200" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-digital-balance-tobe" archimateElement="obj-visit-balance" type="1">
+            <bounds x="1290" y="490" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- TO-BE Application Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-mobile-tobe" archimateElement="app-mobile-tobe">
+            <bounds x="1070" y="570" width="200" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-tobe" archimateElement="app-web-portal-tobe">
+            <bounds x="1290" y="570" width="240" height="55"/>
+            <fillColor r="150" g="255" b="150"/>
+          </child>
+          
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-schedule-tobe" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="1070" y="650" width="200" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-profile-tobe" archimateElement="data-digital-profile-tobe">
+            <bounds x="1290" y="650" width="240" height="55"/>
+            <fillColor r="180" g="240" b="180"/>
+          </child>
+          
+          <!-- TO-BE Tech Layer -->
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-smartphone-tobe" archimateElement="tech-smartphone-tobe">
+            <bounds x="1070" y="730" width="200" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-tobe" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="1290" y="730" width="240" height="55"/>
+            <fillColor r="150" g="240" b="150"/>
           </child>
         </child>
       </element>
