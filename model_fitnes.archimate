@@ -3683,6 +3683,50 @@
       <property key="State" value="TO-BE"/>
     </element>
 
+    <!-- Additional TO-BE Elements for Partners -->
+    <element xsi:type="archimate:Device" name="RFID Reader (TO-BE)" id="tech-rfid-reader-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:Device" name="Biometric Scanner (TO-BE)" id="tech-biometric-scanner-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    
+    <element xsi:type="archimate:SystemSoftware" name="Grafana Monitoring (TO-BE)" id="tech-sw-grafana-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Prometheus Metrics (TO-BE)" id="tech-sw-prometheus-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Elasticsearch (TO-BE)" id="tech-sw-elasticsearch-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ Messaging (TO-BE)" id="tech-sw-rabbitmq-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    
+    <element xsi:type="archimate:TechnologyService" name="ML Training Service (TO-BE)" id="tech-svc-ml-training-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:TechnologyService" name="Cloud Monitoring Service (TO-BE)" id="tech-svc-monitoring-tobe">
+      <property key="Layer" value="Tech"/>
+      <property key="Area" value="Партнёры"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+
   </folder>
   <folder name="Relations" id="id-relations-folder" type="relations">
     <element xsi:type="archimate:AssignmentRelationship" id="rel-001" source="actor-client" target="role-client"/>
@@ -7418,6 +7462,286 @@
         </child>
       </element>
 
+      <!-- ========== TO-BE: PARTNERS DIGITAL PLATFORM ========== -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IS — TO-BE Партнёры: Цифровая платформа" id="view-is-partners-tobe">
+        <documentation>TO-BE Information Systems для работы с партнёрами: API-first платформа, автоматизация согласований, интеграции, аналитика.</documentation>
+        
+        <child xsi:type="archimate:Group" id="grp-is-partners-tobe" name="IS: Партнёры — TO-BE (Digital Integration Platform)" textAlignment="1">
+          <bounds x="20" y="20" width="1600" height="950"/>
+          <fillColor r="230" g="255" b="230"/>
+          
+          <!-- APPLICATION COMPONENTS (15 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-api-gateway-tobe" archimateElement="app-api-gateway-tobe">
+            <bounds x="50" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-portal-tobe" archimateElement="app-web-portal-tobe">
+            <bounds x="260" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-mobile-tobe" archimateElement="app-mobile-tobe">
+            <bounds x="470" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cloud-crm-tobe" archimateElement="app-cloud-crm-tobe">
+            <bounds x="680" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-bi-analytics-tobe" archimateElement="app-bi-analytics-tobe">
+            <bounds x="890" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-payment-gateway-tobe" archimateElement="app-payment-gateway-tobe">
+            <bounds x="1100" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-push-notify-tobe" archimateElement="app-push-notify-tobe">
+            <bounds x="1310" y="60" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-qr-scanner-tobe" archimateElement="app-qr-scanner-tobe">
+            <bounds x="50" y="160" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cloud-scheduler-tobe" archimateElement="app-cloud-scheduler-tobe">
+            <bounds x="260" y="160" width="180" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-ml-recommendation-tobe" archimateElement="app-ml-recommendation-tobe">
+            <bounds x="470" y="160" width="200" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-ai-training-tobe" archimateElement="app-ai-training-platform-tobe">
+            <bounds x="700" y="160" width="220" height="70"/>
+            <fillColor r="180" g="230" b="255"/>
+          </child>
+          
+          <!-- Дополнительные компоненты для партнёров -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-contract-mgmt" archimateElement="app-cloud-crm-tobe">
+            <bounds x="950" y="160" width="200" height="70"/>
+            <fillColor r="200" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-doc-flow" archimateElement="app-cloud-crm-tobe">
+            <bounds x="1180" y="160" width="200" height="70"/>
+            <fillColor r="200" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approval-engine" archimateElement="app-cloud-scheduler-tobe">
+            <bounds x="1410" y="160" width="180" height="70"/>
+            <fillColor r="200" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-integration-hub" archimateElement="app-api-gateway-tobe">
+            <bounds x="50" y="260" width="200" height="70"/>
+            <fillColor r="200" g="240" b="255"/>
+          </child>
+          
+          <!-- APPLICATION SERVICES (12 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-online-booking-svc-tobe" archimateElement="app-svc-online-booking-tobe">
+            <bounds x="280" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-client-profile-svc-tobe" archimateElement="app-svc-client-profile-tobe">
+            <bounds x="490" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-qr-checkin-svc-tobe" archimateElement="app-svc-qr-checkin-tobe">
+            <bounds x="700" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-push-notify-svc-tobe" archimateElement="app-svc-push-notify-tobe">
+            <bounds x="910" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-analytics-api-tobe" archimateElement="app-svc-analytics-api-tobe">
+            <bounds x="1120" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-card-payment-svc-tobe" archimateElement="app-svc-card-payment-tobe">
+            <bounds x="1330" y="260" width="180" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cloud-sync-svc-tobe" archimateElement="app-svc-cloud-sync-tobe">
+            <bounds x="50" y="350" width="200" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-recommendation-svc-tobe" archimateElement="app-svc-recommendation-tobe">
+            <bounds x="280" y="350" width="200" height="60"/>
+            <fillColor r="255" g="240" b="200"/>
+          </child>
+          
+          <!-- Специфичные сервисы для партнёров -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-contract-api" archimateElement="app-svc-online-booking-tobe">
+            <bounds x="510" y="350" width="200" height="60"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approval-api" archimateElement="app-svc-cloud-sync-tobe">
+            <bounds x="740" y="350" width="200" height="60"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-api" archimateElement="app-svc-analytics-api-tobe">
+            <bounds x="970" y="350" width="200" height="60"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-reporting-api" archimateElement="app-svc-analytics-api-tobe">
+            <bounds x="1200" y="350" width="200" height="60"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          
+          <!-- APPLICATION FUNCTIONS (14 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-self-booking-func-tobe" archimateElement="app-func-self-booking-tobe">
+            <bounds x="50" y="440" width="190" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-auto-availability-func-tobe" archimateElement="app-func-auto-availability-tobe">
+            <bounds x="270" y="440" width="190" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-qr-scan-func-tobe" archimateElement="app-func-qr-scan-tobe">
+            <bounds x="490" y="440" width="180" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-realtime-analytics-func-tobe" archimateElement="app-func-realtime-analytics-tobe">
+            <bounds x="700" y="440" width="180" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-auto-payment-func-tobe" archimateElement="app-func-auto-payment-tobe">
+            <bounds x="910" y="440" width="190" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-smart-recommendation-func-tobe" archimateElement="app-func-smart-recommendation-tobe">
+            <bounds x="1130" y="440" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-cloud-sync-func-tobe" archimateElement="app-func-cloud-sync-tobe">
+            <bounds x="1360" y="440" width="180" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-push-delivery-func-tobe" archimateElement="app-func-push-delivery-tobe">
+            <bounds x="50" y="530" width="200" height="60"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- Специфичные функции для партнёров -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-auto-contract-gen" archimateElement="app-func-self-booking-tobe">
+            <bounds x="280" y="530" width="200" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-digital-signature" archimateElement="app-func-qr-scan-tobe">
+            <bounds x="510" y="530" width="200" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-workflow-routing" archimateElement="app-func-auto-availability-tobe">
+            <bounds x="740" y="530" width="200" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approval-tracking" archimateElement="app-func-realtime-analytics-tobe">
+            <bounds x="970" y="530" width="200" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-commission-calc" archimateElement="app-func-auto-payment-tobe">
+            <bounds x="1200" y="530" width="200" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-performance-dashboard" archimateElement="app-func-realtime-analytics-tobe">
+            <bounds x="1430" y="530" width="220" height="60"/>
+            <fillColor r="180" g="255" b="180"/>
+          </child>
+          
+          <!-- DATA OBJECTS (10 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-contract-data-tobe" archimateElement="data-digital-profile-tobe" type="1">
+            <bounds x="50" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-data-tobe" archimateElement="data-cloud-schedule-tobe" type="1">
+            <bounds x="260" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approval-data-tobe" archimateElement="data-qr-attendance-tobe" type="1">
+            <bounds x="470" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-commission-data-tobe" archimateElement="data-e-receipt-tobe" type="1">
+            <bounds x="680" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-performance-data-tobe" archimateElement="data-kpi-metrics-tobe" type="1">
+            <bounds x="890" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-activity-log-tobe" archimateElement="data-ml-training-tobe" type="1">
+            <bounds x="1100" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-notification-queue-tobe" archimateElement="data-ai-program-tobe" type="1">
+            <bounds x="1310" y="650" width="180" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-integration-log-tobe" archimateElement="data-smart-schedule-tobe" type="1">
+            <bounds x="50" y="740" width="200" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-analytics-warehouse-tobe" archimateElement="data-ai-exercise-kb-tobe" type="1">
+            <bounds x="280" y="740" width="200" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-document-storage-tobe" archimateElement="data-digital-profile-tobe" type="1">
+            <bounds x="510" y="740" width="200" height="60"/>
+            <fillColor r="255" g="255" b="220"/>
+          </child>
+          
+          <!-- APPLICATION EVENTS (9 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-auto-confirmed-event-tobe" archimateElement="app-event-auto-confirmed-tobe">
+            <bounds x="740" y="740" width="200" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-qr-checkin-event-tobe" archimateElement="app-event-qr-checkin-tobe">
+            <bounds x="970" y="740" width="200" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-payment-auto-event-tobe" archimateElement="app-event-payment-auto-tobe">
+            <bounds x="1200" y="740" width="200" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-push-sent-event-tobe" archimateElement="app-event-push-sent-tobe">
+            <bounds x="1430" y="740" width="200" height="55"/>
+            <fillColor r="255" g="220" b="220"/>
+          </child>
+          
+          <!-- Специфичные события для партнёров -->
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-contract-signed-event" archimateElement="app-event-auto-confirmed-tobe">
+            <bounds x="50" y="830" width="200" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-brief-approved-event" archimateElement="app-event-qr-checkin-tobe">
+            <bounds x="280" y="830" width="200" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-approval-rejected-event" archimateElement="app-event-payment-auto-tobe">
+            <bounds x="510" y="830" width="200" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-commission-calculated-event" archimateElement="app-event-push-sent-tobe">
+            <bounds x="740" y="830" width="220" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-is-partners-integration-success-event" archimateElement="app-event-auto-confirmed-tobe">
+            <bounds x="990" y="830" width="200" height="55"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <!-- ANNOTATION NOTE -->
+          <child xsi:type="archimate:Note" id="note-is-partners-tobe-summary">
+            <bounds x="1220" y="830" width="350" height="90"/>
+            <fillColor r="255" g="250" b="205"/>
+            <content>TO-BE IS Architecture — Партнёры:
+✓ API-first платформа
+✓ Автоматизация workflow
+✓ Цифровые подписи
+✓ Интеграция с внешними системами
+✓ Real-time аналитика партнёров</content>
+          </child>
+        </child>
+      </element>
+
     </folder>
     <folder name="Tech Layer" id="folder-tech-layer" type="diagrams">
       <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — AS-IS Fitness Club — Integrated View" id="view-tech-integrated">
@@ -8259,6 +8583,490 @@
           <child xsi:type="archimate:DiagramObject" id="view-tech-trainers-tobe-func-rate-limit" archimateElement="tech-func-rate-limit-tobe">
             <bounds x="250" y="308" width="180" height="60"/>
             <fillColor r="255" g="245" b="200"/>
+          </child>
+        </child>
+      </element>
+
+      <!-- ========== TECH AS-IS: ПАРТНЁРЫ ========== -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — AS-IS Партнёры — Technology View" id="view-tech-partners-asis">
+        <documentation>AS-IS Technology Architecture для работы с партнёрами: on-premise серверы, локальная сеть, email коммуникации, файловые хранилища.</documentation>
+        
+        <child xsi:type="archimate:Group" id="grp-tech-partners-asis" name="Tech AS-IS: Партнёры (Legacy Infrastructure)" textAlignment="1">
+          <bounds x="20" y="20" width="1800" height="1100"/>
+          <fillColor r="255" g="245" b="230"/>
+          
+          <!-- NODES (15 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-admin-pc-asis" archimateElement="tech-admin-pc">
+            <bounds x="50" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-manager-ws-asis" archimateElement="tech-manager-ws">
+            <bounds x="260" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-app-server-asis" archimateElement="tech-app-server">
+            <bounds x="470" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-db-server-asis" archimateElement="tech-db-server">
+            <bounds x="680" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-file-server-asis" archimateElement="tech-file-server">
+            <bounds x="890" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-report-server-asis" archimateElement="tech-report-server">
+            <bounds x="1100" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-router-asis" archimateElement="tech-router">
+            <bounds x="1310" y="60" width="150" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-backup-node-asis" archimateElement="tech-backup-node">
+            <bounds x="1490" y="60" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-monitoring-asis" archimateElement="tech-monitoring">
+            <bounds x="50" y="160" width="180" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-trainer-ws-asis" archimateElement="tech-trainer-workstation">
+            <bounds x="260" y="160" width="200" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-exercise-server-asis" archimateElement="tech-exercise-server">
+            <bounds x="490" y="160" width="200" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-program-db-asis" archimateElement="tech-program-db-server">
+            <bounds x="720" y="160" width="220" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-session-server-asis" archimateElement="tech-session-server">
+            <bounds x="970" y="160" width="200" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-messaging-server-asis" archimateElement="tech-messaging-server">
+            <bounds x="1200" y="160" width="200" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-trainer-file-asis" archimateElement="tech-trainer-file-server">
+            <bounds x="1430" y="160" width="220" height="70"/>
+            <fillColor r="255" g="220" b="180"/>
+          </child>
+          
+          <!-- DEVICES (12 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-phone-device-asis" archimateElement="tech-phone-device">
+            <bounds x="50" y="270" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-printer-asis" archimateElement="tech-printer">
+            <bounds x="260" y="270" width="150" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-firewall-asis" archimateElement="tech-firewall">
+            <bounds x="440" y="270" width="150" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-vpn-asis" archimateElement="tech-vpn">
+            <bounds x="620" y="270" width="150" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sms-gateway-asis" archimateElement="tech-sms-gateway">
+            <bounds x="800" y="270" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-trainer-laptop-asis" archimateElement="tech-trainer-laptop">
+            <bounds x="1010" y="270" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-training-pc-asis" archimateElement="tech-training-room-pc">
+            <bounds x="1220" y="270" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-trainer-phone-asis" archimateElement="tech-trainer-phone">
+            <bounds x="1430" y="270" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-trainer-tablet-asis" archimateElement="tech-trainer-tablet">
+            <bounds x="50" y="365" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-fitness-tracker-asis" archimateElement="tech-fitness-tracker">
+            <bounds x="260" y="365" width="200" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-barcode-scanner-asis" archimateElement="tech-barcode-scanner">
+            <bounds x="490" y="365" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-backup-nas-asis" archimateElement="tech-backup-nas">
+            <bounds x="700" y="365" width="180" height="65"/>
+            <fillColor r="255" g="200" b="200"/>
+          </child>
+          
+          <!-- SYSTEM SOFTWARE (10 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-windows-asis" archimateElement="tech-sw-windows">
+            <bounds x="920" y="365" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-linux-asis" archimateElement="tech-sw-linux">
+            <bounds x="1130" y="365" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-postgres-asis" archimateElement="tech-sw-postgres">
+            <bounds x="1340" y="365" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-apache-asis" archimateElement="tech-sw-apache">
+            <bounds x="1550" y="365" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-office-asis" archimateElement="tech-sw-office">
+            <bounds x="50" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-mongodb-asis" archimateElement="tech-sw-mongodb">
+            <bounds x="260" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-file-system-asis" archimateElement="tech-sw-file-system">
+            <bounds x="470" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-mail-asis" archimateElement="tech-sw-mail-server">
+            <bounds x="680" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-nginx-asis" archimateElement="tech-sw-nginx">
+            <bounds x="890" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-antivirus-asis" archimateElement="tech-sw-antivirus">
+            <bounds x="1100" y="460" width="180" height="60"/>
+            <fillColor r="220" g="240" b="255"/>
+          </child>
+          
+          <!-- TECHNOLOGY SERVICES (12 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-hosting-asis" archimateElement="tech-svc-hosting">
+            <bounds x="50" y="570" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-database-asis" archimateElement="tech-svc-database">
+            <bounds x="260" y="570" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-queue-asis" archimateElement="tech-svc-queue">
+            <bounds x="470" y="570" width="200" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-notify-asis" archimateElement="tech-svc-notify">
+            <bounds x="700" y="570" width="220" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-backup-asis" archimateElement="tech-svc-backup">
+            <bounds x="950" y="570" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-print-asis" archimateElement="tech-svc-print">
+            <bounds x="1160" y="570" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-network-asis" archimateElement="tech-svc-network">
+            <bounds x="1370" y="570" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-vpn-asis" archimateElement="tech-svc-vpn">
+            <bounds x="1580" y="570" width="150" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-monitoring-asis" archimateElement="tech-svc-monitoring">
+            <bounds x="50" y="655" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-storage-asis" archimateElement="tech-svc-storage">
+            <bounds x="260" y="655" width="180" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-trainer-db-asis" archimateElement="tech-svc-trainer-db">
+            <bounds x="470" y="655" width="200" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-exercise-asis" archimateElement="tech-svc-exercise-hosting">
+            <bounds x="700" y="655" width="220" height="55"/>
+            <fillColor r="255" g="255" b="200"/>
+          </child>
+          
+          <!-- COMMUNICATION NETWORKS (3 элемента) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-lan-asis" archimateElement="tech-net-lan">
+            <bounds x="950" y="655" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-internet-asis" archimateElement="tech-net-internet">
+            <bounds x="1160" y="655" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-trainer-lan-asis" archimateElement="tech-net-trainer-lan">
+            <bounds x="1370" y="655" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          
+          <!-- ANNOTATION NOTE -->
+          <child xsi:type="archimate:Note" id="note-tech-partners-asis-summary">
+            <bounds x="50" y="750" width="1680" height="120"/>
+            <fillColor r="255" g="250" b="205"/>
+            <content>AS-IS Tech Architecture — Партнёры (Legacy):
+✗ On-premise серверы (высокие затраты на поддержку)
+✗ Локальная сеть (ограничена офисом)
+✗ Email/телефон для согласований (медленно)
+✗ Файловые хранилища (версионирование вручную)
+✗ Отсутствие API для партнёров
+✗ Ручное резервное копирование</content>
+          </child>
+        </child>
+      </element>
+
+      <!-- ========== TECH TO-BE: ПАРТНЁРЫ ========== -->
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Tech — TO-BE Партнёры — Technology View" id="view-tech-partners-tobe">
+        <documentation>TO-BE Technology Architecture для работы с партнёрами: облачная инфраструктура, API Gateway, автоматизированные процессы, микросервисы, CI/CD.</documentation>
+        
+        <child xsi:type="archimate:Group" id="grp-tech-partners-tobe" name="Tech TO-BE: Партнёры (Cloud-Native Platform)" textAlignment="1">
+          <bounds x="20" y="20" width="1800" height="1150"/>
+          <fillColor r="230" g="255" b="245"/>
+          
+          <!-- CLOUD NODES (12 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-aws-cloud-tobe" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="50" y="60" width="200" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-azure-vm-tobe" archimateElement="tech-azure-vm-tobe">
+            <bounds x="280" y="60" width="200" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-cloud-db-tobe" archimateElement="tech-cloud-db-tobe">
+            <bounds x="510" y="60" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-load-balancer-tobe" archimateElement="tech-load-balancer-tobe">
+            <bounds x="760" y="60" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-cdn-edge-tobe" archimateElement="tech-cdn-edge-tobe">
+            <bounds x="1010" y="60" width="200" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-analytics-server-tobe" archimateElement="tech-analytics-server-tobe">
+            <bounds x="1240" y="60" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-api-gateway-node-tobe" archimateElement="tech-api-gateway-node-tobe">
+            <bounds x="1490" y="60" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-ai-cloud-tobe" archimateElement="tech-ai-cloud-tobe">
+            <bounds x="50" y="160" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-aws-trainer-tobe" archimateElement="tech-aws-trainer-tobe">
+            <bounds x="300" y="160" width="220" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-cloud-db-cluster-tobe" archimateElement="tech-cloud-db-cluster-tobe">
+            <bounds x="550" y="160" width="240" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-iot-gateway-tobe" archimateElement="tech-iot-gateway-tobe">
+            <bounds x="820" y="160" width="200" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-edge-node-tobe" archimateElement="tech-edge-node-tobe">
+            <bounds x="1050" y="160" width="200" height="70"/>
+            <fillColor r="180" g="255" b="220"/>
+          </child>
+          
+          <!-- MODERN DEVICES (10 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-tablet-tobe" archimateElement="tech-tablet-tobe">
+            <bounds x="1280" y="160" width="180" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-smartphone-tobe" archimateElement="tech-smartphone-tobe">
+            <bounds x="1490" y="160" width="180" height="70"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-qr-scanner-tobe" archimateElement="tech-qr-scanner-tobe">
+            <bounds x="50" y="260" width="180" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-payment-terminal-tobe" archimateElement="tech-payment-terminal-tobe">
+            <bounds x="260" y="260" width="200" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-smart-tablet-tobe" archimateElement="tech-smart-tablet-tobe">
+            <bounds x="490" y="260" width="200" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-5g-phone-tobe" archimateElement="tech-5g-phone-tobe">
+            <bounds x="720" y="260" width="180" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-smartwatch-tobe" archimateElement="tech-smartwatch-tobe">
+            <bounds x="930" y="260" width="180" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-heart-monitor-tobe" archimateElement="tech-heart-monitor-tobe">
+            <bounds x="1140" y="260" width="180" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-rfid-reader-tobe" archimateElement="tech-rfid-reader-tobe">
+            <bounds x="1350" y="260" width="180" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-biometric-scanner-tobe" archimateElement="tech-biometric-scanner-tobe">
+            <bounds x="1560" y="260" width="200" height="65"/>
+            <fillColor r="200" g="255" b="200"/>
+          </child>
+          
+          <!-- CLOUD SYSTEM SOFTWARE (12 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-postgres-cloud-tobe" archimateElement="tech-sw-postgres-cloud-tobe">
+            <bounds x="50" y="360" width="200" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-kubernetes-tobe" archimateElement="tech-sw-kubernetes-tobe">
+            <bounds x="280" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-docker-tobe" archimateElement="tech-sw-docker-tobe">
+            <bounds x="490" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-redis-tobe" archimateElement="tech-sw-redis-tobe">
+            <bounds x="700" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-nginx-tobe" archimateElement="tech-sw-nginx-tobe">
+            <bounds x="910" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-k8s-tobe" archimateElement="tech-sw-k8s-tobe">
+            <bounds x="1120" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-tensorflow-tobe" archimateElement="tech-sw-tensorflow-tobe">
+            <bounds x="1330" y="360" width="200" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-grafana-tobe" archimateElement="tech-sw-grafana-tobe">
+            <bounds x="1560" y="360" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-prometheus-tobe" archimateElement="tech-sw-prometheus-tobe">
+            <bounds x="50" y="450" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-elasticsearch-tobe" archimateElement="tech-sw-elasticsearch-tobe">
+            <bounds x="260" y="450" width="200" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-kafka-tobe" archimateElement="tech-sw-kafka-tobe">
+            <bounds x="490" y="450" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-sw-rabbitmq-tobe" archimateElement="tech-sw-rabbitmq-tobe">
+            <bounds x="700" y="450" width="180" height="60"/>
+            <fillColor r="220" g="245" b="255"/>
+          </child>
+          
+          <!-- CLOUD TECHNOLOGY SERVICES (14 элементов) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-cloud-hosting-tobe" archimateElement="tech-svc-cloud-hosting-tobe">
+            <bounds x="920" y="450" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-managed-db-tobe" archimateElement="tech-svc-managed-db-tobe">
+            <bounds x="1170" y="450" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-cdn-tobe" archimateElement="tech-svc-cdn-tobe">
+            <bounds x="1420" y="450" width="180" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-push-gateway-tobe" archimateElement="tech-svc-push-gateway-tobe">
+            <bounds x="1630" y="450" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-cloud-queue-tobe" archimateElement="tech-svc-cloud-queue-tobe">
+            <bounds x="50" y="540" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-cloud-backup-tobe" archimateElement="tech-svc-cloud-backup-tobe">
+            <bounds x="280" y="540" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-api-gateway-tobe" archimateElement="tech-svc-api-gateway-tobe">
+            <bounds x="530" y="540" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-bi-analytics-tobe" archimateElement="tech-svc-bi-analytics-tobe">
+            <bounds x="760" y="540" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-ml-training-tobe" archimateElement="tech-svc-ml-training-tobe">
+            <bounds x="1010" y="540" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-push-notif-tobe" archimateElement="tech-svc-push-notif-tobe">
+            <bounds x="1240" y="540" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-ai-serving-tobe" archimateElement="tech-svc-ai-serving-tobe">
+            <bounds x="1470" y="540" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-cloud-db-tobe" archimateElement="tech-svc-cloud-db-tobe">
+            <bounds x="50" y="625" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-orchestration-tobe" archimateElement="tech-svc-orchestration-tobe">
+            <bounds x="280" y="625" width="220" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-svc-monitoring-tobe" archimateElement="tech-svc-monitoring-tobe">
+            <bounds x="530" y="625" width="200" height="55"/>
+            <fillColor r="255" g="255" b="180"/>
+          </child>
+          
+          <!-- MODERN NETWORKS (4 элемента) -->
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-5g-tobe" archimateElement="tech-net-5g-tobe">
+            <bounds x="760" y="625" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-cloud-vpn-tobe" archimateElement="tech-net-cloud-vpn-tobe">
+            <bounds x="970" y="625" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-secure-api-tobe" archimateElement="tech-net-secure-api-tobe">
+            <bounds x="1180" y="625" width="200" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-tech-partners-net-wifi6-tobe" archimateElement="tech-net-wifi6-tobe">
+            <bounds x="1410" y="625" width="180" height="55"/>
+            <fillColor r="200" g="255" b="255"/>
+          </child>
+          
+          <!-- ANNOTATION NOTE -->
+          <child xsi:type="archimate:Note" id="note-tech-partners-tobe-summary">
+            <bounds x="50" y="720" width="1700" height="150"/>
+            <fillColor r="230" g="255" b="230"/>
+            <content>TO-BE Tech Architecture — Партнёры (Cloud-Native):
+✓ Облачная инфраструктура AWS/Azure (масштабируемость, высокая доступность)
+✓ Kubernetes + Docker для микросервисов (DevOps, CI/CD)
+✓ API Gateway для безопасной интеграции партнёров
+✓ Managed Database Services (автоматическое резервное копирование, репликация)
+✓ CDN для быстрой доставки контента
+✓ Real-time аналитика и мониторинг (Prometheus, Grafana)
+✓ IoT &amp; Edge Computing для smart-устройств
+✓ 5G / WiFi 6 для высокоскоростного доступа</content>
           </child>
         </child>
       </element>
