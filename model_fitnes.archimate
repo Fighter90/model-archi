@@ -866,7 +866,7 @@
       <property key="Area" value="Коммуникации"/>
       <property key="State" value="AS-IS"/>
     </element>
-    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер по закупкам" id="role-procurement-manager-asis">
+    <element xsi:type="archimate:BusinessRole" name="Роль: Менеджер по снабжению" id="role-procurement-manager-asis">
       <property key="Area" value="Закупки"/>
       <property key="State" value="AS-IS"/>
     </element>
@@ -1392,6 +1392,18 @@
     </element>
     <element xsi:type="archimate:BusinessProcess" name="Процесс: Сопоставление расписаний (copy)" id="id-a9f031939da446ea9d46ff4f5735fdb4">
       <property key="Area" value="Хранение"/>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Процесс: Электронное согласование контракта (TO-BE) (copy)" id="id-f8164473e96e41f6a8dacd393c82ff2f">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="TO-BE"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Поставщик спортивного питания (copy)" id="id-f401673d30c847b2a4985edfdc7e51c9">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Бизнес-актор: Поставщик спортивного питания " id="id-4953fca11f16459b91acbd600cb02395">
+      <property key="Area" value="Закупки"/>
+      <property key="State" value="AS-IS"/>
     </element>
   </folder>
   <folder name="Application" id="id-application-folder" type="application">
@@ -4487,6 +4499,224 @@
     <element xsi:type="archimate:CompositionRelationship" id="id-79bfd53472394342a83507e49e2a014e" source="id-d33e6c4212b44f80aa3c4f3b78b18b99" target="id-2aae90c232ce44789e8eefd72fbbf877"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-9c62321ea03d469ab50e6880f0481206" source="id-202f22e80d9845b39ca19d5892c39cf1" target="id-2a39c7e3ecc9456fb858734882583ee6"/>
     <element xsi:type="archimate:AccessRelationship" id="id-98a890f97587450f90d531c508188f68" source="id-202f22e80d9845b39ca19d5892c39cf1" target="data-cloud-schedule-tobe" accessType="3"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-1fe82f1f1bca4b03a2ff0c43d595584d" source="iface-phone" target="proc-client-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2cbe6dd46823422092a8a0237ca5549a" source="iface-desk" target="proc-client-booking"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-565300f4ceaf46f5b2542cee5a246684" source="app-booking" target="proc-client-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-189bda9879204a63b1c67f28da95a321" source="iface-mobile-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-a5e65d4943c94307a2eded0a14d71b9a" source="svc-online-booking-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ec159aa17b064b8ca7cde97eed20812a" source="iface-web-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-8f4e801191ec4484895769c42b02e099" source="proc-self-booking-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7d9c7b4e78d24b39879b885590b76876" source="proc-self-booking-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-e8e6d281987b4e18808512465f98faad" source="proc-client-booking" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-45658d919093437d826a953ef4b1c5cb" source="proc-client-booking" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-a3c8d0e2780743f9911fa76a2862088a" source="proc-client-booking" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-9d8f4a284b034c51a22d801c4294c301" source="app-api-gateway-tobe" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1971937f880d45e5a6175e4ab1e4ab4e" source="app-mobile-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-887d78a4710f407197f40a4061affa87" source="tech-admin-pc" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-a349212bcabd4bb3bb2cf9f4221b8f7e" source="tech-phone-device" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-6c1eb675f1f84f208c744697b49e291b" source="tech-tablet-tobe" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-abfc0f9e8e7545a58dece599e4a9dc7b" source="tech-smartphone-tobe" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-1fc2bf9518834409a4807cf6e41a8e9b" source="tech-net-5g-tobe" target="tech-tablet-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ae2169cc31cb4c478be09612c7cc080a" source="tech-net-5g-tobe" target="tech-smartphone-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-5b714c7e04394c5a9d1472924fc907df" source="app-booking" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-51cca3f5d0dd4917ad0c2f8bb4b1bd8c" source="actor-client" target="role-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-2c772a9ad5b4454db7794922f4814238" source="actor-admin" target="role-frontdesk"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-3558844a817c4aeba70570bb1d1b4f87" source="actor-client" target="role-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-f130e7d26aad4c53afa3f87ff5acaaf1" source="actor-client" target="role-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-91e4a4800da84e5ea26c39cf95412e87" source="actor-client" target="role-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-cbbe6914bef84fc895e6b141246d92be" source="actor-client" target="role-client"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-a49fd7812a7e48a9a598051f8adccdf1" source="role-client" target="proc-client-booking"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-348205a751674ba98b8f27b82a8e1723" source="role-frontdesk" target="proc-sell-subscription"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-efd22f24f508407d8fee1984fb57ee4b" source="role-client" target="proc-client-booking"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-31be4f30ff9a4dac82894dd1579fc89d" source="role-client" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-a7d5f565e9f5438b9157b8a94446ef5f" source="role-client" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-2bf2835696a64bb1b465f1e51c2294e6" source="role-client" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-23af910560eb4b9cb8d4f80ccbfc390f" source="proc-client-booking" target="obj-paper-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-819207fef6a34015949ccd0ce8ff4267" source="proc-client-booking" target="obj-paper-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-42d8a8e021cf4224b5bd56dd6f03cae9" source="proc-self-booking-tobe" target="obj-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-524fc670237d45dca6e3a8fd7ec1b73e" source="proc-check-in" target="obj-paper-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-e5492b7104674805be53303cbc2040f8" source="proc-check-in" target="obj-paper-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-bc302e05e04647bd84b9fdbe86d51cc1" source="proc-sell-subscription" target="obj-client-card"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-1bb978d9086e40dc8eed673b74462f49" source="role-frontdesk" target="proc-check-in"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0c77489c794a4fc1a614f241f1cc2e0e" source="iface-desk" target="proc-sell-subscription"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-87f05cbf6e8a49f4841fdafdf368692a" source="app-crm" target="proc-sell-subscription"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-859074f37f2a43ec8dce583a70e66197" source="app-booking" target="data-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-c6b7fd2481704a26a77dae01732fd34d" source="app-crm" target="data-client-card"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-39f5213e7d104db2bd69c2d1dc505ec9" source="tech-admin-pc" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d93a9401b57645d68d694a18724bc24e" source="tech-phone-device" target="proc-client-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ef266d88a0b1472bbac81daef7b4b01e" source="iface-web-tobe" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-e6f987930a474e208608a514976b0e6e" source="app-booking" target="proc-check-in"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-678d4ed5f2874189a10a6e8380ba7020" source="app-booking" target="data-schedule"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-ce899ce180ef4f0e9b2ede5065ea0e43" source="app-web-portal-tobe" target="data-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-057b8056cc84426693c2754957579b2e" source="app-booking" target="data-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-b649f788764f4c9fa236435446f7b310" source="tech-admin-pc" target="app-booking"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2929f851a0b34fcd8ac95d9c00af1d41" source="iface-web-tobe" target="proc-check-in"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-74014bee62fd4f5dadde4330f1469042" source="iface-web-tobe" target="proc-check-in"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-7fbdcf443666425aafe0d9e2d305fef9" source="tech-aws-cloud-tobe" target="app-web-portal-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-0f860e72346f426a8dabbc47eee80910" source="proc-self-booking-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-50b4fdbbc6b54c9bb3986d56a834b816" source="proc-qr-checkin-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-822bdc6d4b5449b79104839f8435b2bf" source="iface-web-tobe" target="obj-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-7342c2261d414ecdb611c620da423de7" source="app-web-portal-tobe" target="iface-web-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-2a69383d7cd4415a9ffba864ccab1344" source="app-web-portal-tobe" target="iface-web-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-600d87165e384feb8e7038f6bffa1d39" source="app-mobile-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-29c195befce14bd09fd7cba00aac90f1" source="app-web-portal-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-c41dbfb1896b4b75871503d6dded74ee" source="app-mobile-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-01bf88b511a44e989753e38381481168" source="app-web-portal-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f319202258604f9f83f5fad0ebad3337" source="svc-online-booking-tobe" target="obj-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-894502c9891a4570b08c3e397f9fe9e7" source="svc-online-payment-tobe" target="obj-visit-balance"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-fe82d760105347bca44eec9b6aac891e" source="svc-online-booking-tobe" target="obj-visit-balance"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-a36105cf7c694bee9b13142c095fbc15" source="app-web-portal-tobe" target="data-digital-profile-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-253f4b93dd19485d8923af12a633d18e" source="app-web-portal-tobe" target="data-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-866b7f5f1f564319a392efdfc585f39a" source="app-mobile-tobe" target="data-digital-profile-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-1d23277d3ee847498c0b8d328837640c" source="app-mobile-tobe" target="data-cloud-schedule-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d0e94b07ef7746d5af296bf02941fd79" source="tech-aws-cloud-tobe" target="app-web-portal-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5a54a1f429548559e6595971bd9adda" source="tech-smartphone-tobe" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-e4fda50d75864181a9d6d85532352ac8" source="proc-sell-subscription" target="proc-self-booking-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-c1ace6e9d4fd4d3c9b8ac6b598c58580" source="proc-self-booking-tobe" target="svc-online-booking-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-beb4bcb4925a42ab9ef8a8c7d4d5ee46" source="proc-self-booking-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-fda6403d17ee43e9a4e5133ed02c7c34" source="app-web-portal-tobe" target="app-mobile-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-da17b40e763e4488974b55fbe63ee324" source="tech-analytics-server-tobe" target="app-bi-analytics-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-b7942f3b6d70489f95acb56f54100576" source="tech-payment-terminal-tobe" target="app-payment-gateway-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-3683e02eaced41149d2fda934c45bfc4" source="app-payment-gateway-tobe" target="proc-card-payment-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-9c3447c73c844c01a3e80b97182b521f" source="app-bi-analytics-tobe" target="proc-auto-reporting-tobe"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-9eed911a08b042fc84c1aff67da21d9d" source="proc-auto-reporting-tobe" target="obj-digital-receipt-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-72f3e6117c0b4c7889c4256af2f2d389" source="proc-card-payment-tobe" target="svc-online-payment-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-9ab568354c524a23919a59c364dc1ddb" source="proc-auto-reporting-tobe" target="svc-analytics-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-2b7f6177f5f446f0a6411696f11dfb99" source="proc-card-payment-tobe" target="obj-kpi-dashboard-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-44031c1be07a406e903bf3f58aa19e3d" source="proc-auto-reporting-tobe" target="obj-kpi-dashboard-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f09b9d3e800043509f37c1339243863f" source="proc-card-payment-tobe" target="obj-digital-receipt-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-3882ec4afd584181bba8376070383242" source="tech-report-server" target="app-sales"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d1b86c010fa64abaa6b4d6ee0a4a423d" source="tech-printer" target="app-sales"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-fd29aa6f88524f92ae04435a95c4737d" source="app-sales" target="svc-sales"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-1d8a3f97f8b84f6298792623f76bd166" source="svc-sales" target="proc-report"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-41d17e09e01f45e2ab83787f933c7e43" source="proc-report" target="obj-receipt"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-9a7b0ab6e5874ed0b6357cd57d1d50f0" source="proc-report" target="proc-auto-reporting-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-2a6c033b3e1848d296f6342fb5612cf2" source="app-sales" target="app-payment-gateway-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-4ee866cbbd2644b0a0ff5eaeb566b85f" source="tech-report-server" target="tech-analytics-server-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-2ea53442db164811b8b62abe3f89b412" source="app-crm" target="svc-card-mgmt"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-bf662a6f82b8481eb3fa927b7384d4b1" source="app-crm" target="svc-attendance"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-79572e9bb47b42d89dd2c1cd2153336d" source="svc-card-mgmt" target="obj-client-card"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-878f294a4f6f4953b35dbdb8afbf811c" source="tech-db-server" target="app-crm"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-96206f8712de4a1e8129f6e8bfdf253d" source="svc-digital-cards-tobe" target="obj-digital-card-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1cf1674108ab4fb28e2310a6ac0d7f7e" source="tech-qr-scanner-tobe" target="app-qr-scanner-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1738db1c7e5f45daac6df130d6ae5169" source="tech-cloud-db-tobe" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-cbaadb8031a2448eba33bd334b9b757c" source="app-qr-scanner-tobe" target="svc-digital-cards-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-c7890ac95a514bab834a74f01a8381b7" source="tech-qr-scanner-tobe" target="app-qr-scanner-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-8161686ffc5140d09def1da58ca1fd60" source="tech-cloud-db-tobe" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-69eb3c1ed818485fa06fb5ae7018af9a" source="app-cloud-crm-tobe" target="svc-auto-attendance-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-408a2703ff854867b28fdd717cdf1dc2" source="iface-qr-scanner-tobe" target="svc-auto-attendance-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-8c66213b5d4744b78c7e4e972b3651fc" source="iface-qr-scanner-tobe" target="obj-digital-card-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-2361c6e3a06b4f4b8d6960069c9ba30f" source="app-crm" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-e2e9bcf5ce844aed8676fbe8e831ddff" source="tech-db-server" target="tech-cloud-db-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-fc88e08b6f524b5883dd2193dfffdede" source="svc-card-mgmt" target="svc-digital-cards-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-0ad88a78d2684232b563435c2e7f502e" source="svc-attendance" target="svc-auto-attendance-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-51f82ac665504829b13c8832170fb712" source="actor-equipment-supplier-asis" target="role-procurement-manager-asis"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-9471e4c214dc41e0972f700d9732a0ae" source="proc-select-supplier-asis" target="proc-negotiate-contract-asis"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-b1f7812d748f49099050200efbaf4e4f" source="proc-negotiate-contract-asis" target="proc-order-equipment-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-279e027048aa4a439ef7a745641b493b" source="actor-equipment-supplier-asis" target="proc-select-supplier-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-b9b87d4f99ec47e2ade31a2471af98bf" source="role-procurement-manager-asis" target="proc-select-supplier-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-7e08aa034d354490a51cd825cf3c4499" source="actor-nutrition-supplier-asis" target="proc-negotiate-contract-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-4bb273e5beeb4c2f9ef8931453df14ed" source="role-supply-manager-asis" target="proc-negotiate-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-dc4f9b4f85e048e99af039990c3f9236" source="proc-order-equipment-asis" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-61ef3c405e9c417ca065098fb3a50440" source="proc-negotiate-contract-asis" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-d39403cc65e04deeac1adca56134b63e" source="app-partners-procurement-asis" target="proc-select-supplier-asis"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-69ea2a454bc74e09af90f23b4f9c985a" source="app-partners-email-asis" target="proc-negotiate-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-a8739bbecc1140a8a9384513833d8ecb" source="app-partners-procurement-asis" target="app-data-partners-supplier-profile-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-b2b2f7bb1e6f4a989be40bca4d382dd9" source="app-partners-email-asis" target="app-data-partners-email-thread-asis"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-22b4c601749f44039ae3875b810cbcbe" source="tech-admin-pc" target="app-partners-procurement-asis"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-918f122034f4429e8a58bc76912c3167" source="tech-phone-device" target="app-partners-email-asis"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-ff69d29b54d742eba4a2ab5607870cc4" source="tech-phone-device" target="tech-admin-pc"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ce1b969b8d704ba6985595148edc7ed7" source="tech-phone-device" target="tech-admin-pc"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-2f49a1ffb28a4b90935004aead56fc43" source="actor-equipment-supplier-asis" target="proc-select-supplier-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-1549c226fde641d089d6b88b83033a64" source="role-procurement-manager-asis" target="proc-select-supplier-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-6edc93c53815443cb1c3c3b06cd38d23" source="actor-equipment-supplier-asis" target="id-f8164473e96e41f6a8dacd393c82ff2f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-b3217a4acde94e18ac651fa5e04c17e8" source="id-4953fca11f16459b91acbd600cb02395" target="role-procurement-manager-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-86fef5a9a8384df0846a7a30cb6e73a5" source="id-4953fca11f16459b91acbd600cb02395" target="id-f8164473e96e41f6a8dacd393c82ff2f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-9ae1252f7cbe4f22bb91189a6c7bb6ab" source="role-procurement-manager-asis" target="id-f8164473e96e41f6a8dacd393c82ff2f"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-3715f15ce9804b4a9aa4a2e93b4f2501" source="proc-select-supplier-asis" target="proc-e-negotiate-contract-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-604d3a94abf04fe1814a42a0a19b3edb" source="proc-select-supplier-asis" target="proc-order-equipment-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-d3e3d21e44434c4aae0daac5b72d520e" source="proc-order-equipment-asis" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-039fa318651a48bb80e6125e477b0da7" source="proc-e-negotiate-contract-tobe" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-97133757b993403c828d51faf7dc42a9" source="app-partners-procurement-asis" target="proc-e-negotiate-contract-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-bd4683c042a64de6a3e40dd5e0091872" source="app-crm" target="app-partners-procurement-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-8ebf921f8cc4459faaa8eccfe7cda975" source="app-crm" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-0d276c2e01544a75b9b4850b94400327" source="app-partners-procurement-asis" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-11533f1e147f42fcaff9a556186be3e0" source="app-partners-procurement-asis" target="app-data-partners-supplier-profile-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-b28b4439fefb4dc6a124be828b3e87f3" source="app-partners-procurement-asis" target="app-data-partners-contract-asis"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d6dedb0b6d4d47e69cb35a0e8211f65e" source="tech-admin-pc" target="app-partners-procurement-asis"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-9a266f7791a6423b9fc7008a048007c3" source="tech-aws-cloud-tobe" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-fb61430758134fb79b17839f2a173915" source="tech-aws-cloud-tobe" target="app-partners-procurement-asis"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-626a6038b8144441960a338769c4557f" source="actor-equipment-supplier-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-0b4c20f8faf941a8ae0675805baea553" source="role-procurement-manager-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-99d4fa2f52a44e6fabeefbabcfc60a4a" source="actor-nutrition-supplier-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-835212a70dc44e07b82d6687a8cf25fb" source="role-supply-manager-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-6174dca502ad4e6a9fe74894c1222faf" source="proc-partner-analytics-tobe" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-19affc27c3694d32934b8ed99048d7cd" source="proc-e-negotiate-contract-tobe" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-bfdfba6836944a29bc0350b9bf129df4" source="proc-e-negotiate-contract-tobe" target="obj-supplier-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-d0dd48df27e547f4b836caa86787f0e5" source="proc-e-negotiate-contract-tobe" target="obj-smart-contract-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-015fb55352d143efb3e5b5ddee558e38" source="tech-aws-cloud-tobe" target="app-crm"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-e78100e051454c429af40b733255b39d" source="app-crm" target="app-data-partners-contract-asis"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-3b579e0e872a4e3c983a537d07f3f87f" source="app-web-portal-tobe" target="app-data-partners-supplier-profile-asis"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-02b47f67b72e4f129104adba7e7fa4cd" source="tech-api-gateway-node-tobe" target="app-web-portal-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-94aafa1285ec4cf188a38681dcb52f33" source="app-crm" target="proc-e-negotiate-contract-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a03df88809c0418b81ebdd781b808232" source="app-web-portal-tobe" target="proc-partner-analytics-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-a646cf763e994bc3852fd17a2982f98f" source="proc-select-supplier-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-adcd5663bfc747219ab54dc0e0c8a48a" source="id-f8164473e96e41f6a8dacd393c82ff2f" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-d9498ef599be4be49057cbb8a77adb8c" source="proc-negotiate-contract-asis" target="proc-e-negotiate-contract-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-2b450a5d41dd4936b945ef306d3073be" source="proc-order-equipment-asis" target="svc-smart-procurement-platform-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-8dfb623bed4547c3a9dff4ed5e747bb7" source="app-partners-procurement-asis" target="app-web-portal-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-cfee39e293ea48bbbcfe9db0696bc6a6" source="app-data-partners-contract-asis" target="obj-smart-contract-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-6824a6df015640f7b3bed3a7ad49304a" source="app-partners-email-asis" target="app-crm"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-16ca3466505f43fb9d2187454edf769f" source="proc-negotiate-contract-asis" target="id-f8164473e96e41f6a8dacd393c82ff2f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-a00484e1e49e4f489ebf10c41a3f2bb6" source="proc-create-program" target="svc-training-planning"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-c603f269d99e493fb876d2fb4f480fac" source="proc-fill-journal" target="svc-conducting-sessions"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0e0d6c98445d4d82bbb5a8e2f4ac13a7" source="iface-trainer-journal" target="svc-training-planning"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-04d62da5d73544e6a5daf235fa2cbfc1" source="proc-create-program" target="obj-training-plan"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-c96ea77a3fca474bb776ae0c80ad0015" source="proc-fill-journal" target="obj-training-journal"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-428c144135344afbb082b23d4e60179c" source="proc-fill-journal" target="svc-training-planning"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d6cb33d2207f463e89854f7726e09c81" source="proc-create-program" target="svc-conducting-sessions"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-a7685d9af48b4523a9b0e87c7f5abb9e" source="iface-trainer-schedule-board" target="svc-training-planning"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a7cb46b653354974b664d56db4f164a9" source="app-crm" target="proc-fill-journal"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-cf1b6114a6184ec58679c256d54e9ee5" source="app-schedule" target="proc-fill-journal"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-76d7591fb7b6403c8f473fcea999084e" source="app-crm" target="proc-create-program"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-9f2f095fd5034d949855e5619e005931" source="tech-app-server" target="app-schedule"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-2a79eae55d0d41a3988369070a279b70" source="tech-app-server" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-566aa0fe871440a48edd8038d7bdd010" source="tech-app-server" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-68cdae6e04e349a4841d779eb3a37fbe" source="tech-trainer-workstation" target="app-schedule"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-c8f49a96404c40908f2848b7799bbd0e" source="iface-trainer-tablet" target="svc-digital-schedule-mgmt-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2abc4b53e8b14564819198f55c05cda5" source="iface-trainer-mobile-app-tobe" target="svc-digital-team-coordination-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ca4926a6e7514b188c3099e3f17b44e7" source="iface-trainer-tablet" target="iface-trainer-mobile-app-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0ce9477daaf04c61be9c431a31a0058b" source="iface-trainer-mobile-app-tobe" target="svc-digital-schedule-mgmt-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-cedb0fa3708a456fb628814fd376da98" source="proc-fill-journal" target="svc-digital-schedule-mgmt-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-03d11ce7abf44238bd24485bd9b6724c" source="proc-fill-journal" target="svc-digital-schedule-mgmt-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ce6861da95c04ee9a4c462eb696b7c8d" source="proc-digital-preparation-tobe" target="svc-digital-team-coordination-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-635c238d1acf412699fd3c2dfff5dbd2" source="proc-digital-preparation-tobe" target="obj-sync-schedule-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-495c650c97cb486cb17decfd4098dcb9" source="proc-fill-journal" target="obj-cloud-notes-storage-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-3af925c2cd084019ae8158bd232589f0" source="app-crm" target="proc-digital-preparation-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-8478a1607cde4c51bc4852db69495f98" source="app-qr-scanner-tobe" target="svc-digital-team-coordination-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2a2ccb6bd3b347e29b2700d80e62bbac" source="tech-smartphone-tobe" target="app-qr-scanner-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-64c254c1eb4a4f48b5f957805ca2499b" source="tech-aws-cloud-tobe" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-aaf462d251544dce9130331ed0fc4cf5" source="tech-smartphone-tobe" target="app-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-93b15213325e4d04a5ae87f90850a699" source="iface-trainer-mobile-app-tobe" target="svc-auto-training-planning-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2ab4f8187fb849b0a4be18000ff3fe7e" source="iface-trainer-cloud-platform-tobe" target="iface-trainer-mobile-app-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7d63f6487e2b4299aee27f0162d9e750" source="tech-smartphone-tobe" target="iface-trainer-mobile-app-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-cce31348fb35483c8ce1081550fba08d" source="proc-conduct-training" target="svc-conducting-sessions"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d13efe0d20b34cbf82977cb8dcbc8042" source="proc-ai-program-generation-tobe" target="svc-auto-training-planning-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-b720b79daa414762bee748368e426b9d" source="svc-auto-training-planning-tobe" target="svc-conducting-sessions"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-215d5f81a0b447eeb3a963f6e696922c" source="proc-ai-program-generation-tobe" target="obj-ai-training-plan-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-ecccf097c6f24715b45b15d8d2ed0b3c" source="svc-auto-training-planning-tobe" target="obj-digital-journal-tobe"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-cb7f718bdd9548a4a52696f96d90a0b4" source="proc-conduct-training" target="obj-digital-journal-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-25303821c2354f9dbbdc47b95670b5b3" source="app-cloud-crm-tobe" target="svc-auto-training-planning-tobe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-593bda647e4f4c10b58a3392bc89e1df" source="app-bi-analytics-tobe" target="svc-conducting-sessions"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-631431cc66a34b2cad7a6eba071b891d" source="tech-aws-trainer-tobe" target="app-bi-analytics-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-61bc5b8615be404983e38f40b5a78afc" source="tech-smart-tablet-tobe" target="app-bi-analytics-tobe"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-2bec608104734a8db15ab965523b233f" source="tech-aws-trainer-tobe" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-065545b7a77549188764d2af09ae7a10" source="tech-aws-trainer-tobe" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-be706e3cf33942bc956df94b005df97c" source="app-crm" target="app-cloud-crm-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-a891cd3cb0b645858de86c3d50863081" source="proc-create-program" target="proc-ai-program-generation-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-41a7d42d6f674b90802e14e4b61b89cc" source="svc-training-planning" target="svc-digital-schedule-mgmt-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-94498bd0ab6441bfbf93e43d2216f04d" source="svc-digital-schedule-mgmt-tobe" target="svc-auto-training-planning-tobe"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-0f0aefaf3d2c489d8cf90ba12bb8967b" source="svc-digital-team-coordination-tobe" target="svc-auto-training-planning-tobe"/>
   </folder>
   <folder name="Views" id="id-views-folder" type="diagrams">
     <folder name="Motivation Model" id="folder-motivation-views" type="diagrams">
@@ -8941,6 +9171,8 @@
         </child>
         <documentation>TO-BE Technology Architecture для работы с партнёрами: облачная инфраструктура, API Gateway, автоматизированные процессы, микросервисы, CI/CD.</documentation>
       </element>
+    </folder>
+    <folder name="Transition Layer" id="id-34771a9d47c945deb16d8eda2e41bf1f">
       <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Запись (Booking)" id="view-transition-booking">
         <child xsi:type="archimate:Group" id="grp-transition-booking" name="Transition: Запись AS-IS → TO-BE" fillColor="">
           <bounds x="24" y="24" width="1600" height="800"/>
@@ -8951,15 +9183,18 @@
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-phone-asis" fillColor="" archimateElement="iface-phone">
             <bounds x="50" y="160" width="150" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-774de79b9a5c4c59913748daf8cd0c55" source="view-transition-booking-iface-phone-asis" target="view-transition-booking-proc-booking-asis" archimateRelationship="id-1fe82f1f1bca4b03a2ff0c43d595584d"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-desk-asis" fillColor="" archimateElement="iface-desk">
             <bounds x="220" y="160" width="150" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-9909360d4f214ffcbc40342a6a793aea" source="view-transition-booking-iface-desk-asis" target="view-transition-booking-proc-booking-asis" archimateRelationship="id-2cbe6dd46823422092a8a0237ca5549a"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-booking-asis" fillColor="" archimateElement="proc-client-booking">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-booking-asis" targetConnections="id-774de79b9a5c4c59913748daf8cd0c55 id-9909360d4f214ffcbc40342a6a793aea id-0e6c7379e59b48309d3361c1da94553b" fillColor="" archimateElement="proc-client-booking">
             <bounds x="50" y="240" width="320" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3ca97584a2c441bb8e0263a0e458e5d5" source="view-transition-booking-proc-booking-asis" target="view-transition-booking-proc-self-tobe" archimateRelationship="id-a3c8d0e2780743f9911fa76a2862088a"/>
           </child>
           <child xsi:type="archimate:Note" id="note-transition-booking-arrow" fillColor="">
-            <bounds x="450" y="200" width="200" height="100"/>
+            <bounds x="450" y="137" width="200" height="100"/>
             <content>═══════➤
 MIGRATION
 PHASE 1-2
@@ -8972,28 +9207,35 @@ PHASE 1-2
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-mobile-tobe" fillColor="" archimateElement="iface-mobile-tobe">
             <bounds x="720" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-008fc80554de475ab8ed738817186885" source="view-transition-booking-iface-mobile-tobe" target="view-transition-booking-proc-self-tobe" archimateRelationship="id-189bda9879204a63b1c67f28da95a321"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-iface-web-tobe" fillColor="" archimateElement="iface-web-tobe">
             <bounds x="920" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-99836eeb7a024a4593e627e99fac3471" source="view-transition-booking-iface-web-tobe" target="view-transition-booking-proc-self-tobe" archimateRelationship="id-ec159aa17b064b8ca7cde97eed20812a"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-self-tobe" fillColor="" archimateElement="proc-self-booking-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-proc-self-tobe" targetConnections="id-008fc80554de475ab8ed738817186885 id-99836eeb7a024a4593e627e99fac3471 id-3ca97584a2c441bb8e0263a0e458e5d5 id-47aba7c94e714609b9674905edca2d0c" fillColor="" archimateElement="proc-self-booking-tobe">
             <bounds x="720" y="240" width="280" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-33d9948752934d3e842a9decd932e8e4" source="view-transition-booking-proc-self-tobe" target="view-transition-booking-svc-online-tobe" archimateRelationship="id-7d9c7b4e78d24b39879b885590b76876"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-svc-online-tobe" fillColor="" archimateElement="svc-online-booking-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-svc-online-tobe" targetConnections="id-33d9948752934d3e842a9decd932e8e4" fillColor="" archimateElement="svc-online-booking-tobe">
             <bounds x="1020" y="240" width="200" height="55"/>
           </child>
           <child xsi:type="archimate:Note" id="note-transition-booking-is" fillColor="">
             <bounds x="50" y="350" width="600" height="60"/>
             <content>IS Layer: Booking App (AS-IS) → Mobile App Client + API Gateway (TO-BE)</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-booking-asis" fillColor="" archimateElement="app-booking">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-booking-asis" targetConnections="id-b3a0283574784b9f85c1618262a58603 id-ee9697ea945547c6abf9ebd4c52b9882" fillColor="" archimateElement="app-booking">
             <bounds x="50" y="430" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0e6c7379e59b48309d3361c1da94553b" source="view-transition-booking-app-booking-asis" target="view-transition-booking-proc-booking-asis" archimateRelationship="id-565300f4ceaf46f5b2542cee5a246684"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8a06219e832c499788c9aef07b0d62b9" source="view-transition-booking-app-booking-asis" target="view-transition-booking-app-mobile-tobe" archimateRelationship="id-5b714c7e04394c5a9d1472924fc907df"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-mobile-tobe" fillColor="" archimateElement="app-mobile-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-mobile-tobe" targetConnections="id-295af0a3904c45f590753260088de4da id-efdadd785e3b46e5a597990c96073828 id-6d31150c714b4fff9ecb0a939d9e1737 id-8a06219e832c499788c9aef07b0d62b9" fillColor="" archimateElement="app-mobile-tobe">
             <bounds x="720" y="430" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-47aba7c94e714609b9674905edca2d0c" source="view-transition-booking-app-mobile-tobe" target="view-transition-booking-proc-self-tobe" archimateRelationship="id-1971937f880d45e5a6175e4ab1e4ab4e"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-app-api-gateway-tobe" fillColor="" archimateElement="app-api-gateway-tobe">
             <bounds x="940" y="430" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-295af0a3904c45f590753260088de4da" source="view-transition-booking-app-api-gateway-tobe" target="view-transition-booking-app-mobile-tobe" archimateRelationship="id-9d8f4a284b034c51a22d801c4294c301"/>
           </child>
           <child xsi:type="archimate:Note" id="note-transition-booking-tech" fillColor="">
             <bounds x="50" y="530" width="600" height="60"/>
@@ -9001,79 +9243,648 @@ PHASE 1-2
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-admin-pc-asis" fillColor="" archimateElement="tech-admin-pc">
             <bounds x="50" y="610" width="150" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b3a0283574784b9f85c1618262a58603" source="view-transition-booking-tech-admin-pc-asis" target="view-transition-booking-app-booking-asis" archimateRelationship="id-887d78a4710f407197f40a4061affa87"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-phone-asis" fillColor="" archimateElement="tech-phone-device">
             <bounds x="220" y="610" width="150" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ee9697ea945547c6abf9ebd4c52b9882" source="view-transition-booking-tech-phone-asis" target="view-transition-booking-app-booking-asis" archimateRelationship="id-a349212bcabd4bb3bb2cf9f4221b8f7e"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-tablet-tobe" fillColor="" archimateElement="tech-tablet-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-tablet-tobe" targetConnections="id-6e28ae8a9c2a4596915d313298febf24" fillColor="" archimateElement="tech-tablet-tobe">
             <bounds x="720" y="610" width="150" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-efdadd785e3b46e5a597990c96073828" source="view-transition-booking-tech-tablet-tobe" target="view-transition-booking-app-mobile-tobe" archimateRelationship="id-6c1eb675f1f84f208c744697b49e291b"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-smartphone-tobe" fillColor="" archimateElement="tech-smartphone-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-smartphone-tobe" targetConnections="id-07994ba3a2a8470eb41302c4fff0bede" fillColor="" archimateElement="tech-smartphone-tobe">
             <bounds x="890" y="610" width="150" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6d31150c714b4fff9ecb0a939d9e1737" source="view-transition-booking-tech-smartphone-tobe" target="view-transition-booking-app-mobile-tobe" archimateRelationship="id-abfc0f9e8e7545a58dece599e4a9dc7b"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-transition-booking-tech-5g-tobe" fillColor="" archimateElement="tech-net-5g-tobe">
             <bounds x="1060" y="610" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6e28ae8a9c2a4596915d313298febf24" source="view-transition-booking-tech-5g-tobe" target="view-transition-booking-tech-tablet-tobe" archimateRelationship="id-1fc2bf9518834409a4807cf6e41a8e9b"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-07994ba3a2a8470eb41302c4fff0bede" source="view-transition-booking-tech-5g-tobe" target="view-transition-booking-tech-smartphone-tobe" archimateRelationship="id-ae2169cc31cb4c478be09612c7cc080a"/>
           </child>
         </child>
       </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Хранение (Storage)" id="view-transition-storage">
-        <child xsi:type="archimate:Group" id="grp-transition-storage" name="Transition: Хранение AS-IS → TO-BE" fillColor="">
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Клиенты" id="view-transition-clients">
+        <child xsi:type="archimate:Group" id="grp-transition-clients" name="Transition: Клиенты AS-IS → TO-BE" fillColor="">
+          <bounds x="-48" y="84" width="1704" height="828"/>
+          <child xsi:type="archimate:Note" id="note-transition-clients-asis" fillColor="">
+            <bounds x="168" y="50" width="400" height="90"/>
+            <content>AS-IS: Ручная запись через администратора, телефон, бумажное расписание, оплата наличными/картой на стойке.
+ПРОБЛЕМЫ: Очереди, ошибки записи, нет онлайн доступа, низкая прозрачность баланса посещений</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-asis" fillColor="" archimateElement="actor-client">
+            <bounds x="168" y="170" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3e7401a8b10d40ab8ab44568330f6dcc" source="view-trans-clients-actor-client-asis" target="view-trans-clients-role-client-asis" archimateRelationship="id-51cca3f5d0dd4917ad0c2f8bb4b1bd8c"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-frontdesk-asis" fillColor="" archimateElement="actor-admin">
+            <bounds x="368" y="170" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4d84d8dc443b451ca35c762cb0ae33d4" source="view-trans-clients-actor-frontdesk-asis" target="view-trans-clients-role-frontdesk-asis" archimateRelationship="id-2c772a9ad5b4454db7794922f4814238"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-asis" targetConnections="id-3e7401a8b10d40ab8ab44568330f6dcc" fillColor="" archimateElement="role-client">
+            <bounds x="168" y="250" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c5c31b2271fe4b3c9a2ddeea0d91ce20" source="view-trans-clients-role-client-asis" target="view-trans-clients-proc-booking-asis" archimateRelationship="id-a49fd7812a7e48a9a598051f8adccdf1"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-frontdesk-asis" targetConnections="id-4d84d8dc443b451ca35c762cb0ae33d4" fillColor="" archimateElement="role-frontdesk">
+            <bounds x="368" y="250" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e8fa50034152495db3ed38e7a18e6b4b" source="view-trans-clients-role-frontdesk-asis" target="view-trans-clients-proc-subscription-asis" archimateRelationship="id-348205a751674ba98b8f27b82a8e1723"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8e233d11dc1d49bd896d400970166af9" source="view-trans-clients-role-frontdesk-asis" target="view-trans-clients-proc-checkin-asis" archimateRelationship="id-1bb978d9086e40dc8eed673b74462f49"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-asis" targetConnections="id-c5c31b2271fe4b3c9a2ddeea0d91ce20 id-c5c87ba1942a4ec99710c5ce753b8107 id-21a55083e76840f486129f5b2dec25a4" fillColor="" archimateElement="proc-client-booking">
+            <bounds x="168" y="330" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-81aa7e170e3542a090d45ad4c391d18c" source="view-trans-clients-proc-booking-asis" target="view-trans-clients-obj-schedule-asis" archimateRelationship="id-23af910560eb4b9cb8d4f80ccbfc390f">
+              <bendpoint startX="-101" startY="76" endX="-101" endY="-84"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-subscription-asis" targetConnections="id-e8fa50034152495db3ed38e7a18e6b4b id-c43e8f56a08f4322b802ec674ccff5b3 id-24a8ad5a48cf4b9e80acafabf63ba0a8" fillColor="" archimateElement="proc-sell-subscription">
+            <bounds x="368" y="330" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-26eb249c2b1d4e748bbb718a961003a8" source="view-trans-clients-proc-subscription-asis" target="view-trans-clients-obj-client-card-asis" archimateRelationship="id-bc302e05e04647bd84b9fdbe86d51cc1">
+              <bendpoint startX="102" startY="76" endX="102" endY="-84"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-de78b55f1719411d9119e31cfd226ea3" source="view-trans-clients-proc-subscription-asis" target="view-trans-clients-proc-self-booking-trans" archimateRelationship="id-e4fda50d75864181a9d6d85532352ac8"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-asis" targetConnections="id-8e233d11dc1d49bd896d400970166af9" fillColor="" archimateElement="proc-check-in">
+            <bounds x="168" y="410" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8cb1e17cbd554ad3b08f14b7c1f456e1" source="view-trans-clients-proc-checkin-asis" target="view-trans-clients-obj-schedule-asis" archimateRelationship="id-524fc670237d45dca6e3a8fd7ec1b73e"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-desk-asis" fillColor="" archimateElement="iface-desk">
+            <bounds x="368" y="410" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c43e8f56a08f4322b802ec674ccff5b3" source="view-trans-clients-iface-desk-asis" target="view-trans-clients-proc-subscription-asis" archimateRelationship="id-0c77489c794a4fc1a614f241f1cc2e0e"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-asis" targetConnections="id-81aa7e170e3542a090d45ad4c391d18c id-8cb1e17cbd554ad3b08f14b7c1f456e1" fillColor="" archimateElement="obj-paper-schedule" type="1">
+            <bounds x="168" y="490" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-client-card-asis" targetConnections="id-26eb249c2b1d4e748bbb718a961003a8" fillColor="" archimateElement="obj-client-card" type="1">
+            <bounds x="368" y="490" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-asis" targetConnections="id-33f0ce3aa5b0465fb16f7f07bdae34ca" fillColor="" archimateElement="app-booking">
+            <bounds x="168" y="570" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c5c87ba1942a4ec99710c5ce753b8107" source="view-trans-clients-app-booking-asis" target="view-trans-clients-proc-booking-asis" archimateRelationship="id-565300f4ceaf46f5b2542cee5a246684">
+              <bendpoint startX="-173" startY="-116" endX="-173" endY="124"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8bd8763cd6b64973920e645c2bea8451" source="view-trans-clients-app-booking-asis" target="view-trans-clients-data-schedule-asis" archimateRelationship="id-859074f37f2a43ec8dce583a70e66197"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-crm-asis" fillColor="" archimateElement="app-crm">
+            <bounds x="368" y="570" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-24a8ad5a48cf4b9e80acafabf63ba0a8" source="view-trans-clients-app-crm-asis" target="view-trans-clients-proc-subscription-asis" archimateRelationship="id-87f05cbf6e8a49f4841fdafdf368692a">
+              <bendpoint startX="-114" startY="-116" endX="-114" endY="124"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-28e34cd1002145ba8871d2dd58bc0126" source="view-trans-clients-app-crm-asis" target="view-trans-clients-data-client-asis" archimateRelationship="id-c6b7fd2481704a26a77dae01732fd34d"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-asis" targetConnections="id-8bd8763cd6b64973920e645c2bea8451" fillColor="" archimateElement="data-schedule">
+            <bounds x="168" y="650" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-asis" targetConnections="id-28e34cd1002145ba8871d2dd58bc0126" fillColor="" archimateElement="data-client-card">
+            <bounds x="368" y="650" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-asis" fillColor="" archimateElement="tech-admin-pc">
+            <bounds x="168" y="730" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-33f0ce3aa5b0465fb16f7f07bdae34ca" source="view-trans-clients-tech-pc-asis" target="view-trans-clients-app-booking-asis" archimateRelationship="id-39f5213e7d104db2bd69c2d1dc505ec9">
+              <bendpoint startX="-113" startY="-72" endX="-113" endY="88"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-phone-asis" fillColor="" archimateElement="tech-phone-device">
+            <bounds x="368" y="730" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-21a55083e76840f486129f5b2dec25a4" source="view-trans-clients-tech-phone-asis" target="view-trans-clients-proc-booking-asis" archimateRelationship="id-d93a9401b57645d68d694a18724bc24e">
+              <bendpoint startX="-246" startY="-204" endX="-41" endY="196"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:Note" id="note-transition-clients-hybrid" fillColor="">
+            <bounds x="668" y="50" width="420" height="90"/>
+            <content>ПЕРЕХОД (6-9 мес): Внедрение веб-портала и мобильного приложения, гибридная запись (стойка + онлайн), обучение клиентов, постепенный переход на онлайн оплаты</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-trans" fillColor="" archimateElement="actor-client">
+            <bounds x="668" y="170" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-bbba1783b8a34e999611f8828fa8877a" source="view-trans-clients-actor-client-trans" target="view-trans-clients-role-client-trans" archimateRelationship="id-3558844a817c4aeba70570bb1d1b4f87"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-trans" fillColor="" archimateElement="actor-client">
+            <bounds x="868" y="170" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8d04c54cbbcd4d03b9c8334290d49ad5" source="view-trans-clients-actor-online-trans" target="view-trans-clients-role-self-service-trans" archimateRelationship="id-f130e7d26aad4c53afa3f87ff5acaaf1"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-trans" targetConnections="id-bbba1783b8a34e999611f8828fa8877a" fillColor="" archimateElement="role-client">
+            <bounds x="668" y="250" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b83b00cd224f400db52439b916658e95" source="view-trans-clients-role-client-trans" target="view-trans-clients-proc-booking-trans" archimateRelationship="id-efd22f24f508407d8fee1984fb57ee4b"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-service-trans" targetConnections="id-8d04c54cbbcd4d03b9c8334290d49ad5" fillColor="" archimateElement="role-client">
+            <bounds x="868" y="250" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6e2578acb6444d0aa92b6cea2c562ba0" source="view-trans-clients-role-self-service-trans" target="view-trans-clients-proc-self-booking-trans" archimateRelationship="id-31be4f30ff9a4dac82894dd1579fc89d"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-trans" targetConnections="id-b83b00cd224f400db52439b916658e95" fillColor="" archimateElement="proc-client-booking">
+            <bounds x="668" y="330" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b458d15f07c14b4a8e95014cc48559df" source="view-trans-clients-proc-booking-trans" target="view-trans-clients-obj-schedule-trans" archimateRelationship="id-819207fef6a34015949ccd0ce8ff4267">
+              <bendpoint startX="-97" startY="76" endX="-97" endY="-84"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-trans" targetConnections="id-6e2578acb6444d0aa92b6cea2c562ba0 id-4d20e8ed64354a8eb22f3bd4395252bc id-de78b55f1719411d9119e31cfd226ea3" fillColor="" archimateElement="proc-self-booking-tobe">
+            <bounds x="868" y="330" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-061e966881e74dfd8bc260cd0e619b0b" source="view-trans-clients-proc-self-booking-trans" target="view-trans-clients-svc-booking-tobe" archimateRelationship="id-c1ace6e9d4fd4d3c9b8ac6b598c58580"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3c1d9c78541a4d16981e525abf357a61" source="view-trans-clients-proc-self-booking-trans" target="view-trans-clients-svc-payment-tobe" archimateRelationship="id-beb4bcb4925a42ab9ef8a8c7d4d5ee46">
+              <bendpoint startX="256" startY="15" endX="-304" endY="15"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-trans" targetConnections="id-02a7a472f42a41bf98a1649a54b870e3 id-017483ea095c472ebcfb1660971b3f69" fillColor="" archimateElement="proc-check-in">
+            <bounds x="668" y="410" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-04c9f2462af74ce0be38a4d8a0443bd8" source="view-trans-clients-proc-checkin-trans" target="view-trans-clients-obj-schedule-trans" archimateRelationship="id-e5492b7104674805be53303cbc2040f8"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-web-trans" targetConnections="id-d4d86872ce7347b4810bc2148d728bd8" fillColor="" archimateElement="iface-web-tobe">
+            <bounds x="868" y="410" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4d20e8ed64354a8eb22f3bd4395252bc" source="view-trans-clients-iface-web-trans" target="view-trans-clients-proc-self-booking-trans" archimateRelationship="id-ef266d88a0b1472bbac81daef7b4b01e"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-017483ea095c472ebcfb1660971b3f69" source="view-trans-clients-iface-web-trans" target="view-trans-clients-proc-checkin-trans" archimateRelationship="id-74014bee62fd4f5dadde4330f1469042"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4acbe463855e45b0bde9bb4e4175295c" source="view-trans-clients-iface-web-trans" target="view-trans-clients-obj-cloud-schedule-trans" archimateRelationship="id-822bdc6d4b5449b79104839f8435b2bf"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-trans" targetConnections="id-b458d15f07c14b4a8e95014cc48559df id-04c9f2462af74ce0be38a4d8a0443bd8" fillColor="" archimateElement="obj-paper-schedule" type="1">
+            <bounds x="668" y="490" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-trans" targetConnections="id-4acbe463855e45b0bde9bb4e4175295c" fillColor="" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="868" y="490" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-trans" targetConnections="id-5fe93854cd1b4cfab36f898f5e3640f4" fillColor="" archimateElement="app-booking">
+            <bounds x="668" y="570" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-02a7a472f42a41bf98a1649a54b870e3" source="view-trans-clients-app-booking-trans" target="view-trans-clients-proc-checkin-trans" archimateRelationship="id-e6f987930a474e208608a514976b0e6e">
+              <bendpoint startX="107" startY="-80" endX="107" endY="80"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6aae2b59aec44e1fba486816414d0ea9" source="view-trans-clients-app-booking-trans" target="view-trans-clients-data-schedule-trans" archimateRelationship="id-678d4ed5f2874189a10a6e8380ba7020"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4dbb7107ebc7486f97a4f39652e9720a" source="view-trans-clients-app-booking-trans" target="view-trans-clients-data-cloud-trans" archimateRelationship="id-057b8056cc84426693c2754957579b2e"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-trans" targetConnections="id-5a79a270cffb4ecabee2490bcfa5b8c5" fillColor="" archimateElement="app-web-portal-tobe">
+            <bounds x="868" y="570" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d5403d29d850446f9676ef9eced9a379" source="view-trans-clients-app-web-trans" target="view-trans-clients-data-cloud-trans" archimateRelationship="id-ce899ce180ef4f0e9b2ede5065ea0e43"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d4d86872ce7347b4810bc2148d728bd8" source="view-trans-clients-app-web-trans" target="view-trans-clients-iface-web-trans" archimateRelationship="id-2a69383d7cd4415a9ffba864ccab1344">
+              <bendpoint startX="40" startY="-80" endX="40" endY="80"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-08963326815140ada435703bc25b143e" source="view-trans-clients-app-web-trans" target="view-trans-clients-app-mobile-tobe" archimateRelationship="id-fda6403d17ee43e9a4e5133ed02c7c34"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-trans" targetConnections="id-6aae2b59aec44e1fba486816414d0ea9" fillColor="" archimateElement="data-schedule">
+            <bounds x="668" y="650" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-trans" targetConnections="id-d5403d29d850446f9676ef9eced9a379 id-4dbb7107ebc7486f97a4f39652e9720a" fillColor="" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="868" y="650" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-trans" fillColor="" archimateElement="tech-admin-pc">
+            <bounds x="668" y="730" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5fe93854cd1b4cfab36f898f5e3640f4" source="view-trans-clients-tech-pc-trans" target="view-trans-clients-app-booking-trans" archimateRelationship="id-b649f788764f4c9fa236435446f7b310">
+              <bendpoint startX="-49" startY="-72" endX="-49" endY="88"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-trans" fillColor="" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="868" y="730" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5a79a270cffb4ecabee2490bcfa5b8c5" source="view-trans-clients-tech-cloud-trans" target="view-trans-clients-app-web-trans" archimateRelationship="id-7fbdcf443666425aafe0d9e2d305fef9">
+              <bendpoint startX="40" startY="-84" endX="40" endY="76"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:Note" id="note-transition-clients-tobe" fillColor="">
+            <bounds x="1188" y="50" width="480" height="90"/>
+            <content>TO-BE: 100% онлайн-запись через мобильное приложение и веб-портал, бесконтактный QR-вход, онлайн-оплаты, push-уведомления, персонализированные рекомендации.
+РЕЗУЛЬТАТ: Время записи -80%, удовлетворенность клиентов +40%, конверсия онлайн-оплат 85%</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-tobe" fillColor="" archimateElement="actor-client">
+            <bounds x="1188" y="170" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-7936898b9af847e2beffe00ff5a50c5c" source="view-trans-clients-actor-online-tobe" target="view-trans-clients-role-self-tobe" archimateRelationship="id-91e4a4800da84e5ea26c39cf95412e87"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-mobile-tobe" fillColor="" archimateElement="actor-client">
+            <bounds x="1408" y="170" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-439aaf3c4bff471382bd4358eaee9384" source="view-trans-clients-actor-mobile-tobe" target="view-trans-clients-role-mobile-user-tobe" archimateRelationship="id-cbbe6914bef84fc895e6b141246d92be"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-tobe" targetConnections="id-7936898b9af847e2beffe00ff5a50c5c" fillColor="" archimateElement="role-client">
+            <bounds x="1188" y="250" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-21d6a295e3af4e20a06c399d79b4b56b" source="view-trans-clients-role-self-tobe" target="view-trans-clients-svc-booking-tobe" archimateRelationship="id-a7d5f565e9f5438b9157b8a94446ef5f"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-mobile-user-tobe" targetConnections="id-439aaf3c4bff471382bd4358eaee9384" fillColor="" archimateElement="role-client">
+            <bounds x="1408" y="250" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-15ba2b0c9c324ba5b2194c3126b7cf23" source="view-trans-clients-role-mobile-user-tobe" target="view-trans-clients-svc-payment-tobe" archimateRelationship="id-2bf2835696a64bb1b465f1e51c2294e6"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-booking-tobe" targetConnections="id-21d6a295e3af4e20a06c399d79b4b56b id-0376b04c6170449296899d57b6f19ddf id-8b4500f1bfe54f7e919effa79fe9cea2 id-880af1b6926e427dac1f3bc8d7e9e174 id-061e966881e74dfd8bc260cd0e619b0b" fillColor="" archimateElement="svc-online-booking-tobe">
+            <bounds x="1188" y="330" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8b9a00fe17c049d09cbb57de1354c938" source="view-trans-clients-svc-booking-tobe" target="view-trans-clients-obj-cloud-schedule-tobe" archimateRelationship="id-f319202258604f9f83f5fad0ebad3337">
+              <bendpoint startX="56" startY="87" endX="56" endY="-73"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8fa4ca57e616479788cae6855ba21305" source="view-trans-clients-svc-booking-tobe" target="view-trans-clients-obj-digital-balance-tobe" archimateRelationship="id-fe82d760105347bca44eec9b6aac891e">
+              <bendpoint startX="272" startY="111" endX="32" endY="-49"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-payment-tobe" targetConnections="id-15ba2b0c9c324ba5b2194c3126b7cf23 id-06579a3c0c70418d8a547862d00669ef id-176eac2db92e422c834a08209cb4c9bd id-28ce18d35e1b461eb325cfdc3dd46913 id-3c1d9c78541a4d16981e525abf357a61" fillColor="" archimateElement="svc-online-payment-tobe">
+            <bounds x="1408" y="330" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c47e234c35e04fa08f2c51d7e4f27d16" source="view-trans-clients-svc-payment-tobe" target="view-trans-clients-obj-digital-balance-tobe" archimateRelationship="id-894502c9891a4570b08c3e397f9fe9e7">
+              <bendpoint startX="68" startY="87" endX="68" endY="-73"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-tobe" fillColor="" archimateElement="proc-self-booking-tobe">
+            <bounds x="1188" y="410" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0376b04c6170449296899d57b6f19ddf" source="view-trans-clients-proc-self-booking-tobe" target="view-trans-clients-svc-booking-tobe" archimateRelationship="id-0f860e72346f426a8dabbc47eee80910"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-qr-checkin-tobe" fillColor="" archimateElement="proc-qr-checkin-tobe">
+            <bounds x="1408" y="410" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-06579a3c0c70418d8a547862d00669ef" source="view-trans-clients-proc-qr-checkin-tobe" target="view-trans-clients-svc-payment-tobe" archimateRelationship="id-50b4fdbbc6b54c9bb3986d56a834b816"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-tobe" targetConnections="id-8b9a00fe17c049d09cbb57de1354c938" fillColor="" archimateElement="obj-cloud-schedule-tobe" type="1">
+            <bounds x="1188" y="490" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-digital-balance-tobe" targetConnections="id-c47e234c35e04fa08f2c51d7e4f27d16 id-8fa4ca57e616479788cae6855ba21305" fillColor="" archimateElement="obj-visit-balance" type="1">
+            <bounds x="1408" y="490" width="240" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-mobile-tobe" targetConnections="id-8c1d423fe2884f85a3fc9e15407b22e4 id-08963326815140ada435703bc25b143e" fillColor="" archimateElement="app-mobile-tobe">
+            <bounds x="1188" y="570" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8b4500f1bfe54f7e919effa79fe9cea2" source="view-trans-clients-app-mobile-tobe" target="view-trans-clients-svc-booking-tobe" archimateRelationship="id-600d87165e384feb8e7038f6bffa1d39">
+              <bendpoint startX="-52" startY="-117" endX="-52" endY="123"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-28ce18d35e1b461eb325cfdc3dd46913" source="view-trans-clients-app-mobile-tobe" target="view-trans-clients-svc-payment-tobe" archimateRelationship="id-c41dbfb1896b4b75871503d6dded74ee"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-9a224a65fd4444958efa5fac651fec39" source="view-trans-clients-app-mobile-tobe" target="view-trans-clients-data-client-profile-tobe" archimateRelationship="id-866b7f5f1f564319a392efdfc585f39a"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d8ac0a6d630644a288d82fe4d5463547" source="view-trans-clients-app-mobile-tobe" target="view-trans-clients-data-cloud-schedule-tobe" archimateRelationship="id-1d23277d3ee847498c0b8d328837640c"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-tobe" targetConnections="id-afe01e16aac0441884abf324fb6b9a4b" fillColor="" archimateElement="app-web-portal-tobe">
+            <bounds x="1408" y="570" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-176eac2db92e422c834a08209cb4c9bd" source="view-trans-clients-app-web-tobe" target="view-trans-clients-svc-payment-tobe" archimateRelationship="id-29c195befce14bd09fd7cba00aac90f1">
+              <bendpoint startX="-52" startY="-117" endX="-52" endY="123"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-880af1b6926e427dac1f3bc8d7e9e174" source="view-trans-clients-app-web-tobe" target="view-trans-clients-svc-booking-tobe" archimateRelationship="id-01bf88b511a44e989753e38381481168"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e5c74ca403914366b0fb6ce90eebd3a8" source="view-trans-clients-app-web-tobe" target="view-trans-clients-data-client-profile-tobe" archimateRelationship="id-a36105cf7c694bee9b13142c095fbc15"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a4ec8a8cc1394acf81524329df7d42c3" source="view-trans-clients-app-web-tobe" target="view-trans-clients-data-cloud-schedule-tobe" archimateRelationship="id-253f4b93dd19485d8923af12a633d18e"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-schedule-tobe" targetConnections="id-a4ec8a8cc1394acf81524329df7d42c3 id-d8ac0a6d630644a288d82fe4d5463547" fillColor="" archimateElement="data-cloud-schedule-tobe">
+            <bounds x="1188" y="650" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-profile-tobe" targetConnections="id-e5c74ca403914366b0fb6ce90eebd3a8 id-9a224a65fd4444958efa5fac651fec39" fillColor="" archimateElement="data-digital-profile-tobe">
+            <bounds x="1408" y="650" width="240" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-smartphone-tobe" fillColor="" archimateElement="tech-smartphone-tobe">
+            <bounds x="1188" y="730" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8c1d423fe2884f85a3fc9e15407b22e4" source="view-trans-clients-tech-smartphone-tobe" target="view-trans-clients-app-mobile-tobe" archimateRelationship="id-f5a54a1f429548559e6595971bd9adda">
+              <bendpoint startX="-40" startY="-85" endX="-40" endY="75"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-tobe" fillColor="" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="1408" y="730" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-afe01e16aac0441884abf324fb6b9a4b" source="view-trans-clients-tech-cloud-tobe" target="view-trans-clients-app-web-tobe" archimateRelationship="id-d0e94b07ef7746d5af296bf02941fd79">
+              <bendpoint startX="44" startY="-85" endX="44" endY="75"/>
+            </sourceConnection>
+          </child>
+        </child>
+      </element>
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Отчётность (Reporting)" id="view-transition-reporting">
+        <child xsi:type="archimate:Group" id="grp-transition-reporting" name="Transition: Отчётность AS-IS → TO-BE" fillColor="">
           <bounds x="24" y="24" width="1600" height="800"/>
-          <child xsi:type="archimate:Note" id="note-transition-storage-asis" fillColor="">
+          <child xsi:type="archimate:Note" id="note-transition-reporting-asis" fillColor="">
             <bounds x="50" y="50" width="350" height="80"/>
-            <content>AS-IS: Бумажные карточки, ручная отметка посещений, локальная БД. 
+            <content>AS-IS: Наличные расчеты, бумажные чеки, ручные отчеты Excel.
 УСТАРЕВАЕТ → TO-BE</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-card-asis" fillColor="" archimateElement="svc-card-mgmt">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-sales-asis" targetConnections="id-3a41b7a91c644d159ed6f47a41d4502a" fillColor="" archimateElement="svc-sales">
             <bounds x="50" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-58ff78e838e540afb80723ee5c742e46" source="view-transition-reporting-svc-sales-asis" target="view-transition-reporting-proc-manual-report-asis" archimateRelationship="id-1d8a3f97f8b84f6298792623f76bd166">
+              <bendpoint startX="52" startY="66" endX="3" endY="-62"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-attendance-asis" fillColor="" archimateElement="svc-attendance">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-paper-receipt-asis" targetConnections="id-8b9e548ed33f40dda56cd50a3b4e3aa4" fillColor="" archimateElement="obj-receipt">
             <bounds x="250" y="160" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-paper-card-asis" fillColor="" archimateElement="obj-client-card">
-            <bounds x="50" y="240" width="180" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-manual-report-asis" targetConnections="id-58ff78e838e540afb80723ee5c742e46" fillColor="" archimateElement="proc-report">
+            <bounds x="50" y="288" width="280" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8b9e548ed33f40dda56cd50a3b4e3aa4" source="view-transition-reporting-proc-manual-report-asis" target="view-transition-reporting-obj-paper-receipt-asis" archimateRelationship="id-41d17e09e01f45e2ab83787f933c7e43"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-cb80bb857cad47b9aebbc07a320b6354" source="view-transition-reporting-proc-manual-report-asis" target="view-transition-reporting-proc-auto-reporting-tobe" archimateRelationship="id-9a7b0ab6e5874ed0b6357cd57d1d50f0"/>
           </child>
-          <child xsi:type="archimate:Note" id="note-transition-storage-arrow" fillColor="">
-            <bounds x="500" y="200" width="200" height="100"/>
+          <child xsi:type="archimate:Note" id="note-transition-reporting-arrow" fillColor="">
+            <bounds x="504" y="189" width="200" height="100"/>
             <content>═══════➤
 MIGRATION
-PHASE 2
+PHASE 3
 (2 months)</content>
           </child>
-          <child xsi:type="archimate:Note" id="note-transition-storage-tobe" fillColor="">
+          <child xsi:type="archimate:Note" id="note-transition-reporting-tobe" fillColor="">
             <bounds x="770" y="50" width="400" height="80"/>
-            <content>TO-BE: Цифровые карты, QR-сканирование, облачное хранилище.
-НОВЫЕ возможности: автоматический учет, синхронизация</content>
+            <content>TO-BE: Безналичные платежи, электронные чеки, BI-дашборды.
+НОВЫЕ возможности: real-time аналитика, автоматические KPI</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-digital-cards-tobe" fillColor="" archimateElement="svc-digital-cards-tobe">
-            <bounds x="770" y="160" width="200" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-online-payment-tobe" targetConnections="id-1f270ae1a1db45609abee0e86adbe85d" fillColor="" archimateElement="svc-online-payment-tobe">
+            <bounds x="1008" y="156" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-auto-attendance-tobe" fillColor="" archimateElement="svc-auto-attendance-tobe">
-            <bounds x="990" y="160" width="200" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-card-payment-tobe" targetConnections="id-02c1651bd8d349a28b7f73b2994e2b6c" fillColor="" archimateElement="proc-card-payment-tobe">
+            <bounds x="1008" y="240" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1f270ae1a1db45609abee0e86adbe85d" source="view-transition-reporting-proc-card-payment-tobe" target="view-transition-reporting-svc-online-payment-tobe" archimateRelationship="id-72f3e6117c0b4c7889c4256af2f2d389"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-7d0906fc471f43ecacc4c7af5e52edad" source="view-transition-reporting-proc-card-payment-tobe" target="view-transition-reporting-obj-digital-receipt-tobe" archimateRelationship="id-f09b9d3e800043509f37c1339243863f"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-iface-qr-tobe" fillColor="" archimateElement="iface-qr-scanner-tobe">
-            <bounds x="770" y="240" width="180" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-auto-reporting-tobe" targetConnections="id-2f343aa23c8844debc08d030b4f529ca id-cb80bb857cad47b9aebbc07a320b6354" fillColor="" archimateElement="proc-auto-reporting-tobe">
+            <bounds x="760" y="252" width="220" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c693fbc658c641f09d90c5424efc590b" source="view-transition-reporting-proc-auto-reporting-tobe" target="view-transition-reporting-svc-analytics-tobe" archimateRelationship="id-9ab568354c524a23919a59c364dc1ddb"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-51fbb97fc3434b3388a8e6d681276b32" source="view-transition-reporting-proc-auto-reporting-tobe" target="view-transition-reporting-obj-kpi-dashboard-tobe" archimateRelationship="id-44031c1be07a406e903bf3f58aa19e3d"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-digital-card-tobe" fillColor="" archimateElement="obj-digital-card-tobe">
-            <bounds x="970" y="240" width="180" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-digital-receipt-tobe" targetConnections="id-7d0906fc471f43ecacc4c7af5e52edad" fillColor="" archimateElement="obj-digital-receipt-tobe">
+            <bounds x="1018" y="324" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-crm-asis" fillColor="" archimateElement="app-crm">
-            <bounds x="50" y="380" width="200" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-kpi-dashboard-tobe" targetConnections="id-51fbb97fc3434b3388a8e6d681276b32" fillColor="" archimateElement="obj-kpi-dashboard-tobe">
+            <bounds x="760" y="324" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-cloud-crm-tobe" fillColor="" archimateElement="app-cloud-crm-tobe">
-            <bounds x="770" y="380" width="200" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-sales-asis" targetConnections="id-05f348a2fceb4f9996871e24707d8857 id-01ac75f363fe412abdf27a970479d1db" fillColor="" archimateElement="app-sales">
+            <bounds x="50" y="430" width="180" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3a41b7a91c644d159ed6f47a41d4502a" source="view-transition-reporting-app-sales-asis" target="view-transition-reporting-svc-sales-asis" archimateRelationship="id-fd29aa6f88524f92ae04435a95c4737d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-16233ca632a94f449648a8f0e257a8ae" source="view-transition-reporting-app-sales-asis" target="view-transition-reporting-app-payment-gateway-tobe" archimateRelationship="id-2a6c033b3e1848d296f6342fb5612cf2"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-qr-scanner-tobe" fillColor="" archimateElement="app-qr-scanner-tobe">
-            <bounds x="990" y="380" width="200" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-bi-analytics-tobe" targetConnections="id-44f33da7afe44782aafed6083410353c" fillColor="" archimateElement="app-bi-analytics-tobe">
+            <bounds x="770" y="430" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2f343aa23c8844debc08d030b4f529ca" source="view-transition-reporting-app-bi-analytics-tobe" target="view-transition-reporting-proc-auto-reporting-tobe" archimateRelationship="id-9c3447c73c844c01a3e80b97182b521f">
+              <bendpoint startX="55" startY="-100" endX="55" endY="94"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-db-server-asis" fillColor="" archimateElement="tech-db-server">
-            <bounds x="50" y="480" width="180" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-payment-gateway-tobe" targetConnections="id-849c71f4ea7d4aee982af9699c360ba5 id-16233ca632a94f449648a8f0e257a8ae" fillColor="" archimateElement="app-payment-gateway-tobe">
+            <bounds x="990" y="430" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-02c1651bd8d349a28b7f73b2994e2b6c" source="view-transition-reporting-app-payment-gateway-tobe" target="view-transition-reporting-proc-card-payment-tobe" archimateRelationship="id-3683e02eaced41149d2fda934c45bfc4">
+              <bendpoint startX="63" startY="-100" endX="44" endY="94"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-cloud-db-tobe" fillColor="" archimateElement="tech-cloud-db-tobe">
-            <bounds x="770" y="480" width="200" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-reporting-server-asis" fillColor="" archimateElement="tech-report-server">
+            <bounds x="50" y="530" width="180" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-05f348a2fceb4f9996871e24707d8857" source="view-transition-reporting-tech-reporting-server-asis" target="view-transition-reporting-app-sales-asis" archimateRelationship="id-3882ec4afd584181bba8376070383242"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-98a59b3be6cd46fcaf1c0ffa4e3247bb" source="view-transition-reporting-tech-reporting-server-asis" target="view-transition-reporting-tech-analytics-server-tobe" archimateRelationship="id-4ee866cbbd2644b0a0ff5eaeb566b85f"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-qr-scanner-tobe" fillColor="" archimateElement="tech-qr-scanner-tobe">
-            <bounds x="990" y="480" width="150" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-printer-asis" fillColor="" archimateElement="tech-printer">
+            <bounds x="250" y="530" width="120" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-01ac75f363fe412abdf27a970479d1db" source="view-transition-reporting-tech-printer-asis" target="view-transition-reporting-app-sales-asis" archimateRelationship="id-d1b86c010fa64abaa6b4d6ee0a4a423d"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-analytics-server-tobe" targetConnections="id-98a59b3be6cd46fcaf1c0ffa4e3247bb" fillColor="" archimateElement="tech-analytics-server-tobe">
+            <bounds x="770" y="530" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-44f33da7afe44782aafed6083410353c" source="view-transition-reporting-tech-analytics-server-tobe" target="view-transition-reporting-app-bi-analytics-tobe" archimateRelationship="id-da17b40e763e4488974b55fbe63ee324"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-payment-terminal-tobe" fillColor="" archimateElement="tech-payment-terminal-tobe">
+            <bounds x="990" y="530" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-849c71f4ea7d4aee982af9699c360ba5" source="view-transition-reporting-tech-payment-terminal-tobe" target="view-transition-reporting-app-payment-gateway-tobe" archimateRelationship="id-b7942f3b6d70489f95acb56f54100576"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-analytics-tobe" targetConnections="id-c693fbc658c641f09d90c5424efc590b" fillColor="" archimateElement="svc-analytics-tobe">
+            <bounds x="770" y="160" width="180" height="55"/>
+          </child>
+        </child>
+      </element>
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Партнеры (Partners)" id="view-transition-partners">
+        <child xsi:type="archimate:Group" id="grp-transition-partners" name="Transition: Партнеры AS-IS → TO-BE" fillColor="">
+          <bounds x="24" y="12" width="1600" height="900"/>
+          <child xsi:type="archimate:Note" id="note-transition-partners-asis" fillColor="">
+            <bounds x="50" y="50" width="380" height="90"/>
+            <content>AS-IS: Телефонные переговоры, Excel-реестры, бумажные договоры, email.
+ПРОБЛЕМЫ: Потеря контактов, ручной контроль оплат, отсутствие централизованной базы</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-asis" fillColor="" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="50" y="170" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-655f0d24cb79484f92d05fd6860c558d" source="view-trans-partners-actor-supplier-asis" target="view-trans-partners-proc-select-asis" archimateRelationship="id-279e027048aa4a439ef7a745641b493b">
+              <bendpoint startX="-44" startY="79" endX="-44" endY="-81"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-nutrition-asis" fillColor="" archimateElement="actor-nutrition-supplier-asis">
+            <bounds x="250" y="170" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-819d5337884845a7a0c593f1758d98de" source="view-trans-partners-actor-nutrition-asis" target="view-trans-partners-proc-negotiate-asis" archimateRelationship="id-7e08aa034d354490a51cd825cf3c4499">
+              <bendpoint startX="-45" startY="79" endX="-45" endY="-81"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-asis" fillColor="" archimateElement="role-procurement-manager-asis">
+            <bounds x="50" y="250" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5fc6a47d822942fe9f10ebf1dcfeb3a2" source="view-trans-partners-role-procurement-asis" target="view-trans-partners-proc-select-asis" archimateRelationship="id-b9b87d4f99ec47e2ade31a2471af98bf"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-supply-asis" fillColor="" archimateElement="role-supply-manager-asis">
+            <bounds x="250" y="250" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-f40ccc3948554d36bae4287f0c24f51f" source="view-trans-partners-role-supply-asis" target="view-trans-partners-proc-negotiate-asis" archimateRelationship="id-4bb273e5beeb4c2f9ef8931453df14ed"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-asis" targetConnections="id-655f0d24cb79484f92d05fd6860c558d id-5fc6a47d822942fe9f10ebf1dcfeb3a2 id-ad1961f190a3476a88e4512469ad01d9" fillColor="" archimateElement="proc-select-supplier-asis">
+            <bounds x="50" y="330" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3c43348b750d4777b91a4a66d456c903" source="view-trans-partners-proc-select-asis" target="view-trans-partners-proc-contract-asis" archimateRelationship="id-9471e4c214dc41e0972f700d9732a0ae"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-negotiate-asis" targetConnections="id-819d5337884845a7a0c593f1758d98de id-f40ccc3948554d36bae4287f0c24f51f id-5470014fc60e4e7794b810bd6cf39826" fillColor="" archimateElement="proc-negotiate-contract-asis">
+            <bounds x="250" y="330" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d334a3ea14bd49a5864ebb96e6bc7f24" source="view-trans-partners-proc-negotiate-asis" target="view-trans-partners-proc-delivery-asis" archimateRelationship="id-b1f7812d748f49099050200efbaf4e4f"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0aa3622130e548ffa8070b91f19dfff4" source="view-trans-partners-proc-negotiate-asis" target="id-d927daffd4184d5b88b362daae6128a5" archimateRelationship="id-16ca3466505f43fb9d2187454edf769f"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-contract-asis" targetConnections="id-3c43348b750d4777b91a4a66d456c903" fillColor="" archimateElement="proc-negotiate-contract-asis">
+            <bounds x="50" y="410" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d89a295905b844c4a134eaecf4a1b236" source="view-trans-partners-proc-contract-asis" target="view-trans-partners-obj-supplier-asis" archimateRelationship="id-61ef3c405e9c417ca065098fb3a50440"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2be257ef544441b89b77ae23c8fa8572" source="view-trans-partners-proc-contract-asis" target="view-trans-partners-proc-digital-contract-trans" archimateRelationship="id-d9498ef599be4be49057cbb8a77adb8c"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-delivery-asis" targetConnections="id-d334a3ea14bd49a5864ebb96e6bc7f24" fillColor="" archimateElement="proc-order-equipment-asis">
+            <bounds x="250" y="410" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ff140a84d1ef41a0804083d320a533fc" source="view-trans-partners-proc-delivery-asis" target="view-trans-partners-obj-contract-asis" archimateRelationship="id-dc4f9b4f85e048e99af039990c3f9236"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-asis" targetConnections="id-d89a295905b844c4a134eaecf4a1b236" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="50" y="490" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-contract-asis" targetConnections="id-ff140a84d1ef41a0804083d320a533fc" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="250" y="490" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-asis" targetConnections="id-fd24dc0061d743bca5f7fae6f55e6d11" fillColor="" archimateElement="app-partners-procurement-asis">
+            <bounds x="50" y="570" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ad1961f190a3476a88e4512469ad01d9" source="view-trans-partners-app-excel-asis" target="view-trans-partners-proc-select-asis" archimateRelationship="id-d39403cc65e04deeac1adca56134b63e">
+              <bendpoint startX="40" startY="-81" endX="40" endY="79"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1437f274e2b5482fa65cf3dd8634be65" source="view-trans-partners-app-excel-asis" target="view-trans-partners-data-supplier-asis" archimateRelationship="id-a8739bbecc1140a8a9384513833d8ecb"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-email-asis" fillColor="" archimateElement="app-partners-email-asis">
+            <bounds x="250" y="570" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5470014fc60e4e7794b810bd6cf39826" source="view-trans-partners-app-email-asis" target="view-trans-partners-proc-negotiate-asis" archimateRelationship="id-69ea2a454bc74e09af90f23b4f9c985a">
+              <bendpoint startX="39" startY="-117" endX="39" endY="123"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-81a9c98208224e7ba8a7ec95f26f62dc" source="view-trans-partners-app-email-asis" target="view-trans-partners-data-email-asis" archimateRelationship="id-b2b2f7bb1e6f4a989be40bca4d382dd9"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b422dd2e86ec4912ae4fdaa98f27a4a1" source="view-trans-partners-app-email-asis" target="view-trans-partners-app-crm-trans" archimateRelationship="id-6824a6df015640f7b3bed3a7ad49304a">
+              <bendpoint startX="243" startY="-21" endX="-262" endY="-21"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-supplier-asis" targetConnections="id-1437f274e2b5482fa65cf3dd8634be65" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="50" y="650" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-email-asis" targetConnections="id-81a9c98208224e7ba8a7ec95f26f62dc" fillColor="" archimateElement="app-data-partners-email-thread-asis">
+            <bounds x="250" y="650" width="190" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-asis" targetConnections="id-b03187e6dbaa48b88b891c9cdd6da7f9" fillColor="" archimateElement="tech-admin-pc">
+            <bounds x="50" y="730" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-fd24dc0061d743bca5f7fae6f55e6d11" source="view-trans-partners-tech-pc-asis" target="view-trans-partners-app-excel-asis" archimateRelationship="id-22b4c601749f44039ae3875b810cbcbe">
+              <bendpoint startX="-44" startY="-85" endX="-44" endY="75"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-phone-asis" fillColor="" archimateElement="tech-phone-device">
+            <bounds x="250" y="730" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b03187e6dbaa48b88b891c9cdd6da7f9" source="view-trans-partners-tech-phone-asis" target="view-trans-partners-tech-pc-asis" archimateRelationship="id-ce1b969b8d704ba6985595148edc7ed7"/>
+          </child>
+          <child xsi:type="archimate:Note" id="note-transition-partners-hybrid" fillColor="">
+            <bounds x="550" y="50" width="420" height="90"/>
+            <content>ПЕРЕХОД (8-12 мес): Внедрение CRM для партнёров, миграция Excel в базу, e-подписи пилотные, API-интеграция с топ-5 поставщиками, обучение менеджеров</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-trans" fillColor="" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="550" y="170" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a132db11c9ca49d0ae84eb589af6370f" source="view-trans-partners-actor-supplier-trans" target="view-trans-partners-proc-select-trans" archimateRelationship="id-2f49a1ffb28a4b90935004aead56fc43">
+              <bendpoint startX="-52" startY="79" endX="-52" endY="-81"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-trans" fillColor="" archimateElement="role-procurement-manager-asis">
+            <bounds x="550" y="250" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2e4afd8a3e734bfca1d3a302a5ccb008" source="view-trans-partners-role-procurement-trans" target="view-trans-partners-proc-select-trans" archimateRelationship="id-1549c226fde641d089d6b88b83033a64"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-trans" fillColor="" archimateElement="role-procurement-manager-asis">
+            <bounds x="750" y="250" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-d66026e11fb042e1abc0fbac96ba81c9" source="view-trans-partners-role-partner-trans" target="id-d927daffd4184d5b88b362daae6128a5" archimateRelationship="id-9ae1252f7cbe4f22bb91189a6c7bb6ab"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-trans" targetConnections="id-a132db11c9ca49d0ae84eb589af6370f id-2e4afd8a3e734bfca1d3a302a5ccb008" fillColor="" archimateElement="proc-select-supplier-asis">
+            <bounds x="550" y="330" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c857432b1cd9453b8e3c9213fe8578c4" source="view-trans-partners-proc-select-trans" target="view-trans-partners-proc-digital-contract-trans" archimateRelationship="id-3715f15ce9804b4a9aa4a2e93b4f2501"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4348eedfd4284166bc83f872651b29c5" source="view-trans-partners-proc-select-trans" target="view-trans-partners-proc-track-trans" archimateRelationship="id-604d3a94abf04fe1814a42a0a19b3edb"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-edf686dfaae941faad27ccfbf2c727ce" source="view-trans-partners-proc-select-trans" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-a646cf763e994bc3852fd17a2982f98f">
+              <bendpoint startX="260" startY="-9" endX="-270" endY="-9"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-trans" targetConnections="id-c857432b1cd9453b8e3c9213fe8578c4 id-5fe9c1f59789438d94ed475c7b3766d8 id-2be257ef544441b89b77ae23c8fa8572" fillColor="" archimateElement="proc-e-negotiate-contract-tobe">
+            <bounds x="540" y="410" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6c29723b481146bc8acc553922c745eb" source="view-trans-partners-proc-digital-contract-trans" target="view-trans-partners-obj-supplier-trans" archimateRelationship="id-039fa318651a48bb80e6125e477b0da7"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-track-trans" targetConnections="id-4348eedfd4284166bc83f872651b29c5" fillColor="" archimateElement="proc-order-equipment-asis">
+            <bounds x="750" y="410" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-49f83419c74b4cdf91ef451c441d3e01" source="view-trans-partners-proc-track-trans" target="view-trans-partners-obj-digital-trans" archimateRelationship="id-d3e3d21e44434c4aae0daac5b72d520e"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ca96e9d0abd9414880c1326f953986df" source="view-trans-partners-proc-track-trans" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-2b450a5d41dd4936b945ef306d3073be"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-trans" targetConnections="id-6c29723b481146bc8acc553922c745eb id-0cec1d13e07e49d583c726c8f29aadce" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="550" y="490" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-trans" targetConnections="id-49f83419c74b4cdf91ef451c441d3e01 id-9744681330214bd4b1e581890c63ca79" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="750" y="490" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-trans" targetConnections="id-604c4a7f534d47bf8d2b85ff510e533c id-29ed7b3802c34dcd8622b0e46bffddee id-546a183c91e8427d8cbadee772a33f4d" fillColor="" archimateElement="app-partners-procurement-asis">
+            <bounds x="550" y="570" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5fe9c1f59789438d94ed475c7b3766d8" source="view-trans-partners-app-excel-trans" target="view-trans-partners-proc-digital-contract-trans" archimateRelationship="id-97133757b993403c828d51faf7dc42a9">
+              <bendpoint startX="-40" startY="-81" endX="-40" endY="79"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0cec1d13e07e49d583c726c8f29aadce" source="view-trans-partners-app-excel-trans" target="view-trans-partners-obj-supplier-trans" archimateRelationship="id-0d276c2e01544a75b9b4850b94400327"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-f944efe5fd2842d1a954963d6d01d771" source="view-trans-partners-app-excel-trans" target="view-trans-partners-data-mixed-trans" archimateRelationship="id-11533f1e147f42fcaff9a556186be3e0"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-cbef71cf261248a2b31bf722bfcf4d67" source="view-trans-partners-app-excel-trans" target="view-trans-partners-data-cloud-trans" archimateRelationship="id-b28b4439fefb4dc6a124be828b3e87f3"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-064b02b7c7f3467e8800ec64183339ee" source="view-trans-partners-app-excel-trans" target="view-trans-partners-app-portal-tobe" archimateRelationship="id-8dfb623bed4547c3a9dff4ed5e747bb7">
+              <bendpoint startX="368" startY="15" endX="-402" endY="15"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-trans" targetConnections="id-9d859fc8672743248233310df613a3f2 id-b422dd2e86ec4912ae4fdaa98f27a4a1" fillColor="" archimateElement="app-crm">
+            <bounds x="750" y="570" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-604c4a7f534d47bf8d2b85ff510e533c" source="view-trans-partners-app-crm-trans" target="view-trans-partners-app-excel-trans" archimateRelationship="id-bd4683c042a64de6a3e40dd5e0091872"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-9744681330214bd4b1e581890c63ca79" source="view-trans-partners-app-crm-trans" target="view-trans-partners-obj-digital-trans" archimateRelationship="id-8ebf921f8cc4459faaa8eccfe7cda975"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-mixed-trans" targetConnections="id-f944efe5fd2842d1a954963d6d01d771" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="550" y="650" width="180" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-trans" targetConnections="id-cbef71cf261248a2b31bf722bfcf4d67" fillColor="" archimateElement="app-data-partners-contract-asis">
+            <bounds x="750" y="650" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-trans" fillColor="" archimateElement="tech-admin-pc">
+            <bounds x="550" y="730" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-29ed7b3802c34dcd8622b0e46bffddee" source="view-trans-partners-tech-pc-trans" target="view-trans-partners-app-excel-trans" archimateRelationship="id-d6dedb0b6d4d47e69cb35a0e8211f65e">
+              <bendpoint startX="-52" startY="-85" endX="-52" endY="75"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-trans" fillColor="" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="750" y="730" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-9d859fc8672743248233310df613a3f2" source="view-trans-partners-tech-cloud-trans" target="view-trans-partners-app-crm-trans" archimateRelationship="id-9a266f7791a6423b9fc7008a048007c3"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-546a183c91e8427d8cbadee772a33f4d" source="view-trans-partners-tech-cloud-trans" target="view-trans-partners-app-excel-trans" archimateRelationship="id-fb61430758134fb79b17839f2a173915"/>
+          </child>
+          <child xsi:type="archimate:Note" id="note-transition-partners-tobe" fillColor="">
+            <bounds x="1070" y="50" width="480" height="90"/>
+            <content>TO-BE: Единый портал партнёров, автоматические e-договоры, интеграция через API, онлайн-оплаты, реал-тайм трекинг поставок.
+РЕЗУЛЬТАТ: Время обработки заказа -60%, прозрачность поставок 100%, сокращение ошибок на 75%</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-digital-tobe" fillColor="" archimateElement="actor-equipment-supplier-asis">
+            <bounds x="1070" y="170" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b20bd28809ca4c3fbc3e09fdc8d00794" source="view-trans-partners-actor-digital-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-626a6038b8144441960a338769c4557f">
+              <bendpoint startX="-66" startY="79" endX="-66" endY="-81"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-api-tobe" fillColor="" archimateElement="actor-nutrition-supplier-asis">
+            <bounds x="1290" y="170" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ef95886b7e94444a9ad70c7bf21a4acd" source="view-trans-partners-actor-api-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-99d4fa2f52a44e6fabeefbabcfc60a4a"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-tobe" fillColor="" archimateElement="role-procurement-manager-asis">
+            <bounds x="1070" y="250" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-90138ad204964b42a6e42fb256f59c6d" source="view-trans-partners-role-partner-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-0b4c20f8faf941a8ae0675805baea553"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-integration-tobe" fillColor="" archimateElement="role-supply-manager-asis">
+            <bounds x="1290" y="250" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-87c9931aef62472092309f9259610e55" source="view-trans-partners-role-integration-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-835212a70dc44e07b82d6687a8cf25fb"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-svc-portal-tobe" targetConnections="id-b20bd28809ca4c3fbc3e09fdc8d00794 id-90138ad204964b42a6e42fb256f59c6d id-ef95886b7e94444a9ad70c7bf21a4acd id-87c9931aef62472092309f9259610e55 id-913059dec8464708a52d2ada9437650e id-bfb829f0b6ca41d192bc49c132448f24 id-edf686dfaae941faad27ccfbf2c727ce id-5de04fb5bc5d4d2bb847410184577b93 id-ca96e9d0abd9414880c1326f953986df" fillColor="" archimateElement="svc-smart-procurement-platform-tobe">
+            <bounds x="1070" y="330" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-tobe" targetConnections="id-28446dd522f743b1b041b926aac20dac" fillColor="" archimateElement="proc-e-negotiate-contract-tobe">
+            <bounds x="1070" y="410" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-bfb829f0b6ca41d192bc49c132448f24" source="view-trans-partners-proc-digital-contract-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-19affc27c3694d32934b8ed99048d7cd"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-00a4cabc53f840df818282232ea69982" source="view-trans-partners-proc-digital-contract-tobe" target="view-trans-partners-obj-digital-db-tobe" archimateRelationship="id-bfdfba6836944a29bc0350b9bf129df4"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0c12e6a1db554c42b1d352a60afdb6a0" source="view-trans-partners-proc-digital-contract-tobe" target="view-trans-partners-obj-esign-tobe" archimateRelationship="id-d0dd48df27e547f4b836caa86787f0e5"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-auto-payment-tobe" targetConnections="id-98f359420c57412eb72d99fd3df68734" fillColor="" archimateElement="proc-partner-analytics-tobe">
+            <bounds x="1290" y="410" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-913059dec8464708a52d2ada9437650e" source="view-trans-partners-proc-auto-payment-tobe" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-6174dca502ad4e6a9fe74894c1222faf"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-db-tobe" targetConnections="id-00a4cabc53f840df818282232ea69982" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
+            <bounds x="1070" y="490" width="200" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-esign-tobe" targetConnections="id-0c12e6a1db554c42b1d352a60afdb6a0 id-dc5e79872b634b7ab3a7c5624d2ac5ef" fillColor="" archimateElement="obj-smart-contract-tobe" type="1">
+            <bounds x="1290" y="490" width="240" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-tobe" targetConnections="id-18f92ff48f53437d82c4e80781bfc62d" fillColor="" archimateElement="app-crm">
+            <bounds x="1070" y="570" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-dbd6f67b9c364b25a55dc783df88fc3b" source="view-trans-partners-app-crm-tobe" target="view-trans-partners-data-cloud-tobe" archimateRelationship="id-e78100e051454c429af40b733255b39d">
+              <bendpoint startX="30" startY="39" endX="30" endY="-41"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-28446dd522f743b1b041b926aac20dac" source="view-trans-partners-app-crm-tobe" target="view-trans-partners-proc-digital-contract-tobe" archimateRelationship="id-94aafa1285ec4cf188a38681dcb52f33">
+              <bendpoint startX="-42" startY="-81" endX="-42" endY="79"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-portal-tobe" targetConnections="id-e94bf9d66bce4a85b2532e907d2568f9 id-064b02b7c7f3467e8800ec64183339ee" fillColor="" archimateElement="app-web-portal-tobe">
+            <bounds x="1290" y="570" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5aedd6c078c2404bb779316627af0a1c" source="view-trans-partners-app-portal-tobe" target="view-trans-partners-data-api-tobe" archimateRelationship="id-3b579e0e872a4e3c983a537d07f3f87f">
+              <bendpoint startX="42" startY="39" endX="42" endY="-41"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-98f359420c57412eb72d99fd3df68734" source="view-trans-partners-app-portal-tobe" target="view-trans-partners-proc-auto-payment-tobe" archimateRelationship="id-a03df88809c0418b81ebdd781b808232"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-tobe" targetConnections="id-dbd6f67b9c364b25a55dc783df88fc3b" fillColor="" archimateElement="app-data-partners-contract-asis">
+            <bounds x="1070" y="650" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-dc5e79872b634b7ab3a7c5624d2ac5ef" source="view-trans-partners-data-cloud-tobe" target="view-trans-partners-obj-esign-tobe" archimateRelationship="id-cfee39e293ea48bbbcfe9db0696bc6a6"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-api-tobe" targetConnections="id-5aedd6c078c2404bb779316627af0a1c" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
+            <bounds x="1290" y="650" width="240" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-tobe" fillColor="" archimateElement="tech-aws-cloud-tobe">
+            <bounds x="1070" y="730" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-18f92ff48f53437d82c4e80781bfc62d" source="view-trans-partners-tech-cloud-tobe" target="view-trans-partners-app-crm-tobe" archimateRelationship="id-015fb55352d143efb3e5b5ddee558e38"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-api-gateway-tobe" fillColor="" archimateElement="tech-api-gateway-node-tobe">
+            <bounds x="1290" y="730" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e94bf9d66bce4a85b2532e907d2568f9" source="view-trans-partners-tech-api-gateway-tobe" target="view-trans-partners-app-portal-tobe" archimateRelationship="id-02b47f67b72e4f129104adba7e7fa4cd">
+              <bendpoint startX="-6" startY="-85" endX="-6" endY="75"/>
+            </sourceConnection>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-partners-arrow1" fillColor="">
+            <bounds x="470" y="350" width="60" height="40"/>
+            <content>→ Фаза 1
+4 мес</content>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-partners-arrow2" fillColor="">
+            <bounds x="984" y="360" width="60" height="40"/>
+            <content>→ Фаза 2
+8 мес</content>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-partners-workpackage" fillColor="">
+            <bounds x="550" y="810" width="400" height="160"/>
+            <content>РАБОТЫ ПО МИГРАЦИИ:
+1. Выбор и внедрение CRM для партнёров (2-3 мес)
+2. Миграция реестра поставщиков из Excel (1-2 мес)
+3. Пилот e-подписи с 3 партнёрами (3-4 мес)
+4. API-интеграция топ-5 поставщиков (4-6 мес)
+5. Обучение менеджеров закупок (2 мес, параллельно)
+6. Запуск партнёрского портала (8 мес)
+7. Полная миграция всех партнёров (12 мес)</content>
+          </child>
+          <child xsi:type="archimate:Note" id="note-trans-partners-risks" fillColor="">
+            <bounds x="50" y="810" width="450" height="160"/>
+            <content>РИСКИ И МИТИГАЦИЯ:
+• Сопротивление партнёров → Демо преимуществ, пилот с лояльными партнёрами
+• Потеря данных при миграции → Параллельное ведение Excel 6 месяцев
+• Сложность интеграции → API для топ-5, остальные через портал
+• Юридические вопросы e-подписи → Консультация с юристами, сертифицированные решения
+• Высокая стоимость портала → Поэтапное внедрение, MVP за 4 месяца</content>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-d927daffd4184d5b88b362daae6128a5" targetConnections="id-a1d9125e782645e4b7bc5e382a1594d4 id-d66026e11fb042e1abc0fbac96ba81c9 id-0aa3622130e548ffa8070b91f19dfff4" fillColor="" archimateElement="id-f8164473e96e41f6a8dacd393c82ff2f">
+            <bounds x="750" y="330" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5de04fb5bc5d4d2bb847410184577b93" source="id-d927daffd4184d5b88b362daae6128a5" target="view-trans-partners-svc-portal-tobe" archimateRelationship="id-adcd5663bfc747219ab54dc0e0c8a48a"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-bc915e5bc16e4ce98c2ce1e60a4c8806" fillColor="" archimateElement="id-4953fca11f16459b91acbd600cb02395">
+            <bounds x="755" y="170" width="190" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a1d9125e782645e4b7bc5e382a1594d4" source="id-bc915e5bc16e4ce98c2ce1e60a4c8806" target="id-d927daffd4184d5b88b362daae6128a5" archimateRelationship="id-86fef5a9a8384df0846a7a30cb6e73a5">
+              <bendpoint startX="-70" startY="79" endX="-70" endY="-81"/>
+            </sourceConnection>
           </child>
         </child>
       </element>
@@ -9087,39 +9898,57 @@ PHASE 2
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-journal-asis" fillColor="" archimateElement="iface-trainer-journal">
             <bounds x="50" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2992fbf471904b4e872bcc1fbcd1647d" source="view-trans-trainers-iface-journal-asis" target="view-trans-trainers-svc-planning-asis" archimateRelationship="id-0e0d6c98445d4d82bbb5a8e2f4ac13a7"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-board-asis" fillColor="" archimateElement="iface-trainer-schedule-board">
             <bounds x="250" y="160" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-006a80d93752484591f7161fe9bf16ea" source="view-trans-trainers-iface-board-asis" target="view-trans-trainers-svc-planning-asis" archimateRelationship="id-a7685d9af48b4523a9b0e87c7f5abb9e"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-planning-asis" fillColor="" archimateElement="svc-training-planning">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-planning-asis" targetConnections="id-a9cb0c29aa264cf79bd3540c753c699b id-6852399c48ed4531824962f98d8c77e9 id-006a80d93752484591f7161fe9bf16ea id-2992fbf471904b4e872bcc1fbcd1647d" fillColor="" archimateElement="svc-training-planning">
             <bounds x="50" y="240" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-33c24bab6708437e809018c2a3c2f185" source="view-trans-trainers-svc-planning-asis" target="view-trans-trainers-svc-digital-schedule-trans" archimateRelationship="id-41a7d42d6f674b90802e14e4b61b89cc"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-conducting-asis" fillColor="" archimateElement="svc-conducting-sessions">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-conducting-asis" targetConnections="id-477a134f9ab4468ea9e845d5bc56b374 id-23518afb02414ff18985cbbcc002d521" fillColor="" archimateElement="svc-conducting-sessions">
             <bounds x="250" y="240" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-create-asis" fillColor="" archimateElement="proc-create-program">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-create-asis" targetConnections="id-ab5f3e11f5474669b306a26b6e62eb62" fillColor="" archimateElement="proc-create-program">
             <bounds x="50" y="320" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ff332bde45a04205b51b0ad2ed2ce2a6" source="view-trans-trainers-proc-create-asis" target="view-trans-trainers-obj-plan-asis" archimateRelationship="id-04d62da5d73544e6a5daf235fa2cbfc1"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-23518afb02414ff18985cbbcc002d521" source="view-trans-trainers-proc-create-asis" target="view-trans-trainers-svc-conducting-asis" archimateRelationship="id-d6cb33d2207f463e89854f7726e09c81"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6852399c48ed4531824962f98d8c77e9" source="view-trans-trainers-proc-create-asis" target="view-trans-trainers-svc-planning-asis" archimateRelationship="id-a00484e1e49e4f489ebf10c41a3f2bb6"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c277d6f1b158426fb72d9ed94a2c5fe0" source="view-trans-trainers-proc-create-asis" target="view-trans-trainers-proc-ai-program-tobe" archimateRelationship="id-a891cd3cb0b645858de86c3d50863081"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-fill-asis" fillColor="" archimateElement="proc-fill-journal">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-fill-asis" targetConnections="id-6e320d90506b482d902e762cfece3236 id-c750fe69820f45039d1e0393715a4d4a" fillColor="" archimateElement="proc-fill-journal">
             <bounds x="250" y="320" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-42aa581673dc4f888ea15414f4510383" source="view-trans-trainers-proc-fill-asis" target="view-trans-trainers-obj-journal-asis" archimateRelationship="id-c96ea77a3fca474bb776ae0c80ad0015"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a9cb0c29aa264cf79bd3540c753c699b" source="view-trans-trainers-proc-fill-asis" target="view-trans-trainers-svc-planning-asis" archimateRelationship="id-428c144135344afbb082b23d4e60179c"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-477a134f9ab4468ea9e845d5bc56b374" source="view-trans-trainers-proc-fill-asis" target="view-trans-trainers-svc-conducting-asis" archimateRelationship="id-c603f269d99e493fb876d2fb4f480fac"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-plan-asis" fillColor="" archimateElement="obj-training-plan" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-plan-asis" targetConnections="id-ff332bde45a04205b51b0ad2ed2ce2a6" fillColor="" archimateElement="obj-training-plan" type="1">
             <bounds x="50" y="400" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-journal-asis" fillColor="" archimateElement="obj-training-journal" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-journal-asis" targetConnections="id-42aa581673dc4f888ea15414f4510383" fillColor="" archimateElement="obj-training-journal" type="1">
             <bounds x="250" y="400" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-schedule-asis" fillColor="" archimateElement="app-schedule">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-schedule-asis" targetConnections="id-0b9d2a1136204024babbb0efaa32d84a id-e2656d88e41a421996a624cd60a09bd5" fillColor="" archimateElement="app-schedule">
             <bounds x="50" y="480" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c750fe69820f45039d1e0393715a4d4a" source="view-trans-trainers-app-schedule-asis" target="view-trans-trainers-proc-fill-asis" archimateRelationship="id-cf1b6114a6184ec58679c256d54e9ee5"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-crm-asis" fillColor="" archimateElement="app-crm">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-crm-asis" targetConnections="id-072697eb129c482dadf69cd08a554fa1" fillColor="" archimateElement="app-crm">
             <bounds x="250" y="480" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ab5f3e11f5474669b306a26b6e62eb62" source="view-trans-trainers-app-crm-asis" target="view-trans-trainers-proc-create-asis" archimateRelationship="id-76d7591fb7b6403c8f473fcea999084e"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6e320d90506b482d902e762cfece3236" source="view-trans-trainers-app-crm-asis" target="view-trans-trainers-proc-fill-asis" archimateRelationship="id-a7cb46b653354974b664d56db4f164a9">
+              <bendpoint startX="-50" startY="-75" endX="-50" endY="85"/>
+            </sourceConnection>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-server-asis" fillColor="" archimateElement="tech-app-server">
             <bounds x="50" y="560" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0b9d2a1136204024babbb0efaa32d84a" source="view-trans-trainers-tech-server-asis" target="view-trans-trainers-app-schedule-asis" archimateRelationship="id-9f2f095fd5034d949855e5619e005931"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-072697eb129c482dadf69cd08a554fa1" source="view-trans-trainers-tech-server-asis" target="view-trans-trainers-app-crm-asis" archimateRelationship="id-566aa0fe871440a48edd8038d7bdd010"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-pc-asis" fillColor="" archimateElement="tech-trainer-workstation">
             <bounds x="250" y="560" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e2656d88e41a421996a624cd60a09bd5" source="view-trans-trainers-tech-pc-asis" target="view-trans-trainers-app-schedule-asis" archimateRelationship="id-68cdae6e04e349a4841d779eb3a37fbe"/>
           </child>
           <child xsi:type="archimate:Note" id="note-transition-trainers-hybrid" fillColor="">
             <bounds x="550" y="50" width="420" height="80"/>
@@ -9127,80 +9956,125 @@ PHASE 2
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-tablet-trans" fillColor="" archimateElement="iface-trainer-tablet">
             <bounds x="550" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-abb05bceac234beca312ac5c0c65062b" source="view-trans-trainers-iface-tablet-trans" target="view-trans-trainers-iface-mobile-trans" archimateRelationship="id-ca4926a6e7514b188c3099e3f17b44e7"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-trans" fillColor="" archimateElement="iface-trainer-mobile-app-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-trans" targetConnections="id-abb05bceac234beca312ac5c0c65062b id-351235331d0545f3925d52dfdd35500e" fillColor="" archimateElement="iface-trainer-mobile-app-tobe">
             <bounds x="750" y="160" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ad1ab351e91c48ffb40d3ee04f0b7fbd" source="view-trans-trainers-iface-mobile-trans" target="view-trans-trainers-svc-coord-trans" archimateRelationship="id-2abc4b53e8b14564819198f55c05cda5"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ac16597e07ad48cbb8597782014cf6f9" source="view-trans-trainers-iface-mobile-trans" target="view-trans-trainers-svc-digital-schedule-trans" archimateRelationship="id-0ce9477daaf04c61be9c431a31a0058b"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-digital-schedule-trans" fillColor="" archimateElement="svc-digital-schedule-mgmt-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-digital-schedule-trans" targetConnections="id-ac16597e07ad48cbb8597782014cf6f9 id-1fcd519302884e96a55f4801ad74fa42 id-33c24bab6708437e809018c2a3c2f185" fillColor="" archimateElement="svc-digital-schedule-mgmt-tobe">
             <bounds x="550" y="240" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-40a30a65d3474239a03e0f5d09238470" source="view-trans-trainers-svc-digital-schedule-trans" target="view-trans-trainers-svc-auto-planning-tobe" archimateRelationship="id-94498bd0ab6441bfbf93e43d2216f04d"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-coord-trans" fillColor="" archimateElement="svc-digital-team-coordination-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-coord-trans" targetConnections="id-ad1ab351e91c48ffb40d3ee04f0b7fbd id-4b08915f9f9e4bfbac96b4dcd3852199 id-4064e83c7bd84d3883400ca0f2acb88d" fillColor="" archimateElement="svc-digital-team-coordination-tobe">
             <bounds x="770" y="240" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c7a4cd2ddb0140929ef0eeadb71bdb12" source="view-trans-trainers-svc-coord-trans" target="view-trans-trainers-svc-auto-planning-tobe" archimateRelationship="id-0f0aefaf3d2c489d8cf90ba12bb8967b">
+              <bendpoint startX="148" startY="9" endX="-172" endY="9"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-digital-prep-trans" fillColor="" archimateElement="proc-digital-preparation-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-digital-prep-trans" targetConnections="id-1e76a62c18a2443db2994084759cdf26" fillColor="" archimateElement="proc-digital-preparation-tobe">
             <bounds x="550" y="320" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4b08915f9f9e4bfbac96b4dcd3852199" source="view-trans-trainers-proc-digital-prep-trans" target="view-trans-trainers-svc-coord-trans" archimateRelationship="id-ce6861da95c04ee9a4c462eb696b7c8d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4016c808b55a461eaf189f7872631ccb" source="view-trans-trainers-proc-digital-prep-trans" target="view-trans-trainers-obj-sync-trans" archimateRelationship="id-635c238d1acf412699fd3c2dfff5dbd2"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-auto-doc-trans" fillColor="" archimateElement="proc-fill-journal">
             <bounds x="770" y="320" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1fcd519302884e96a55f4801ad74fa42" source="view-trans-trainers-proc-auto-doc-trans" target="view-trans-trainers-svc-digital-schedule-trans" archimateRelationship="id-03d11ce7abf44238bd24485bd9b6724c"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a12882c52c404e459619cca312353210" source="view-trans-trainers-proc-auto-doc-trans" target="view-trans-trainers-obj-cloud-trans" archimateRelationship="id-495c650c97cb486cb17decfd4098dcb9"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-sync-trans" fillColor="" archimateElement="obj-sync-schedule-tobe" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-sync-trans" targetConnections="id-4016c808b55a461eaf189f7872631ccb" fillColor="" archimateElement="obj-sync-schedule-tobe" type="1">
             <bounds x="550" y="400" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-cloud-trans" fillColor="" archimateElement="obj-cloud-notes-storage-tobe" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-cloud-trans" targetConnections="id-a12882c52c404e459619cca312353210" fillColor="" archimateElement="obj-cloud-notes-storage-tobe" type="1">
             <bounds x="750" y="400" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-trans" fillColor="" archimateElement="app-crm">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-trans" targetConnections="id-73731c252fb045d497111e582a4c3477 id-ec0b674ea49f43c986a16bc82287509f" fillColor="" archimateElement="app-crm">
             <bounds x="550" y="480" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1e76a62c18a2443db2994084759cdf26" source="view-trans-trainers-app-ai-trans" target="view-trans-trainers-proc-digital-prep-trans" archimateRelationship="id-3af925c2cd084019ae8158bd232589f0">
+              <bendpoint startX="34" startY="-87" endX="34" endY="73"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1bca09c4fa8e463398ce339263bf013a" source="view-trans-trainers-app-ai-trans" target="view-trans-trainers-app-ai-tobe" archimateRelationship="id-be706e3cf33942bc956df94b005df97c"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-integration-trans" fillColor="" archimateElement="app-qr-scanner-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-integration-trans" targetConnections="id-362a5486f79e4f4ebd08e515d2c26bb1" fillColor="" archimateElement="app-qr-scanner-tobe">
             <bounds x="770" y="480" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4064e83c7bd84d3883400ca0f2acb88d" source="view-trans-trainers-app-integration-trans" target="view-trans-trainers-svc-coord-trans" archimateRelationship="id-8478a1607cde4c51bc4852db69495f98">
+              <bendpoint startX="52" startY="-123" endX="52" endY="117"/>
+            </sourceConnection>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-cloud-trans" fillColor="" archimateElement="tech-aws-cloud-tobe">
             <bounds x="550" y="560" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-73731c252fb045d497111e582a4c3477" source="view-trans-trainers-tech-cloud-trans" target="view-trans-trainers-app-ai-trans" archimateRelationship="id-64c254c1eb4a4f48b5f957805ca2499b"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-mobile-trans" fillColor="" archimateElement="tech-smartphone-tobe">
             <bounds x="750" y="560" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-362a5486f79e4f4ebd08e515d2c26bb1" source="view-trans-trainers-tech-mobile-trans" target="view-trans-trainers-app-integration-trans" archimateRelationship="id-2a2ccb6bd3b347e29b2700d80e62bbac"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ec0b674ea49f43c986a16bc82287509f" source="view-trans-trainers-tech-mobile-trans" target="view-trans-trainers-app-ai-trans" archimateRelationship="id-aaf462d251544dce9130331ed0fc4cf5">
+              <bendpoint startX="-118" startY="-35" endX="82" endY="45"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-351235331d0545f3925d52dfdd35500e" source="view-trans-trainers-tech-mobile-trans" target="view-trans-trainers-iface-mobile-trans" archimateRelationship="id-7d63f6487e2b4299aee27f0162d9e750">
+              <bendpoint startX="-34" startY="-203" endX="-34" endY="197"/>
+            </sourceConnection>
           </child>
           <child xsi:type="archimate:Note" id="note-transition-trainers-tobe" fillColor="">
             <bounds x="1070" y="50" width="480" height="80"/>
             <content>TO-BE: AI-ассистент тренера, автоматическая генерация программ, реал-тайм аналитика.
 РЕЗУЛЬТАТ: Автоматизация 70%, персонализация тренировок, рост удовлетворённости на 40%</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-tobe" fillColor="" archimateElement="iface-trainer-mobile-app-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-mobile-tobe" targetConnections="id-1888a11bb1a04d42bc10fbe5bf16f462" fillColor="" archimateElement="iface-trainer-mobile-app-tobe">
             <bounds x="1070" y="160" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5135c9014e24472381789a36fd504ba7" source="view-trans-trainers-iface-mobile-tobe" target="view-trans-trainers-svc-auto-planning-tobe" archimateRelationship="id-93b15213325e4d04a5ae87f90850a699"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-iface-cloud-tobe" fillColor="" archimateElement="iface-trainer-cloud-platform-tobe">
             <bounds x="1290" y="160" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-1888a11bb1a04d42bc10fbe5bf16f462" source="view-trans-trainers-iface-cloud-tobe" target="view-trans-trainers-iface-mobile-tobe" archimateRelationship="id-2ab4f8187fb849b0a4be18000ff3fe7e"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-auto-planning-tobe" fillColor="" archimateElement="svc-auto-training-planning-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-auto-planning-tobe" targetConnections="id-5135c9014e24472381789a36fd504ba7 id-ab94d6fd286b4980999d6abd7198ad04 id-b655a46c3c9c4a2188170e07f5a58515 id-40a30a65d3474239a03e0f5d09238470 id-c7a4cd2ddb0140929ef0eeadb71bdb12" fillColor="" archimateElement="svc-auto-training-planning-tobe">
             <bounds x="1070" y="240" width="220" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ea1ab24b2e2b41c3872aa9c1260b0080" source="view-trans-trainers-svc-auto-planning-tobe" target="view-trans-trainers-svc-ai-guidance-tobe" archimateRelationship="id-b720b79daa414762bee748368e426b9d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4c77c11f5ae84c0b9b3b9c4bb6b4eb2e" source="view-trans-trainers-svc-auto-planning-tobe" target="view-trans-trainers-obj-digital-journal-tobe" archimateRelationship="id-ecccf097c6f24715b45b15d8d2ed0b3c">
+              <bendpoint startX="116" startY="81" endX="-114" endY="-79"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-ai-guidance-tobe" fillColor="" archimateElement="svc-conducting-sessions">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-svc-ai-guidance-tobe" targetConnections="id-b6b28fceb2a045f0b434398556cbe682 id-ea1ab24b2e2b41c3872aa9c1260b0080 id-2526999fccdc4b72a5eeee60ea8be1f2" fillColor="" archimateElement="svc-conducting-sessions">
             <bounds x="1310" y="240" width="220" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-ai-program-tobe" fillColor="" archimateElement="proc-ai-program-generation-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-ai-program-tobe" targetConnections="id-c277d6f1b158426fb72d9ed94a2c5fe0" fillColor="" archimateElement="proc-ai-program-generation-tobe">
             <bounds x="1070" y="320" width="220" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ab94d6fd286b4980999d6abd7198ad04" source="view-trans-trainers-proc-ai-program-tobe" target="view-trans-trainers-svc-auto-planning-tobe" archimateRelationship="id-d13efe0d20b34cbf82977cb8dcbc8042"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-98789410ee374ebd811c6125f3d221da" source="view-trans-trainers-proc-ai-program-tobe" target="view-trans-trainers-obj-ai-plan-tobe" archimateRelationship="id-215d5f81a0b447eeb3a963f6e696922c"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-proc-smart-conduct-tobe" fillColor="" archimateElement="proc-conduct-training">
             <bounds x="1310" y="320" width="220" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b6b28fceb2a045f0b434398556cbe682" source="view-trans-trainers-proc-smart-conduct-tobe" target="view-trans-trainers-svc-ai-guidance-tobe" archimateRelationship="id-cce31348fb35483c8ce1081550fba08d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3319b372c97e4e2f962a64d7a5fefaa7" source="view-trans-trainers-proc-smart-conduct-tobe" target="view-trans-trainers-obj-digital-journal-tobe" archimateRelationship="id-cb7f718bdd9548a4a52696f96d90a0b4"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-ai-plan-tobe" fillColor="" archimateElement="obj-ai-training-plan-tobe" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-ai-plan-tobe" targetConnections="id-98789410ee374ebd811c6125f3d221da" fillColor="" archimateElement="obj-ai-training-plan-tobe" type="1">
             <bounds x="1070" y="400" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-digital-journal-tobe" fillColor="" archimateElement="obj-digital-journal-tobe" type="1">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-obj-digital-journal-tobe" targetConnections="id-4c77c11f5ae84c0b9b3b9c4bb6b4eb2e id-3319b372c97e4e2f962a64d7a5fefaa7" fillColor="" archimateElement="obj-digital-journal-tobe" type="1">
             <bounds x="1290" y="400" width="240" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-tobe" fillColor="" archimateElement="app-cloud-crm-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-ai-tobe" targetConnections="id-e59ac7b0b41f4de396645e833e4cadaf id-1bca09c4fa8e463398ce339263bf013a" fillColor="" archimateElement="app-cloud-crm-tobe">
             <bounds x="1070" y="480" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b655a46c3c9c4a2188170e07f5a58515" source="view-trans-trainers-app-ai-tobe" target="view-trans-trainers-svc-auto-planning-tobe" archimateRelationship="id-25303821c2354f9dbbdc47b95670b5b3">
+              <bendpoint startX="-42" startY="-123" endX="-52" endY="117"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-analytics-tobe" fillColor="" archimateElement="app-bi-analytics-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-app-analytics-tobe" targetConnections="id-e8c77e08cfee4c528d7e5f0fa84183b6 id-50f22d4b31634eac8994f2fc9babd4ba" fillColor="" archimateElement="app-bi-analytics-tobe">
             <bounds x="1290" y="480" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2526999fccdc4b72a5eeee60ea8be1f2" source="view-trans-trainers-app-analytics-tobe" target="view-trans-trainers-svc-ai-guidance-tobe" archimateRelationship="id-593bda647e4f4c10b58a3392bc89e1df">
+              <bendpoint startX="-54" startY="-123" endX="-64" endY="117"/>
+            </sourceConnection>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-aws-tobe" fillColor="" archimateElement="tech-aws-trainer-tobe">
             <bounds x="1070" y="560" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e8c77e08cfee4c528d7e5f0fa84183b6" source="view-trans-trainers-tech-aws-tobe" target="view-trans-trainers-app-analytics-tobe" archimateRelationship="id-631431cc66a34b2cad7a6eba071b891d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-e59ac7b0b41f4de396645e833e4cadaf" source="view-trans-trainers-tech-aws-tobe" target="view-trans-trainers-app-ai-tobe" archimateRelationship="id-065545b7a77549188764d2af09ae7a10"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="view-trans-trainers-tech-tablet-tobe" fillColor="" archimateElement="tech-smart-tablet-tobe">
             <bounds x="1290" y="560" width="240" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-50f22d4b31634eac8994f2fc9babd4ba" source="view-trans-trainers-tech-tablet-tobe" target="view-trans-trainers-app-analytics-tobe" archimateRelationship="id-61bc5b8615be404983e38f40b5a78afc"/>
           </child>
           <child xsi:type="archimate:Note" id="note-trans-trainers-arrow1" fillColor="">
             <bounds x="470" y="250" width="60" height="40"/>
@@ -9232,429 +10106,91 @@ PHASE 2
           </child>
         </child>
       </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Партнеры (Partners)" id="view-transition-partners">
-        <child xsi:type="archimate:Group" id="grp-transition-partners" name="Transition: Партнеры AS-IS → TO-BE" fillColor="">
-          <bounds x="24" y="24" width="1600" height="900"/>
-          <child xsi:type="archimate:Note" id="note-transition-partners-asis" fillColor="">
-            <bounds x="50" y="50" width="380" height="90"/>
-            <content>AS-IS: Телефонные переговоры, Excel-реестры, бумажные договоры, email.
-ПРОБЛЕМЫ: Потеря контактов, ручной контроль оплат, отсутствие централизованной базы</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-asis" fillColor="" archimateElement="actor-equipment-supplier-asis">
-            <bounds x="50" y="170" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-nutrition-asis" fillColor="" archimateElement="actor-nutrition-supplier-asis">
-            <bounds x="250" y="170" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-asis" fillColor="" archimateElement="role-procurement-manager-asis">
-            <bounds x="50" y="250" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-supply-asis" fillColor="" archimateElement="role-supply-manager-asis">
-            <bounds x="250" y="250" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-asis" fillColor="" archimateElement="proc-select-supplier-asis">
-            <bounds x="50" y="330" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-negotiate-asis" fillColor="" archimateElement="proc-negotiate-contract-asis">
-            <bounds x="250" y="330" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-contract-asis" fillColor="" archimateElement="proc-negotiate-contract-asis">
-            <bounds x="50" y="410" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-delivery-asis" fillColor="" archimateElement="proc-order-equipment-asis">
-            <bounds x="250" y="410" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-asis" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
-            <bounds x="50" y="490" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-contract-asis" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
-            <bounds x="250" y="490" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-asis" fillColor="" archimateElement="app-partners-procurement-asis">
-            <bounds x="50" y="570" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-email-asis" fillColor="" archimateElement="app-partners-email-asis">
-            <bounds x="250" y="570" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-supplier-asis" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
-            <bounds x="50" y="650" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-email-asis" fillColor="" archimateElement="app-data-partners-email-thread-asis">
-            <bounds x="250" y="650" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-asis" fillColor="" archimateElement="tech-admin-pc">
-            <bounds x="50" y="730" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-phone-asis" fillColor="" archimateElement="tech-phone-device">
-            <bounds x="250" y="730" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="note-transition-partners-hybrid" fillColor="">
-            <bounds x="550" y="50" width="420" height="90"/>
-            <content>ПЕРЕХОД (8-12 мес): Внедрение CRM для партнёров, миграция Excel в базу, e-подписи пилотные, API-интеграция с топ-5 поставщиками, обучение менеджеров</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-supplier-trans" fillColor="" archimateElement="actor-equipment-supplier-asis">
-            <bounds x="550" y="170" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-digital-trans" fillColor="" archimateElement="actor-equipment-supplier-asis">
-            <bounds x="750" y="170" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-procurement-trans" fillColor="" archimateElement="role-procurement-manager-asis">
-            <bounds x="550" y="250" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-trans" fillColor="" archimateElement="role-procurement-manager-asis">
-            <bounds x="750" y="250" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-select-trans" fillColor="" archimateElement="proc-select-supplier-asis">
-            <bounds x="550" y="330" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-trans" fillColor="" archimateElement="proc-e-negotiate-contract-tobe">
-            <bounds x="750" y="330" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-auto-notify-trans" fillColor="" archimateElement="proc-order-equipment-asis">
-            <bounds x="550" y="410" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-track-trans" fillColor="" archimateElement="proc-order-equipment-asis">
-            <bounds x="750" y="410" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-supplier-trans" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
-            <bounds x="550" y="490" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-trans" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
-            <bounds x="750" y="490" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-excel-trans" fillColor="" archimateElement="app-partners-procurement-asis">
-            <bounds x="550" y="570" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-trans" fillColor="" archimateElement="app-crm">
-            <bounds x="750" y="570" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-mixed-trans" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
-            <bounds x="550" y="650" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-trans" fillColor="" archimateElement="app-data-partners-contract-asis">
-            <bounds x="750" y="650" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-pc-trans" fillColor="" archimateElement="tech-admin-pc">
-            <bounds x="550" y="730" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-trans" fillColor="" archimateElement="tech-aws-cloud-tobe">
-            <bounds x="750" y="730" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="note-transition-partners-tobe" fillColor="">
-            <bounds x="1070" y="50" width="480" height="90"/>
-            <content>TO-BE: Единый портал партнёров, автоматические e-договоры, интеграция через API, онлайн-оплаты, реал-тайм трекинг поставок.
-РЕЗУЛЬТАТ: Время обработки заказа -60%, прозрачность поставок 100%, сокращение ошибок на 75%</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-digital-tobe" fillColor="" archimateElement="actor-equipment-supplier-asis">
-            <bounds x="1070" y="170" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-actor-api-tobe" fillColor="" archimateElement="actor-nutrition-supplier-asis">
-            <bounds x="1290" y="170" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-partner-tobe" fillColor="" archimateElement="role-procurement-manager-asis">
-            <bounds x="1070" y="250" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-role-integration-tobe" fillColor="" archimateElement="role-supply-manager-asis">
-            <bounds x="1290" y="250" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-svc-portal-tobe" fillColor="" archimateElement="svc-smart-procurement-platform-tobe">
-            <bounds x="1070" y="330" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-svc-auto-ordering-tobe" fillColor="" archimateElement="app-svc-partners-order-mgmt-asis">
-            <bounds x="1290" y="330" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-digital-contract-tobe" fillColor="" archimateElement="proc-e-negotiate-contract-tobe">
-            <bounds x="1070" y="410" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-proc-auto-payment-tobe" fillColor="" archimateElement="proc-partner-analytics-tobe">
-            <bounds x="1290" y="410" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-digital-db-tobe" fillColor="" archimateElement="obj-supplier-contract-asis" type="1">
-            <bounds x="1070" y="490" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-obj-esign-tobe" fillColor="" archimateElement="obj-smart-contract-tobe" type="1">
-            <bounds x="1290" y="490" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-crm-tobe" fillColor="" archimateElement="app-crm">
-            <bounds x="1070" y="570" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-app-portal-tobe" fillColor="" archimateElement="app-web-portal-tobe">
-            <bounds x="1290" y="570" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-cloud-tobe" fillColor="" archimateElement="app-data-partners-contract-asis">
-            <bounds x="1070" y="650" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-data-api-tobe" fillColor="" archimateElement="app-data-partners-supplier-profile-asis">
-            <bounds x="1290" y="650" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-cloud-tobe" fillColor="" archimateElement="tech-aws-cloud-tobe">
-            <bounds x="1070" y="730" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-partners-tech-api-gateway-tobe" fillColor="" archimateElement="tech-api-gateway-node-tobe">
-            <bounds x="1290" y="730" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="note-trans-partners-arrow1" fillColor="">
-            <bounds x="470" y="350" width="60" height="40"/>
-            <content>→ Фаза 1
-4 мес</content>
-          </child>
-          <child xsi:type="archimate:Note" id="note-trans-partners-arrow2" fillColor="">
-            <bounds x="990" y="350" width="60" height="40"/>
-            <content>→ Фаза 2
-8 мес</content>
-          </child>
-          <child xsi:type="archimate:Note" id="note-trans-partners-workpackage" fillColor="">
-            <bounds x="550" y="810" width="400" height="160"/>
-            <content>РАБОТЫ ПО МИГРАЦИИ:
-1. Выбор и внедрение CRM для партнёров (2-3 мес)
-2. Миграция реестра поставщиков из Excel (1-2 мес)
-3. Пилот e-подписи с 3 партнёрами (3-4 мес)
-4. API-интеграция топ-5 поставщиков (4-6 мес)
-5. Обучение менеджеров закупок (2 мес, параллельно)
-6. Запуск партнёрского портала (8 мес)
-7. Полная миграция всех партнёров (12 мес)</content>
-          </child>
-          <child xsi:type="archimate:Note" id="note-trans-partners-risks" fillColor="">
-            <bounds x="50" y="810" width="450" height="160"/>
-            <content>РИСКИ И МИТИГАЦИЯ:
-• Сопротивление партнёров → Демо преимуществ, пилот с лояльными партнёрами
-• Потеря данных при миграции → Параллельное ведение Excel 6 месяцев
-• Сложность интеграции → API для топ-5, остальные через портал
-• Юридические вопросы e-подписи → Консультация с юристами, сертифицированные решения
-• Высокая стоимость портала → Поэтапное внедрение, MVP за 4 месяца</content>
-          </child>
-        </child>
-      </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Отчётность (Reporting)" id="view-transition-reporting">
-        <child xsi:type="archimate:Group" id="grp-transition-reporting" name="Transition: Отчётность AS-IS → TO-BE" fillColor="">
-          <bounds x="24" y="24" width="1600" height="800"/>
-          <child xsi:type="archimate:Note" id="note-transition-reporting-asis" fillColor="">
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Хранение (Storage)" id="view-transition-storage">
+        <child xsi:type="archimate:Group" id="grp-transition-storage" name="Transition: Хранение AS-IS → TO-BE" fillColor="">
+          <bounds y="24" width="1600" height="800"/>
+          <child xsi:type="archimate:Note" id="note-transition-storage-asis" fillColor="">
             <bounds x="50" y="50" width="350" height="80"/>
-            <content>AS-IS: Наличные расчеты, бумажные чеки, ручные отчеты Excel.
+            <content>AS-IS: Бумажные карточки, ручная отметка посещений, локальная БД. 
 УСТАРЕВАЕТ → TO-BE</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-sales-asis" fillColor="" archimateElement="svc-sales">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-card-asis" targetConnections="id-f8573d08d06b4c98936af5a3c5afd3d6" fillColor="" archimateElement="svc-card-mgmt">
             <bounds x="50" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-08c635ae73dc4ba1a400130f7a4cf6db" source="view-transition-storage-svc-card-asis" target="view-transition-storage-obj-paper-card-asis" archimateRelationship="id-79572e9bb47b42d89dd2c1cd2153336d"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-535b8317ffd140fabcb0ebe29e38dc67" source="view-transition-storage-svc-card-asis" target="view-transition-storage-svc-digital-cards-tobe" archimateRelationship="id-fc88e08b6f524b5883dd2193dfffdede">
+              <bendpoint startX="472" startY="5" endX="-478" endY="5"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-paper-receipt-asis" fillColor="" archimateElement="obj-receipt">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-attendance-asis" targetConnections="id-3e64a3934dc244acae146acfe6a4c590" fillColor="" archimateElement="svc-attendance">
             <bounds x="250" y="160" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-7f21e02e55e448ff8aa8e6896d7a3899" source="view-transition-storage-svc-attendance-asis" target="view-transition-storage-svc-auto-attendance-tobe" archimateRelationship="id-0ad88a78d2684232b563435c2e7f502e">
+              <bendpoint startX="260" startY="-19" endX="-270" endY="-19"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-manual-report-asis" fillColor="" archimateElement="proc-report">
-            <bounds x="50" y="240" width="280" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-paper-card-asis" targetConnections="id-08c635ae73dc4ba1a400130f7a4cf6db" fillColor="" archimateElement="obj-client-card">
+            <bounds x="50" y="240" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:Note" id="note-transition-reporting-arrow" fillColor="">
-            <bounds x="500" y="200" width="200" height="100"/>
+          <child xsi:type="archimate:Note" id="note-transition-storage-arrow" fillColor="">
+            <bounds x="468" y="218" width="200" height="100"/>
             <content>═══════➤
 MIGRATION
-PHASE 3
+PHASE 2
 (2 months)</content>
           </child>
-          <child xsi:type="archimate:Note" id="note-transition-reporting-tobe" fillColor="">
+          <child xsi:type="archimate:Note" id="note-transition-storage-tobe" fillColor="">
             <bounds x="770" y="50" width="400" height="80"/>
-            <content>TO-BE: Безналичные платежи, электронные чеки, BI-дашборды.
-НОВЫЕ возможности: real-time аналитика, автоматические KPI</content>
+            <content>TO-BE: Цифровые карты, QR-сканирование, облачное хранилище.
+НОВЫЕ возможности: автоматический учет, синхронизация</content>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-online-payment-tobe" fillColor="" archimateElement="svc-online-payment-tobe">
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-digital-cards-tobe" targetConnections="id-0f37b8c0108041ef99d4911d99962abd id-535b8317ffd140fabcb0ebe29e38dc67" fillColor="" archimateElement="svc-digital-cards-tobe">
+            <bounds x="990" y="160" width="200" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c7128ccae4ef4de1be7f4419acc32a94" source="view-transition-storage-svc-digital-cards-tobe" target="view-transition-storage-obj-digital-card-tobe" archimateRelationship="id-96206f8712de4a1e8129f6e8bfdf253d"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-svc-auto-attendance-tobe" targetConnections="id-fc0985e0ea624dd9943f0659b13850ae id-0e2616f96f0b41c292fd3510757b1e24 id-7f21e02e55e448ff8aa8e6896d7a3899" fillColor="" archimateElement="svc-auto-attendance-tobe">
             <bounds x="770" y="160" width="200" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-svc-analytics-tobe" fillColor="" archimateElement="svc-analytics-tobe">
-            <bounds x="990" y="160" width="180" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-iface-qr-tobe" fillColor="" archimateElement="iface-qr-scanner-tobe">
+            <bounds x="770" y="240" width="180" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0e2616f96f0b41c292fd3510757b1e24" source="view-transition-storage-iface-qr-tobe" target="view-transition-storage-svc-auto-attendance-tobe" archimateRelationship="id-408a2703ff854867b28fdd717cdf1dc2">
+              <bendpoint startX="-44" startY="-39" endX="-54" endY="41"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-bd9f25628a4947a88ba124dd823e25f0" source="view-transition-storage-iface-qr-tobe" target="view-transition-storage-obj-digital-card-tobe" archimateRelationship="id-8c66213b5d4744b78c7e4e972b3651fc"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-card-payment-tobe" fillColor="" archimateElement="proc-card-payment-tobe">
-            <bounds x="770" y="240" width="200" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-obj-digital-card-tobe" targetConnections="id-c7128ccae4ef4de1be7f4419acc32a94 id-bd9f25628a4947a88ba124dd823e25f0" fillColor="" archimateElement="obj-digital-card-tobe">
+            <bounds x="1000" y="240" width="180" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-proc-auto-reporting-tobe" fillColor="" archimateElement="proc-auto-reporting-tobe">
-            <bounds x="990" y="240" width="220" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-crm-asis" targetConnections="id-2c48324c10e74c99b8bbb5aa19b89a4a" fillColor="" archimateElement="app-crm">
+            <bounds x="50" y="380" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-f8573d08d06b4c98936af5a3c5afd3d6" source="view-transition-storage-app-crm-asis" target="view-transition-storage-svc-card-asis" archimateRelationship="id-2ea53442db164811b8b62abe3f89b412">
+              <bendpoint startX="-42" startY="-110" endX="-32" endY="113"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3e64a3934dc244acae146acfe6a4c590" source="view-transition-storage-app-crm-asis" target="view-transition-storage-svc-attendance-asis" archimateRelationship="id-bf662a6f82b8481eb3fa927b7384d4b1">
+              <bendpoint startX="162" startY="-122" endX="-28" endY="101"/>
+            </sourceConnection>
+            <sourceConnection xsi:type="archimate:Connection" id="id-b3fad0fd39a448e68fb9061bc480905e" source="view-transition-storage-app-crm-asis" target="view-transition-storage-app-cloud-crm-tobe" archimateRelationship="id-2361c6e3a06b4f4b8d6960069c9ba30f"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-digital-receipt-tobe" fillColor="" archimateElement="obj-digital-receipt-tobe">
-            <bounds x="770" y="320" width="180" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-cloud-crm-tobe" targetConnections="id-8a49548b155c4ea6a21b3000c950893e id-b3fad0fd39a448e68fb9061bc480905e" fillColor="" archimateElement="app-cloud-crm-tobe">
+            <bounds x="770" y="380" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-fc0985e0ea624dd9943f0659b13850ae" source="view-transition-storage-app-cloud-crm-tobe" target="view-transition-storage-svc-auto-attendance-tobe" archimateRelationship="id-69eb3c1ed818485fa06fb5ae7018af9a"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-obj-kpi-dashboard-tobe" fillColor="" archimateElement="obj-kpi-dashboard-tobe">
-            <bounds x="970" y="320" width="200" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-app-qr-scanner-tobe" targetConnections="id-5616ea11efc1403992e667692c73ee97" fillColor="" archimateElement="app-qr-scanner-tobe">
+            <bounds x="990" y="380" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-0f37b8c0108041ef99d4911d99962abd" source="view-transition-storage-app-qr-scanner-tobe" target="view-transition-storage-svc-digital-cards-tobe" archimateRelationship="id-cbaadb8031a2448eba33bd334b9b757c">
+              <bendpoint startX="-58" startY="-110" endX="-58" endY="113"/>
+            </sourceConnection>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-sales-asis" fillColor="" archimateElement="app-sales">
-            <bounds x="50" y="430" width="180" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-db-server-asis" fillColor="" archimateElement="tech-db-server">
+            <bounds x="50" y="480" width="180" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-2c48324c10e74c99b8bbb5aa19b89a4a" source="view-transition-storage-tech-db-server-asis" target="view-transition-storage-app-crm-asis" archimateRelationship="id-878f294a4f6f4953b35dbdb8afbf811c"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-abd8a6917e114534a9cb995e3a4adfd8" source="view-transition-storage-tech-db-server-asis" target="view-transition-storage-tech-cloud-db-tobe" archimateRelationship="id-e2e9bcf5ce844aed8676fbe8e831ddff"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-bi-analytics-tobe" fillColor="" archimateElement="app-bi-analytics-tobe">
-            <bounds x="770" y="430" width="200" height="60"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-cloud-db-tobe" targetConnections="id-abd8a6917e114534a9cb995e3a4adfd8" fillColor="" archimateElement="tech-cloud-db-tobe">
+            <bounds x="770" y="480" width="200" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8a49548b155c4ea6a21b3000c950893e" source="view-transition-storage-tech-cloud-db-tobe" target="view-transition-storage-app-cloud-crm-tobe" archimateRelationship="id-8161686ffc5140d09def1da58ca1fd60"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-app-payment-gateway-tobe" fillColor="" archimateElement="app-payment-gateway-tobe">
-            <bounds x="990" y="430" width="200" height="60"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-reporting-server-asis" fillColor="" archimateElement="tech-report-server">
-            <bounds x="50" y="530" width="180" height="60"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-printer-asis" fillColor="" archimateElement="tech-printer">
-            <bounds x="250" y="530" width="120" height="60"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-analytics-server-tobe" fillColor="" archimateElement="tech-analytics-server-tobe">
-            <bounds x="770" y="530" width="200" height="60"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-transition-reporting-tech-payment-terminal-tobe" fillColor="" archimateElement="tech-payment-terminal-tobe">
-            <bounds x="990" y="530" width="200" height="60"/>
-          </child>
-        </child>
-      </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="Transition Architecture — Клиенты" id="view-transition-clients">
-        <child xsi:type="archimate:Group" id="grp-transition-clients" name="Transition: Клиенты AS-IS → TO-BE" fillColor="">
-          <bounds x="24" y="24" width="1600" height="850"/>
-          <child xsi:type="archimate:Note" id="note-transition-clients-asis" fillColor="">
-            <bounds x="50" y="50" width="400" height="90"/>
-            <content>AS-IS: Ручная запись через администратора, телефон, бумажное расписание, оплата наличными/картой на стойке.
-ПРОБЛЕМЫ: Очереди, ошибки записи, нет онлайн доступа, низкая прозрачность баланса посещений</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-asis" fillColor="" archimateElement="actor-client">
-            <bounds x="50" y="170" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-frontdesk-asis" fillColor="" archimateElement="actor-admin">
-            <bounds x="250" y="170" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-asis" fillColor="" archimateElement="role-client">
-            <bounds x="50" y="250" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-frontdesk-asis" fillColor="" archimateElement="role-frontdesk">
-            <bounds x="250" y="250" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-asis" fillColor="" archimateElement="proc-client-booking">
-            <bounds x="50" y="330" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-subscription-asis" fillColor="" archimateElement="proc-sell-subscription">
-            <bounds x="250" y="330" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-asis" fillColor="" archimateElement="proc-check-in">
-            <bounds x="50" y="410" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-desk-asis" fillColor="" archimateElement="iface-desk">
-            <bounds x="250" y="410" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-asis" fillColor="" archimateElement="obj-paper-schedule" type="1">
-            <bounds x="50" y="490" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-client-card-asis" fillColor="" archimateElement="obj-client-card" type="1">
-            <bounds x="250" y="490" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-asis" fillColor="" archimateElement="app-booking">
-            <bounds x="50" y="570" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-crm-asis" fillColor="" archimateElement="app-crm">
-            <bounds x="250" y="570" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-asis" fillColor="" archimateElement="data-schedule">
-            <bounds x="50" y="650" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-asis" fillColor="" archimateElement="data-client-card">
-            <bounds x="250" y="650" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-asis" fillColor="" archimateElement="tech-admin-pc">
-            <bounds x="50" y="730" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-phone-asis" fillColor="" archimateElement="tech-phone-device">
-            <bounds x="250" y="730" width="190" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="note-transition-clients-hybrid" fillColor="">
-            <bounds x="550" y="50" width="420" height="90"/>
-            <content>ПЕРЕХОД (6-9 мес): Внедрение веб-портала и мобильного приложения, гибридная запись (стойка + онлайн), обучение клиентов, постепенный переход на онлайн оплаты</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-client-trans" fillColor="" archimateElement="actor-client">
-            <bounds x="550" y="170" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-trans" fillColor="" archimateElement="actor-client">
-            <bounds x="750" y="170" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-client-trans" fillColor="" archimateElement="role-client">
-            <bounds x="550" y="250" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-service-trans" fillColor="" archimateElement="role-client">
-            <bounds x="750" y="250" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-booking-trans" fillColor="" archimateElement="proc-client-booking">
-            <bounds x="550" y="330" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-trans" fillColor="" archimateElement="proc-self-booking-tobe">
-            <bounds x="750" y="330" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-checkin-trans" fillColor="" archimateElement="proc-check-in">
-            <bounds x="550" y="410" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-iface-web-trans" fillColor="" archimateElement="iface-web-tobe">
-            <bounds x="750" y="410" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-schedule-trans" fillColor="" archimateElement="obj-paper-schedule" type="1">
-            <bounds x="550" y="490" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-trans" fillColor="" archimateElement="obj-cloud-schedule-tobe" type="1">
-            <bounds x="750" y="490" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-booking-trans" fillColor="" archimateElement="app-booking">
-            <bounds x="550" y="570" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-trans" fillColor="" archimateElement="app-web-portal-tobe">
-            <bounds x="750" y="570" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-schedule-trans" fillColor="" archimateElement="data-schedule">
-            <bounds x="550" y="650" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-trans" fillColor="" archimateElement="data-cloud-schedule-tobe">
-            <bounds x="750" y="650" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-pc-trans" fillColor="" archimateElement="tech-admin-pc">
-            <bounds x="550" y="730" width="180" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-trans" fillColor="" archimateElement="tech-aws-cloud-tobe">
-            <bounds x="750" y="730" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="note-transition-clients-tobe" fillColor="">
-            <bounds x="1070" y="50" width="480" height="90"/>
-            <content>TO-BE: 100% онлайн-запись через мобильное приложение и веб-портал, бесконтактный QR-вход, онлайн-оплаты, push-уведомления, персонализированные рекомендации.
-РЕЗУЛЬТАТ: Время записи -80%, удовлетворенность клиентов +40%, конверсия онлайн-оплат 85%</content>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-online-tobe" fillColor="" archimateElement="actor-client">
-            <bounds x="1070" y="170" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-actor-mobile-tobe" fillColor="" archimateElement="actor-client">
-            <bounds x="1290" y="170" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-self-tobe" fillColor="" archimateElement="role-client">
-            <bounds x="1070" y="250" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-role-mobile-user-tobe" fillColor="" archimateElement="role-client">
-            <bounds x="1290" y="250" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-booking-tobe" fillColor="" archimateElement="svc-online-booking-tobe">
-            <bounds x="1070" y="330" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-svc-payment-tobe" fillColor="" archimateElement="svc-online-payment-tobe">
-            <bounds x="1290" y="330" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-self-booking-tobe" fillColor="" archimateElement="proc-self-booking-tobe">
-            <bounds x="1070" y="410" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-proc-qr-checkin-tobe" fillColor="" archimateElement="proc-qr-checkin-tobe">
-            <bounds x="1290" y="410" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-cloud-schedule-tobe" fillColor="" archimateElement="obj-cloud-schedule-tobe" type="1">
-            <bounds x="1070" y="490" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-obj-digital-balance-tobe" fillColor="" archimateElement="obj-visit-balance" type="1">
-            <bounds x="1290" y="490" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-mobile-tobe" fillColor="" archimateElement="app-mobile-tobe">
-            <bounds x="1070" y="570" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-app-web-tobe" fillColor="" archimateElement="app-web-portal-tobe">
-            <bounds x="1290" y="570" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-cloud-schedule-tobe" fillColor="" archimateElement="data-cloud-schedule-tobe">
-            <bounds x="1070" y="650" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-data-client-profile-tobe" fillColor="" archimateElement="data-digital-profile-tobe">
-            <bounds x="1290" y="650" width="240" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-smartphone-tobe" fillColor="" archimateElement="tech-smartphone-tobe">
-            <bounds x="1070" y="730" width="200" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="view-trans-clients-tech-cloud-tobe" fillColor="" archimateElement="tech-aws-cloud-tobe">
-            <bounds x="1290" y="730" width="240" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="view-transition-storage-tech-qr-scanner-tobe" fillColor="" archimateElement="tech-qr-scanner-tobe">
+            <bounds x="990" y="480" width="150" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5616ea11efc1403992e667692c73ee97" source="view-transition-storage-tech-qr-scanner-tobe" target="view-transition-storage-app-qr-scanner-tobe" archimateRelationship="id-c7890ac95a514bab834a74f01a8381b7"/>
           </child>
         </child>
       </element>
