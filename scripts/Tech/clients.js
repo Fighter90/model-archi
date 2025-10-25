@@ -1,7 +1,7 @@
 /**
- * @name Generate Technology Views - Fitness Club (AS-IS & TO-BE)
- * @description Создаёт 8 Technology Layer Views (4 AS-IS + 4 TO-BE) с минимум 40 элементами каждая
- * @version 1.1
+ * @name Generate Technology Layer Views - Fitness Club (Optimized v2.2)
+ * @description Создаёт 2 Technology Layer Integrated Views (AS-IS + TO-BE) с 3 областями
+ * @version 2.2 — Strict Element Count + More Relationships
  * @author Claude AI Assistant
  * @lastModifiedDate 2025-10-25
  * @archimateVersion 3.2
@@ -19,59 +19,43 @@ function logConsole(message, data) {
     }
 }
 
-logConsole("=== Technology Layer Generator v1.1 (Fixed) ===");
+logConsole("=== Technology Layer Generator v2.2 (Strict) ===");
 
 // ============================================================
 // КОНФИГУРАЦИЯ
 // ============================================================
-const ANTHROPIC_API_KEY = "";
+const ANTHROPIC_API_KEY = ""; // ← ВСТАВЬТЕ ВАШ API KEY
 const ANTHROPIC_MODEL = "claude-sonnet-4-20250514";
 const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
 const ANTHROPIC_API_VERSION = "2023-06-01";
-const API_TIMEOUT = 180000;
-const MAX_TOKENS = 28000;
-const MAX_RETRIES = 3;
+const API_TIMEOUT = 360000; // 6 минут
+const MAX_TOKENS = 20000; // Уменьшено для быстрой генерации
+const MAX_RETRIES = 2;
 
+// Только 2 integrated views
 const VIEWS_CONFIG = [
-    // AS-IS Views
-    { phase: "AS-IS", area: "Integrated", viewType: "Integrated" },
-    { phase: "AS-IS", area: "Запись", viewType: "Area" },
-    { phase: "AS-IS", area: "Хранение", viewType: "Area" },
-    { phase: "AS-IS", area: "Отчётность", viewType: "Area" },
-    
-    // TO-BE Views
-    { phase: "TO-BE", area: "Integrated", viewType: "Integrated" },
-    { phase: "TO-BE", area: "Запись", viewType: "Area" },
-    { phase: "TO-BE", area: "Хранение", viewType: "Area" },
-    { phase: "TO-BE", area: "Отчётность", viewType: "Area" }
+    { phase: "AS-IS", viewType: "Integrated" },
+    { phase: "TO-BE", viewType: "Integrated" }
 ];
 
-// Цвет Technology Layer по ArchiMate 3.2
-const TECH_COLOR = "#C9E7B7"; // Technology Green (Archi default)
+// Три области на каждой view
+const AREAS = ["Запись", "Хранение", "Отчётность"];
 
-// ============================================================
-// ПОЛУЧЕНИЕ МОДЕЛИ
-// ============================================================
-function getTargetModel() {
-    try {
-        if (typeof model !== 'undefined' && model) {
-            logConsole(`✓ Found model: ${model.name}`);
-            return model;
-        }
-        
-        const models = $("archimate-model");
-        if (models && models.size() > 0) {
-            const foundModel = models.first();
-            logConsole(`✓ Found model via $(): ${foundModel.name}`);
-            return foundModel;
-        }
-        
-        throw new Error("No ArchiMate model found! Please open model_fitnes.archimate in Archi.");
-    } catch (e) {
-        logConsole(`✗ getTargetModel error: ${e.message}`);
-        throw e;
-    }
-}
+// Цвет Technology Layer
+const TECH_COLOR = "#C9E7B7";
+
+// Layout config для прямоугольного размещения
+const LAYOUT_CONFIG = {
+    MARGIN_LEFT: 80,
+    MARGIN_TOP: 80,
+    AREA_WIDTH: 800,
+    AREA_HEIGHT: 520,
+    HORIZONTAL_GAP: 100,
+    VERTICAL_GAP: 60,
+    ELEMENT_WIDTH: 170,
+    ELEMENT_HEIGHT: 70,
+    ELEMENTS_PER_ROW: 3
+};
 
 // ============================================================
 // HTTP CLIENT
@@ -125,463 +109,145 @@ function callAnthropicAPI(prompt) {
 }
 
 // ============================================================
-// ПРОМПТ ДЛЯ TECHNOLOGY LAYER (ИСПРАВЛЕННЫЙ)
+// ПРОМПТ ДЛЯ INTEGRATED VIEW (СТРОГИЕ ОГРАНИЧЕНИЯ)
 // ============================================================
-function buildTechnologyPrompt(phase, area, viewType) {
+function buildIntegratedPrompt(phase) {
     const isASIS = phase === "AS-IS";
-    const isIntegrated = viewType === "Integrated";
+    const elementsPerArea = isASIS ? "15-17" : "18-20";
+    const totalElements = isASIS ? "45-51" : "54-60";
+    const relationshipsPerArea = isASIS ? "30-35" : "35-40";
+    const totalRelationships = isASIS ? "90-105" : "105-120";
     
-    let contextDescription = "";
-    
-    if (isASIS && isIntegrated) {
-        contextDescription = `
-## КОНТЕКСТ AS-IS (Integrated):
-Текущая IT-инфраструктура фитнес-клуба ООО "Спорт+" — фрагментированная, устаревшая, с минимальной автоматизацией.
-
-**Ключевые характеристики:**
-- Локальные серверы Windows Server 2012 на устаревшем железе
-- Отсутствие облачных технологий и виртуализации
-- Разрозненные системы: Excel на ПК администраторов, локальная MySQL 5.x
-- Файловые хранилища на сетевом диске (NAS)
-- Телефонная линия (PBX) как основной канал связи с клиентами
-- Минимальная сетевая инфраструктура: коммутатор 100 Мбит/с, один роутер
-- Резервное копирование на внешний USB-диск вручную раз в неделю
-- Отсутствие мониторинга и логирования
-
-**Типовые проблемы:**
-- Низкая отказоустойчивость: падение сервера = остановка работы
-- Нет резервирования критичных сервисов
-- Отсутствие мобильного доступа для клиентов и тренеров
-- Ручное управление конфигурациями и обновлениями
-- Невозможность масштабирования при росте клиентской базы
-`;
-    } else if (isASIS) {
-        contextDescription = `
-## КОНТЕКСТ AS-IS (${area}):
-Фрагмент инфраструктуры для области "${area}" в текущем состоянии.
-
-**${area === "Запись" ? `
-### Инфраструктура записи клиентов (AS-IS):
-**Устройства:**
-- ПК администратора (Desktop PC Intel Core i3, 4GB RAM, HDD 500GB)
-- Стационарный телефон (Panasonic KX-TS)
-- Принтер для квитанций (HP LaserJet P1102)
-
-**Серверы и ПО:**
-- Файловый сервер (Windows Server 2012, локальная сеть)
-- База данных расписаний (MySQL 5.5 на том же сервере)
-- Microsoft Excel 2010 (локальная установка на ПК администратора)
-
-**Сеть:**
-- Локальная сеть 100 Мбит/с (коммутатор TP-Link)
-- Роутер с подключением к интернету (DSL 10 Мбит/с)
-
-**Процессы:**
-- Ручной поиск слотов в Excel-файле
-- Запись данных клиента в локальную базу
-- Печать квитанции на принтере
-` : area === "Хранение" ? `
-### Инфраструктура хранения данных (AS-IS):
-**Серверы:**
-- Файловый сервер (Windows Server 2012, RAID 1, 2TB)
-- База данных клиентов (MySQL 5.5, отдельный сервер)
-- NAS для резервных копий (Synology DS218+, 4TB)
-
-**Устройства:**
-- ПК менеджера (Desktop PC для работы с БД)
-- Сканер документов (Canon CanoScan)
-
-**ПО:**
-- MySQL Workbench (для управления БД)
-- Windows File Explorer (для навигации по файлам)
-- WinRAR (для архивации данных)
-
-**Сеть:**
-- Локальная сеть 100 Мбит/с
-- Сетевое хранилище (NAS) в той же подсети
-
-**Процессы:**
-- Ручное резервное копирование раз в неделю
-- Синхронизация файлов расписаний между серверами (вручную через копирование)
-- Ручная очистка устаревших данных раз в квартал
-` : `
-### Инфраструктура отчётности (AS-IS):
-**Устройства:**
-- ПК менеджера (Desktop PC Intel Core i5, 8GB RAM)
-- Принтер для отчётов (HP OfficeJet Pro)
-
-**Серверы и ПО:**
-- База данных продаж (MySQL 5.5 на локальном сервере)
-- Microsoft Excel 2010 (для ручного формирования отчётов)
-- Файловый сервер для хранения отчётов (Windows Server 2012)
-
-**Сеть:**
-- Локальная сеть 100 Мбит/с
-- Роутер для подключения к интернету (только для email)
-
-**Процессы:**
-- Ручная выгрузка данных из БД в Excel
-- Формирование сводных таблиц вручную
-- Печать отчётов для руководства
-- Email-рассылка PDF-отчётов раз в неделю
-`}
-`;
-    } else if (!isASIS && isIntegrated) {
-        contextDescription = `
-## КОНТЕКСТ TO-BE (Integrated):
-Целевая архитектура — облачная, масштабируемая, высокодоступная, с автоматизацией и мониторингом.
-
-**Ключевые изменения:**
-- Переход на облачную инфраструктуру (AWS или Azure)
-- Контейнеризация приложений (Docker) и оркестрация (Kubernetes)
-- Микросервисная архитектура с API Gateway для интеграции
-- Мобильные устройства клиентов (iOS/Android приложения)
-- CDN для быстрой загрузки статического контента
-- Автоматическое резервное копирование с репликацией в другой регион
-- Централизованный мониторинг (Prometheus + Grafana) и логирование (ELK Stack)
-- Load Balancer для распределения нагрузки
-- Auto-scaling для масштабирования при пиковых нагрузках
-
-**Технологический стек:**
-- Cloud VMs: AWS EC2 или Azure Virtual Machines
-- Managed Databases: AWS RDS PostgreSQL или Azure SQL Database
-- Cloud Storage: AWS S3 или Azure Blob Storage
-- Container Orchestration: Kubernetes (EKS/AKS)
-- API Gateway: AWS API Gateway или Azure API Management
-- Notification Services: AWS SNS + FCM (Firebase Cloud Messaging)
-- Payment Gateway: Stripe API или YooKassa
-- CDN: AWS CloudFront или Azure CDN
-- Monitoring: Prometheus, Grafana, CloudWatch/Azure Monitor
-`;
-    } else {
-        contextDescription = `
-## КОНТЕКСТ TO-BE (${area}):
-Целевая инфраструктура для области "${area}".
-
-**${area === "Запись" ? `
-### Инфраструктура онлайн-записи (TO-BE):
-**Устройства клиентов:**
-- Мобильное приложение клиента (iOS/Android)
-- Web-приложение (PWA) в браузере
-- QR-сканер на входе в зал (Android-терминал)
-
-**Облачные серверы:**
-- API Gateway (AWS API Gateway / Nginx на AWS EC2)
-- Backend API Server (Docker-контейнеры на Kubernetes)
-- Cloud Database для слотов (AWS RDS PostgreSQL)
-- Redis Cache для сессий и быстрой проверки слотов
-
-**Сервисы:**
-- Push Notification Service (AWS SNS + FCM)
-- SMS Service (Twilio API)
-- Load Balancer (AWS ALB / Azure Load Balancer)
-- CDN для статики мобильного приложения (AWS CloudFront)
-
-**Сеть:**
-- Cloud Virtual Network (AWS VPC / Azure VNet)
-- Интернет (публичный доступ через HTTPS)
-
-**Процессы:**
-- Автоматическая проверка доступности слотов (API endpoint)
-- Real-time синхронизация расписания между устройствами
-- Автоматическая отправка уведомлений при подтверждении записи
-` : area === "Хранение" ? `
-### Инфраструктура облачного хранения (TO-BE):
-**Облачные сервисы:**
-- Cloud CRM System (Salesforce или HubSpot CRM на AWS/Azure)
-- Cloud Database — реляционная (AWS RDS PostgreSQL)
-- Cloud Database — NoSQL для логов (AWS DynamoDB / Azure Cosmos DB)
-- Object Storage для документов (AWS S3 / Azure Blob Storage)
-- Managed Backup Service (AWS Backup / Azure Backup)
-
-**Серверы:**
-- API Server для интеграции с мобильным приложением (Docker на Kubernetes)
-- Sync Service для синхронизации расписаний (микросервис в контейнере)
-- ETL Pipeline для миграции данных из AS-IS (AWS Glue / Azure Data Factory)
-
-**Устройства:**
-- Планшеты администраторов (iPad / Android-планшет)
-- ПК менеджера (обновлённый, с доступом к Cloud CRM через браузер)
-
-**Сеть:**
-- Cloud Virtual Network с приватными подсетями
-- VPN для безопасного доступа администраторов
-
-**Процессы:**
-- Автоматическое резервное копирование каждые 6 часов с репликацией
-- Синхронизация данных между CRM и мобильным приложением в реальном времени
-- Автоматическая архивация старых данных (старше 2 лет)
-` : `
-### Инфраструктура BI и аналитики (TO-BE):
-**Облачные платформы:**
-- BI Analytics Platform (Microsoft Power BI / Tableau на AWS)
-- Data Warehouse (AWS Redshift / Azure Synapse Analytics)
-- ETL Pipeline для агрегации данных (AWS Glue / Azure Data Factory)
-
-**Серверы:**
-- API для финансовых отчётов (RESTful API на Docker)
-- Notification Service для менеджеров (AWS SNS + Email)
-- Dashboard Hosting (Cloud VM с nginx)
-
-**Устройства:**
-- ПК менеджера (с доступом к Power BI через браузер)
-- Мобильное приложение менеджера (iOS/Android) для просмотра дашбордов
-
-**Сервисы:**
-- Data Lake для хранения сырых данных (AWS S3 / Azure Data Lake)
-- Analytics Service (AWS QuickSight / Azure Analysis Services)
-- Scheduled Reports Service (автоматическая генерация отчётов раз в день)
-
-**Сеть:**
-- Cloud Virtual Network
-- Интернет (публичный доступ через HTTPS с OAuth 2.0)
-
-**Процессы:**
-- Автоматическая агрегация данных из всех источников (CRM, платёжная система, посещаемость)
-- Real-time обновление дашбордов
-- Автоматическая отправка email-отчётов руководству раз в неделю
-`}
-`;
-    }
-
     return `Ты — senior инфраструктурный архитектор, эксперт по ArchiMate 3.2 Technology & Physical Layer.
 
-ЗАДАЧА: Создать ${phase} Technology Layer для фитнес-клуба ООО "Спорт+".
+ЗАДАЧА: Создать ${phase} Technology Layer Integrated View для фитнес-клуба ООО "Спорт+".
 
-${contextDescription}
+## СТРОГИЕ ТРЕБОВАНИЯ:
+⚠️ **РОВНО ${elementsPerArea} элементов на каждую область** (итого ${totalElements})
+⚠️ **РОВНО ${relationshipsPerArea} связей на каждую область** (итого ${totalRelationships}+)
+⚠️ **Все элементы должны быть связаны**
+⚠️ **Связи не должны пересекать элементы** (горизонтальное/вертикальное размещение)
 
-## ТРЕБОВАНИЯ:
-✅ Минимум 40 элементов Technology Layer
-✅ 70-90 связей (serving-relationship, assignment, realization, composition, access)
-✅ Использовать ТОЛЬКО элементы Technology & Physical Layer:
-   - **node** (физические/виртуальные серверы, VM)
-   - **device** (ПК, телефоны, планшеты, принтеры, сканеры, роутеры)
-   - **system-software** (ОС, СУБД, middleware, Docker, Kubernetes)
-   - **technology-collaboration** (кластеры, балансировщики)
-   - **technology-interface** (API endpoints, сетевые интерфейсы)
-   - **path** (сетевые каналы связи)
-   - **communication-network** (LAN, WAN, VPC, Internet)
-   - **technology-function** (функции обработки запросов, синхронизации)
-   - **technology-process** (процессы бэкапа, мониторинга, деплоя)
-   - **technology-service** (хостинг, БД-сервис, CDN, уведомления)
-   - **artifact** (конфигурационные файлы, Docker Images, скрипты)
-
-## ✅ ТИПЫ СВЯЗЕЙ (СТРОГО по ArchiMate 3.2):
-1. **assignment-relationship**: Device → Node (устройство размещено на узле)
-2. **composition-relationship**: Node → System Software (узел содержит ПО)
-3. **realization-relationship**: System Software → Technology Service (ПО реализует сервис)
-4. **serving-relationship**: Technology Service → Application Component (сервис обслуживает приложение)
-5. **access-relationship**: Technology Function → Artifact (функция читает конфигурацию)
-6. **association-relationship**: Network → Node (сеть соединяет узлы)
-7. **aggregation-relationship**: Technology Collaboration → Node (кластер включает узлы)
-
-## СОСТАВ (минимум 40):
-
-**Nodes (10-12):**
+## КОНТЕКСТ:
 ${isASIS ? `
-- node "Сервер приложений" (Windows Server 2012)
-- node "Файловый сервер" (Windows Server 2012, RAID 1)
-- node "БД-сервер MySQL" (CentOS 6, MySQL 5.5)
-- node "ПК администратора" (Desktop PC)
-- node "ПК менеджера" (Desktop PC)
-- node "Резервный сервер" (старое железо для бэкапа)
-- node "Принт-сервер" (Windows Server 2008 R2)
-- node "Роутер офисный" (Cisco 800 Series)
-- node "Коммутатор" (TP-Link TL-SG1024)
-- node "NAS для бэкапов" (Synology DS218+)
+### AS-IS: Устаревшая локальная инфраструктура
+
+**3 области (СТРОГО 15-17 элементов на каждую):**
+
+1. **Запись (Booking)** — 16 элементов:
+   - 4 Nodes: ПК администратора (Core i3 4GB), Сервер приложений (Win Server 2012), БД-сервер (MySQL 5.5), Коммутатор TP-Link
+   - 3 Devices: Телефон Panasonic KX-TS, ПК Dell OptiPlex, Принтер HP LaserJet
+   - 3 System Software: Windows Server 2012, Excel 2010, MySQL 5.5
+   - 3 Services: Файловый сервис SMB, Служба MySQL, Телефонная служба PBX
+   - 2 Artifacts: Файлы Excel расписаний, Скрипты бэкапа .bat
+   - 1 Network: LAN 100 Мбит/с
+
+   **30 связей**: assignment (device→node), realization (software→service), serving (service→service), access (node→artifact), composition (node→software)
+
+2. **Хранение (Storage)** — 16 элементов:
+   - 4 Nodes: Файловый сервер (RAID 1 2TB), БД-сервер клиентов, NAS Synology DS218+, ПК менеджера
+   - 3 Devices: ПК менеджера Dell, Сканер Canon, NAS устройство
+   - 3 System Software: Windows Server 2012, MySQL 5.5, NTFS
+   - 3 Services: Служба резервного копирования, Сетевая папка SMB, Антивирус Kaspersky
+   - 2 Artifacts: my.cnf конфиг, Windows Event Log
+   - 1 Network: LAN
+
+   **30 связей**
+
+3. **Отчётность (Reporting)** — 16 элементов:
+   - 4 Nodes: ПК менеджера, БД продаж MySQL, Файловый сервер, Коммутатор
+   - 3 Devices: ПК менеджера, Принтер HP OfficeJet, Роутер D-Link
+   - 3 System Software: Excel 2010, MySQL Workbench, Python 2.7
+   - 3 Services: Email локальный, Служба печати, WSUS
+   - 2 Artifacts: Шаблоны Excel, Скрипты Python
+   - 1 Network: Интернет DSL 10 Мбит/с
+
+   **30 связей**
 ` : `
-- node "AWS EC2 Instance (App Server)" (t3.medium)
-- node "AWS RDS Instance (PostgreSQL 14)" (db.t3.large)
-- node "Load Balancer Node" (AWS ALB)
-- node "API Gateway Node" (AWS API Gateway managed)
-- node "CDN Edge Node" (CloudFront PoP)
-- node "Kubernetes Master Node" (EKS Control Plane)
-- node "Kubernetes Worker Node 1" (t3.large)
-- node "Kubernetes Worker Node 2" (t3.large)
-- node "Monitoring Server" (Prometheus on EC2)
-- node "Backup Server" (AWS S3 managed)
-- node "Redis Cache Node" (ElastiCache)
-- node "ETL Pipeline Node" (AWS Glue managed)
+### TO-BE: Облачная инфраструктура AWS
+
+**3 области (СТРОГО 18-20 элементов на каждую):**
+
+1. **Запись (Booking)** — 19 элементов:
+   - 5 Nodes: AWS EC2 API Server, RDS PostgreSQL, Load Balancer ALB, K8s Master EKS, CDN Edge CloudFront
+   - 4 Devices: Смартфон iOS, Смартфон Android, QR-сканер, Планшет iPad
+   - 4 System Software: Linux Ubuntu 22.04, Docker Engine, Kubernetes 1.28, PostgreSQL 14
+   - 3 Services: API Gateway, Push Notifications FCM, SMS Service Twilio
+   - 2 Artifacts: Docker Images, K8s Deployment YAML
+   - 1 Network: AWS VPC
+
+   **35 связей**: assignment, realization, serving, access, composition, aggregation
+
+2. **Хранение (Storage)** — 19 элементов:
+   - 5 Nodes: Cloud CRM Salesforce, RDS PostgreSQL, S3 Bucket, Backup Server, ETL Pipeline Glue
+   - 4 Devices: Планшет администратора, Смартфон тренера, ПК менеджера, Wi-Fi AP
+   - 4 System Software: PostgreSQL 14, Redis 7.x, Python 3.11, nginx 1.24
+   - 3 Services: Managed DB RDS, Cloud Storage S3, Backup Service
+   - 2 Artifacts: Terraform Config, Ansible Playbooks
+   - 1 Network: Private Subnet AWS
+
+   **35 связей**
+
+3. **Отчётность (Reporting)** — 19 элементов:
+   - 5 Nodes: BI Platform Power BI, Data Warehouse Redshift, ETL Glue, Monitoring Prometheus, Dashboard nginx
+   - 4 Devices: ПК менеджера, Смартфон менеджера, Планшет руководителя, Роутер Ubiquiti
+   - 4 System Software: Prometheus, Grafana, Python 3.11, Linux Ubuntu
+   - 3 Services: BI Analytics, CloudWatch Monitoring, Notification SNS
+   - 2 Artifacts: prometheus.yml, nginx.conf
+   - 1 Network: CDN CloudFront
+
+   **35 связей**
 `}
 
-**Devices (8-10):**
-${isASIS ? `
-- device "Телефон администратора" (Panasonic KX-TS)
-- device "ПК администратора" (Desktop PC Intel Core i3)
-- device "ПК менеджера" (Desktop PC Intel Core i5)
-- device "Принтер для квитанций" (HP LaserJet P1102)
-- device "Принтер для отчётов" (HP OfficeJet Pro)
-- device "Сканер документов" (Canon CanoScan)
-- device "Роутер офисный" (D-Link DIR-615)
-- device "Коммутатор" (TP-Link TL-SG1024)
-- device "NAS для резервного копирования" (Synology DS218+)
-` : `
-- device "Смартфон клиента (iOS/Android)"
-- device "Планшет администратора (iPad)"
-- device "QR-сканер на входе (Android-терминал)"
-- device "ПК менеджера (обновлённый)"
-- device "Смартфон тренера (iOS/Android)"
-- device "Умные часы клиента" (опционально, Apple Watch)
-- device "Роутер Wi-Fi (офис)" (Ubiquiti UniFi)
-- device "Wi-Fi Access Point (зал)" (Ubiquiti UniFi AP)
-`}
-
-**System Software (8-10):**
-${isASIS ? `
-- system-software "Windows Server 2012"
-- system-software "Microsoft Excel 2010"
-- system-software "MySQL 5.5"
-- system-software "Windows File System (NTFS)"
-- system-software "Антивирус (Kaspersky Endpoint)"
-- system-software "WinRAR (архиватор)"
-- system-software "MySQL Workbench"
-- system-software "Windows Backup Utility"
-` : `
-- system-software "Linux (Ubuntu Server 22.04)"
-- system-software "Docker Engine 24.x"
-- system-software "Kubernetes 1.28"
-- system-software "PostgreSQL 14"
-- system-software "Redis 7.x"
-- system-software "nginx 1.24 (Web Server)"
-- system-software "Prometheus (Monitoring)"
-- system-software "Grafana (Visualization)"
-- system-software "Node.js Runtime (для API)"
-- system-software "Python 3.11 (для ETL)"
-`}
-
-**Technology Services (10-12):**
-${isASIS ? `
-- technology-service "Локальный файловый сервис"
-- technology-service "Служба базы данных MySQL"
-- technology-service "Служба печати"
-- technology-service "Служба резервного копирования"
-- technology-service "Телефонная служба (PBX)"
-- technology-service "Служба электронной почты (локальная)"
-- technology-service "Служба сетевой папки (SMB/CIFS)"
-- technology-service "Служба антивируса"
-- technology-service "Служба мониторинга дисков (S.M.A.R.T.)"
-- technology-service "Служба обновления Windows (WSUS)"
-` : `
-- technology-service "Cloud Hosting Service (AWS EC2)"
-- technology-service "Managed Database Service (AWS RDS)"
-- technology-service "Cloud Storage Service (AWS S3)"
-- technology-service "CDN Service (CloudFront)"
-- technology-service "Push Notification Service (FCM + SNS)"
-- technology-service "SMS Service (Twilio API)"
-- technology-service "Payment Gateway Service (Stripe API)"
-- technology-service "Monitoring Service (CloudWatch + Prometheus)"
-- technology-service "Backup Service (AWS Backup)"
-- technology-service "Load Balancing Service (AWS ALB)"
-- technology-service "API Gateway Service (AWS API Gateway)"
-- technology-service "Container Orchestration Service (EKS)"
-`}
-
-**Artifacts (4-6):**
-${isASIS ? `
-- artifact "Конфигурационные файлы (my.cnf для MySQL)"
-- artifact "Скрипты резервного копирования (.bat)"
-- artifact "Файлы расписаний (Excel .xlsx)"
-- artifact "Логи системы (Windows Event Log)"
-- artifact "Файлы конфигурации роутера (.cfg)"
-` : `
-- artifact "Docker Images (API Server)"
-- artifact "Kubernetes Deployment YAML"
-- artifact "Terraform Configuration (Infrastructure as Code)"
-- artifact "Ansible Playbooks (автоматизация)"
-- artifact "Скрипты миграции данных (Python)"
-- artifact "Конфигурация nginx (nginx.conf)"
-- artifact "Prometheus Configuration (prometheus.yml)"
-`}
-
-**Networks (3-4):**
-${isASIS ? `
-- communication-network "Локальная сеть (LAN 100 Мбит/с)"
-- communication-network "Интернет (внешняя связь, DSL 10 Мбит/с)"
-- communication-network "Телефонная сеть (PSTN)"
-` : `
-- communication-network "Cloud Virtual Network (AWS VPC)"
-- communication-network "CDN Network (CloudFront)"
-- communication-network "Интернет (публичный доступ, HTTPS)"
-- communication-network "Private Subnet (для БД и бэкенда)"
-`}
-
-**Technology Functions (4-6):**
-${isASIS ? `
-- technology-function "Обработка запросов (ручной поиск в Excel)"
-- technology-function "Синхронизация файлов (ручное копирование)"
-- technology-function "Проверка доступности базы данных"
-- technology-function "Печать документов"
-` : `
-- technology-function "Request Processing (API Gateway)"
-- technology-function "Data Sync (real-time синхронизация)"
-- technology-function "Health Check (мониторинг состояния сервисов)"
-- technology-function "Log Aggregation (сбор логов)"
-- technology-function "Auto-scaling (автоматическое масштабирование)"
-- technology-function "Load Distribution (распределение нагрузки)"
-`}
-
-**Technology Processes (3-5):**
-${isASIS ? `
-- technology-process "Резервное копирование (вручную раз в неделю)"
-- technology-process "Обновление системы (вручную раз в месяц)"
-- technology-process "Проверка дисков (раз в квартал)"
-` : `
-- technology-process "Automated Backup Process (каждые 6 часов)"
-- technology-process "CI/CD Pipeline (автоматический деплой)"
-- technology-process "Infrastructure Monitoring (24/7)"
-- technology-process "Auto-scaling Process (динамическое масштабирование)"
-- technology-process "Security Patching Process (автоматические обновления)"
-`}
-
-## ФОРМАТ ОТВЕТА: JSON в тегах <technology_model>...</technology_model>
+## ФОРМАТ ОТВЕТА: JSON
 
 {
-  "description": "Technology Layer ${phase} для области ${area}",
-  "nodes": [
-    {"id": "n1", "type": "node", "name": "Сервер приложений", "description": "Windows Server 2012", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "d1", "type": "device", "name": "ПК администратора", "description": "Desktop PC", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "sw1", "type": "system-software", "name": "Windows Server", "description": "", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "ts1", "type": "technology-service", "name": "Служба базы данных", "description": "", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "net1", "type": "communication-network", "name": "Локальная сеть", "description": "LAN", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "art1", "type": "artifact", "name": "Конфигурация MySQL", "description": "my.cnf", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "fn1", "type": "technology-function", "name": "Обработка запросов", "description": "", "properties": {"Phase": "${phase}", "Area": "${area}"}},
-    {"id": "proc1", "type": "technology-process", "name": "Резервное копирование", "description": "Раз в неделю", "properties": {"Phase": "${phase}", "Area": "${area}"}}
-  ],
-  "relationships": [
-    {"source": "d1", "target": "n1", "type": "assignment-relationship", "name": "Подключается"},
-    {"source": "n1", "target": "sw1", "type": "composition-relationship", "name": "Содержит"},
-    {"source": "sw1", "target": "ts1", "type": "realization-relationship", "name": "Реализует"},
-    {"source": "ts1", "target": "fn1", "type": "serving-relationship", "name": "Обслуживает"},
-    {"source": "fn1", "target": "art1", "type": "access-relationship", "name": "Читает"},
-    {"source": "net1", "target": "n1", "type": "association-relationship", "name": "Соединяет"},
-    {"source": "proc1", "target": "n1", "type": "association-relationship", "name": "Выполняется на"}
+  "description": "Technology Layer ${phase} Integrated View",
+  "areas": {
+    "Запись": {
+      "nodes": [
+        {"id": "b_n1", "name": "ПК администратора", "type": "node", "description": "Core i3, 4GB RAM", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_n2", "name": "Сервер приложений", "type": "node", "description": "Windows Server 2012", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_d1", "name": "Телефон", "type": "device", "description": "Panasonic KX-TS", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_ss1", "name": "Windows Server 2012", "type": "system-software", "description": "ОС сервера", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_ts1", "name": "Файловый сервис", "type": "technology-service", "description": "SMB", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_a1", "name": "Файлы Excel", "type": "artifact", "description": "Расписания", "properties": {"Phase": "${phase}", "Area": "Запись"}},
+        {"id": "b_net1", "name": "LAN", "type": "communication-network", "description": "100 Мбит/с", "properties": {"Phase": "${phase}", "Area": "Запись"}}
+      ],
+      "relationships": [
+        {"source": "b_d1", "target": "b_n1", "type": "assignment-relationship", "name": "connected to"},
+        {"source": "b_n1", "target": "b_ss1", "type": "assignment-relationship", "name": "runs"},
+        {"source": "b_ss1", "target": "b_ts1", "type": "realization-relationship", "name": "realizes"},
+        {"source": "b_ts1", "target": "b_a1", "type": "access-relationship", "name": "reads"},
+        {"source": "b_n1", "target": "b_net1", "type": "assignment-relationship", "name": "connects to"}
+      ]
+    },
+    "Хранение": {
+      "nodes": [...],
+      "relationships": [...]
+    },
+    "Отчётность": {
+      "nodes": [...],
+      "relationships": [...]
+    }
+  },
+  "cross_area_relationships": [
+    {"source": "b_ts1", "target": "s_n1", "type": "serving-relationship", "name": "sends data to"}
   ]
 }
 
-⚠️ ВАЖНО:
-1. РОВНО 40-45 элементов (не меньше 40!)
-2. 70-90 связей (используй ПРАВИЛЬНЫЕ типы: assignment, composition, realization, serving, access)
-3. ВСЕ элементы должны быть связаны (нет изолированных узлов)
-4. Используй короткие id (n1, d1, sw1, ts1, net1, art1, fn1, proc1)
-5. Для каждого элемента property "Phase" и "Area"
-6. Описания 2-5 слов (для экономии токенов)
-7. НЕ используй serving-relationship для Device → Node (это ОШИБКА, используй assignment-relationship)
+⚠️ КРИТИЧЕСКИ ВАЖНО:
+1. **РОВНО ${elementsPerArea} элементов на область** (не больше, не меньше!)
+2. **РОВНО ${relationshipsPerArea} связей на область**
+3. **Короткие id**: b_n1, s_d1, r_ts1 (b=Запись, s=Хранение, r=Отчётность)
+4. **Все элементы связаны** (нет изолированных)
 
-ВЕРНИ ТОЛЬКО JSON в тегах <technology_model>...</technology_model> БЕЗ ЛИШНЕГО ТЕКСТА`;
+ВЕРНИ ТОЛЬКО JSON в тегах <technology_model>...</technology_model>`;
 }
 
 // ============================================================
-// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+// ИЗВЛЕЧЕНИЕ JSON
 // ============================================================
-function countByType(nodes) {
-    const counts = {};
-    for (let i = 0; i < nodes.length; i++) {
-        const type = nodes[i].type;
-        counts[type] = (counts[type] || 0) + 1;
-    }
-    return counts;
-}
-
 function extractJSON(content) {
     const taggedMatch = content.match(/<technology_model>([\s\S]*?)<\/technology_model>/);
     if (taggedMatch) {
@@ -597,27 +263,7 @@ function extractJSON(content) {
     
     if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
         logConsole("✓ Extracted JSON by braces");
-        const extracted = cleanContent.substring(firstBrace, lastBrace + 1);
-        
-        if (!extracted.endsWith('}')) {
-            logConsole("⚠ JSON truncated, attempting to fix...");
-            let fixed = extracted;
-            const openBraces = (fixed.match(/{/g) || []).length;
-            const closeBraces = (fixed.match(/}/g) || []).length;
-            const openBrackets = (fixed.match(/\[/g) || []).length;
-            const closeBrackets = (fixed.match(/\]/g) || []).length;
-            
-            for (let i = 0; i < (openBrackets - closeBrackets); i++) {
-                fixed += ']';
-            }
-            for (let i = 0; i < (openBraces - closeBraces); i++) {
-                fixed += '}';
-            }
-            
-            return fixed;
-        }
-        
-        return extracted;
+        return cleanContent.substring(firstBrace, lastBrace + 1);
     }
     
     logConsole("✗ No JSON found in response");
@@ -625,14 +271,45 @@ function extractJSON(content) {
 }
 
 // ============================================================
-// ГЕНЕРАЦИЯ С RETRY
+// ВАЛИДАЦИЯ КОЛИЧЕСТВА ЭЛЕМЕНТОВ
 // ============================================================
-function generateWithRetry(phase, area, viewType) {
+function validateElementCount(jsonObject, phase) {
+    const isASIS = phase === "AS-IS";
+    const minPerArea = isASIS ? 15 : 18;
+    const maxPerArea = isASIS ? 17 : 20;
+    const minTotal = isASIS ? 45 : 54;
+    const maxTotal = isASIS ? 51 : 60;
+    
+    let totalElements = 0;
+    let areaValid = true;
+    
+    for (let area in jsonObject.areas) {
+        const count = jsonObject.areas[area].nodes.length;
+        totalElements += count;
+        
+        if (count < minPerArea || count > maxPerArea) {
+            logConsole(`⚠ Area ${area}: ${count} elements (expected ${minPerArea}-${maxPerArea})`);
+            areaValid = false;
+        }
+    }
+    
+    if (totalElements < minTotal || totalElements > maxTotal) {
+        logConsole(`⚠ Total: ${totalElements} elements (expected ${minTotal}-${maxTotal})`);
+        return false;
+    }
+    
+    return areaValid && totalElements >= minTotal && totalElements <= maxTotal;
+}
+
+// ============================================================
+// ГЕНЕРАЦИЯ С RETRY И ВАЛИДАЦИЕЙ
+// ============================================================
+function generateWithRetry(phase) {
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        logConsole(`\n>>> Attempt ${attempt}/${MAX_RETRIES}: ${phase} ${area}`);
+        logConsole(`\n>>> Attempt ${attempt}/${MAX_RETRIES}: ${phase}`);
         
         try {
-            const prompt = buildTechnologyPrompt(phase, area, viewType);
+            const prompt = buildIntegratedPrompt(phase);
             
             logConsole("→ Calling Anthropic API...");
             const content = callAnthropicAPI(prompt);
@@ -647,20 +324,27 @@ function generateWithRetry(phase, area, viewType) {
             
             const jsonObject = JSON.parse(extractedJSON);
             
-            if (!jsonObject.nodes || !jsonObject.relationships) {
-                throw new Error("Missing nodes or relationships in JSON");
+            if (!jsonObject.areas) {
+                throw new Error("Missing 'areas' in JSON");
             }
             
-            const typeCounts = countByType(jsonObject.nodes);
-            const totalNodes = jsonObject.nodes.length;
-            
-            logConsole(`✓ Parsed: ${totalNodes} nodes, ${jsonObject.relationships.length} relationships`);
-            logConsole(`  Types: ${JSON.stringify(typeCounts)}`);
-            
-            if (totalNodes < 40) {
-                logConsole(`⚠ Only ${totalNodes}/40 nodes, retrying...`);
+            // ВАЛИДАЦИЯ КОЛИЧЕСТВА
+            if (!validateElementCount(jsonObject, phase)) {
+                logConsole("✗ Element count validation failed, retrying...");
                 if (attempt < MAX_RETRIES) continue;
+                throw new Error("Element count out of range after " + MAX_RETRIES + " attempts");
             }
+            
+            let totalNodes = 0;
+            let totalRels = 0;
+            for (let area in jsonObject.areas) {
+                totalNodes += jsonObject.areas[area].nodes.length;
+                if (jsonObject.areas[area].relationships) {
+                    totalRels += jsonObject.areas[area].relationships.length;
+                }
+            }
+            
+            logConsole(`✓ Validated: ${totalNodes} nodes, ${totalRels} relationships`);
             
             return jsonObject;
             
@@ -674,7 +358,31 @@ function generateWithRetry(phase, area, viewType) {
 }
 
 // ============================================================
-// СОЗДАНИЕ ЭЛЕМЕНТОВ
+// ПОЛУЧЕНИЕ МОДЕЛИ
+// ============================================================
+function getTargetModel() {
+    try {
+        if (typeof model !== 'undefined' && model) {
+            logConsole(`✓ Found model: ${model.name}`);
+            return model;
+        }
+        
+        const models = $("archimate-model");
+        if (models && models.size() > 0) {
+            const foundModel = models.first();
+            logConsole(`✓ Found model via $(): ${foundModel.name}`);
+            return foundModel;
+        }
+        
+        throw new Error("No ArchiMate model found!");
+    } catch (e) {
+        logConsole(`✗ getTargetModel error: ${e.message}`);
+        throw e;
+    }
+}
+
+// ============================================================
+// СОЗДАНИЕ ЭЛЕМЕНТА
 // ============================================================
 function createElement(targetModel, node) {
     try {
@@ -704,6 +412,9 @@ function createElement(targetModel, node) {
     }
 }
 
+// ============================================================
+// СОЗДАНИЕ СВЯЗИ
+// ============================================================
 function createRelationship(targetModel, source, target, relType, name) {
     const validTypes = [
         'association-relationship',
@@ -714,8 +425,7 @@ function createRelationship(targetModel, source, target, relType, name) {
         'aggregation-relationship',
         'access-relationship',
         'triggering-relationship',
-        'flow-relationship',
-        'specialization-relationship'
+        'flow-relationship'
     ];
     
     const type = validTypes.includes(relType) ? relType : 'association-relationship';
@@ -723,141 +433,153 @@ function createRelationship(targetModel, source, target, relType, name) {
     try {
         return targetModel.createRelationship(type, name || '', source, target);
     } catch (e) {
-        logConsole(`⚠ Failed to create ${relType}, using association: ${e.message}`);
         return targetModel.createRelationship('association-relationship', name || '', source, target);
     }
 }
 
 // ============================================================
-// СОЗДАНИЕ VIEW С ГРУППИРОВКОЙ ПО ТИПАМ
+// СОЗДАНИЕ INTEGRATED VIEW С ПРЯМОУГОЛЬНЫМ РАЗМЕЩЕНИЕМ
 // ============================================================
-function createTechnologyView(targetModel, phase, area, modelJson) {
-    const viewName = `Technology Layer — ${phase} — ${area}`;
+function createIntegratedView(targetModel, phase, modelJson) {
+    const viewName = `Technology Layer — ${phase} — Integrated`;
     const view = targetModel.createArchimateView(viewName);
     
-    const typeCounts = countByType(modelJson.nodes);
-    
-    view.documentation = `🖥️ Technology & Physical Layer: ${phase} ${area}\n\n` +
+    view.documentation = `🖥️ Technology & Physical Layer: ${phase} Integrated View\n\n` +
                         `${modelJson.description || ''}\n\n` +
-                        `Элементов: ${modelJson.nodes.length}, Связей: ${modelJson.relationships.length}\n\n` +
-                        `Статистика:\n${JSON.stringify(typeCounts, null, 2)}\n\n` +
+                        `3 области: Запись / Хранение / Отчётность\n` +
                         `ArchiMate 3.2, Technology Layer\n` +
-                        `Цветовая кодировка: #C9E7B7 (Technology Green)`;
+                        `Цвет: #C9E7B7 (Technology Green)`;
     
     view.prop("viewpoint", "technology");
     view.prop("Phase", phase);
-    view.prop("Area", area);
     
     const elementMap = {};
     const visualMap = {};
     
-    // Группировка по типам
-    const nodesByType = {
-        'node': [],
-        'device': [],
-        'system-software': [],
-        'technology-service': [],
-        'artifact': [],
-        'communication-network': [],
-        'technology-function': [],
-        'technology-process': [],
-        'technology-collaboration': [],
-        'technology-interface': [],
-        'path': []
-    };
+    // Размещение областей ГОРИЗОНТАЛЬНО
+    let areaX = LAYOUT_CONFIG.MARGIN_LEFT;
+    const areaY = LAYOUT_CONFIG.MARGIN_TOP;
     
-    for (let i = 0; i < modelJson.nodes.length; i++) {
-        const node = modelJson.nodes[i];
-        const type = node.type;
-        if (nodesByType[type]) {
-            nodesByType[type].push(node);
-        } else {
-            // Неизвестный тип — добавляем в отдельную группу
-            if (!nodesByType['other']) nodesByType['other'] = [];
-            nodesByType['other'].push(node);
+    const areaNames = ["Запись", "Хранение", "Отчётность"];
+    
+    for (let areaIdx = 0; areaIdx < areaNames.length; areaIdx++) {
+        const areaName = areaNames[areaIdx];
+        const areaData = modelJson.areas[areaName];
+        
+        if (!areaData || !areaData.nodes) {
+            logConsole(`⚠ No data for area: ${areaName}`);
+            continue;
         }
-    }
-    
-    // Размещение по типам
-    let xOffset = 50;
-    let yOffset = 50;
-    const columnWidth = 220;
-    const rowHeight = 100;
-    const itemsPerRow = 4;
-    
-    const typeOrder = ['node', 'device', 'system-software', 'technology-service', 
-                      'artifact', 'communication-network', 'technology-function', 
-                      'technology-process', 'technology-collaboration', 'technology-interface', 
-                      'path', 'other'];
-    
-    for (let typeIdx = 0; typeIdx < typeOrder.length; typeIdx++) {
-        const type = typeOrder[typeIdx];
-        const nodes = nodesByType[type];
         
-        if (!nodes || nodes.length === 0) continue;
+        logConsole(`\n  Processing area: ${areaName} (${areaData.nodes.length} nodes, ${areaData.relationships ? areaData.relationships.length : 0} relationships)`);
         
-        logConsole(`  Placing ${nodes.length} elements of type: ${type}`);
+        // Создаём grouping для области
+        const areaGrouping = targetModel.createElement('grouping', `IS ${areaName}`);
+        areaGrouping.prop("Area", areaName);
+        areaGrouping.prop("Phase", phase);
+        areaGrouping.documentation = `Область инфраструктуры: ${areaName}`;
         
-        for (let i = 0; i < nodes.length; i++) {
-            const node = nodes[i];
+        const areaVisual = view.add(areaGrouping, areaX, areaY, LAYOUT_CONFIG.AREA_WIDTH, LAYOUT_CONFIG.AREA_HEIGHT);
+        areaVisual.fillColor = "#EEEEEE";
+        areaVisual.opacity = 50;
+        
+        // Размещение элементов внутри области прямоугольной сеткой
+        let elementX = areaX + 35;
+        let elementY = areaY + 60;
+        let col = 0;
+        
+        for (let i = 0; i < areaData.nodes.length; i++) {
+            const node = areaData.nodes[i];
             try {
                 const element = createElement(targetModel, node);
                 elementMap[node.id] = element;
                 
-                const row = Math.floor(i / itemsPerRow);
-                const col = i % itemsPerRow;
-                
-                const x = xOffset + col * columnWidth;
-                const y = yOffset + row * rowHeight;
-                
-                const visualObj = view.add(element, x, y, 200, 80);
+                const visualObj = view.add(element, elementX, elementY, LAYOUT_CONFIG.ELEMENT_WIDTH, LAYOUT_CONFIG.ELEMENT_HEIGHT);
                 visualMap[node.id] = visualObj;
-                
-                // Применяем единый цвет Technology Layer
                 visualObj.fillColor = TECH_COLOR;
+                
+                // Переход к следующей позиции
+                col++;
+                if (col >= LAYOUT_CONFIG.ELEMENTS_PER_ROW) {
+                    col = 0;
+                    elementX = areaX + 35;
+                    elementY += LAYOUT_CONFIG.ELEMENT_HEIGHT + 12;
+                } else {
+                    elementX += LAYOUT_CONFIG.ELEMENT_WIDTH + 20;
+                }
                 
             } catch (e) {
                 logConsole(`✗ Failed to create element ${node.id}: ${e.message}`);
             }
         }
         
-        // Отступ между типами
-        const rowsUsed = Math.ceil(nodes.length / itemsPerRow);
-        yOffset += rowsUsed * rowHeight + 50;
+        // Создание связей внутри области
+        let createdRels = 0;
+        if (areaData.relationships) {
+            for (let i = 0; i < areaData.relationships.length; i++) {
+                const rel = areaData.relationships[i];
+                try {
+                    const sourceElement = elementMap[rel.source];
+                    const targetElement = elementMap[rel.target];
+                    const sourceVisual = visualMap[rel.source];
+                    const targetVisual = visualMap[rel.target];
+                    
+                    if (sourceElement && targetElement && sourceVisual && targetVisual) {
+                        const relationship = createRelationship(
+                            targetModel, 
+                            sourceElement, 
+                            targetElement, 
+                            rel.type, 
+                            rel.name || ''
+                        );
+                        view.add(relationship, sourceVisual, targetVisual);
+                        createdRels++;
+                    }
+                } catch (e) {
+                    // Пропускаем ошибки связей
+                }
+            }
+        }
+        
+        logConsole(`  ✓ Created ${createdRels} relationships in ${areaName}`);
+        
+        // Сдвиг к следующей области
+        areaX += LAYOUT_CONFIG.AREA_WIDTH + LAYOUT_CONFIG.HORIZONTAL_GAP;
     }
     
-    logConsole(`✓ Created ${Object.keys(elementMap).length}/${modelJson.nodes.length} elements`);
+    logConsole(`✓ Created ${Object.keys(elementMap).length} elements`);
     
-    // Создание связей
-    let relCreated = 0;
-    for (let i = 0; i < modelJson.relationships.length; i++) {
-        const rel = modelJson.relationships[i];
-        try {
-            const sourceElement = elementMap[rel.source];
-            const targetElement = elementMap[rel.target];
-            const sourceVisual = visualMap[rel.source];
-            const targetVisual = visualMap[rel.target];
-            
-            if (sourceElement && targetElement && sourceVisual && targetVisual) {
-                const relationship = createRelationship(
-                    targetModel, 
-                    sourceElement, 
-                    targetElement, 
-                    rel.type, 
-                    rel.name || ''
-                );
+    // Создание связей между областями
+    let crossRels = 0;
+    if (modelJson.cross_area_relationships) {
+        logConsole(`  Creating ${modelJson.cross_area_relationships.length} cross-area relationships`);
+        for (let i = 0; i < modelJson.cross_area_relationships.length; i++) {
+            const rel = modelJson.cross_area_relationships[i];
+            try {
+                const sourceElement = elementMap[rel.source];
+                const targetElement = elementMap[rel.target];
+                const sourceVisual = visualMap[rel.source];
+                const targetVisual = visualMap[rel.target];
                 
-                view.add(relationship, sourceVisual, targetVisual);
-                relCreated++;
-            } else {
-                logConsole(`⚠ Missing elements for relationship ${i + 1}: ${rel.source} → ${rel.target}`);
+                if (sourceElement && targetElement && sourceVisual && targetVisual) {
+                    const relationship = createRelationship(
+                        targetModel, 
+                        sourceElement, 
+                        targetElement, 
+                        rel.type, 
+                        rel.name || ''
+                    );
+                    view.add(relationship, sourceVisual, targetVisual);
+                    crossRels++;
+                }
+            } catch (e) {
+                // Пропускаем ошибки связей
             }
-        } catch (e) {
-            logConsole(`✗ Relationship ${i + 1} failed: ${e.message}`);
         }
     }
     
-    logConsole(`✓ Created ${relCreated}/${modelJson.relationships.length} relationships`);
+    logConsole(`  ✓ Created ${crossRels} cross-area relationships`);
+    
     return view;
 }
 
@@ -867,7 +589,7 @@ function createTechnologyView(targetModel, phase, area, modelJson) {
 function main() {
     try {
         logConsole('\n========================================');
-        logConsole('=== Technology Layer Generator v1.1 ===');
+        logConsole('=== Technology Layer Generator v2.2 ===');
         logConsole('========================================');
         
         const targetModel = getTargetModel();
@@ -876,32 +598,43 @@ function main() {
         
         for (let i = 0; i < VIEWS_CONFIG.length; i++) {
             const config = VIEWS_CONFIG[i];
-            logConsole(`\n=== View ${i + 1}/${VIEWS_CONFIG.length}: ${config.phase} ${config.area} ===`);
+            logConsole(`\n=== View ${i + 1}/2: ${config.phase} Integrated ===`);
             
             try {
-                const modelJson = generateWithRetry(config.phase, config.area, config.viewType);
+                const modelJson = generateWithRetry(config.phase);
                 
-                if (!modelJson || !modelJson.nodes || !modelJson.relationships) {
+                if (!modelJson || !modelJson.areas) {
                     throw new Error("Invalid JSON structure");
                 }
                 
-                createTechnologyView(targetModel, config.phase, config.area, modelJson);
+                createIntegratedView(targetModel, config.phase, modelJson);
+                
+                let totalElements = 0;
+                let totalRels = 0;
+                for (let area in modelJson.areas) {
+                    totalElements += modelJson.areas[area].nodes.length;
+                    if (modelJson.areas[area].relationships) {
+                        totalRels += modelJson.areas[area].relationships.length;
+                    }
+                }
+                
+                if (modelJson.cross_area_relationships) {
+                    totalRels += modelJson.cross_area_relationships.length;
+                }
                 
                 results.push({
                     phase: config.phase,
-                    area: config.area,
-                    elements: modelJson.nodes.length,
-                    relationships: modelJson.relationships.length,
+                    elements: totalElements,
+                    relationships: totalRels,
                     success: true
                 });
                 
-                logConsole(`✓ ${config.phase} ${config.area}: OK`);
+                logConsole(`✓ ${config.phase}: OK (${totalElements} elements, ${totalRels} relationships)`);
                 
             } catch (error) {
-                logConsole(`✗ ${config.phase} ${config.area}: FAILED - ${error.message}`);
+                logConsole(`✗ ${config.phase}: FAILED - ${error.message}`);
                 results.push({
                     phase: config.phase,
-                    area: config.area,
                     elements: 0,
                     relationships: 0,
                     success: false,
@@ -923,27 +656,26 @@ function main() {
         }
         
         logConsole(`\nРезультаты генерации:`);
-        logConsole(`  Успешно создано: ${successCount}/${results.length} views`);
+        logConsole(`  Успешно создано: ${successCount}/2 integrated views`);
         logConsole(`  Всего элементов: ${totalElements}`);
         logConsole(`  Всего связей: ${totalRels}`);
         
         for (let i = 0; i < results.length; i++) {
             const r = results[i];
             if (r.success) {
-                logConsole(`  ${i + 1}. ${r.phase} ${r.area}: ✓ ${r.elements} элементов, ${r.relationships} связей`);
+                logConsole(`  ${i + 1}. ${r.phase}: ✓ ${r.elements} элементов, ${r.relationships} связей`);
             } else {
-                logConsole(`  ${i + 1}. ${r.phase} ${r.area}: ✗ ${r.error}`);
+                logConsole(`  ${i + 1}. ${r.phase}: ✗ ${r.error}`);
             }
         }
         
-        if (successCount === results.length) {
-            logConsole(`\n✅ ВСЕ Technology Views успешно созданы!`);
+        if (successCount === 2) {
+            logConsole(`\n✅ ОБЕ Technology Integrated Views успешно созданы!`);
             logConsole(`\n📌 Проверьте в Archi: Views → Technology Layer`);
-            logConsole(`\n🎨 Цветовая кодировка: #C9E7B7 (Technology Green)`);
-            logConsole(`\n⚙️ Следующий шаг: Tools → Validate Model для проверки корректности`);
+            logConsole(`\n🎯 AS-IS: 45-51 элемент, 90+ связей`);
+            logConsole(`\n🎯 TO-BE: 54-60 элементов, 105+ связей`);
         } else {
-            logConsole(`\n⚠️ Создано ${successCount}/${results.length} views`);
-            logConsole(`   Проверьте ошибки выше и повторите запуск для неудачных views`);
+            logConsole(`\n⚠️ Создано ${successCount}/2 views`);
         }
         
     } catch (error) {
