@@ -1,187 +1,308 @@
 /**
- * @name Generate Migration Views - Fitness Club
- * @description Создаёт 3 Migration Views для областей: Запись, Хранение, Отчётность (ArchiMate 3.2 compatible)
- * @version 3.9
+ * @name Generate Migration Views - Fitness Club (Optimized)
+ * @description Создаёт 3 Migration Views с 45 элементами каждая (оптимизировано)
+ * @version 4.4
  * @author Claude AI Assistant
- * @lastModifiedDate 2025-10-24
+ * @lastModifiedDate 2025-10-25
  */
 
 console.clear();
 console.show();
 
 function logConsole(message, data) {
-    console.log(`[${new Date().toISOString()}] ${message}`);
+    const timestamp = new Date().toISOString();
+    console.log(`[${timestamp}] ${message}`);
     if (data) {
         console.log(JSON.stringify(data, null, 2));
     }
 }
 
-logConsole("=== Migration Views Generator v3.9 ===");
+logConsole("=== Migration Views Generator v4.4 (Optimized) ===");
 
-// Configuration
+// ============================================================
+// КОНФИГУРАЦИЯ
+// ============================================================
 const ANTHROPIC_API_KEY = "";
-const ANTHROPIC_MODEL = "claude-sonnet-4-5-20250929";
+const ANTHROPIC_MODEL = "claude-sonnet-4-20250514";
 const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
 const ANTHROPIC_API_VERSION = "2023-06-01";
-const API_TIMEOUT = 120000;
-const MAX_TOKENS = 16384;
+const API_TIMEOUT = 180000;
+const MAX_TOKENS = 24000; // ✅ Оптимизировано
 const MAX_RETRIES = 3;
+const AREAS = ['Запись', 'Хранение', 'Отчётность'];
 
-logConsole("Configuration", {
-    model: ANTHROPIC_MODEL,
-    timeout: API_TIMEOUT,
-    maxTokens: MAX_TOKENS
-});
+// ============================================================
+// ЦВЕТОВАЯ КОДИРОВКА ПО СЛОЯМ ARCHIMATE
+// ============================================================
+const LAYER_COLORS = {
+    // Business Layer
+    "business-actor": "#FFFFB3",
+    "business-role": "#FFFFB3",
+    "business-collaboration": "#FFFFB3",
+    "business-interface": "#FFFFB3",
+    "business-process": "#FFFFB3",
+    "business-function": "#FFFFB3",
+    "business-interaction": "#FFFFB3",
+    "business-event": "#FFFFB3",
+    "business-service": "#FFFFB3",
+    "business-object": "#FFFFB3",
+    "contract": "#FFFFB3",
+    "representation": "#FFFFB3",
+    "product": "#FFFFB3",
+    
+    // Application Layer
+    "application-component": "#C0FFFF",
+    "application-collaboration": "#C0FFFF",
+    "application-interface": "#C0FFFF",
+    "application-function": "#C0FFFF",
+    "application-interaction": "#C0FFFF",
+    "application-process": "#C0FFFF",
+    "application-event": "#C0FFFF",
+    "application-service": "#C0FFFF",
+    "data-object": "#C0FFFF",
+    
+    // Technology Layer
+    "node": "#D6EEC3",
+    "device": "#D6EEC3",
+    "system-software": "#D6EEC3",
+    "technology-collaboration": "#D6EEC3",
+    "technology-interface": "#D6EEC3",
+    "path": "#D6EEC3",
+    "communication-network": "#D6EEC3",
+    "technology-function": "#D6EEC3",
+    "technology-process": "#D6EEC3",
+    "technology-interaction": "#D6EEC3",
+    "technology-event": "#D6EEC3",
+    "technology-service": "#D6EEC3",
+    "artifact": "#D6EEC3",
+    
+    // Implementation & Migration
+    "work-package": "#FFE4B5",
+    "deliverable": "#E0FFE0",
+    "implementation-event": "#FFE0F0",
+    "plateau": "#F0F0F0",
+    "gap": "#FFD0D0",
+    
+    // Motivation
+    "stakeholder": "#FFF8DC",
+    "driver": "#FFF8DC",
+    "assessment": "#FFF8DC",
+    "goal": "#FFF8DC",
+    "outcome": "#FFF8DC",
+    "principle": "#FFF8DC",
+    "requirement": "#FFF8DC",
+    "constraint": "#FFF8DC",
+    "meaning": "#FFF8DC",
+    "value": "#FFF8DC",
+    
+    // По умолчанию
+    "grouping": "#F5F5F5",
+    "location": "#F5F5F5"
+};
 
-const apiClient = require("./lib/apiClient");
-const anthropicApi = apiClient.create({
-    baseURL: ANTHROPIC_BASE_URL,
-    headers: {
-        "Content-Type": "application/json",
-        "X-API-Key": ANTHROPIC_API_KEY,
-        "anthropic-version": ANTHROPIC_API_VERSION,
-    },
-    debug: true,
-    timeout: API_TIMEOUT
-});
-
+// ============================================================
+// ПОЛУЧЕНИЕ МОДЕЛИ
+// ============================================================
 function getTargetModel() {
     try {
-        const models = $("archimate-model");
-        if (models && models.length > 0) {
-            return models.first();
-        }
-    } catch (e) {
-        logConsole(`⚠ Error getting model via $(): ${e.message}`);
-    }
-    
-    try {
         if (typeof model !== 'undefined' && model) {
+            logConsole(`✓ Found model: ${model.name}`);
             return model;
         }
+        
+        const models = $("archimate-model");
+        if (models && models.size() > 0) {
+            const foundModel = models.first();
+            logConsole(`✓ Found model via $(): ${foundModel.name}`);
+            return foundModel;
+        }
+        
+        throw new Error("No ArchiMate model found! Please open a model in Archi.");
+        
     } catch (e) {
-        logConsole(`⚠ Error getting model via global: ${e.message}`);
+        logConsole(`✗ getTargetModel error: ${e.message}`);
+        throw e;
     }
-    
-    throw new Error("No ArchiMate model found!");
 }
 
-function getOrCreateFolder(folderName) {
+// ============================================================
+// HTTP CLIENT
+// ============================================================
+function callAnthropicAPI(prompt) {
     try {
-        let viewsFolder = $("folder").filter(f => f.name === "Views").first();
+        const HttpClient = Java.type("java.net.http.HttpClient");
+        const HttpRequest = Java.type("java.net.http.HttpRequest");
+        const HttpResponse = Java.type("java.net.http.HttpResponse");
+        const URI = Java.type("java.net.URI");
+        const Duration = Java.type("java.time.Duration");
         
-        if (!viewsFolder) {
-            logConsole("⚠ Views folder not found, will create views in root");
-            return null;
+        const requestBody = JSON.stringify({
+            model: ANTHROPIC_MODEL,
+            max_tokens: MAX_TOKENS,
+            temperature: 0.3,
+            messages: [{ role: "user", content: prompt }]
+        });
+        
+        const request = HttpRequest.newBuilder()
+            .uri(URI.create(ANTHROPIC_BASE_URL + "/v1/messages"))
+            .header("Content-Type", "application/json")
+            .header("x-api-key", ANTHROPIC_API_KEY)
+            .header("anthropic-version", ANTHROPIC_API_VERSION)
+            .timeout(Duration.ofMillis(API_TIMEOUT))
+            .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+            .build();
+        
+        const client = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofMillis(API_TIMEOUT))
+            .build();
+        
+        const response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        
+        if (response.statusCode() !== 200) {
+            throw new Error(`API returned ${response.statusCode()}: ${response.body()}`);
         }
         
-        const existingFolder = $(viewsFolder).find("folder").filter(f => f.name === folderName).first();
+        const jsonResponse = JSON.parse(response.body());
         
-        if (existingFolder) {
-            logConsole(`✓ Found existing folder: ${folderName}`);
-            return existingFolder;
+        if (jsonResponse.stop_reason === "max_tokens") {
+            logConsole("⚠ Response was truncated due to max_tokens limit");
         }
         
-        logConsole(`→ Creating folder: ${folderName} in Views`);
-        const newFolder = viewsFolder.createFolder(folderName);
-        logConsole(`✓ Created folder: ${folderName}`);
-        return newFolder;
+        return jsonResponse.content[0].text;
         
     } catch (e) {
-        logConsole(`⚠ Error managing folder ${folderName}: ${e.message}`);
-        try {
-            return $("folder").filter(f => f.name === "Views").first();
-        } catch (e2) {
-            logConsole(`✗ Cannot access Views folder: ${e2.message}`);
-            return null;
-        }
+        logConsole(`✗ API call failed: ${e.message}`);
+        throw e;
     }
 }
 
-// MIGRATION PROMPT v3.9 (упрощённый для быстрой генерации)
-const MIGRATION_PROMPT = `Ты — архитектор предприятия, эксперт по ArchiMate 3.2.
+// ============================================================
+// ОПТИМИЗИРОВАННЫЙ ПРОМПТ v4.4 (45 элементов вместо 70)
+// ============================================================
+const MIGRATION_PROMPT_V4 = `Ты — senior архитектор, эксперт по ArchiMate 3.2.
 
-Создай Migration View для фитнес-клуба, область: {{AREA}}
+ЗАДАЧА: Создать компактную модель миграции (Implementation & Migration View) для {{AREA}}.
 
 КОНТЕКСТ:
-AS-IS (текущее):
-- Запись: телефон, бумажное расписание, двойное бронирование
-- Хранение: бумажные карточки, ручной поиск
-- Отчётность: Excel вручную
+- Фитнес-клуб, цифровая трансформация, 12 мес, 5 млн руб
+- AS-IS: телефоны, бумага, Excel
+- TO-BE: онлайн-запись, CRM, BI-дашборды
 
-TO-BE (целевое):
-- Запись: онлайн 24/7, автопроверка, SMS
-- Хранение: CRM, QR-коды, облако
-- Отчётность: BI дашборды, аналитика
+ТРЕБОВАНИЯ:
+✅ РОВНО 45 элементов (не больше!)
+✅ 80-100 связей (компактно)
+✅ ВСЕ слои: Business, Application, Technology, Migration
 
-ИСПОЛЬЗУЙ Implementation & Migration элементы:
-- work-package (WP1-WP5)
-- deliverable (результаты работ)
-- plateau (AS-IS, Transition, TO-BE)
-- gap (разрывы)
-- implementation-event (события проекта)
+СОСТАВ (СТРОГО):
 
-СТРУКТУРА:
-1. AS-IS Plateau
-2. Event: Начало проекта
-3. WP1: Анализ → Deliverable: Требования
-4. WP2: Разработка → Deliverable: Система
-5. Event: Завершение разработки
-6. WP3: Обучение → Deliverable: Персонал
-7. Transition Plateau + 2 Gap
-8. WP4: Миграция → Deliverable: Данные
-9. Event: Go-Live
-10. TO-BE Plateau
-11. WP5: Архивация → Deliverable: Архив
-12. Event: Закрытие
+1️⃣ BUSINESS (15 элементов):
+   • Actors (3): Клиент, Администратор, Менеджер
+   • Roles (3): Front Desk, Оператор CRM, Аналитик
+   • Processes (6): Запись AS-IS, Запись TO-BE, Проверка слотов, Учёт посещений, Формирование отчёта, Оплата
+   • Objects (3): Расписание, Карточка клиента, Отчёт
 
-СВЯЗИ (русские подписи):
-- triggering-relationship: "Запускает", "Инициирует"
-- flow-relationship: "Создаёт", "Производит"
-- realization-relationship: "Реализует"
-- association-relationship: "Связан с"
+2️⃣ APPLICATION (10 элементов):
+   • Components (5): Excel (AS-IS), Mobile App (TO-BE), Cloud CRM (TO-BE), BI Analytics (TO-BE), Payment Gateway (TO-BE)
+   • Services (3): Booking API, Client API, Analytics API
+   • Functions (2): Check Slot, Generate Report
 
-МИНИМУМ:
-- 5 work-package
-- 4 deliverable
-- 3 plateau
-- 2 gap
-- 4 implementation-event
-Итого ≥18 элементов, ≥20 связей
+3️⃣ TECHNOLOGY (8 элементов):
+   • Nodes (4): Admin PC (AS-IS), App Server (AS-IS), AWS Cloud (TO-BE), Azure VM (TO-BE)
+   • Devices (2): Phone (AS-IS), Smartphone (TO-BE)
+   • Services (2): Hosting, Database
 
-Верни ТОЛЬКО JSON (БЕЗ markdown):
+4️⃣ MIGRATION (12 элементов):
+   • Plateaus (3): AS-IS, Transition, TO-BE
+   • Work Packages (5): WP1 Анализ, WP2 Мобильное приложение, WP3 Cloud CRM, WP4 BI-дашборды, WP5 Миграция данных
+   • Deliverables (2): Приложение, CRM-система
+   • Gaps (2): Технологический разрыв, Функциональный разрыв
+
+ФОРМАТ ОТВЕТА: JSON в тегах <migration_model>...</migration_model>
+
+ПРИМЕР JSON (КОМПАКТНЫЙ):
+
 {
-  "description": "краткое описание",
-  "nodes": [{"id":"x","type":"plateau","name":"AS-IS","description":"текст","properties":{"Area":"{{AREA}}","Phase":"AS-IS"}}],
-  "relationships": [{"source":"id1","target":"id2","type":"triggering-relationship","name":"Запускает"}]
+  "description": "Миграция {{AREA}}: AS-IS → TO-BE",
+  "nodes": [
+    {"id": "p1", "type": "plateau", "name": "AS-IS ({{AREA}})", "description": "Текущее", "properties": {"Phase": "AS-IS"}},
+    {"id": "a1", "type": "business-actor", "name": "Клиент", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "a2", "type": "business-actor", "name": "Администратор", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "a3", "type": "business-actor", "name": "Менеджер", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "r1", "type": "business-role", "name": "Front Desk", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "r2", "type": "business-role", "name": "Оператор CRM", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "r3", "type": "business-role", "name": "Аналитик", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "pr1", "type": "business-process", "name": "Запись клиента (AS-IS)", "description": "Ручная", "properties": {"Phase": "AS-IS"}},
+    {"id": "pr2", "type": "business-process", "name": "Онлайн-запись (TO-BE)", "description": "Автоматическая", "properties": {"Phase": "TO-BE"}},
+    {"id": "pr3", "type": "business-process", "name": "Проверка слотов", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "pr4", "type": "business-process", "name": "Учёт посещений", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "pr5", "type": "business-process", "name": "Формирование отчёта", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "pr6", "type": "business-process", "name": "Оплата услуг", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "o1", "type": "business-object", "name": "Расписание", "description": "Бумажное", "properties": {"Phase": "AS-IS"}},
+    {"id": "o2", "type": "business-object", "name": "Карточка клиента", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "o3", "type": "business-object", "name": "Отчёт", "description": "Excel", "properties": {"Phase": "AS-IS"}},
+    {"id": "app1", "type": "application-component", "name": "Excel (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "app2", "type": "application-component", "name": "Mobile App (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "app3", "type": "application-component", "name": "Cloud CRM (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "app4", "type": "application-component", "name": "BI Analytics (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "app5", "type": "application-component", "name": "Payment Gateway (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "svc1", "type": "application-service", "name": "Booking API", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "svc2", "type": "application-service", "name": "Client API", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "svc3", "type": "application-service", "name": "Analytics API", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "fn1", "type": "application-function", "name": "Check Slot", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "fn2", "type": "application-function", "name": "Generate Report", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "n1", "type": "node", "name": "Admin PC (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "n2", "type": "node", "name": "App Server (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "n3", "type": "node", "name": "AWS Cloud (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "n4", "type": "node", "name": "Azure VM (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "d1", "type": "device", "name": "Phone (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "d2", "type": "device", "name": "Smartphone (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
+    {"id": "ts1", "type": "technology-service", "name": "Hosting", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "ts2", "type": "technology-service", "name": "Database", "description": "", "properties": {"Phase": "AS-IS"}},
+    {"id": "p2", "type": "plateau", "name": "Transition ({{AREA}})", "description": "Переход", "properties": {"Phase": "Transition"}},
+    {"id": "wp1", "type": "work-package", "name": "WP1: Анализ", "description": "1 мес", "properties": {"Phase": "Проект", "Duration": "1", "Budget": "300k"}},
+    {"id": "wp2", "type": "work-package", "name": "WP2: Мобильное приложение", "description": "3 мес", "properties": {"Phase": "Проект", "Duration": "3", "Budget": "1.5M"}},
+    {"id": "wp3", "type": "work-package", "name": "WP3: Cloud CRM", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "800k"}},
+    {"id": "wp4", "type": "work-package", "name": "WP4: BI-дашборды", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "700k"}},
+    {"id": "wp5", "type": "work-package", "name": "WP5: Миграция данных", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "400k"}},
+    {"id": "dl1", "type": "deliverable", "name": "Мобильное приложение", "description": "", "properties": {"Phase": "Проект"}},
+    {"id": "dl2", "type": "deliverable", "name": "CRM-система", "description": "", "properties": {"Phase": "Проект"}},
+    {"id": "g1", "type": "gap", "name": "Технологический разрыв", "description": "Бумага → Цифра", "properties": {"Phase": "Проект"}},
+    {"id": "g2", "type": "gap", "name": "Функциональный разрыв", "description": "Ручное → Автоматизация", "properties": {"Phase": "Проект"}},
+    {"id": "p3", "type": "plateau", "name": "TO-BE ({{AREA}})", "description": "Целевое", "properties": {"Phase": "TO-BE"}}
+  ],
+  "relationships": [
+    {"source": "wp1", "target": "wp2", "type": "association-relationship", "name": "Предшествует"},
+    {"source": "wp2", "target": "dl1", "type": "association-relationship", "name": "Создаёт"},
+    {"source": "wp3", "target": "dl2", "type": "association-relationship", "name": "Создаёт"},
+    {"source": "p1", "target": "g1", "type": "association-relationship", "name": "Имеет разрыв"},
+    {"source": "g1", "target": "p3", "type": "association-relationship", "name": "Преодолевается"},
+    {"source": "r1", "target": "pr1", "type": "association-relationship", "name": "Выполняет"},
+    {"source": "pr1", "target": "o1", "type": "association-relationship", "name": "Использует"},
+    {"source": "app1", "target": "pr1", "type": "association-relationship", "name": "Поддерживает"},
+    {"source": "n1", "target": "app1", "type": "association-relationship", "name": "Размещает"},
+    {"source": "d1", "target": "r1", "type": "association-relationship", "name": "Используется"}
+  ]
 }
 
-В тегах <migration_model>JSON</migration_model>`;
+⚠️ ВАЖНО:
+1. РОВНО 45 элементов (15 Business + 10 Application + 8 Technology + 12 Migration)
+2. 80-100 связей (все через association-relationship)
+3. Короткие descriptions (2-5 слов)
+4. Компактные id (p1, a1, r1, pr1)
+5. Для каждого элемента property "Phase"
 
-const CONTINUATION_PROMPT = `Продолжи JSON для "{{AREA}}":
+ВЕРНИ ТОЛЬКО JSON в тегах <migration_model>...</migration_model>`;
 
-{{PARTIAL_JSON}}
-
-Закрой все [] {}. Добавь недостающие элементы до минимума.
-В тегах <continuation>JSON</continuation>`;
-
-function tryFixIncompleteJSON(jsonString) {
-    logConsole("→ Fixing incomplete JSON...");
-    
-    const openBraces = (jsonString.match(/{/g) || []).length;
-    const closeBraces = (jsonString.match(/}/g) || []).length;
-    const openBrackets = (jsonString.match(/\[/g) || []).length;
-    const closeBrackets = (jsonString.match(/\]/g) || []).length;
-    
-    let fixed = jsonString.trim();
-    if (fixed.endsWith(',')) fixed = fixed.slice(0, -1);
-    
-    for (let i = 0; i < (openBrackets - closeBrackets); i++) fixed += '\n]';
-    for (let i = 0; i < (openBraces - closeBraces); i++) fixed += '\n}';
-    
-    logConsole(`  Fixed brackets: ${openBrackets - closeBrackets}, braces: ${openBraces - closeBraces}`);
-    
-    return fixed;
+// ============================================================
+// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+// ============================================================
+function countByType(nodes) {
+    const counts = {};
+    for (let i = 0; i < nodes.length; i++) {
+        const type = nodes[i].type;
+        counts[type] = (counts[type] || 0) + 1;
+    }
+    return counts;
 }
 
 function extractJSON(content) {
@@ -193,129 +314,92 @@ function extractJSON(content) {
         return extracted;
     }
     
-    const contMatch = content.match(/<continuation>([\s\S]*?)<\/continuation>/);
-    if (contMatch) {
-        let extracted = contMatch[1].trim();
-        logConsole("✓ Extracted JSON from <continuation> tags");
-        extracted = extracted.replace(/^```json\s*\n?/i, '').replace(/\n?```\s*$/i, '');
-        return extracted;
-    }
-    
     let cleanContent = content.replace(/```json\s*\n?/gi, '').replace(/\n?```/g, '');
     const firstBrace = cleanContent.indexOf('{');
     const lastBrace = cleanContent.lastIndexOf('}');
-    if (firstBrace !== -1 && lastBrace !== -1) {
+    
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
         logConsole("✓ Extracted JSON by braces");
-        return cleanContent.substring(firstBrace, lastBrace + 1);
+        const extracted = cleanContent.substring(firstBrace, lastBrace + 1);
+        
+        // Попытка восстановить обрезанный JSON
+        if (!extracted.endsWith('}')) {
+            logConsole("⚠ JSON seems truncated, attempting to fix...");
+            let fixed = extracted;
+            const openBraces = (fixed.match(/{/g) || []).length;
+            const closeBraces = (fixed.match(/}/g) || []).length;
+            const openBrackets = (fixed.match(/\[/g) || []).length;
+            const closeBrackets = (fixed.match(/\]/g) || []).length;
+            
+            for (let i = 0; i < (openBrackets - closeBrackets); i++) {
+                fixed += ']';
+            }
+            for (let i = 0; i < (openBraces - closeBraces); i++) {
+                fixed += '}';
+            }
+            
+            return fixed;
+        }
+        
+        return extracted;
     }
     
     logConsole("✗ No JSON found");
     return null;
 }
 
-async function generateWithRetry(area) {
-    let attempt = 0;
-    let partialJSON = null;
-    let jsonObject = null;
-    
-    while (attempt < MAX_RETRIES && !jsonObject) {
-        attempt++;
+// ============================================================
+// ГЕНЕРАЦИЯ С RETRY
+// ============================================================
+function generateWithRetry(area) {
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         logConsole(`\n>>> Attempt ${attempt}/${MAX_RETRIES}: ${area}`);
         
         try {
-            const areaId = area.toLowerCase().replace(/ё/g, 'е');
-            const prompt = attempt === 1 
-                ? MIGRATION_PROMPT.replace(/{{AREA}}/g, area).replace(/{{AREA_ID}}/g, areaId)
-                : CONTINUATION_PROMPT
-                    .replace(/{{AREA}}/g, area)
-                    .replace(/{{PARTIAL_JSON}}/g, partialJSON || "{}");
+            const prompt = MIGRATION_PROMPT_V4.replace(/{{AREA}}/g, area);
             
-            const requestBody = {
-                model: ANTHROPIC_MODEL,
-                max_tokens: MAX_TOKENS,
-                temperature: 0.3,
-                messages: [{ role: "user", content: prompt }]
-            };
-
             logConsole("→ Calling API...");
-            
-            const response = await Promise.race([
-                anthropicApi.post("/v1/messages", requestBody),
-                new Promise((_, reject) => 
-                    setTimeout(() => reject(new Error("API timeout")), API_TIMEOUT)
-                )
-            ]);
-            
-            const content = response.data.content[0].text;
+            const content = callAnthropicAPI(prompt);
             logConsole(`← Response: ${content.length} chars`);
             
             const extractedJSON = extractJSON(content);
             if (!extractedJSON) {
-                logConsole("✗ No JSON");
-                continue;
+                logConsole("✗ No JSON, retrying...");
+                if (attempt < MAX_RETRIES) continue;
+                throw new Error("No JSON found after " + MAX_RETRIES + " attempts");
             }
             
-            try {
-                jsonObject = JSON.parse(extractedJSON);
-                
-                // Проверка структуры
-                if (!jsonObject.nodes || !jsonObject.relationships) {
-                    throw new Error("Missing nodes or relationships");
-                }
-                
-                // Подсчёт Migration элементов (БЕЗ filter)
-                const migrationTypes = ['work-package', 'deliverable', 'plateau', 'gap', 'implementation-event'];
-                let migrationCount = 0;
-                for (let i = 0; i < jsonObject.nodes.length; i++) {
-                    const nodeType = jsonObject.nodes[i].type;
-                    for (let j = 0; j < migrationTypes.length; j++) {
-                        if (nodeType === migrationTypes[j]) {
-                            migrationCount++;
-                            break;
-                        }
-                    }
-                }
-                
-                logConsole(`✓ Parsed: ${jsonObject.nodes.length} nodes (${migrationCount} migration), ${jsonObject.relationships.length} rels`);
-                
-                if (migrationCount < 15 && attempt < MAX_RETRIES) {
-                    logConsole(`⚠ Insufficient (${migrationCount}/15), retry`);
-                    partialJSON = extractedJSON;
-                    jsonObject = null;
-                    continue;
-                }
-                
-                break;
-                
-            } catch (parseError) {
-                logConsole(`⚠ Parse error: ${parseError.message}`);
-                
-                const fixedJSON = tryFixIncompleteJSON(extractedJSON);
-                try {
-                    jsonObject = JSON.parse(fixedJSON);
-                    logConsole(`✓ Fixed: ${jsonObject.nodes.length} nodes`);
-                    break;
-                } catch (fixError) {
-                    logConsole(`✗ Fix failed: ${fixError.message}`);
-                    if (attempt < MAX_RETRIES) {
-                        partialJSON = extractedJSON;
-                    } else {
-                        throw new Error("Max retries, JSON invalid");
-                    }
-                }
+            const jsonObject = JSON.parse(extractedJSON);
+            
+            if (!jsonObject.nodes || !jsonObject.relationships) {
+                throw new Error("Missing nodes or relationships");
             }
+            
+            const typeCounts = countByType(jsonObject.nodes);
+            const totalNodes = jsonObject.nodes.length;
+            
+            logConsole(`✓ Parsed: ${totalNodes} nodes, ${jsonObject.relationships.length} rels`);
+            logConsole(`  Types: ${JSON.stringify(typeCounts)}`);
+            
+            if (totalNodes < 40 || totalNodes > 50) {
+                logConsole(`⚠ Expected 45±5 nodes, got ${totalNodes}, retrying...`);
+                if (attempt < MAX_RETRIES) continue;
+            }
+            
+            return jsonObject;
             
         } catch (error) {
-            logConsole(`✗ Failed: ${error.message}`);
+            logConsole(`✗ Attempt ${attempt} failed: ${error.message}`);
             if (attempt >= MAX_RETRIES) {
-                throw new Error(`Failed after ${MAX_RETRIES} attempts: ${error.message}`);
+                throw error;
             }
         }
     }
-    
-    return jsonObject;
 }
 
+// ============================================================
+// СОЗДАНИЕ ЭЛЕМЕНТОВ И СВЯЗЕЙ
+// ============================================================
 function createElement(targetModel, node) {
     try {
         const element = targetModel.createElement(node.type, node.name);
@@ -326,18 +410,18 @@ function createElement(targetModel, node) {
         
         if (node.properties) {
             for (let key in node.properties) {
-                element.prop(key, node.properties[key]);
+                element.prop(key, String(node.properties[key]));
             }
         }
         
         return element;
     } catch (e) {
-        logConsole(`⚠ Failed to create ${node.type}: ${e.message}, using grouping`);
+        logConsole(`⚠ Failed ${node.type}, using grouping: ${e.message}`);
         const element = targetModel.createElement('grouping', node.name);
         if (node.description) element.documentation = node.description;
         if (node.properties) {
             for (let key in node.properties) {
-                element.prop(key, node.properties[key]);
+                element.prop(key, String(node.properties[key]));
             }
         }
         return element;
@@ -348,93 +432,62 @@ function createRelationship(targetModel, source, target, relType, name) {
     try {
         return targetModel.createRelationship(relType, name || '', source, target);
     } catch (e) {
-        logConsole(`⚠ Failed ${relType}: ${e.message}, using association`);
         return targetModel.createRelationship('association-relationship', name || '', source, target);
     }
 }
 
-function createMigrationView(targetModel, area, modelJson, migrationFolder) {
-    logConsole(`\n>>> Creating view: Migration — ${area}`);
-    
-    const viewName = `Migration — ${area}`;
+// ============================================================
+// СОЗДАНИЕ VIEW
+// ============================================================
+function createMigrationView(targetModel, area, modelJson) {
+    const viewName = `Implementation & Migration — ${area}`;
     const view = targetModel.createArchimateView(viewName);
     
-    // Статистика (БЕЗ forEach)
-    const typeCounts = {};
-    for (let i = 0; i < modelJson.nodes.length; i++) {
-        const nodeType = modelJson.nodes[i].type;
-        typeCounts[nodeType] = (typeCounts[nodeType] || 0) + 1;
-    }
+    const typeCounts = countByType(modelJson.nodes);
     
-    view.documentation = `🔄 Процесс миграции: ${area}\n\n` +
+    view.documentation = `🔄 Модель миграции: ${area}\n\n` +
                         `${modelJson.description || ''}\n\n` +
                         `Элементов: ${modelJson.nodes.length}, Связей: ${modelJson.relationships.length}\n\n` +
-                        `Статистика:\n` +
-                        `- work-package: ${typeCounts['work-package'] || 0}\n` +
-                        `- deliverable: ${typeCounts['deliverable'] || 0}\n` +
-                        `- plateau: ${typeCounts['plateau'] || 0}\n` +
-                        `- gap: ${typeCounts['gap'] || 0}\n` +
-                        `- implementation-event: ${typeCounts['implementation-event'] || 0}\n\n` +
-                        `Тип: Implementation & Migration View (ArchiMate 3.2)`;
+                        `Статистика:\n${JSON.stringify(typeCounts, null, 2)}\n\n` +
+                        `Цветовая кодировка:\n` +
+                        `- Business: #FFFFB3, Application: #C0FFFF, Technology: #D6EEC3`;
     
     view.prop("viewpoint", "implementation_migration");
+    view.prop("Area", area);
     
     const elementMap = {};
     const visualMap = {};
     
-    logConsole(`→ Creating ${modelJson.nodes.length} elements...`);
-    
     const phaseX = {
         "AS-IS": 50,
-        "Проект": 450,
-        "Transition": 900,
-        "TO-BE": 1350
+        "Проект": 550,
+        "Transition": 1050,
+        "TO-BE": 1550
     };
     
     const phaseCounters = {};
-    let successCount = 0;
     
     for (let i = 0; i < modelJson.nodes.length; i++) {
         const node = modelJson.nodes[i];
         try {
             const element = createElement(targetModel, node);
             elementMap[node.id] = element;
-            successCount++;
             
             const phase = (node.properties && node.properties.Phase) || "Проект";
-            const baseX = phaseX[phase] || 450;
+            const baseX = phaseX[phase] || 550;
             
             if (!phaseCounters[phase]) phaseCounters[phase] = 0;
             phaseCounters[phase]++;
             
-            const x = baseX + (phaseCounters[phase] % 3) * 180;
-            const y = 50 + Math.floor(phaseCounters[phase] / 3) * 100;
+            const x = baseX + (phaseCounters[phase] % 3) * 160;
+            const y = 50 + Math.floor(phaseCounters[phase] / 3) * 90;
             
-            const visualObj = view.add(element, x, y, 170, 75);
+            const visualObj = view.add(element, x, y, 150, 70);
             visualMap[node.id] = visualObj;
             
-            // Розовый для Migration
-            const migrationTypes = ['work-package', 'deliverable', 'plateau', 'gap', 'implementation-event'];
-            let isMigration = false;
-            for (let j = 0; j < migrationTypes.length; j++) {
-                if (node.type === migrationTypes[j]) {
-                    isMigration = true;
-                    break;
-                }
-            }
-            
-            if (isMigration) {
-                visualObj.fillColor = "#FFE0F0";
-            } else {
-                const phaseColors = {
-                    "AS-IS": "#FFE5E5",
-                    "Проект": "#FFF4E5",
-                    "Transition": "#E5F0FF",
-                    "TO-BE": "#E5F5E5"
-                };
-                if (phaseColors[phase]) {
-                    visualObj.fillColor = phaseColors[phase];
-                }
+            const elementType = node.type;
+            if (LAYER_COLORS[elementType]) {
+                visualObj.fillColor = LAYER_COLORS[elementType];
             }
             
         } catch (e) {
@@ -442,14 +495,9 @@ function createMigrationView(targetModel, area, modelJson, migrationFolder) {
         }
     }
     
-    logConsole(`✓ Created ${successCount}/${modelJson.nodes.length} elements`);
-    logConsole(`  Statistics: ${JSON.stringify(typeCounts)}`);
-    
-    logConsole(`→ Creating ${modelJson.relationships.length} relationships...`);
+    logConsole(`✓ Created ${Object.keys(elementMap).length}/${modelJson.nodes.length} elements`);
     
     let relCreated = 0;
-    let relWithLabel = 0;
-    
     for (let i = 0; i < modelJson.relationships.length; i++) {
         const rel = modelJson.relationships[i];
         try {
@@ -469,58 +517,41 @@ function createMigrationView(targetModel, area, modelJson, migrationFolder) {
                 
                 view.add(relationship, sourceVisual, targetVisual);
                 relCreated++;
-                
-                if (rel.name && rel.name.trim()) {
-                    relWithLabel++;
-                }
-            } else {
-                if (!sourceElement) logConsole(`⚠ Rel ${i + 1}: source not found (${rel.source})`);
-                if (!targetElement) logConsole(`⚠ Rel ${i + 1}: target not found (${rel.target})`);
             }
         } catch (e) {
             logConsole(`✗ Rel ${i + 1} failed: ${e.message}`);
         }
     }
     
-    logConsole(`✓ Created ${relCreated}/${modelJson.relationships.length} rels (${relWithLabel} labeled)`);
+    logConsole(`✓ Created ${relCreated}/${modelJson.relationships.length} relationships`);
     return view;
 }
 
-async function main() {
+// ============================================================
+// ГЛАВНАЯ ФУНКЦИЯ
+// ============================================================
+function main() {
     try {
         logConsole('\n========================================');
-        logConsole('=== Migration Views Generator v3.9 ===');
+        logConsole('=== Migration Views Generator v4.4 ===');
         logConsole('========================================');
         
         const targetModel = getTargetModel();
-        logConsole(`✓ Model: ${targetModel.name}`);
         
-        logConsole('\n→ Finding Migration Layer folder...');
-        const migrationFolder = getOrCreateFolder("Migration Layer");
-        
-        if (migrationFolder) {
-            logConsole(`✓ Folder: ${migrationFolder.name}`);
-        } else {
-            logConsole(`⚠ No folder`);
-        }
-        
-        const areas = ['Запись', 'Хранение', 'Отчётность'];
         const results = [];
         
-        for (let i = 0; i < areas.length; i++) {
-            const area = areas[i];
-            logConsole(`\n========================================`);
-            logConsole(`=== Area ${i + 1}/3: ${area} ===`);
-            logConsole(`========================================`);
+        for (let i = 0; i < AREAS.length; i++) {
+            const area = AREAS[i];
+            logConsole(`\n=== Area ${i + 1}/${AREAS.length}: ${area} ===`);
             
             try {
-                const modelJson = await generateWithRetry(area);
+                const modelJson = generateWithRetry(area);
                 
                 if (!modelJson || !modelJson.nodes || !modelJson.relationships) {
                     throw new Error("Invalid JSON structure");
                 }
                 
-                const view = createMigrationView(targetModel, area, modelJson, migrationFolder);
+                createMigrationView(targetModel, area, modelJson);
                 
                 results.push({
                     area: area,
@@ -543,9 +574,7 @@ async function main() {
             }
         }
         
-        logConsole('\n========================================');
-        logConsole('=== SUMMARY ===');
-        logConsole('========================================');
+        logConsole('\n=== SUMMARY ===');
         
         let successCount = 0;
         let totalElements = 0;
@@ -561,7 +590,6 @@ async function main() {
         logConsole(`  Успешно: ${successCount}/${results.length} views`);
         logConsole(`  Элементов: ${totalElements}`);
         logConsole(`  Связей: ${totalRels}`);
-        logConsole(`\nДетали:`);
         
         for (let i = 0; i < results.length; i++) {
             const r = results[i];
@@ -574,8 +602,7 @@ async function main() {
         
         if (successCount === results.length) {
             logConsole(`\n✓ Все Migration Views созданы!`);
-            logConsole(`\n📌 Проверьте в Archi:`);
-            logConsole(`   Views → Migration Layer → 3 диаграммы`);
+            logConsole(`\n📌 Проверьте: Views → Implementation & Migration`);
         } else {
             logConsole(`\n⚠ Создано ${successCount}/${results.length} views`);
         }
@@ -583,18 +610,21 @@ async function main() {
     } catch (error) {
         logConsole(`\n✗ CRITICAL: ${error.message}`);
         if (error.stack) {
-            logConsole(`Stack: ${error.stack}`);
+            console.log(error.stack);
         }
         throw error;
     }
 }
 
-// Запуск
-main().catch(error => {
+// ============================================================
+// ЗАПУСК
+// ============================================================
+try {
+    main();
+} catch (error) {
     logConsole(`\n✗✗✗ FATAL ✗✗✗`);
     logConsole(`${error.message}`);
     if (error.stack) {
-        logConsole(`${error.stack}`);
+        console.log(error.stack);
     }
-    console.log("\n!!! Script failed !!!");
-});
+}
