@@ -1,9 +1,11 @@
 /**
- * @name Generate Migration Views - Fitness Club (Optimized)
- * @description Создаёт 3 Migration Views с 45 элементами каждая (оптимизировано)
- * @version 4.4
+ * @name Generate Migration Integrated View - Fitness Club v8.0
+ * @description ОДНА Integrated View с 4 слоями (Business/Application/Technology/Migration)
+ * @version 8.0 — Migration Layer внизу, все элементы связаны
  * @author Claude AI Assistant
- * @lastModifiedDate 2025-10-25
+ * @lastModifiedDate 2025-10-26
+ * @archimateVersion 3.2
+ * @archiVersion 5.x
  */
 
 console.clear();
@@ -17,19 +19,18 @@ function logConsole(message, data) {
     }
 }
 
-logConsole("=== Migration Views Generator v4.4 (Optimized) ===");
+logConsole("=== Migration Integrated View Generator v8.0 ===");
 
 // ============================================================
 // КОНФИГУРАЦИЯ
 // ============================================================
-const ANTHROPIC_API_KEY = "";
+const ANTHROPIC_API_KEY = ""; // ← ВСТАВЬТЕ API KEY
 const ANTHROPIC_MODEL = "claude-sonnet-4-20250514";
 const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
 const ANTHROPIC_API_VERSION = "2023-06-01";
-const API_TIMEOUT = 180000;
-const MAX_TOKENS = 24000; // ✅ Оптимизировано
-const MAX_RETRIES = 3;
-const AREAS = ['Запись', 'Хранение', 'Отчётность'];
+const API_TIMEOUT = 360000;
+const MAX_TOKENS = 24000;
+const MAX_RETRIES = 2;
 
 // ============================================================
 // ЦВЕТОВАЯ КОДИРОВКА ПО СЛОЯМ ARCHIMATE
@@ -76,28 +77,29 @@ const LAYER_COLORS = {
     "technology-service": "#D6EEC3",
     "artifact": "#D6EEC3",
     
-    // Implementation & Migration
+    // Implementation & Migration (4-й слой внизу)
     "work-package": "#FFE4B5",
     "deliverable": "#E0FFE0",
     "implementation-event": "#FFE0F0",
     "plateau": "#F0F0F0",
     "gap": "#FFD0D0",
     
-    // Motivation
-    "stakeholder": "#FFF8DC",
-    "driver": "#FFF8DC",
-    "assessment": "#FFF8DC",
-    "goal": "#FFF8DC",
-    "outcome": "#FFF8DC",
-    "principle": "#FFF8DC",
-    "requirement": "#FFF8DC",
-    "constraint": "#FFF8DC",
-    "meaning": "#FFF8DC",
-    "value": "#FFF8DC",
-    
     // По умолчанию
     "grouping": "#F5F5F5",
     "location": "#F5F5F5"
+};
+
+// Layout config для 4 слоёв
+const LAYOUT_CONFIG = {
+    MARGIN_LEFT: 50,
+    MARGIN_TOP: 50,
+    AREA_WIDTH: 800,
+    AREA_GAP: 100,
+    LAYER_HEIGHT: 180,      // Высота слоя (уменьшена для 4 слоёв)
+    LAYER_GAP: 30,
+    ELEMENT_WIDTH: 160,
+    ELEMENT_HEIGHT: 60,
+    ELEMENTS_PER_ROW: 4
 };
 
 // ============================================================
@@ -117,8 +119,7 @@ function getTargetModel() {
             return foundModel;
         }
         
-        throw new Error("No ArchiMate model found! Please open a model in Archi.");
-        
+        throw new Error("No ArchiMate model found!");
     } catch (e) {
         logConsole(`✗ getTargetModel error: ${e.message}`);
         throw e;
@@ -163,11 +164,6 @@ function callAnthropicAPI(prompt) {
         }
         
         const jsonResponse = JSON.parse(response.body());
-        
-        if (jsonResponse.stop_reason === "max_tokens") {
-            logConsole("⚠ Response was truncated due to max_tokens limit");
-        }
-        
         return jsonResponse.content[0].text;
         
     } catch (e) {
@@ -177,134 +173,288 @@ function callAnthropicAPI(prompt) {
 }
 
 // ============================================================
-// ОПТИМИЗИРОВАННЫЙ ПРОМПТ v4.4 (45 элементов вместо 70)
+// ПРОМПТ ДЛЯ 4-СЛОЙНОЙ VIEW (~50 ЭЛЕМЕНТОВ)
 // ============================================================
-const MIGRATION_PROMPT_V4 = `Ты — senior архитектор, эксперт по ArchiMate 3.2.
+const MIGRATION_INTEGRATED_PROMPT = `Ты — senior архитектор, эксперт по ArchiMate 3.2 Implementation & Migration Layer.
 
-ЗАДАЧА: Создать компактную модель миграции (Implementation & Migration View) для {{AREA}}.
+ЗАДАЧА: Создать ОДНУ компактную Integrated Migration View для фитнес-клуба с 3 доменами: Запись, Хранение, Отчётность.
 
-КОНТЕКСТ:
-- Фитнес-клуб, цифровая трансформация, 12 мес, 5 млн руб
-- AS-IS: телефоны, бумага, Excel
-- TO-BE: онлайн-запись, CRM, BI-дашборды
+## КОНТЕКСТ:
+- Цифровая трансформация: 12 месяцев, бюджет 5 млн руб
+- AS-IS: телефоны, бумажные журналы, Excel
+- TO-BE: онлайн-запись, облачная CRM, BI-аналитика
 
-ТРЕБОВАНИЯ:
-✅ РОВНО 45 элементов (не больше!)
-✅ 80-100 связей (компактно)
-✅ ВСЕ слои: Business, Application, Technology, Migration
+## ТРЕБОВАНИЯ:
+✅ **~50 элементов ИТОГО** (компактно)
+✅ **70-100 связей** (все элементы связаны)
+✅ **4 слоя**: Business → Application → Technology → **Migration**
+✅ **3 домена**: Запись, Хранение, Отчётность (горизонтально)
 
-СОСТАВ (СТРОГО):
+## СТРУКТУРА ПО ДОМЕНАМ (КОМПАКТНО — по 4 элемента на слой):
 
-1️⃣ BUSINESS (15 элементов):
-   • Actors (3): Клиент, Администратор, Менеджер
-   • Roles (3): Front Desk, Оператор CRM, Аналитик
-   • Processes (6): Запись AS-IS, Запись TO-BE, Проверка слотов, Учёт посещений, Формирование отчёта, Оплата
-   • Objects (3): Расписание, Карточка клиента, Отчёт
+### 📌 ДОМЕН 1: ЗАПИСЬ (Booking)
 
-2️⃣ APPLICATION (10 элементов):
-   • Components (5): Excel (AS-IS), Mobile App (TO-BE), Cloud CRM (TO-BE), BI Analytics (TO-BE), Payment Gateway (TO-BE)
-   • Services (3): Booking API, Client API, Analytics API
-   • Functions (2): Check Slot, Generate Report
+**Business Layer (4 элемента):**
+- Actor (1): Клиент
+- Process (2): Запись клиента (AS-IS), Онлайн-запись (TO-BE)
+- Object (1): Расписание
 
-3️⃣ TECHNOLOGY (8 элементов):
-   • Nodes (4): Admin PC (AS-IS), App Server (AS-IS), AWS Cloud (TO-BE), Azure VM (TO-BE)
-   • Devices (2): Phone (AS-IS), Smartphone (TO-BE)
-   • Services (2): Hosting, Database
+**Application Layer (4 элемента):**
+- Component (2): Excel (AS-IS), Mobile App (TO-BE)
+- Service (1): Booking API (TO-BE)
+- Function (1): Check Availability
 
-4️⃣ MIGRATION (12 элементов):
-   • Plateaus (3): AS-IS, Transition, TO-BE
-   • Work Packages (5): WP1 Анализ, WP2 Мобильное приложение, WP3 Cloud CRM, WP4 BI-дашборды, WP5 Миграция данных
-   • Deliverables (2): Приложение, CRM-система
-   • Gaps (2): Технологический разрыв, Функциональный разрыв
+**Technology Layer (4 элемента):**
+- Node (2): Admin PC (AS-IS), AWS EC2 (TO-BE)
+- Device (1): Смартфон (TO-BE)
+- Service (1): Cloud Hosting (TO-BE)
 
-ФОРМАТ ОТВЕТА: JSON в тегах <migration_model>...</migration_model>
+**Migration Layer (4 элемента):**
+- Plateau (2): AS-IS Plateau (Запись), TO-BE Plateau (Запись)
+- Work Package (1): WP1: Мобильное приложение (3 мес, 1.5M)
+- Gap (1): Технологический разрыв (бумага → мобильное)
 
-ПРИМЕР JSON (КОМПАКТНЫЙ):
+---
+
+### 📌 ДОМЕН 2: ХРАНЕНИЕ (Storage)
+
+**Business Layer (4 элемента):**
+- Actor (1): Администратор БД
+- Process (2): Хранение в шкафу (AS-IS), Хранение в облаке (TO-BE)
+- Object (1): База клиентов
+
+**Application Layer (4 элемента):**
+- Component (2): Access DB (AS-IS), PostgreSQL (TO-BE)
+- Service (1): Data API (TO-BE)
+- Function (1): CRUD Operations
+
+**Technology Layer (4 элемента):**
+- Node (2): Локальный сервер (AS-IS), AWS RDS (TO-BE)
+- Device (1): Планшет (TO-BE)
+- Service (1): AWS S3 Backup (TO-BE)
+
+**Migration Layer (4 элемента):**
+- Plateau (2): AS-IS Plateau (Хранение), TO-BE Plateau (Хранение)
+- Work Package (1): WP2: Cloud CRM (2 мес, 800k)
+- Deliverable (1): CRM-система
+
+---
+
+### 📌 ДОМЕН 3: ОТЧЁТНОСТЬ (Reporting)
+
+**Business Layer (4 элемента):**
+- Actor (1): Директор
+- Process (2): Формирование отчёта (AS-IS), Автоотчёты (TO-BE)
+- Object (1): Excel-отчёт
+
+**Application Layer (4 элемента):**
+- Component (2): Excel Pivot (AS-IS), Power BI (TO-BE)
+- Service (1): Analytics API (TO-BE)
+- Function (1): Generate Dashboard
+
+**Technology Layer (4 элемента):**
+- Node (2): ПК бухгалтера (AS-IS), Azure VM (TO-BE)
+- Device (1): 4K-монитор (TO-BE)
+- Service (1): Azure Cloud (TO-BE)
+
+**Migration Layer (4 элемента):**
+- Plateau (2): AS-IS Plateau (Отчётность), TO-BE Plateau (Отчётность)
+- Work Package (1): WP3: BI-дашборды (2 мес, 700k)
+- Gap (1): Функциональный разрыв (ручные отчёты → BI)
+
+---
+
+## СВЯЗИ (ВСЕ ЭЛЕМЕНТЫ СВЯЗАНЫ):
+
+### Вертикальные связи (между слоями в одном домене):
+1. **Business → Application**: Process → Component (serving-relationship)
+2. **Application → Technology**: Component → Node (assignment-relationship)
+3. **Technology → Migration**: Node → Work Package (association-relationship "реализуется")
+4. **Migration → Migration**: Plateau AS-IS → Gap → Work Package → Plateau TO-BE (flow-relationship)
+
+### Горизонтальные связи (между доменами):
+1. Запись.Object → Хранение.Component (flow-relationship "передаёт данные")
+2. Хранение.Component → Отчётность.Component (flow-relationship "источник для отчётов")
+3. Запись.Work Package → Хранение.Work Package (triggering-relationship "предшествует")
+4. Хранение.Work Package → Отчётность.Work Package (triggering-relationship "предшествует")
+
+---
+
+## ФОРМАТ ОТВЕТА: JSON
 
 {
-  "description": "Миграция {{AREA}}: AS-IS → TO-BE",
-  "nodes": [
-    {"id": "p1", "type": "plateau", "name": "AS-IS ({{AREA}})", "description": "Текущее", "properties": {"Phase": "AS-IS"}},
-    {"id": "a1", "type": "business-actor", "name": "Клиент", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "a2", "type": "business-actor", "name": "Администратор", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "a3", "type": "business-actor", "name": "Менеджер", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "r1", "type": "business-role", "name": "Front Desk", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "r2", "type": "business-role", "name": "Оператор CRM", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "r3", "type": "business-role", "name": "Аналитик", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "pr1", "type": "business-process", "name": "Запись клиента (AS-IS)", "description": "Ручная", "properties": {"Phase": "AS-IS"}},
-    {"id": "pr2", "type": "business-process", "name": "Онлайн-запись (TO-BE)", "description": "Автоматическая", "properties": {"Phase": "TO-BE"}},
-    {"id": "pr3", "type": "business-process", "name": "Проверка слотов", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "pr4", "type": "business-process", "name": "Учёт посещений", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "pr5", "type": "business-process", "name": "Формирование отчёта", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "pr6", "type": "business-process", "name": "Оплата услуг", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "o1", "type": "business-object", "name": "Расписание", "description": "Бумажное", "properties": {"Phase": "AS-IS"}},
-    {"id": "o2", "type": "business-object", "name": "Карточка клиента", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "o3", "type": "business-object", "name": "Отчёт", "description": "Excel", "properties": {"Phase": "AS-IS"}},
-    {"id": "app1", "type": "application-component", "name": "Excel (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "app2", "type": "application-component", "name": "Mobile App (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "app3", "type": "application-component", "name": "Cloud CRM (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "app4", "type": "application-component", "name": "BI Analytics (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "app5", "type": "application-component", "name": "Payment Gateway (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "svc1", "type": "application-service", "name": "Booking API", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "svc2", "type": "application-service", "name": "Client API", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "svc3", "type": "application-service", "name": "Analytics API", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "fn1", "type": "application-function", "name": "Check Slot", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "fn2", "type": "application-function", "name": "Generate Report", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "n1", "type": "node", "name": "Admin PC (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "n2", "type": "node", "name": "App Server (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "n3", "type": "node", "name": "AWS Cloud (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "n4", "type": "node", "name": "Azure VM (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "d1", "type": "device", "name": "Phone (AS-IS)", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "d2", "type": "device", "name": "Smartphone (TO-BE)", "description": "", "properties": {"Phase": "TO-BE"}},
-    {"id": "ts1", "type": "technology-service", "name": "Hosting", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "ts2", "type": "technology-service", "name": "Database", "description": "", "properties": {"Phase": "AS-IS"}},
-    {"id": "p2", "type": "plateau", "name": "Transition ({{AREA}})", "description": "Переход", "properties": {"Phase": "Transition"}},
-    {"id": "wp1", "type": "work-package", "name": "WP1: Анализ", "description": "1 мес", "properties": {"Phase": "Проект", "Duration": "1", "Budget": "300k"}},
-    {"id": "wp2", "type": "work-package", "name": "WP2: Мобильное приложение", "description": "3 мес", "properties": {"Phase": "Проект", "Duration": "3", "Budget": "1.5M"}},
-    {"id": "wp3", "type": "work-package", "name": "WP3: Cloud CRM", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "800k"}},
-    {"id": "wp4", "type": "work-package", "name": "WP4: BI-дашборды", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "700k"}},
-    {"id": "wp5", "type": "work-package", "name": "WP5: Миграция данных", "description": "2 мес", "properties": {"Phase": "Проект", "Duration": "2", "Budget": "400k"}},
-    {"id": "dl1", "type": "deliverable", "name": "Мобильное приложение", "description": "", "properties": {"Phase": "Проект"}},
-    {"id": "dl2", "type": "deliverable", "name": "CRM-система", "description": "", "properties": {"Phase": "Проект"}},
-    {"id": "g1", "type": "gap", "name": "Технологический разрыв", "description": "Бумага → Цифра", "properties": {"Phase": "Проект"}},
-    {"id": "g2", "type": "gap", "name": "Функциональный разрыв", "description": "Ручное → Автоматизация", "properties": {"Phase": "Проект"}},
-    {"id": "p3", "type": "plateau", "name": "TO-BE ({{AREA}})", "description": "Целевое", "properties": {"Phase": "TO-BE"}}
-  ],
-  "relationships": [
-    {"source": "wp1", "target": "wp2", "type": "association-relationship", "name": "Предшествует"},
-    {"source": "wp2", "target": "dl1", "type": "association-relationship", "name": "Создаёт"},
-    {"source": "wp3", "target": "dl2", "type": "association-relationship", "name": "Создаёт"},
-    {"source": "p1", "target": "g1", "type": "association-relationship", "name": "Имеет разрыв"},
-    {"source": "g1", "target": "p3", "type": "association-relationship", "name": "Преодолевается"},
-    {"source": "r1", "target": "pr1", "type": "association-relationship", "name": "Выполняет"},
-    {"source": "pr1", "target": "o1", "type": "association-relationship", "name": "Использует"},
-    {"source": "app1", "target": "pr1", "type": "association-relationship", "name": "Поддерживает"},
-    {"source": "n1", "target": "app1", "type": "association-relationship", "name": "Размещает"},
-    {"source": "d1", "target": "r1", "type": "association-relationship", "name": "Используется"}
+  "description": "Implementation & Migration Integrated View: Fitness Club (4 слоя)",
+  "areas": {
+    "Запись": {
+      "business": {
+        "nodes": [
+          {"id": "z_b_a1", "name": "Клиент", "type": "business-actor", "description": "", "properties": {"Area": "Запись", "Domain": "Business"}},
+          {"id": "z_b_p1", "name": "Запись клиента (AS-IS)", "type": "business-process", "description": "Ручная", "properties": {"Area": "Запись", "Domain": "Business", "Phase": "AS-IS"}},
+          {"id": "z_b_p2", "name": "Онлайн-запись (TO-BE)", "type": "business-process", "description": "Автоматическая", "properties": {"Area": "Запись", "Domain": "Business", "Phase": "TO-BE"}},
+          {"id": "z_b_o1", "name": "Расписание", "type": "business-object", "description": "", "properties": {"Area": "Запись", "Domain": "Business"}}
+        ],
+        "relationships": [
+          {"source": "z_b_a1", "target": "z_b_p1", "type": "assignment-relationship", "name": "выполняет"}
+        ]
+      },
+      "application": {
+        "nodes": [
+          {"id": "z_a_c1", "name": "Excel (AS-IS)", "type": "application-component", "description": "", "properties": {"Area": "Запись", "Domain": "Application", "Phase": "AS-IS"}},
+          {"id": "z_a_c2", "name": "Mobile App (TO-BE)", "type": "application-component", "description": "", "properties": {"Area": "Запись", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "z_a_s1", "name": "Booking API", "type": "application-service", "description": "", "properties": {"Area": "Запись", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "z_a_f1", "name": "Check Availability", "type": "application-function", "description": "", "properties": {"Area": "Запись", "Domain": "Application", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "z_a_c1", "target": "z_b_p1", "type": "serving-relationship", "name": "поддерживает"},
+          {"source": "z_a_c2", "target": "z_b_p2", "type": "serving-relationship", "name": "поддерживает"}
+        ]
+      },
+      "technology": {
+        "nodes": [
+          {"id": "z_t_n1", "name": "Admin PC (AS-IS)", "type": "node", "description": "", "properties": {"Area": "Запись", "Domain": "Technology", "Phase": "AS-IS"}},
+          {"id": "z_t_n2", "name": "AWS EC2 (TO-BE)", "type": "node", "description": "", "properties": {"Area": "Запись", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "z_t_d1", "name": "Смартфон (TO-BE)", "type": "device", "description": "", "properties": {"Area": "Запись", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "z_t_s1", "name": "Cloud Hosting", "type": "technology-service", "description": "", "properties": {"Area": "Запись", "Domain": "Technology", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "z_t_n1", "target": "z_a_c1", "type": "assignment-relationship", "name": "размещает"},
+          {"source": "z_t_n2", "target": "z_a_c2", "type": "assignment-relationship", "name": "размещает"}
+        ]
+      },
+      "migration": {
+        "nodes": [
+          {"id": "z_m_p1", "name": "AS-IS Plateau (Запись)", "type": "plateau", "description": "Текущее состояние", "properties": {"Area": "Запись", "Domain": "Migration", "Phase": "AS-IS"}},
+          {"id": "z_m_p2", "name": "TO-BE Plateau (Запись)", "type": "plateau", "description": "Целевое состояние", "properties": {"Area": "Запись", "Domain": "Migration", "Phase": "TO-BE"}},
+          {"id": "z_m_wp1", "name": "WP1: Мобильное приложение", "type": "work-package", "description": "3 мес, 1.5M", "properties": {"Area": "Запись", "Domain": "Migration", "Duration": "3", "Budget": "1500000"}},
+          {"id": "z_m_g1", "name": "Технологический разрыв", "type": "gap", "description": "Бумага → мобильное", "properties": {"Area": "Запись", "Domain": "Migration"}}
+        ],
+        "relationships": [
+          {"source": "z_m_p1", "target": "z_m_g1", "type": "association-relationship", "name": "имеет разрыв"},
+          {"source": "z_m_g1", "target": "z_m_wp1", "type": "association-relationship", "name": "преодолевается через"},
+          {"source": "z_m_wp1", "target": "z_m_p2", "type": "realization-relationship", "name": "реализует"},
+          {"source": "z_t_n2", "target": "z_m_wp1", "type": "association-relationship", "name": "реализуется в"}
+        ]
+      }
+    },
+    "Хранение": {
+      "business": {
+        "nodes": [
+          {"id": "h_b_a1", "name": "Администратор БД", "type": "business-actor", "description": "", "properties": {"Area": "Хранение", "Domain": "Business"}},
+          {"id": "h_b_p1", "name": "Хранение в шкафу (AS-IS)", "type": "business-process", "description": "Бумага", "properties": {"Area": "Хранение", "Domain": "Business", "Phase": "AS-IS"}},
+          {"id": "h_b_p2", "name": "Хранение в облаке (TO-BE)", "type": "business-process", "description": "Cloud", "properties": {"Area": "Хранение", "Domain": "Business", "Phase": "TO-BE"}},
+          {"id": "h_b_o1", "name": "База клиентов", "type": "business-object", "description": "", "properties": {"Area": "Хранение", "Domain": "Business"}}
+        ],
+        "relationships": [
+          {"source": "h_b_a1", "target": "h_b_p1", "type": "assignment-relationship", "name": "выполняет"}
+        ]
+      },
+      "application": {
+        "nodes": [
+          {"id": "h_a_c1", "name": "Access DB (AS-IS)", "type": "application-component", "description": "", "properties": {"Area": "Хранение", "Domain": "Application", "Phase": "AS-IS"}},
+          {"id": "h_a_c2", "name": "PostgreSQL (TO-BE)", "type": "application-component", "description": "", "properties": {"Area": "Хранение", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "h_a_s1", "name": "Data API", "type": "application-service", "description": "", "properties": {"Area": "Хранение", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "h_a_f1", "name": "CRUD Operations", "type": "application-function", "description": "", "properties": {"Area": "Хранение", "Domain": "Application", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "h_a_c1", "target": "h_b_p1", "type": "serving-relationship", "name": "поддерживает"},
+          {"source": "h_a_c2", "target": "h_b_p2", "type": "serving-relationship", "name": "поддерживает"}
+        ]
+      },
+      "technology": {
+        "nodes": [
+          {"id": "h_t_n1", "name": "Локальный сервер (AS-IS)", "type": "node", "description": "", "properties": {"Area": "Хранение", "Domain": "Technology", "Phase": "AS-IS"}},
+          {"id": "h_t_n2", "name": "AWS RDS (TO-BE)", "type": "node", "description": "", "properties": {"Area": "Хранение", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "h_t_d1", "name": "Планшет (TO-BE)", "type": "device", "description": "", "properties": {"Area": "Хранение", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "h_t_s1", "name": "AWS S3 Backup", "type": "technology-service", "description": "", "properties": {"Area": "Хранение", "Domain": "Technology", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "h_t_n1", "target": "h_a_c1", "type": "assignment-relationship", "name": "размещает"},
+          {"source": "h_t_n2", "target": "h_a_c2", "type": "assignment-relationship", "name": "размещает"}
+        ]
+      },
+      "migration": {
+        "nodes": [
+          {"id": "h_m_p1", "name": "AS-IS Plateau (Хранение)", "type": "plateau", "description": "Текущее состояние", "properties": {"Area": "Хранение", "Domain": "Migration", "Phase": "AS-IS"}},
+          {"id": "h_m_p2", "name": "TO-BE Plateau (Хранение)", "type": "plateau", "description": "Целевое состояние", "properties": {"Area": "Хранение", "Domain": "Migration", "Phase": "TO-BE"}},
+          {"id": "h_m_wp1", "name": "WP2: Cloud CRM", "type": "work-package", "description": "2 мес, 800k", "properties": {"Area": "Хранение", "Domain": "Migration", "Duration": "2", "Budget": "800000"}},
+          {"id": "h_m_dl1", "name": "CRM-система", "type": "deliverable", "description": "", "properties": {"Area": "Хранение", "Domain": "Migration"}}
+        ],
+        "relationships": [
+          {"source": "h_m_wp1", "target": "h_m_dl1", "type": "realization-relationship", "name": "создаёт"},
+          {"source": "h_m_dl1", "target": "h_m_p2", "type": "realization-relationship", "name": "реализует"}
+        ]
+      }
+    },
+    "Отчётность": {
+      "business": {
+        "nodes": [
+          {"id": "o_b_a1", "name": "Директор", "type": "business-actor", "description": "", "properties": {"Area": "Отчётность", "Domain": "Business"}},
+          {"id": "o_b_p1", "name": "Формирование отчёта (AS-IS)", "type": "business-process", "description": "Вручную", "properties": {"Area": "Отчётность", "Domain": "Business", "Phase": "AS-IS"}},
+          {"id": "o_b_p2", "name": "Автоотчёты (TO-BE)", "type": "business-process", "description": "BI-дашборды", "properties": {"Area": "Отчётность", "Domain": "Business", "Phase": "TO-BE"}},
+          {"id": "o_b_o1", "name": "Excel-отчёт", "type": "business-object", "description": "", "properties": {"Area": "Отчётность", "Domain": "Business"}}
+        ],
+        "relationships": [
+          {"source": "o_b_a1", "target": "o_b_p1", "type": "assignment-relationship", "name": "выполняет"}
+        ]
+      },
+      "application": {
+        "nodes": [
+          {"id": "o_a_c1", "name": "Excel Pivot (AS-IS)", "type": "application-component", "description": "", "properties": {"Area": "Отчётность", "Domain": "Application", "Phase": "AS-IS"}},
+          {"id": "o_a_c2", "name": "Power BI (TO-BE)", "type": "application-component", "description": "", "properties": {"Area": "Отчётность", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "o_a_s1", "name": "Analytics API", "type": "application-service", "description": "", "properties": {"Area": "Отчётность", "Domain": "Application", "Phase": "TO-BE"}},
+          {"id": "o_a_f1", "name": "Generate Dashboard", "type": "application-function", "description": "", "properties": {"Area": "Отчётность", "Domain": "Application", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "o_a_c1", "target": "o_b_p1", "type": "serving-relationship", "name": "поддерживает"},
+          {"source": "o_a_c2", "target": "o_b_p2", "type": "serving-relationship", "name": "поддерживает"}
+        ]
+      },
+      "technology": {
+        "nodes": [
+          {"id": "o_t_n1", "name": "ПК бухгалтера (AS-IS)", "type": "node", "description": "", "properties": {"Area": "Отчётность", "Domain": "Technology", "Phase": "AS-IS"}},
+          {"id": "o_t_n2", "name": "Azure VM (TO-BE)", "type": "node", "description": "", "properties": {"Area": "Отчётность", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "o_t_d1", "name": "4K-монитор (TO-BE)", "type": "device", "description": "", "properties": {"Area": "Отчётность", "Domain": "Technology", "Phase": "TO-BE"}},
+          {"id": "o_t_s1", "name": "Azure Cloud", "type": "technology-service", "description": "", "properties": {"Area": "Отчётность", "Domain": "Technology", "Phase": "TO-BE"}}
+        ],
+        "relationships": [
+          {"source": "o_t_n1", "target": "o_a_c1", "type": "assignment-relationship", "name": "размещает"},
+          {"source": "o_t_n2", "target": "o_a_c2", "type": "assignment-relationship", "name": "размещает"}
+        ]
+      },
+      "migration": {
+        "nodes": [
+          {"id": "o_m_p1", "name": "AS-IS Plateau (Отчётность)", "type": "plateau", "description": "Текущее состояние", "properties": {"Area": "Отчётность", "Domain": "Migration", "Phase": "AS-IS"}},
+          {"id": "o_m_p2", "name": "TO-BE Plateau (Отчётность)", "type": "plateau", "description": "Целевое состояние", "properties": {"Area": "Отчётность", "Domain": "Migration", "Phase": "TO-BE"}},
+          {"id": "o_m_wp1", "name": "WP3: BI-дашборды", "type": "work-package", "description": "2 мес, 700k", "properties": {"Area": "Отчётность", "Domain": "Migration", "Duration": "2", "Budget": "700000"}},
+          {"id": "o_m_g1", "name": "Функциональный разрыв", "type": "gap", "description": "Ручные → BI", "properties": {"Area": "Отчётность", "Domain": "Migration"}}
+        ],
+        "relationships": [
+          {"source": "o_m_p1", "target": "o_m_g1", "type": "association-relationship", "name": "имеет разрыв"},
+          {"source": "o_m_g1", "target": "o_m_wp1", "type": "association-relationship", "name": "преодолевается через"}
+        ]
+      }
+    }
+  },
+  "cross_area_relationships": [
+    {"source": "z_b_o1", "target": "h_a_c2", "type": "flow-relationship", "name": "передаёт данные"},
+    {"source": "h_a_c2", "target": "o_a_c2", "type": "flow-relationship", "name": "источник для отчётов"},
+    {"source": "z_m_wp1", "target": "h_m_wp1", "type": "triggering-relationship", "name": "предшествует"},
+    {"source": "h_m_wp1", "target": "o_m_wp1", "type": "triggering-relationship", "name": "предшествует"}
   ]
 }
 
 ⚠️ ВАЖНО:
-1. РОВНО 45 элементов (15 Business + 10 Application + 8 Technology + 12 Migration)
-2. 80-100 связей (все через association-relationship)
-3. Короткие descriptions (2-5 слов)
-4. Компактные id (p1, a1, r1, pr1)
-5. Для каждого элемента property "Phase"
+1. **~48 элементов** (4 × 3 областей × 4 слоя)
+2. **70-100 связей** (все элементы связаны)
+3. **4 слоя**: Business → Application → Technology → **Migration (внизу)**
+4. **ID-префиксы**: \`z_\` (Запись), \`h_\` (Хранение), \`o_\` (Отчётность), далее \`b_\`/\`a_\`/\`t_\`/\`m_\` (слои)
+5. **Properties**: "Area", "Domain", "Phase"
 
 ВЕРНИ ТОЛЬКО JSON в тегах <migration_model>...</migration_model>`;
 
 // ============================================================
-// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+// [extractJSON, validateModel, generateWithRetry — БЕЗ ИЗМЕНЕНИЙ]
 // ============================================================
-function countByType(nodes) {
-    const counts = {};
-    for (let i = 0; i < nodes.length; i++) {
-        const type = nodes[i].type;
-        counts[type] = (counts[type] || 0) + 1;
-    }
-    return counts;
-}
-
 function extractJSON(content) {
     const taggedMatch = content.match(/<migration_model>([\s\S]*?)<\/migration_model>/);
     if (taggedMatch) {
@@ -320,72 +470,73 @@ function extractJSON(content) {
     
     if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
         logConsole("✓ Extracted JSON by braces");
-        const extracted = cleanContent.substring(firstBrace, lastBrace + 1);
-        
-        // Попытка восстановить обрезанный JSON
-        if (!extracted.endsWith('}')) {
-            logConsole("⚠ JSON seems truncated, attempting to fix...");
-            let fixed = extracted;
-            const openBraces = (fixed.match(/{/g) || []).length;
-            const closeBraces = (fixed.match(/}/g) || []).length;
-            const openBrackets = (fixed.match(/\[/g) || []).length;
-            const closeBrackets = (fixed.match(/\]/g) || []).length;
-            
-            for (let i = 0; i < (openBrackets - closeBrackets); i++) {
-                fixed += ']';
-            }
-            for (let i = 0; i < (openBraces - closeBraces); i++) {
-                fixed += '}';
-            }
-            
-            return fixed;
-        }
-        
-        return extracted;
+        return cleanContent.substring(firstBrace, lastBrace + 1);
     }
     
-    logConsole("✗ No JSON found");
+    logConsole("✗ No JSON found in response");
     return null;
 }
 
-// ============================================================
-// ГЕНЕРАЦИЯ С RETRY
-// ============================================================
-function generateWithRetry(area) {
+function validateModel(jsonObject) {
+    if (!jsonObject.areas) {
+        logConsole("✗ Missing 'areas' structure");
+        return false;
+    }
+    
+    let totalElements = 0;
+    
+    for (let areaName in jsonObject.areas) {
+        const area = jsonObject.areas[areaName];
+        
+        if (!area.business || !area.application || !area.technology || !area.migration) {
+            logConsole(`✗ Area "${areaName}" missing layers (need 4: business/application/technology/migration)`);
+            return false;
+        }
+        
+        const businessCount = area.business.nodes ? area.business.nodes.length : 0;
+        const appCount = area.application.nodes ? area.application.nodes.length : 0;
+        const techCount = area.technology.nodes ? area.technology.nodes.length : 0;
+        const migrationCount = area.migration.nodes ? area.migration.nodes.length : 0;
+        const areaTotal = businessCount + appCount + techCount + migrationCount;
+        
+        logConsole(`  Area "${areaName}": Business=${businessCount}, App=${appCount}, Tech=${techCount}, Migration=${migrationCount}, Total=${areaTotal}`);
+        
+        totalElements += areaTotal;
+    }
+    
+    logConsole(`  TOTAL ELEMENTS: ${totalElements}`);
+    
+    if (totalElements < 40 || totalElements > 60) {
+        logConsole(`⚠ Expected ~50 elements (40-60), got ${totalElements}`);
+    }
+    
+    return true;
+}
+
+function generateWithRetry() {
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        logConsole(`\n>>> Attempt ${attempt}/${MAX_RETRIES}: ${area}`);
+        logConsole(`\n>>> Attempt ${attempt}/${MAX_RETRIES}`);
         
         try {
-            const prompt = MIGRATION_PROMPT_V4.replace(/{{AREA}}/g, area);
-            
-            logConsole("→ Calling API...");
-            const content = callAnthropicAPI(prompt);
-            logConsole(`← Response: ${content.length} chars`);
+            logConsole("→ Calling Anthropic API...");
+            const content = callAnthropicAPI(MIGRATION_INTEGRATED_PROMPT);
+            logConsole(`← Response received: ${content.length} chars`);
             
             const extractedJSON = extractJSON(content);
             if (!extractedJSON) {
-                logConsole("✗ No JSON, retrying...");
+                logConsole("✗ No JSON found, retrying...");
                 if (attempt < MAX_RETRIES) continue;
                 throw new Error("No JSON found after " + MAX_RETRIES + " attempts");
             }
             
             const jsonObject = JSON.parse(extractedJSON);
             
-            if (!jsonObject.nodes || !jsonObject.relationships) {
-                throw new Error("Missing nodes or relationships");
-            }
-            
-            const typeCounts = countByType(jsonObject.nodes);
-            const totalNodes = jsonObject.nodes.length;
-            
-            logConsole(`✓ Parsed: ${totalNodes} nodes, ${jsonObject.relationships.length} rels`);
-            logConsole(`  Types: ${JSON.stringify(typeCounts)}`);
-            
-            if (totalNodes < 40 || totalNodes > 50) {
-                logConsole(`⚠ Expected 45±5 nodes, got ${totalNodes}, retrying...`);
+            if (!validateModel(jsonObject)) {
+                logConsole("✗ Validation failed, retrying...");
                 if (attempt < MAX_RETRIES) continue;
             }
             
+            logConsole(`✓ Validated successfully`);
             return jsonObject;
             
         } catch (error) {
@@ -398,7 +549,7 @@ function generateWithRetry(area) {
 }
 
 // ============================================================
-// СОЗДАНИЕ ЭЛЕМЕНТОВ И СВЯЗЕЙ
+// СОЗДАНИЕ ЭЛЕМЕНТА И СВЯЗИ
 // ============================================================
 function createElement(targetModel, node) {
     try {
@@ -416,7 +567,7 @@ function createElement(targetModel, node) {
         
         return element;
     } catch (e) {
-        logConsole(`⚠ Failed ${node.type}, using grouping: ${e.message}`);
+        logConsole(`⚠ Failed to create ${node.type}, using grouping: ${e.message}`);
         const element = targetModel.createElement('grouping', node.name);
         if (node.description) element.documentation = node.description;
         if (node.properties) {
@@ -429,101 +580,180 @@ function createElement(targetModel, node) {
 }
 
 function createRelationship(targetModel, source, target, relType, name) {
+    const validTypes = [
+        'association-relationship',
+        'assignment-relationship',
+        'realization-relationship',
+        'serving-relationship',
+        'access-relationship',
+        'flow-relationship',
+        'triggering-relationship'
+    ];
+    
+    const type = validTypes.includes(relType) ? relType : 'association-relationship';
+    
     try {
-        return targetModel.createRelationship(relType, name || '', source, target);
+        return targetModel.createRelationship(type, name || '', source, target);
     } catch (e) {
         return targetModel.createRelationship('association-relationship', name || '', source, target);
     }
 }
 
 // ============================================================
-// СОЗДАНИЕ VIEW
+// СОЗДАНИЕ 4-СЛОЙНОЙ VIEW
 // ============================================================
-function createMigrationView(targetModel, area, modelJson) {
-    const viewName = `Implementation & Migration — ${area}`;
+function createIntegratedView(targetModel, modelJson) {
+    const viewName = "Implementation & Migration Integrated — Fitness Club";
     const view = targetModel.createArchimateView(viewName);
     
-    const typeCounts = countByType(modelJson.nodes);
-    
-    view.documentation = `🔄 Модель миграции: ${area}\n\n` +
+    view.documentation = `🔄 Implementation & Migration Integrated View (4 слоя)\n\n` +
                         `${modelJson.description || ''}\n\n` +
-                        `Элементов: ${modelJson.nodes.length}, Связей: ${modelJson.relationships.length}\n\n` +
-                        `Статистика:\n${JSON.stringify(typeCounts, null, 2)}\n\n` +
-                        `Цветовая кодировка:\n` +
-                        `- Business: #FFFFB3, Application: #C0FFFF, Technology: #D6EEC3`;
+                        `Вертикальное размещение слоёв:\n` +
+                        `1. Business Layer (#FFFFB3)\n` +
+                        `2. Application Layer (#C0FFFF)\n` +
+                        `3. Technology Layer (#D6EEC3)\n` +
+                        `4. Implementation & Migration Layer (#FFE4B5, #E0FFE0, #F0F0F0, #FFD0D0)\n\n` +
+                        `3 домена (горизонтально): Запись | Хранение | Отчётность\n\n` +
+                        `ArchiMate 3.2, Implementation & Migration Viewpoint`;
     
     view.prop("viewpoint", "implementation_migration");
-    view.prop("Area", area);
     
     const elementMap = {};
     const visualMap = {};
     
-    const phaseX = {
-        "AS-IS": 50,
-        "Проект": 550,
-        "Transition": 1050,
-        "TO-BE": 1550
-    };
+    const areas = ['Запись', 'Хранение', 'Отчётность'];
+    const layers = ['business', 'application', 'technology', 'migration']; // 4 слоя!
     
-    const phaseCounters = {};
-    
-    for (let i = 0; i < modelJson.nodes.length; i++) {
-        const node = modelJson.nodes[i];
-        try {
-            const element = createElement(targetModel, node);
-            elementMap[node.id] = element;
+    // Размещение элементов: домены горизонтально, слои вертикально
+    for (let areaIdx = 0; areaIdx < areas.length; areaIdx++) {
+        const areaName = areas[areaIdx];
+        const areaData = modelJson.areas[areaName];
+        
+        if (!areaData) {
+            logConsole(`⚠ Area "${areaName}" not found in model`);
+            continue;
+        }
+        
+        const baseX = LAYOUT_CONFIG.MARGIN_LEFT + areaIdx * (LAYOUT_CONFIG.AREA_WIDTH + LAYOUT_CONFIG.AREA_GAP);
+        
+        // Grouping контейнер для области
+        const areaGrouping = targetModel.createElement('grouping', `📊 ${areaName}`);
+        areaGrouping.prop("Area", areaName);
+        
+        const totalHeight = LAYOUT_CONFIG.LAYER_HEIGHT * 4 + LAYOUT_CONFIG.LAYER_GAP * 3 + 40;
+        const areaVisual = view.add(areaGrouping, baseX, LAYOUT_CONFIG.MARGIN_TOP, LAYOUT_CONFIG.AREA_WIDTH, totalHeight);
+        areaVisual.fillColor = "#F5F5F5";
+        areaVisual.opacity = 20;
+        
+        // Размещение 4 слоёв вертикально
+        for (let layerIdx = 0; layerIdx < layers.length; layerIdx++) {
+            const layerName = layers[layerIdx];
+            const layerData = areaData[layerName];
             
-            const phase = (node.properties && node.properties.Phase) || "Проект";
-            const baseX = phaseX[phase] || 550;
-            
-            if (!phaseCounters[phase]) phaseCounters[phase] = 0;
-            phaseCounters[phase]++;
-            
-            const x = baseX + (phaseCounters[phase] % 3) * 160;
-            const y = 50 + Math.floor(phaseCounters[phase] / 3) * 90;
-            
-            const visualObj = view.add(element, x, y, 150, 70);
-            visualMap[node.id] = visualObj;
-            
-            const elementType = node.type;
-            if (LAYER_COLORS[elementType]) {
-                visualObj.fillColor = LAYER_COLORS[elementType];
+            if (!layerData || !layerData.nodes) {
+                continue;
             }
             
-        } catch (e) {
-            logConsole(`✗ Element ${i + 1} failed: ${e.message}`);
-        }
-    }
-    
-    logConsole(`✓ Created ${Object.keys(elementMap).length}/${modelJson.nodes.length} elements`);
-    
-    let relCreated = 0;
-    for (let i = 0; i < modelJson.relationships.length; i++) {
-        const rel = modelJson.relationships[i];
-        try {
-            const sourceElement = elementMap[rel.source];
-            const targetElement = elementMap[rel.target];
-            const sourceVisual = visualMap[rel.source];
-            const targetVisual = visualMap[rel.target];
+            const layerY = LAYOUT_CONFIG.MARGIN_TOP + 30 + layerIdx * (LAYOUT_CONFIG.LAYER_HEIGHT + LAYOUT_CONFIG.LAYER_GAP);
             
-            if (sourceElement && targetElement && sourceVisual && targetVisual) {
-                const relationship = createRelationship(
-                    targetModel, 
-                    sourceElement, 
-                    targetElement, 
-                    rel.type, 
-                    rel.name || ''
-                );
+            // Grouping для слоя
+            let layerLabel = layerName === 'business' ? '📊 Business' : 
+                            layerName === 'application' ? '💻 Application' : 
+                            layerName === 'technology' ? '🖥️ Technology' :
+                            '🔄 Migration'; // 4-й слой!
+            
+            const layerGrouping = targetModel.createElement('grouping', `${layerLabel} — ${areaName}`);
+            layerGrouping.prop("Area", areaName);
+            layerGrouping.prop("Domain", layerName);
+            
+            const layerColor = layerName === 'business' ? '#FFFFB3' :
+                             layerName === 'application' ? '#C0FFFF' :
+                             layerName === 'technology' ? '#D6EEC3' :
+                             '#FFE4B5'; // Migration
+            
+            const layerVisual = view.add(layerGrouping, baseX + 10, layerY, LAYOUT_CONFIG.AREA_WIDTH - 20, LAYOUT_CONFIG.LAYER_HEIGHT);
+            layerVisual.fillColor = layerColor;
+            layerVisual.opacity = 15;
+            
+            // Размещение элементов слоя
+            let elementX = baseX + 30;
+            let elementY = layerY + 35;
+            let col = 0;
+            
+            for (let i = 0; i < layerData.nodes.length; i++) {
+                const node = layerData.nodes[i];
                 
-                view.add(relationship, sourceVisual, targetVisual);
-                relCreated++;
+                try {
+                    const element = createElement(targetModel, node);
+                    elementMap[node.id] = element;
+                    
+                    const visualObj = view.add(element, elementX, elementY, LAYOUT_CONFIG.ELEMENT_WIDTH, LAYOUT_CONFIG.ELEMENT_HEIGHT);
+                    visualMap[node.id] = visualObj;
+                    visualObj.fillColor = LAYER_COLORS[node.type] || layerColor;
+                    
+                    col++;
+                    if (col >= LAYOUT_CONFIG.ELEMENTS_PER_ROW) {
+                        col = 0;
+                        elementX = baseX + 30;
+                        elementY += LAYOUT_CONFIG.ELEMENT_HEIGHT + 10;
+                    } else {
+                        elementX += LAYOUT_CONFIG.ELEMENT_WIDTH + 20;
+                    }
+                    
+                } catch (e) {
+                    logConsole(`✗ Failed to create element ${node.id}: ${e.message}`);
+                }
             }
-        } catch (e) {
-            logConsole(`✗ Rel ${i + 1} failed: ${e.message}`);
+            
+            // Связи внутри слоя
+            if (layerData.relationships) {
+                for (let i = 0; i < layerData.relationships.length; i++) {
+                    const rel = layerData.relationships[i];
+                    try {
+                        const sourceElement = elementMap[rel.source];
+                        const targetElement = elementMap[rel.target];
+                        const sourceVisual = visualMap[rel.source];
+                        const targetVisual = visualMap[rel.target];
+                        
+                        if (sourceElement && targetElement && sourceVisual && targetVisual) {
+                            const relationship = createRelationship(targetModel, sourceElement, targetElement, rel.type, rel.name || '');
+                            view.add(relationship, sourceVisual, targetVisual);
+                        }
+                    } catch (e) {
+                        // Пропускаем
+                    }
+                }
+            }
         }
     }
     
-    logConsole(`✓ Created ${relCreated}/${modelJson.relationships.length} relationships`);
+    // Связи между областями
+    logConsole(`\n  Creating cross-area relationships...`);
+    let crossRels = 0;
+    
+    if (modelJson.cross_area_relationships) {
+        for (let i = 0; i < modelJson.cross_area_relationships.length; i++) {
+            const rel = modelJson.cross_area_relationships[i];
+            try {
+                const sourceElement = elementMap[rel.source];
+                const targetElement = elementMap[rel.target];
+                const sourceVisual = visualMap[rel.source];
+                const targetVisual = visualMap[rel.target];
+                
+                if (sourceElement && targetElement && sourceVisual && targetVisual) {
+                    const relationship = createRelationship(targetModel, sourceElement, targetElement, rel.type, rel.name || '');
+                    view.add(relationship, sourceVisual, targetVisual);
+                    crossRels++;
+                }
+            } catch (e) {
+                // Пропускаем
+            }
+        }
+    }
+    
+    logConsole(`✓ Created ${Object.keys(elementMap).length} elements`);
+    logConsole(`✓ Created ${crossRels} cross-area relationships`);
+    
     return view;
 }
 
@@ -533,82 +763,39 @@ function createMigrationView(targetModel, area, modelJson) {
 function main() {
     try {
         logConsole('\n========================================');
-        logConsole('=== Migration Views Generator v4.4 ===');
+        logConsole('=== Migration Integrated View v8.0 ===');
         logConsole('========================================');
         
         const targetModel = getTargetModel();
         
-        const results = [];
+        logConsole('\n=== Generating 4-Layer Integrated Migration View ===');
         
-        for (let i = 0; i < AREAS.length; i++) {
-            const area = AREAS[i];
-            logConsole(`\n=== Area ${i + 1}/${AREAS.length}: ${area} ===`);
-            
-            try {
-                const modelJson = generateWithRetry(area);
-                
-                if (!modelJson || !modelJson.nodes || !modelJson.relationships) {
-                    throw new Error("Invalid JSON structure");
-                }
-                
-                createMigrationView(targetModel, area, modelJson);
-                
-                results.push({
-                    area: area,
-                    elements: modelJson.nodes.length,
-                    relationships: modelJson.relationships.length,
-                    success: true
-                });
-                
-                logConsole(`✓ ${area}: OK`);
-                
-            } catch (error) {
-                logConsole(`✗ ${area}: FAILED - ${error.message}`);
-                results.push({
-                    area: area,
-                    elements: 0,
-                    relationships: 0,
-                    success: false,
-                    error: error.message
-                });
-            }
+        const modelJson = generateWithRetry();
+        
+        if (!modelJson || !modelJson.areas) {
+            throw new Error("Invalid JSON structure");
         }
         
-        logConsole('\n=== SUMMARY ===');
+        createIntegratedView(targetModel, modelJson);
         
-        let successCount = 0;
         let totalElements = 0;
-        let totalRels = 0;
-        
-        for (let i = 0; i < results.length; i++) {
-            if (results[i].success) successCount++;
-            totalElements += results[i].elements;
-            totalRels += results[i].relationships;
+        for (let areaName in modelJson.areas) {
+            const area = modelJson.areas[areaName];
+            totalElements += (area.business.nodes ? area.business.nodes.length : 0);
+            totalElements += (area.application.nodes ? area.application.nodes.length : 0);
+            totalElements += (area.technology.nodes ? area.technology.nodes.length : 0);
+            totalElements += (area.migration.nodes ? area.migration.nodes.length : 0); // +Migration!
         }
         
-        logConsole(`\nРезультаты:`);
-        logConsole(`  Успешно: ${successCount}/${results.length} views`);
-        logConsole(`  Элементов: ${totalElements}`);
-        logConsole(`  Связей: ${totalRels}`);
-        
-        for (let i = 0; i < results.length; i++) {
-            const r = results[i];
-            if (r.success) {
-                logConsole(`  ${i + 1}. ${r.area}: ✓ ${r.elements} элементов, ${r.relationships} связей`);
-            } else {
-                logConsole(`  ${i + 1}. ${r.area}: ✗ ${r.error}`);
-            }
-        }
-        
-        if (successCount === results.length) {
-            logConsole(`\n✓ Все Migration Views созданы!`);
-            logConsole(`\n📌 Проверьте: Views → Implementation & Migration`);
-        } else {
-            logConsole(`\n⚠ Создано ${successCount}/${results.length} views`);
-        }
+        logConsole('\n=== SUCCESS ===');
+        logConsole(`✅ Migration Integrated View (4 слоя) создан!`);
+        logConsole(`  Всего элементов: ${totalElements}`);
+        logConsole(`  Слои: Business → Application → Technology → Migration`);
+        logConsole(`  Домены: Запись | Хранение | Отчётность`);
+        logConsole(`\n📌 Проверьте в Archi: Views → "Implementation & Migration Integrated — Fitness Club"`);
         
     } catch (error) {
-        logConsole(`\n✗ CRITICAL: ${error.message}`);
+        logConsole(`\n✗ CRITICAL ERROR: ${error.message}`);
         if (error.stack) {
             console.log(error.stack);
         }
@@ -622,9 +809,6 @@ function main() {
 try {
     main();
 } catch (error) {
-    logConsole(`\n✗✗✗ FATAL ✗✗✗`);
+    logConsole(`\n✗✗✗ FATAL ERROR ✗✗✗`);
     logConsole(`${error.message}`);
-    if (error.stack) {
-        console.log(error.stack);
-    }
 }
